@@ -33,7 +33,7 @@ en-AU:
   <<: *DEFAULT_EN
 
 # Spanish
-# -------
+# -----------------
 es: &DEFAULT_ES
   nav:
     - title: "Servicios"
@@ -73,7 +73,7 @@ de-DE:
   <<: *DEFAULT_DE
 
 # Turkish
-# -------
+# -----------------
 tr: &DEFAULT_TR
   nav:
     - title: "Hizmetler"
