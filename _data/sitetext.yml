@@ -167,7 +167,7 @@ en-AU:
   <<: *DEFAULT_EN
 
 # Spanish
-# -------
+# -----------------
 es: &DEFAULT_ES
   header:
     title: ¡Bienvenido a nuestro Estudio!
@@ -473,3 +473,153 @@ de: &DEFAULT_DE
         icon: "fab fa-instagram"
 de-DE:
   <<: *DEFAULT_DE
+
+# Turkish
+# -----------------
+tr: &DEFAULT_TR
+  header:
+    title: Stüdyomuza Hoş Geldiniz!
+    text: Tanıştığımıza Memnun Olduk
+    button: Daha Fazlasını Anlat
+    buttonlink: "#services"
+
+  services:
+    title: "Hizmetler"
+    text: "Lorem ipsum"
+    section: services
+    list:
+      - title: "E-Ticaret"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+        icon: fas fa-shopping-cart
+      - title: "Duyarlı Tasarım"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+        icon: fas fa-laptop
+      - title: "[Markdown](https://en.wikipedia.org/wiki/Markdown)"
+        desc: "Açıklamanız burada, tam **Markdown** desteği"
+        icon: fab fa-markdown
+
+  portfolio:
+    title: "Portföy"
+    text: "Lorem ipsum dolor sit amet consectetur."
+    section: portfolio
+    closebutton: "Projeyi Kapat"
+
+  timeline:
+    title: "Zaman Çizelgesi"
+    text: "Lorem ipsum zaman çizelgesi"
+    section: timeline
+    events:
+      - title: "Mütevazı Başlangıcımız"
+        year: "2009-2011"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        image: assets/img/timeline/1.jpg
+        alt:
+      - title: "Bir Ajansın Doğuşu"
+        year: "Mart 2011"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        image: assets/img/timeline/2.jpg
+        alt:
+      - title: "Jekyll Teması Oluşturuldu"
+        year: "2019"
+        desc: "Ravi Riley, Bootstrap tabanlı Agency temasını bir Jekyll temasına dönüştürdü. Jekyll teması bir Ruby gem'i olarak veya uzaktan kurulabilir. Daha fazla bilgi için belgeleri ziyaret edin."
+        image: assets/img/timeline/3.jpg
+        alt: resim alternatif metni
+      - title: "Başlık"
+        year: "2009-2011"
+        desc: "Açıklamanız burada, **Markdown** tamamen desteklenmektedir."
+        image: assets/img/timeline/4.jpg
+        alt:
+        align: right
+    end: "Hikayemizin <br> Bir Parçası <br> Ol!"
+
+  about:
+    title: "Hakkımızda"
+    text: "hikayemiz"
+    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** desteği vardır."
+    section: about
+
+  clients:
+    section: clients
+    max-height: 100px
+    horizontal-scrolling: "" # "evet/hayır" olabilir
+    list:
+      - title: "envato"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/envato.jpg
+      - title: "designmodo"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/designmodo.jpg
+      - title: "themeforest"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/themeforest.jpg
+      - title: "Creative Market"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/creative-market.jpg
+
+  team:
+    title: "HARİKA EKİBİMİZ"
+    text: "Lorem ipsum dolor sit amet consectetur."
+    subtext: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** desteği vardır."
+    section: team
+    people:
+      - name: "Kay Garland"
+        role: "Baş Tasarımcı"
+        image: assets/img/team/500x500.jpg
+        social:
+          - url: https://twitter.com
+            icon: fab fa-twitter
+          - url: https://facebook.com
+            icon: fab fa-facebook-f
+          - url: https://linkedin.com
+            icon: fab fa-linkedin-in
+      - name: "Larry Parker"
+        role: "Baş Pazarlamacı"
+        image: assets/img/team/2.jpg
+        social:
+          - url: https://twitter.com
+            icon: fab fa-twitter
+          - url: https://facebook.com
+            icon: fab fa-facebook-f
+          - url: https://linkedin.com
+            icon: fab fa-linkedin-in
+      - name: "Diana Perterson"
+        role: "Baş Geliştirici"
+        image: assets/img/team/500x500.jpg
+        social:
+          - url: https://twitter.com
+            icon: fab fa-twitter
+          - url: https://facebook.com
+            icon: fab fa-facebook-f
+          - url: https://linkedin.com
+            icon: fab fa-linkedin-in
+
+  contact:
+    title: "Bize Ulaşın"
+    text: "Lorem ipsum ya da bizi arayın 123456789"
+    section: contact
+    name: "İsim*"
+    name-validation: "Lütfen isminizi giriniz."
+    email: "E-posta*"
+    email-validation: "Lütfen e-posta adresinizi giriniz."
+    phone: "Telefon Numarası"
+    phone-validation: "Lütfen telefon numaranızı giriniz."
+    message: "Mesaj*"
+    message-validation: "Lütfen bir mesaj giriniz."
+    subject: "İletişim Formu Gönderimi"
+    submit: "Mesaj Gönder"
+
+  footer:
+    legal: "Gizlilik Politikası"
+    social:
+      - url: https://twitter.com
+        icon: "fab fa-twitter"
+      - url: https://facebook.com
+        icon: "fab fa-facebook-f"
+      - url: https://linkedin.com
+        icon: "fab fa-linkedin-in"
+      - url: https://github.com/raviriley/agency-jekyll-theme
+        icon: "fab fa-github"
+      - url: https://instagram.com
+        icon: "fab fa-instagram"
+tr-TR:
+  <<: *DEFAULT_TR
