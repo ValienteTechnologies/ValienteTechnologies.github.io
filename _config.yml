@@ -25,7 +25,7 @@ author     : Onur Alp Akin
   # path: assets\img\valiente.svg
   # height: 60 #height in px, defaults to 52px
 
-locale: "tr-TR" # See available languages in _data/sitetext.yml
+locale: "en-US" # See available languages in _data/sitetext.yml
 
 analytics:
   google: G-L3H5QZKNQ3
