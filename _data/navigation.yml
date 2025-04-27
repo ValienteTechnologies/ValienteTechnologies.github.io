@@ -71,3 +71,22 @@ de: &DEFAULT_DE
       section: Kontakt
 de-DE:
   <<: *DEFAULT_DE
+
+# Turkish
+# -------
+tr: &DEFAULT_TR
+  nav:
+    - title: "Hizmetler"
+      section: services
+    - title: "Portföy"
+      section: portfolio
+    - title: "Hakkında"
+      section: about
+    - title: "Zaman Çizelgesi"
+      section: timeline
+    - title: "Ekip"
+      section: team
+    - title: "İletişim"
+      section: contact
+tr-TR:
+  <<: *DEFAULT_TR
