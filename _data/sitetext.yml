@@ -37,32 +37,32 @@ en: &DEFAULT_EN
     section: portfolio
     closebutton: "Close Project"
 
-  timeline:
-    title: "Timeline"
-    text: "Lorem ipsum timeline"
-    section: timeline
+  partners:
+    title: "partners"
+    text: "Lorem ipsum partners"
+    section: partners
     # left is the default
     #start_align: "left"
     events:
       - title: "Our Humble Beginnings"
         year: "2009-2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/1.jpg
+        image: assets/img/partners/1.jpg
         alt:
       - title: "An Agency is Born"
         year: "March 2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/2.jpg
+        image: assets/img/partners/2.jpg
         alt:
       - title: "Jekyll Theme is created"
         year: "2019"
         desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
-        image: assets/img/timeline/3.jpg
+        image: assets/img/partners/3.jpg
         alt: image alt text
       - title: "Title"
         year: "2009-2011"
         desc: "Your description here, **Markdown** is fully supported."
-        image: assets/img/timeline/4.jpg
+        image: assets/img/partners/4.jpg
         alt:
         # you can enforce the alignment
         align: right
@@ -196,9 +196,9 @@ es: &DEFAULT_ES
     section: portafolio
     closebutton: "Cerrar Proyecto"
 
-  timeline:
+  partners:
     title: "Cronología"
-    text: "Lorem ipsum timeline"
+    text: "Lorem ipsum partners"
     section: cronologia
     # left is the default
     #start_align: "left"
@@ -206,22 +206,22 @@ es: &DEFAULT_ES
       - title: "Nuestro Humilde Comienzo"
         year: "2009-2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/1.jpg
+        image: assets/img/partners/1.jpg
         alt:
       - title: "Una Agencia nace"
         year: "March 2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/2.jpg
+        image: assets/img/partners/2.jpg
         alt:
       - title: "La plantilla Jekyll es creada"
         year: "2019"
         desc: "Ravi Riley convirtió Agency, una plantilla basada en Bootstrap, en una plantilla de Jekyll. La plantilla Jekyll puede ser instalada commo una gema de Ruby (Ruby gem) o remotamente. Para más información, visite la documentación."
-        image: assets/img/timeline/3.jpg
+        image: assets/img/partners/3.jpg
         alt: image alt text
       - title: "Título"
         year: "2009-2011"
         desc: "Su descripción aquí, **Markdown** es soportado completamente."
-        image: assets/img/timeline/4.jpg
+        image: assets/img/partners/4.jpg
         alt:
         # you can enforce the alignment
         align: right
@@ -351,9 +351,9 @@ de: &DEFAULT_DE
     section: Portfolio
     closebutton: "Schließen"
 
-  timeline:
+  partners:
     title: "Geschichte"
-    text: "Lorem ipsum timeline"
+    text: "Lorem ipsum partners"
     section: Geschichte
     # left is the default
     #start_align: "left"
@@ -361,22 +361,22 @@ de: &DEFAULT_DE
       - title: "Unsere Anfänge"
         year: "2009-2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/1.jpg
+        image: assets/img/partners/1.jpg
         alt:
       - title: "Gründung der Firma"
         year: "März 2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/2.jpg
+        image: assets/img/partners/2.jpg
         alt:
       - title: "Das Jekyll-Thema wurde erstellt"
         year: "2019"
         desc: "Ravi Riley wandelte Agency, ein auf Bootstrap basierendes Thema, in ein Jekyll-Thema um. Man kann das Jekyll-Thema als Ruby-Gem oder remotely installieren. Für mehr Informationen, schauen Sie sich die Dokumentation an."
-        image: assets/img/timeline/3.jpg
+        image: assets/img/partners/3.jpg
         alt: Bildbeschreibung
       - title: "Titel"
         year: "2009-2011"
         desc: "Hier können Sie etwas mit **Markdown** einfügen."
-        image: assets/img/timeline/4.jpg
+        image: assets/img/partners/4.jpg
         alt:
         # you can enforce the alignment
         align: right
@@ -504,30 +504,30 @@ tr: &DEFAULT_TR
     section: portfolio
     closebutton: "Projeyi Kapat"
 
-  timeline:
+  partners:
     title: "Zaman Çizelgesi"
     text: "Lorem ipsum zaman çizelgesi"
-    section: timeline
+    section: partners
     events:
       - title: "Mütevazı Başlangıcımız"
         year: "2009-2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/1.jpg
+        image: assets/img/partners/1.jpg
         alt:
       - title: "Bir Ajansın Doğuşu"
         year: "Mart 2011"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/2.jpg
+        image: assets/img/partners/2.jpg
         alt:
       - title: "Jekyll Teması Oluşturuldu"
         year: "2019"
         desc: "Ravi Riley, Bootstrap tabanlı Agency temasını bir Jekyll temasına dönüştürdü. Jekyll teması bir Ruby gem'i olarak veya uzaktan kurulabilir. Daha fazla bilgi için belgeleri ziyaret edin."
-        image: assets/img/timeline/3.jpg
+        image: assets/img/partners/3.jpg
         alt: resim alternatif metni
       - title: "Başlık"
         year: "2009-2011"
         desc: "Açıklamanız burada, **Markdown** tamamen desteklenmektedir."
-        image: assets/img/timeline/4.jpg
+        image: assets/img/partners/4.jpg
         alt:
         align: right
     end: "Hikayemizin <br> Bir Parçası <br> Ol!"

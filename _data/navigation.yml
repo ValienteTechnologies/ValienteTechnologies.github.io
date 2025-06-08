@@ -17,8 +17,8 @@ en: &DEFAULT_EN
       section: portfolio
     - title: "About"
       section: about
-    - title: "Timeline"
-      section: timeline
+    - title: "Partners"
+      section: partners
     - title: "Team"
       section: team
     - title: "Contact"
@@ -83,7 +83,7 @@ tr: &DEFAULT_TR
     - title: "Hakkında"
       section: about
     - title: "Zaman Çizelgesi"
-      section: timeline
+      section: partners
     - title: "Ekip"
       section: team
     - title: "İletişim"
