@@ -19,8 +19,6 @@ en: &DEFAULT_EN
       section: about
     - title: "Partners"
       section: partners
-    - title: "Team"
-      section: team
     - title: "Contact"
       section: contact
 en-US:
@@ -64,9 +62,7 @@ de: &DEFAULT_DE
     - title: "Über uns"
       section: Ueber
     - title: "Geschichte"
-      section: Geschichte
-    - title: "Team"
-      section: Team
+      section: Geschichtes
     - title: "Kontakt"
       section: Kontakt
 de-DE:
@@ -84,8 +80,6 @@ tr: &DEFAULT_TR
       section: about
     - title: "Zaman Çizelgesi"
       section: partners
-    - title: "Ekip"
-      section: team
     - title: "İletişim"
       section: contact
 tr-TR:
