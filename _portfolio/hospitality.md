@@ -1,19 +1,19 @@
 ---
-title: Hospitality
-subtitle: Scalable IT and Software Solutions for Hotels & Restaurants
+title: Hizmet Sektörü
+subtitle: Oteller ve Restoranlar İçin Ölçeklenebilir BT ve Yazılım Çözümleri
 image: assets/img/portfolio/hospitality.jpg
-alt: Waiter attending the table
+alt: Masaya hizmet eden garson
 
 caption:
-  title: Hospitality
-  subtitle: Hotels & Restaurants
+  title: Hizmet Sektörü
+  subtitle: Oteller ve Restoranlar
   thumbnail: assets/img/portfolio/hospitality-thumbnail.jpg
 ---
 
-We empower the hospitality industry with seamless IT infrastructure, secure networks, and tailored software systems—from cloud-based booking platforms to integrated POS and ERP systems.
+Hizmet sektörünü, bulut tabanlı platformlardan entegre POS ve ERP sistemlerine kadar kesintisiz BT altyapısı, güvenli ağlar ve özel yazılım çözümleriyle güçlendiriyoruz.
 
-#### Services
-- 24/7 Managed IT Support
-- Cybersecurity Hardening & Compliance
-- Cloud Migration & Backup Solutions
-- Custom Odoo ERP Integration
+#### Hizmetler
+- 7/24 BT Desteği  
+- Siber Güvenlik Güçlendirme ve Uyumluluk  
+- Bulut Geçişi ve Yedekleme Çözümleri  
+- Özelleştirilmiş Odoo ERP Entegrasyonu  

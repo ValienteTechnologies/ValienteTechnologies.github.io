@@ -1,19 +1,19 @@
 ---
-title: Startups
-subtitle: Scalable Cloud Infrastructure for High-Growth Startups
+title: Startuplar
+subtitle: Hızla Büyüyen Startuplar İçin Ölçeklenebilir Bulut Altyapısı
 image: assets/img/portfolio/startup.jpg
-alt: Startup team working with laptops in a coworking space
+alt: Ortak çalışma alanında dizüstü bilgisayarlarıyla çalışan startup ekibi
 
 caption:
-  title: Startups
-  subtitle: Software & Product Development 
+  title: Startuplar
+  subtitle: Yazılım ve Ürün Geliştirme
   thumbnail: assets/img/portfolio/startup-thumbnail.jpg
 ---
 
-We help startups scale with secure, flexible, and cost-effective cloud infrastructure. Whether launching an MVP or preparing for rapid user growth, we deliver high-performance hosting, backup, and DevOps solutions that adapt as your business evolves.
+Startupların güvenli, esnek ve maliyet etkin bulut altyapısı ile ölçeklenmesine yardımcı oluyoruz. İster bir MVP lansmanı yapın, ister hızlı kullanıcı büyümesine hazırlanın—işletmenizin gelişimine uyum sağlayan yüksek performanslı barındırma, yedekleme ve DevOps çözümleri sunuyoruz.
 
-#### Services
-- Cloud Architecture Design & Deployment  
-- Scalable Hosting & Backup Solutions  
-- DevOps & CI/CD Pipeline Automation  
-- Infrastructure Monitoring & 24/7 Support
+#### Hizmetler
+- Bulut Mimarisi Tasarımı ve Uygulaması  
+- Ölçeklenebilir Barındırma ve Yedekleme Çözümleri  
+- DevOps ve CI/CD Pipeline Otomasyonu  
+- Altyapı İzleme ve 7/24 Destek  

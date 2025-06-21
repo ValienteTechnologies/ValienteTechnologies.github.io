@@ -1,19 +1,19 @@
 ---
-title: Manufacturing
-subtitle: Smart IT and ERP Solutions for Industrial Efficiency
+title: Üretim Sektörü
+subtitle: Endüstriyel Verimlilik İçin Akıllı BT ve ERP Çözümleri
 image: assets/img/portfolio/manufacturing.jpg
-alt: Factory floor with automated machinery
+alt: Otomatik makinelerle donatılmış fabrika alanı
 
 caption:
-  title: Manufacturing
-  subtitle: Engineering & Production
+  title: Üretim Sektörü
+  subtitle: Mühendislik ve Üretim
   thumbnail: assets/img/portfolio/manufacturing-thumbnail.jpg
 ---
 
-We support manufacturers with reliable IT infrastructure, secure data environments, and tailored ERP systems that optimize production workflows, supply chains, and resource planning.
+Üreticilere güvenilir BT altyapısı, güvenli veri ortamları ve üretim iş akışlarını, tedarik zincirlerini ve kaynak planlamasını optimize eden özel ERP sistemleri ile destek sağlıyoruz.
 
-#### Services
-- Industrial IT Support & Infrastructure Monitoring  
-- Odoo ERP Implementation (MRP, Inventory, QC)  
-- Network Security & Compliance  
-- Cloud Hosting for SCADA & MES Integration
+#### Hizmetler
+- Endüstriyel BT Desteği ve Altyapı İzleme  
+- Odoo ERP Uygulaması (MRP, Envanter, Kalite Kontrol)  
+- Ağ Güvenliği ve Uyumluluk  
+- SCADA ve MES Entegrasyonu İçin Bulut Barındırma  
