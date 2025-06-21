@@ -3,7 +3,7 @@
 en: &DEFAULT_EN
   header:
     title: IT and Software Solutions Tailored for Your Business
-    text: Dependable. Brave. Innovative.
+    text: Reliable and Brave
     button: Explore
     buttonlink: "#services"
 
@@ -35,7 +35,7 @@ en: &DEFAULT_EN
     title: "Our Work"
     text: "See how we’ve helped businesses enhance security, streamline operations, and enable scalable growth."
     section: portfolio
-    closebutton: "Close Project"
+    closebutton: "Close"
 
   partners:
     title: "Our Partners"
@@ -66,13 +66,17 @@ en: &DEFAULT_EN
     list:
       - title: "megasarayhotels"
         url: https://www.megasarayhotels.com/
-        logo: assets/img/clients/envato.jpg
-      - title: "designmodo"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/designmodo.jpg
+        logo: assets/img/clients/megasarayhotels.png
       - title: "cwenerji"
         url: https://cw-enerji.com/
-        logo: assets/img/clients/themeforest.jpg
+        logo: assets/img/clients/cwenerji.png
+      - title: "coretechbilisim"
+        url: https://coretechbilisim.com/
+        logo: assets/img/clients/coretechbilisim.png
+      - title: "baksoftarge"
+        url: https://www.baksoftarge.com/
+        logo: assets/img/clients/baksoftarge.png
+
 
   contact:
     title: "Get in Touch"
