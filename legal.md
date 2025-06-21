@@ -1,37 +1,37 @@
 ---
 layout: page
-title: Privacy Policy
+title: Gizlilik Politikası
 ---
 <div class="col-lg-12 text-center">
-	<h2 class="section-heading text-uppercase">Privacy Policy</h2>
+	<h2 class="section-heading text-uppercase">Gizlilik Politikası</h2>
 </div>
 
-This Privacy Policy describes how your personal information is collected, used, and shared when you visit {{ site.title }} (the “Site”).
+Bu Gizlilik Politikası, {{ site.title }} (bundan böyle “Site” olarak anılacaktır) ziyaret edildiğinde kişisel bilgilerinizin nasıl toplandığını, kullanıldığını ve paylaşıldığını açıklamaktadır.
 
-**PERSONAL INFORMATION WE COLLECT**
+**TOPLADIĞIMIZ KİŞİSEL BİLGİLER**
 
 {% if site.analytics.google %}
 
-Automatically Collected (Google Analytics):
+Otomatik Olarak Toplanan Bilgiler (Google Analytics):
 
-When you visit the Site, we automatically receive information about your device from your browser, such as your IP address. As you browse the Site, we also collect information about how you interact with the Site. We refer to this automatically-collected information as “Device Information”.
+Site’yi ziyaret ettiğinizde, tarayıcınız aracılığıyla IP adresiniz gibi cihazınıza ait bazı bilgileri otomatik olarak alırız. Ayrıca Site’de nasıl gezindiğinize dair etkileşim verilerini de toplarız. Bu otomatik olarak toplanan bilgilere “Cihaz Bilgileri” diyoruz.
 
-We collect Device Information using cookies. “Cookies” are data files that are placed on your device. For more information about cookies and how to disable them, visit http://www.allaboutcookies.org.
+Cihaz Bilgilerini çerezler kullanarak topluyoruz. “Çerezler”, cihazınıza yerleştirilen veri dosyalarıdır. Çerezler ve bunların nasıl devre dışı bırakılacağı hakkında daha fazla bilgi için http://www.allaboutcookies.org adresini ziyaret edebilirsiniz.
 
-We do this using Google Analytics: <https://www.google.com/intl/en/policies/privacy/>.
+Bu işlemleri Google Analytics aracılığıyla yapıyoruz: <https://www.google.com/intl/en/policies/privacy/>.
 
-You can opt-out of Google Analytics here: <https://tools.google.com/dlpage/gaoptout>.
+Google Analytics’ten çıkmak için şu bağlantıyı kullanabilirsiniz: <https://tools.google.com/dlpage/gaoptout>.
 
 {% else %}
 
-We do not collect any data about you or use any cookies.
+Hakkınızda herhangi bir veri toplamıyor ve çerez kullanmıyoruz.
 
 {% endif %}
 
-**CHANGES**
+**DEĞİŞİKLİKLER**
 
-We may update this privacy policy from time to time for personal, operational, legal, or regulatory reasons.
+Bu gizlilik politikasını, kişisel, operasyonel, yasal veya düzenleyici nedenlerle zaman zaman güncelleyebiliriz.
 
-**CONTACT US**
+**BİZE ULAŞIN**
 
-For more information about our privacy practices or if you have questions, please contact us by email at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+Daha fazla bilgi almak veya sorularınızı iletmek için lütfen bize e-posta adresimizden ulaşın: <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
