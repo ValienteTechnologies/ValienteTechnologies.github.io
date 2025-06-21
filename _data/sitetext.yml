@@ -191,7 +191,7 @@ tr: &DEFAULT_TR
         logo: assets/img/clients/baksoftarge.png
 
   contact:
-    title: "Bizimle İletişime Geçin"
+    title: "<a href='mailto:info@valientetechnologies.com'>Bizimle İletişime Geçin</a>"
     text: "İşletmenize nasıl destek olabileceğimizi konuşalım."
     section: contact
     name: "Ad Soyad*"
