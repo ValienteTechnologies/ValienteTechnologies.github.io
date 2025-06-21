@@ -16,7 +16,7 @@ Otomatik Olarak Toplanan Bilgiler (Google Analytics):
 
 Site’yi ziyaret ettiğinizde, tarayıcınız aracılığıyla IP adresiniz gibi cihazınıza ait bazı bilgileri otomatik olarak alırız. Ayrıca Site’de nasıl gezindiğinize dair etkileşim verilerini de toplarız. Bu otomatik olarak toplanan bilgilere “Cihaz Bilgileri” diyoruz.
 
-Cihaz Bilgilerini çerezler kullanarak topluyoruz. “Çerezler”, cihazınıza yerleştirilen veri dosyalarıdır. Çerezler ve bunların nasıl devre dışı bırakılacağı hakkında daha fazla bilgi için http://www.allaboutcookies.org adresini ziyaret edebilirsiniz.
+Cihaz Bilgilerini çerezler kullanarak topluyoruz. “Çerezler”, cihazınıza yerleştirilen veri dosyalarıdır. Çerezler ve bunların nasıl devre dışı bırakılacağı hakkında daha fazla bilgi için <http://www.allaboutcookies.org> adresini ziyaret edebilirsiniz.
 
 Bu işlemleri Google Analytics aracılığıyla yapıyoruz: <https://www.google.com/intl/en/policies/privacy/>.
 
