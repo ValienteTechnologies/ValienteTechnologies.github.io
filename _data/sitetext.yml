@@ -1,124 +1,102 @@
-#
-# Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
-#
-# Configuration: Add to _config.yml
-# locale: "en-US"  [YOUR PREFERRED LOCALE]
-#
-# How to use:
-# {{ site.data.ui-text[site.locale].<var_name> | default: 'text' }}
-
 # English (default)
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Welcome to our Studio!
-    text: It's Nice To Meet You
-    button: Tell Me More
+    title: IT and Software Solutions Tailored for Your Business
+    text: Reliable and Brave
+    button: Explore
     buttonlink: "#services"
 
   services:
-    title: "Services"
-    text: "Lorem ipsum"
+    title: "Our Services"
+    text: "Tailored IT solutions to keep your business secure, scalable, and future-ready."
     section: services
     list:
-      - title: "E-Commerce"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-shopping-cart #find more at https://fontawesome.com/icons
-      - title: "Responsive Design"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-laptop
-      - title: "[Markdown](https://en.wikipedia.org/wiki/Markdown)"
-        desc: "Your description here, full **Markdown** support"
-        icon: fab fa-markdown
+      - title: "IT & MSP"
+        desc: "Proactive monitoring, maintenance, and support to keep your infrastructure running efficiently and minimize downtime."
+        icon: fas fa-cogs
+      - title: "Cybersecurity & MSSP"
+        desc: "Advanced threat detection, incident response, and 24/7 SOC operations to protect your business from evolving cyber threats."
+        icon: fas fa-shield-alt
+      - title: "Compliance Auditing"
+        desc: "We help ensure your business meets regulatory and industry standards with thorough security and IT compliance assessments."
+        icon: fas fa-file-contract
+      - title: "Software Solutions"
+        desc: "End-to-end software development tailored to your business needs—from web and mobile apps to enterprise-grade platforms."
+        icon: fas fa-code
+      - title: "Cloud Solutions"
+        desc: "Scalable and secure cloud infrastructure, hosting, and backup solutions tailored to your business needs."
+        icon: fas fa-cloud
+      - title: "Odoo ERP Solutions"
+        desc: "As an official Odoo partner, we deliver integrated business applications—ERP, MRP, CRM, POS, Accounting, HR, and more—customized for your workflows."
+        icon: fas fa-building
 
   portfolio:
-    title: "Portfolio"
-    text: "Lorem ipsum dolor sit amet consectetur."
+    title: "Our Work"
+    text: "See how we’ve helped businesses improve security, efficiency, and scalability."
     section: portfolio
     closebutton: "Close Project"
 
   partners:
-    title: "partners"
-    text: "Lorem ipsum partners"
+    title: "Our Partners"
+    text: "We work with leading technology providers to deliver reliable, scalable, and secure solutions."
     section: partners
-    # left is the default
-    #start_align: "left"
     events:
-      - title: "Our Humble Beginnings"
-        year: "2009-2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/partners/1.jpg
-        alt:
-      - title: "An Agency is Born"
-        year: "March 2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/partners/2.jpg
-        alt:
-      - title: "Jekyll Theme is created"
-        year: "2019"
-        desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
-        image: assets/img/partners/3.jpg
-        alt: image alt text
-      - title: "Title"
-        year: "2009-2011"
-        desc: "Your description here, **Markdown** is fully supported."
-        image: assets/img/partners/4.jpg
-        alt:
-        # you can enforce the alignment
-        align: right
-    end: "Be Part <br> of Our <br> Story!"
+      - title: "DT Cloud"
+        desc: "DT Cloud is a global cloud computing company, particularly with a significant presence in Türkiye"
+        image: assets/img/partners/dt.png
+      - title: "Odoo"
+        desc: "Odoo is a suite of business management software that helps companies of all sizes manage a wide range of operations."
+        image: assets/img/partners/odoo.png
+      - title: "Ruby Cyber Labs"
+        desc: "Ruby Cyber Labs is a cybersecurity and digital forensics company providing a comprehensive range of services."
+        image: assets/img/partners/ruby.png
+    end: "Be Part <br> of Our <br> Journey!"
 
   about:
     title: "About Us"
-    text: "our story"
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
+    text: "Who We Are"
+    body: "We’re a technology company providing IT, Cybersecurity and software solutions. Our mission is to help businesses stay protected, productive, and ready for the future—using tailored IT strategies and world-class support."
     section: about
 
   clients:
     section: clients
     max-height: 100px
-    horizontal-scrolling: "" #"yes/no"
+    horizontal-scrolling: "yes"
     list:
-      - title: "envato"
-        url: https://github.com/raviriley/agency-jekyll-theme
+      - title: "megasarayhotels"
+        url: https://www.megasarayhotels.com/
         logo: assets/img/clients/envato.jpg
       - title: "designmodo"
         url: https://github.com/raviriley/agency-jekyll-theme
         logo: assets/img/clients/designmodo.jpg
-      - title: "themeforest"
-        url: https://github.com/raviriley/agency-jekyll-theme
+      - title: "cwenerji"
+        url: https://cw-enerji.com/
         logo: assets/img/clients/themeforest.jpg
-      - title: "Creative Market"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/creative-market.jpg
 
   contact:
-    title: "Contact Us"
-    text: "Lorem ipsum or call 123456789"
+    title: "Get in Touch"
+    text: "Let’s talk about how we can support your business."
     section: contact
-    name: "Name*"
+    name: "Full Name*"
     name-validation: "Please enter your name."
-    email: "Email*"
+    email: "Email Address*"
     email-validation: "Please enter your email address."
     phone: "Phone Number"
     phone-validation: "Please enter your phone number."
-    message: "Message*"
+    message: "Your Message*"
     message-validation: "Please enter a message."
-    subject: "Contact Form Submission"
+    subject: "New Inquiry from Website"
     submit: "Send Message"
 
   footer:
     legal: "Privacy Policy"
     social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
+      - url: https://www.linkedin.com/company/valientetechnologies
         icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
+      - url: https://github.com/ValienteTechnologies
         icon: "fab fa-github"
-      - url: https://instagram.com
+      - url: https://www.instagram.com/valientetechnologies
         icon: "fab fa-instagram"
 en-US:
   <<: *DEFAULT_EN
