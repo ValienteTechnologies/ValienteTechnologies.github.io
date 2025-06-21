@@ -3,7 +3,9 @@ section#contact {
   background-color: $gray-900;
   background-image: url("#{$contact-image}");
   background-repeat: no-repeat;
-  background-position: center;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
   .section-heading {
     color: $white;
   }
