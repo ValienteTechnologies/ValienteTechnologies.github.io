@@ -115,111 +115,104 @@ en-AU:
 # -----------------
 tr: &DEFAULT_TR
   header:
-    title: Stüdyomuza Hoş Geldiniz!
-    text: Tanıştığımıza Memnun Olduk
-    button: Daha Fazlasını Anlat
+    title: İşletmeniz İçin Özelleştirilmiş BT ve Yazılım Çözümleri
+    text: Güvenilir ve Cesur
+    button: Keşfet
     buttonlink: "#services"
 
   services:
-    title: "Hizmetler"
-    text: "Lorem ipsum"
+    title: "Hizmetlerimiz"
+    text: "İşletmenizi güvenli, ölçeklenebilir ve geleceğe hazır tutmak için özelleştirilmiş BT çözümleri."
     section: services
     list:
-      - title: "E-Ticaret"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-shopping-cart
-      - title: "Duyarlı Tasarım"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-laptop
-      - title: "[Markdown](https://en.wikipedia.org/wiki/Markdown)"
-        desc: "Açıklamanız burada, tam **Markdown** desteği"
-        icon: fab fa-markdown
+      - title: "BT & MSP"
+        desc: "Altyapınızı verimli çalışır durumda tutmak ve kesinti süresini en aza indirmek için proaktif izleme, bakım ve destek."
+        icon: fas fa-cogs
+      - title: "Siber Güvenlik & MSSP"
+        desc: "7/24 SOC operasyonları, tehdit tespiti ve hızlı olay müdahalesi ile gelişen siber tehditlere karşı savunma."
+        icon: fas fa-shield-alt
+      - title: "Uyumluluk Denetimi"
+        desc: "Kapsamlı BT ve güvenlik uyumluluk değerlendirmeleri ile işletmenizin yasal ve sektörel standartlara uygunluğunun sağlanması."
+        icon: fas fa-file-contract
+      - title: "Yazılım Çözümleri"
+        desc: "Web ve mobil uygulamalardan kurumsal platformlara kadar işletmenize özelleştirilmiş uçtan uca yazılım geliştirme."
+        icon: fas fa-code
+      - title: "Bulut Çözümleri"
+        desc: "Esneklik, büyüme ve iş sürekliliği için özelleştirilmiş, ölçeklenebilir ve güvenli bulut altyapısı, barındırma ve yedekleme çözümleri."
+        icon: fas fa-cloud
+      - title: "Odoo ERP Çözümleri"
+        desc: "Resmi Odoo iş ortağı olarak, ERP, MRP, CRM, POS, Muhasebe, İK ve daha fazlasını içeren entegre iş uygulamaları sunuyoruz."
+        icon: fas fa-building
 
   portfolio:
-    title: "Portföy"
-    text: "Lorem ipsum dolor sit amet consectetur."
+    title: "Projelerimiz"
+    text: "Güvenliği nasıl artırdığımızı, operasyonları nasıl kolaylaştırdığımızı ve ölçeklenebilir büyümeyi nasıl mümkün kıldığımızı görün."
     section: portfolio
-    closebutton: "Projeyi Kapat"
+    closebutton: "Kapat"
 
   partners:
-    title: "Zaman Çizelgesi"
-    text: "Lorem ipsum zaman çizelgesi"
+    title: "İş Ortaklarımız"
+    text: "Güvenilir, ölçeklenebilir ve güvenli çözümler sunmak için önde gelen teknoloji sağlayıcılarıyla çalışıyoruz."
     section: partners
     events:
-      - title: "Mütevazı Başlangıcımız"
-        year: "2009-2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/partners/1.jpg
-        alt:
-      - title: "Bir Ajansın Doğuşu"
-        year: "Mart 2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/partners/2.jpg
-        alt:
-      - title: "Jekyll Teması Oluşturuldu"
-        year: "2019"
-        desc: "Ravi Riley, Bootstrap tabanlı Agency temasını bir Jekyll temasına dönüştürdü. Jekyll teması bir Ruby gem'i olarak veya uzaktan kurulabilir. Daha fazla bilgi için belgeleri ziyaret edin."
-        image: assets/img/partners/3.jpg
-        alt: resim alternatif metni
-      - title: "Başlık"
-        year: "2009-2011"
-        desc: "Açıklamanız burada, **Markdown** tamamen desteklenmektedir."
-        image: assets/img/partners/4.jpg
-        alt:
-        align: right
-    end: "Hikayemizin <br> Bir Parçası <br> Ol!"
+      - title: "DT Cloud"
+        desc: "DT Cloud, Türkiye'de güçlü bir varlığı olan küresel bir bulut bilişim şirketidir."
+        image: assets/img/partners/dt.png
+      - title: "Odoo"
+        desc: "Odoo, her büyüklükteki şirketin çeşitli operasyonlarını yönetmesine yardımcı olan bir iş yönetim yazılımı paketidir."
+        image: assets/img/partners/odoo.png
+      - title: "Ruby Cyber Labs"
+        desc: "Ruby Cyber Labs, kapsamlı hizmet yelpazesi sunan bir siber güvenlik ve dijital adli bilişim şirketidir."
+        image: assets/img/partners/ruby.png
+    end: "Yolculuğun <br> Bir Parçası <br> Olun!"
 
   about:
     title: "Hakkımızda"
-    text: "hikayemiz"
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** desteği vardır."
+    text: "Biz Kimiz"
+    body: "BT, Siber Güvenlik ve yazılım çözümleri sunan bir teknoloji şirketiyiz. Misyonumuz, özel BT stratejileri ve dünya standartlarında destek ile işletmeleri güvenli, verimli ve geleceğe hazır hale getirmektir."
     section: about
 
   clients:
     section: clients
     max-height: 100px
-    horizontal-scrolling: "" # "evet/hayır" olabilir
+    horizontal-scrolling: "yes"
     list:
-      - title: "envato"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/envato.jpg
-      - title: "designmodo"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/designmodo.jpg
-      - title: "themeforest"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/themeforest.jpg
-      - title: "Creative Market"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/creative-market.jpg
+      - title: "megasarayhotels"
+        url: https://www.megasarayhotels.com/
+        logo: assets/img/clients/megasarayhotels.png
+      - title: "cwenerji"
+        url: https://cw-enerji.com/
+        logo: assets/img/clients/cwenerji.png
+      - title: "coretechbilisim"
+        url: https://coretechbilisim.com/
+        logo: assets/img/clients/coretechbilisim.png
+      - title: "baksoftarge"
+        url: https://www.baksoftarge.com/
+        logo: assets/img/clients/baksoftarge.png
 
   contact:
-    title: "Bize Ulaşın"
-    text: "Lorem ipsum ya da bizi arayın 123456789"
+    title: "Bizimle İletişime Geçin"
+    text: "İşletmenize nasıl destek olabileceğimizi konuşalım."
     section: contact
-    name: "İsim*"
-    name-validation: "Lütfen isminizi giriniz."
-    email: "E-posta*"
-    email-validation: "Lütfen e-posta adresinizi giriniz."
-    phone: "Telefon Numarası"
-    phone-validation: "Lütfen telefon numaranızı giriniz."
-    message: "Mesaj*"
-    message-validation: "Lütfen bir mesaj giriniz."
-    subject: "İletişim Formu Gönderimi"
-    submit: "Mesaj Gönder"
+    name: "Ad Soyad*"
+    name-validation: "Lütfen adınızı girin."
+    email: "E-posta Adresi*"
+    email-validation: "Lütfen e-posta adresinizi girin."
+    phone: "Telefon Numarası*"
+    phone-validation: "Lütfen telefon numaranızı girin."
+    message: "Mesajınız*"
+    message-validation: "Lütfen bir mesaj girin."
+    subject: "Web Sitesinden Yeni Talep"
+    submit: "Gönder"
 
   footer:
     legal: "Gizlilik Politikası"
     social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
+      - url: https://www.linkedin.com/company/valientetechnologies
         icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
+      - url: https://github.com/ValienteTechnologies
         icon: "fab fa-github"
-      - url: https://instagram.com
+      - url: https://www.instagram.com/valientetechnologies
         icon: "fab fa-instagram"
 tr-TR:
   <<: *DEFAULT_TR
