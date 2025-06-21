@@ -1,18 +1,19 @@
 ---
 title: Hospitality
-subtitle: subtitle lorem ipsum dolor sit amet consectetur.
+subtitle: Scalable IT and Software Solutions for Hotels & Restaurants
 image: assets/img/portfolio/hospitality.jpg
-alt: Shirts on a hanger
+alt: Waiter attending the table
 
 caption:
   title: Hospitality
   subtitle: Hotels & Restaurants
   thumbnail: assets/img/portfolio/hospitality-thumbnail.jpg
 ---
-Use this area to describe your project. **Markdown** supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 
-{:.list-inline}
-- Date: January 2017
-- Client: Threads
-- Category: Illustration
+We empower the hospitality industry with seamless IT infrastructure, secure networks, and tailored software systems—from cloud-based booking platforms to integrated POS and ERP systems.
 
+#### Services
+- 24/7 Managed IT Support
+- Cybersecurity Hardening & Compliance
+- Cloud Migration & Backup Solutions
+- Custom Odoo ERP Integration

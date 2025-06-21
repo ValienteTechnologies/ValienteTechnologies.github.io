@@ -1,18 +1,19 @@
 ---
 title: Manufacturing
-subtitle: Lorem ipsum dolor sit amet consectetur.
+subtitle: Smart IT and ERP Solutions for Industrial Efficiency
 image: assets/img/portfolio/manufacturing.jpg
-alt: Keep Exploring
+alt: Factory floor with automated machinery
 
 caption:
   title: Manufacturing
-  subtitle: Engineering
+  subtitle: Engineering & Production
   thumbnail: assets/img/portfolio/manufacturing-thumbnail.jpg
 ---
-Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
 
-{:.list-inline}
-- Date: January 2017
-- Client: Explore
-- Category: Graphic Design
+We support manufacturers with reliable IT infrastructure, secure data environments, and tailored ERP systems that optimize production workflows, supply chains, and resource planning.
 
+#### Services
+- Industrial IT Support & Infrastructure Monitoring  
+- Odoo ERP Implementation (MRP, Inventory, QC)  
+- Network Security & Compliance  
+- Cloud Hosting for SCADA & MES Integration
