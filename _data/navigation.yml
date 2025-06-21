@@ -36,11 +36,11 @@ tr: &DEFAULT_TR
   nav:
     - title: "Hizmetler"
       section: services
-    - title: "Portföy"
+    - title: "Projeler"
       section: portfolio
-    - title: "Hakkında"
+    - title: "Hakkımızda"
       section: about
-    - title: "Zaman Çizelgesi"
+    - title: "İş Ortakları"
       section: partners
     - title: "İletişim"
       section: contact
