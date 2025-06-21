@@ -3,7 +3,7 @@
 en: &DEFAULT_EN
   header:
     title: IT and Software Solutions Tailored for Your Business
-    text: Reliable and Brave
+    text: Dependable. Brave. Innovative.
     button: Explore
     buttonlink: "#services"
 
@@ -16,24 +16,24 @@ en: &DEFAULT_EN
         desc: "Proactive monitoring, maintenance, and support to keep your infrastructure running efficiently and minimize downtime."
         icon: fas fa-cogs
       - title: "Cybersecurity & MSSP"
-        desc: "Advanced threat detection, incident response, and 24/7 SOC operations to protect your business from evolving cyber threats."
+        desc: "24/7 SOC operations, threat detection, and rapid incident response to defend against evolving cyber threats."
         icon: fas fa-shield-alt
       - title: "Compliance Auditing"
-        desc: "We help ensure your business meets regulatory and industry standards with thorough security and IT compliance assessments."
+        desc: "We help ensure your business meets regulatory and industry standards through comprehensive IT and security compliance assessments."
         icon: fas fa-file-contract
       - title: "Software Solutions"
         desc: "End-to-end software development tailored to your business needs—from web and mobile apps to enterprise-grade platforms."
         icon: fas fa-code
       - title: "Cloud Solutions"
-        desc: "Scalable and secure cloud infrastructure, hosting, and backup solutions tailored to your business needs."
+        desc: "Scalable and secure cloud infrastructure, hosting, and backup solutions customized for flexibility, growth, and business continuity."
         icon: fas fa-cloud
       - title: "Odoo ERP Solutions"
-        desc: "As an official Odoo partner, we deliver integrated business applications—ERP, MRP, CRM, POS, Accounting, HR, and more—customized for your workflows."
+        desc: "As an official Odoo partner, we deliver integrated business applications—ERP, MRP, CRM, POS, Accounting, HR, and more—tailored to optimize your business processes."
         icon: fas fa-building
 
   portfolio:
     title: "Our Work"
-    text: "See how we’ve helped businesses improve security, efficiency, and scalability."
+    text: "See how we’ve helped businesses enhance security, streamline operations, and enable scalable growth."
     section: portfolio
     closebutton: "Close Project"
 
@@ -43,7 +43,7 @@ en: &DEFAULT_EN
     section: partners
     events:
       - title: "DT Cloud"
-        desc: "DT Cloud is a global cloud computing company, particularly with a significant presence in Türkiye"
+        desc: "DT Cloud is a global cloud computing company, with a strong presence in Türkiye."
         image: assets/img/partners/dt.png
       - title: "Odoo"
         desc: "Odoo is a suite of business management software that helps companies of all sizes manage a wide range of operations."
@@ -56,7 +56,7 @@ en: &DEFAULT_EN
   about:
     title: "About Us"
     text: "Who We Are"
-    body: "We’re a technology company providing IT, Cybersecurity and software solutions. Our mission is to help businesses stay protected, productive, and ready for the future—using tailored IT strategies and world-class support."
+    body: "We’re a technology company providing IT, Cybersecurity, and software solutions. Our mission is to empower businesses to stay secure, efficient, and future-ready—using tailored IT strategies and world-class support."
     section: about
 
   clients:
