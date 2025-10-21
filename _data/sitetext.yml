@@ -62,7 +62,7 @@ tr: &DEFAULT_TR
     body: "Biz, siber güvenlik, bilgi teknolojileri, ve yazılım çözümleri sunan yenilikçi bir teknoloji şirketiyiz.
       <br><br>Misyonumuz, bilgi teknolojileri stratejileri geliştirmek ve dünya standartlarında destek ile işletmeleri güvenli, verimli ve geleceğe hazır hale getirmektir.
 
-      <br><br>Siber güvenlik alanında; kurumların dijital varlıklarını korumak için sızma testleri (penetrasyon testleri), zafiyet analizleri, ağ güvenliği denetimleri ve bilgi güvenliği danışmanlığı hizmetleri sunuyoruz.
+      <br><br>Kurumların dijital varlıklarını korumak için <strong>sızma (penetrasyon) testleri</strong>, zafiyet analizleri, ağ güvenliği denetimleri ve bilgi güvenliği danışmanlığı hizmetleri sunuyoruz.
       <br><br><strong>TSE</strong> ve <strong>OSCP</strong> sertifikalı uzman ekibimiz, kurumlara özel güvenlik mimarileri oluşturarak olası tehditleri proaktif biçimde tespit ediyor ve önlüyor.
 
       <br><br>Veri güvenliğini sadece korumakla kalmıyor, <strong>Bulut Yedekleme (Cloud Backup)</strong> çözümlerimizle olası felaket senaryolarında hızlı geri  dönüş sağlıyoruz. Bu sayede müşterilerimiz iş sürekliliğini korurken; verilerini güvenli, erişilebilir ve yedekli bir şekilde yönetebiliyor.
