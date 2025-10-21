@@ -8,6 +8,8 @@ tr: &DEFAULT_TR
       section: portfolio
     - title: "Hakkımızda"
       section: about
+    - title: "Referanslarımız"
+      section: references
     - title: "İş Ortakları"
       section: partners
     - title: "İletişim"

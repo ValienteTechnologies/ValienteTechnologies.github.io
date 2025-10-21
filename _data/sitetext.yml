@@ -69,8 +69,10 @@ tr: &DEFAULT_TR
       <br><br>Her adımda amacımız, müşterilerimizin dijital güvenliğini garanti altına alırken onlara sürdürülebilir, güvenilir ve yenilikçi çözümler sunmaktır."
     section: about
 
-  clients:
-    section: clients
+  references:
+    title: "Referanslarımız"
+    text: "Güvenilir çözümlerimizle hizmet verdiğimiz değerli müşterilerimiz."
+    section: references
     max-height: 100px
     horizontal-scrolling: "yes"
     list:
