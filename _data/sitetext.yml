@@ -16,16 +16,16 @@ tr: &DEFAULT_TR
         desc: "Altyapınızı verimli çalışır halde tutmak ve kesinti süresini en aza indirmek için proaktif izleme, bakım, destek ve yönetim"
         icon: fas fa-cogs
       - title: "Siber Güvenlik & MSSP"
-        desc: "Sızma testleri, tehdit tespiti ve hızlı olay müdahalesi ile gelişen siber tehditlere karşı savunma ve siber güvenlik danışmanlığı"
+        desc: "<strong>Sızma testleri</strong>, tehdit tespiti ve hızlı olay müdahalesi ile gelişen siber tehditlere karşı savunma ve siber güvenlik danışmanlığı"
         icon: fas fa-shield-alt
       - title: "Uyumluluk Denetimi"
-        desc: "NIST, ISO 27001 ve ISO 27701 gibi standartlara göre değerlendirmeler ile yasal ve sektörel uyumluluk denetimleri ve eğitimleri"
+        desc: "<strong>NIST</strong>, <strong>ISO 27001</strong> ve <strong>ISO 27701</strong> gibi standartlara göre değerlendirmeler ile yasal ve sektörel uyumluluk denetimleri ve eğitimleri"
         icon: fas fa-file-contract
       - title: "Yazılım Çözümleri"
         desc: "Web ve mobil uygulamalardan kurumsal platformlara kadar işletmenize özelleştirilmiş uçtan uca yazılım geliştirme ve desteği"
         icon: fas fa-code
       - title: "Bulut Çözümleri"
-        desc: "Esneklik, büyüme ve iş sürekliliği için özelleştirilmiş, ölçeklenebilir ve güvenli bulut altyapısı, barındırma ve fidye yazılımlara karşı yedekleme çözümleri"
+        desc: "Esneklik, büyüme ve iş sürekliliği için özelleştirilmiş, ölçeklenebilir ve güvenli bulut altyapısı, barındırma ve <strong>fidye yazılımlara karşı yedekleme çözümleri</strong>"
         icon: fas fa-cloud
       - title: "ERP Çözümleri"
         desc: "Resmi Odoo iş ortağı olarak, ERP, MRP, CRM, POS, Muhasebe, İK ve daha fazlasını içeren entegre iş uygulamaları sunuyoruz ve destekliyoruz"
@@ -63,9 +63,9 @@ tr: &DEFAULT_TR
       <br><br>Misyonumuz, bilgi teknolojileri stratejileri geliştirmek ve dünya standartlarında destek ile işletmeleri güvenli, verimli ve geleceğe hazır hale getirmektir.
 
       <br><br>Siber güvenlik alanında; kurumların dijital varlıklarını korumak için sızma testleri (penetrasyon testleri), zafiyet analizleri, ağ güvenliği denetimleri ve bilgi güvenliği danışmanlığı hizmetleri sunuyoruz.
-      <br><br>TSE ve OSCP sertifikalı uzman ekibimiz, kurumlara özel güvenlik mimarileri oluşturarak olası tehditleri proaktif biçimde tespit ediyor ve önlüyor.
+      <br><br><strong>TSE</strong> ve <strong>OSCP</strong> sertifikalı uzman ekibimiz, kurumlara özel güvenlik mimarileri oluşturarak olası tehditleri proaktif biçimde tespit ediyor ve önlüyor.
 
-      <br><br>Veri güvenliğini sadece korumakla kalmıyor, Bulut Yedekleme (Cloud Backup) çözümlerimizle olası felaket senaryolarında hızlı geri  dönüş sağlıyoruz. Bu sayede müşterilerimiz iş sürekliliğini korurken; verilerini güvenli, erişilebilir ve yedekli bir şekilde yönetebiliyor.
+      <br><br>Veri güvenliğini sadece korumakla kalmıyor, <strong>Bulut Yedekleme (Cloud Backup)</strong> çözümlerimizle olası felaket senaryolarında hızlı geri  dönüş sağlıyoruz. Bu sayede müşterilerimiz iş sürekliliğini korurken; verilerini güvenli, erişilebilir ve yedekli bir şekilde yönetebiliyor.
 
       <br><br>Ayrıca, yazılım ekibimiz; güvenliği merkeze alan, ölçeklenebilir ve kullanıcı dostu sistemler geliştirerek kurumların dijital dönüşüm süreçlerine katkı sağlıyor.
 
