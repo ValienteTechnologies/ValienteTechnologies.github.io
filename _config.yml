@@ -17,9 +17,12 @@ baseurl: ""
 
 title      : Valiente Technologies
 email      : info@valientetechnologies.com
-description: "Valiente Technologies is a startup providing services as MSP and MSSP"
-author     : otuva
+description: "Valiente Technologies siber güvenlik ve bilgi teknolojileri alanında hizmet vermekte olan bir şirkettir."
+author     : Valiente Technologies
 locale: "tr-TR"
+logo:
+  path: assets\img\valientetitle.svg
+
 
 analytics:
   google: G-L3H5QZKNQ3
