@@ -4,7 +4,7 @@ tr: &DEFAULT_TR
   nav:
     - title: "Hizmetler"
       section: services
-    - title: "Projeler"
+    - title: "Broşürler"
       section: portfolio
     - title: "Hakkımızda"
       section: about

@@ -27,12 +27,12 @@ tr: &DEFAULT_TR
       - title: "Bulut Çözümleri"
         desc: "Esneklik, büyüme ve iş sürekliliği için özelleştirilmiş, ölçeklenebilir ve güvenli bulut altyapısı, barındırma ve fidye yazılımlara karşı yedekleme çözümleri"
         icon: fas fa-cloud
-      - title: "Odoo ERP Çözümleri"
+      - title: "ERP Çözümleri"
         desc: "Resmi Odoo iş ortağı olarak, ERP, MRP, CRM, POS, Muhasebe, İK ve daha fazlasını içeren entegre iş uygulamaları sunuyoruz ve destekliyoruz"
         icon: fas fa-building
 
   portfolio:
-    title: "Projelerimiz"
+    title: "Broşürler"
     text: "Güvenliği nasıl artırdığımızı, operasyonları nasıl kolaylaştırdığımızı ve ölçeklenebilir büyümeyi nasıl mümkün kıldığımızı görün."
     section: portfolio
     closebutton: "Kapat"
@@ -56,7 +56,17 @@ tr: &DEFAULT_TR
   about:
     title: "Hakkımızda"
     text: "Biz Kimiz"
-    body: "BT, Siber Güvenlik ve yazılım çözümleri sunan bir teknoloji şirketiyiz. Misyonumuz, özel BT stratejileri ve dünya standartlarında destek ile işletmeleri güvenli, verimli ve geleceğe hazır hale getirmektir."
+    body: "Biz, siber güvenlik, bilgi teknolojileri, ve yazılım çözümleri sunan yenilikçi bir teknoloji şirketiyiz.
+      <br><br>Misyonumuz, bilgi teknolojileri stratejileri geliştirmek ve dünya standartlarında destek ile işletmeleri güvenli, verimli ve geleceğe hazır hale getirmektir.
+
+      <br><br>Siber güvenlik alanında; kurumların dijital varlıklarını korumak için sızma testleri (penetrasyon testleri), zafiyet analizleri, ağ güvenliği denetimleri ve bilgi güvenliği danışmanlığı hizmetleri sunuyoruz.
+      <br><br>TSE ve OSCP sertifikalı uzman ekibimiz, kurumlara özel güvenlik mimarileri oluşturarak olası tehditleri proaktif biçimde tespit ediyor ve önlüyor.
+
+      <br><br>Veri güvenliğini sadece korumakla kalmıyor, Bulut Yedekleme (Cloud Backup) çözümlerimizle olası felaket senaryolarında hızlı geri  dönüş sağlıyoruz. Bu sayede müşterilerimiz iş sürekliliğini korurken; verilerini güvenli, erişilebilir ve yedekli bir şekilde yönetebiliyor.
+
+      <br><br>Ayrıca, yazılım ekibimiz; güvenliği merkeze alan, ölçeklenebilir ve kullanıcı dostu sistemler geliştirerek kurumların dijital dönüşüm süreçlerine katkı sağlıyor.
+
+      <br><br>Her adımda amacımız, müşterilerimizin dijital güvenliğini garanti altına alırken onlara sürdürülebilir, güvenilir ve yenilikçi çözümler sunmaktır."
     section: about
 
   clients:
