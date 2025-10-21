@@ -32,7 +32,7 @@ tr: &DEFAULT_TR
         icon: fas fa-building
 
   portfolio:
-    title: "Broşürler"
+    title: "Broşürlerimiz"
     text: "Güvenliği nasıl artırdığımızı, operasyonları nasıl kolaylaştırdığımızı ve ölçeklenebilir büyümeyi nasıl mümkün kıldığımızı görün."
     section: portfolio
     closebutton: "Kapat"

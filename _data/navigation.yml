@@ -6,10 +6,10 @@ tr: &DEFAULT_TR
       section: services
     - title: "Broşürler"
       section: portfolio
+    - title: "Referanslar"
+      section: references
     - title: "Hakkımızda"
       section: about
-    - title: "Referanslarımız"
-      section: references
     - title: "İş Ortakları"
       section: partners
     - title: "İletişim"
