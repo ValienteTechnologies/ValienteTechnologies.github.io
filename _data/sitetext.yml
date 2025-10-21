@@ -19,7 +19,7 @@ tr: &DEFAULT_TR
         desc: "Sızma testleri, tehdit tespiti ve hızlı olay müdahalesi ile gelişen siber tehditlere karşı savunma ve siber güvenlik danışmanlığı"
         icon: fas fa-shield-alt
       - title: "Uyumluluk Denetimi"
-        desc: "NIST, ISO 27001 ve ISO 27701 gibi standartlara göre değerlendirmeler ile yasal ve sektörel uyumluluğun sağlanması"
+        desc: "NIST, ISO 27001 ve ISO 27701 gibi standartlara göre değerlendirmeler ile yasal ve sektörel uyumluluk denetimleri ve eğitimleri"
         icon: fas fa-file-contract
       - title: "Yazılım Çözümleri"
         desc: "Web ve mobil uygulamalardan kurumsal platformlara kadar işletmenize özelleştirilmiş uçtan uca yazılım geliştirme ve desteği"
@@ -51,6 +51,9 @@ tr: &DEFAULT_TR
       - title: "Ruby Cyber Labs"
         desc: "Ruby Cyber Labs, kapsamlı hizmet yelpazesi sunan bir siber güvenlik ve dijital adli bilişim şirketidir."
         image: assets/img/partners/ruby.png
+      - title: "Sigmacert Global"
+        desc: "Sigmacert Global, belgelendirme, denetim ve sertifikasyon kuruluşudur."
+        image: assets/img/partners/sigmacert.png
     end: "Yolculuğun <br> Bir Parçası <br> Olun!"
 
   about:
