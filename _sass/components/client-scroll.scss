@@ -4,11 +4,13 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: auto; // Use auto for programmatic scrolling, smooth causes jank
   -webkit-overflow-scrolling: touch;
   touch-action: pan-x;
   scrollbar-width: thin;
   scrollbar-color: #fed136 transparent;
+  will-change: scroll-position; // Hint browser for better performance
+  backface-visibility: hidden; // Force hardware acceleration
   
   &::-webkit-scrollbar {
     height: 8px;

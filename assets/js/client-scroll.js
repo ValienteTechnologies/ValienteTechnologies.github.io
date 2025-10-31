@@ -54,7 +54,7 @@
       let isPaused = false;
       // Detect mobile/touch devices for faster scrolling
       const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      const scrollSpeed = isMobile ? 1.5 : 0.5; // Faster on mobile devices
+      const scrollSpeed = isMobile ? 2.0 : 1.0; // Faster on mobile, smooth on desktop
       let animationFrameId;
       let direction = 1; // 1 for right, -1 for left
       
@@ -180,12 +180,19 @@
       }, { passive: true });
       
       // Auto-scroll animation
-      function animate() {
+      let lastTime = performance.now();
+      
+      function animate(currentTime = performance.now()) {
         if (!isPaused) {
           const maxScroll = scrollingElement.scrollWidth - scrollingElement.clientWidth;
           
           if (maxScroll > 0) {
-            scrollPosition += scrollSpeed * direction;
+            // Calculate delta time for frame-rate independent scrolling
+            const deltaTime = currentTime - lastTime;
+            const pixelsPerMs = scrollSpeed / 16.67; // Convert to pixels per millisecond (assuming 60fps baseline)
+            const deltaScroll = pixelsPerMs * deltaTime * direction;
+            
+            scrollPosition += deltaScroll;
             
             // Reverse direction at boundaries for continuous loop
             if (scrollPosition >= maxScroll) {
@@ -196,10 +203,12 @@
               scrollPosition = 0;
             }
             
+            // Use requestAnimationFrame timing for smooth scrolling
             scrollingElement.scrollLeft = scrollPosition;
           }
         }
         
+        lastTime = currentTime;
         animationFrameId = requestAnimationFrame(animate);
       }
       
