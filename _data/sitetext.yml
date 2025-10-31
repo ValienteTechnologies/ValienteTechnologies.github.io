@@ -79,18 +79,45 @@ tr: &DEFAULT_TR
     max-height: 100px
     horizontal-scrolling: "yes"
     list:
-      - title: "megasarayhotels"
-        url: https://www.megasarayhotels.com/
-        logo: assets/img/clients/megasarayhotels.png
-      - title: "cwenerji"
-        url: https://cw-enerji.com/
-        logo: assets/img/clients/cwenerji.png
-      - title: "coretechbilisim"
-        url: https://coretechbilisim.com/
-        logo: assets/img/clients/coretechbilisim.png
+      - title: "alarko"
+        url: https://www.alarko.com.tr/
+        logo: assets/img/clients/alarko.png
       - title: "baksoftarge"
         url: https://www.baksoftarge.com/
         logo: assets/img/clients/baksoftarge.png
+      - title: "cenal"
+        url: https://www.cenal.com.tr/
+        logo: assets/img/clients/cenal.png
+      - title: "coretechbilisim"
+        url: https://coretechbilisim.com/
+        logo: assets/img/clients/coretechbilisim.png
+      - title: "cwenerji"
+        url: https://cw-enerji.com/
+        logo: assets/img/clients/cwenerji.png
+      - title: "egeas"
+        url: https://www.egeas.com.tr/
+        logo: assets/img/clients/egeas.png
+      - title: "icisleri"
+        url: https://www.icisleri.gov.tr/
+        logo: assets/img/clients/icisleri.png
+      - title: "maxguvenlik"
+        url: https://maxguvenlik.com/
+        logo: assets/img/clients/maxguvenlik.png
+      - title: "megasarayhotels"
+        url: https://www.megasarayhotels.com/
+        logo: assets/img/clients/megasarayhotels.png
+      - title: "sahinler"
+        url: https://sahinlerholding.com.tr/
+        logo: assets/img/clients/sahinler.png
+      - title: "stm"
+        url: https://www.stm.com.tr/
+        logo: assets/img/clients/stm.png
+      - title: "teurope"
+        url: https://www.tacticaleurope.com/
+        logo: assets/img/clients/teurope.png
+      - title: "tsk"
+        url: https://www.tsk.tr/
+        logo: assets/img/clients/tsk.png
 
   contact:
     title: "<a href='mailto:info@valientetechnologies.com'>Bizimle İletişime Geçin</a>"
