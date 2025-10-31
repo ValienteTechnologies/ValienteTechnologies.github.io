@@ -106,6 +106,9 @@ tr: &DEFAULT_TR
       - title: "megasarayhotels"
         url: https://www.megasarayhotels.com/
         logo: assets/img/clients/megasarayhotels.png
+      - title: "rawbeach"
+        url: https://www.instagram.com/rawbeachhotel
+        logo: assets/img/clients/rawbeach.png
       - title: "sahinler"
         url: https://sahinlerholding.com.tr/
         logo: assets/img/clients/sahinler.png
