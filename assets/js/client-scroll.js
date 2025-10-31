@@ -6,6 +6,25 @@
     const scrollingElement = document.getElementById('scrolling-clients');
     if (!scrollingElement) return;
     
+    // Randomize client order (Fisher-Yates shuffle)
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+    
+    // Get all client elements
+    const clientElements = Array.from(scrollingElement.children);
+    if (clientElements.length > 0) {
+      // Shuffle and re-append in random order
+      const shuffled = shuffleArray([...clientElements]);
+      shuffled.forEach(function(element) {
+        scrollingElement.appendChild(element);
+      });
+    }
+    
     // Wait for images to load to get accurate scroll width
     const images = scrollingElement.querySelectorAll('img');
     let imagesLoaded = 0;
