@@ -52,9 +52,33 @@
     function startScrolling() {
       let scrollPosition = 0;
       let isPaused = false;
-      const scrollSpeed = 0.5; // pixels per frame (slower for smoother effect)
+      // Detect mobile/touch devices for faster scrolling
+      const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const scrollSpeed = isMobile ? 1.5 : 0.5; // Faster on mobile devices
       let animationFrameId;
       let direction = 1; // 1 for right, -1 for left
+      
+      // Sync scrollPosition with actual scroll position when user manually scrolls
+      function syncScrollPosition() {
+        scrollPosition = scrollingElement.scrollLeft;
+      }
+      
+      // Listen for manual scroll events to keep scrollPosition in sync
+      let scrollTimeout;
+      scrollingElement.addEventListener('scroll', function() {
+        // Only sync if auto-scroll is paused (user is manually scrolling)
+        if (isPaused) {
+          scrollPosition = scrollingElement.scrollLeft;
+          
+          // Clear existing timeout
+          if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+          }
+          
+          // Sync again after scroll ends (for momentum scrolling)
+          scrollTimeout = setTimeout(syncScrollPosition, 100);
+        }
+      }, { passive: true });
       
       // Pause on hover
       scrollingElement.addEventListener('mouseenter', function() {
@@ -62,8 +86,98 @@
       });
       
       scrollingElement.addEventListener('mouseleave', function() {
+        // Sync scroll position before resuming
+        scrollPosition = scrollingElement.scrollLeft;
         isPaused = false;
       });
+      
+      // Pause on touch/swipe for mobile devices
+      let touchTimeout;
+      let isTouching = false;
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let lastTouchX = 0;
+      let lastTouchY = 0;
+      
+      scrollingElement.addEventListener('touchstart', function(e) {
+        isTouching = true;
+        isPaused = true;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        lastTouchX = touchStartX;
+        lastTouchY = touchStartY;
+        
+        // Clear any existing timeout
+        if (touchTimeout) {
+          clearTimeout(touchTimeout);
+        }
+      }, { passive: true });
+      
+      scrollingElement.addEventListener('touchmove', function(e) {
+        if (isTouching) {
+          lastTouchX = e.touches[0].clientX;
+          lastTouchY = e.touches[0].clientY;
+          
+          // Clear any existing timeout since user is actively scrolling
+          if (touchTimeout) {
+            clearTimeout(touchTimeout);
+          }
+        }
+      }, { passive: true });
+      
+      scrollingElement.addEventListener('touchend', function(e) {
+        if (isTouching) {
+          isTouching = false;
+          
+          // Sync scroll position with actual scroll position after user stops swiping
+          // Wait for momentum scrolling to settle
+          setTimeout(function() {
+            scrollPosition = scrollingElement.scrollLeft;
+            
+            // Determine scroll direction based on current position
+            const maxScroll = scrollingElement.scrollWidth - scrollingElement.clientWidth;
+            if (scrollPosition >= maxScroll - 1) {
+              direction = -1; // At end, go left
+            } else if (scrollPosition <= 1) {
+              direction = 1; // At start, go right
+            } else {
+              // Determine direction based on which boundary is closer
+              direction = (scrollPosition > maxScroll / 2) ? -1 : 1;
+            }
+          }, 300);
+          
+          // Determine if this was a horizontal swipe (more horizontal than vertical)
+          const deltaX = Math.abs(lastTouchX - touchStartX);
+          const deltaY = Math.abs(lastTouchY - touchStartY);
+          
+          // Only resume auto-scroll if it was a horizontal swipe
+          // Wait 2 seconds after touch ends before resuming auto-scroll
+          touchTimeout = setTimeout(function() {
+            // Final sync before resuming
+            scrollPosition = scrollingElement.scrollLeft;
+            isPaused = false;
+          }, 2000);
+        }
+      }, { passive: true });
+      
+      // Also handle touchcancel event
+      scrollingElement.addEventListener('touchcancel', function(e) {
+        if (isTouching) {
+          isTouching = false;
+          if (touchTimeout) {
+            clearTimeout(touchTimeout);
+          }
+          // Sync scroll position
+          setTimeout(function() {
+            scrollPosition = scrollingElement.scrollLeft;
+          }, 300);
+          // Resume after a delay
+          touchTimeout = setTimeout(function() {
+            scrollPosition = scrollingElement.scrollLeft;
+            isPaused = false;
+          }, 2000);
+        }
+      }, { passive: true });
       
       // Auto-scroll animation
       function animate() {
@@ -96,6 +210,12 @@
       window.addEventListener('beforeunload', function() {
         if (animationFrameId) {
           cancelAnimationFrame(animationFrameId);
+        }
+        if (touchTimeout) {
+          clearTimeout(touchTimeout);
+        }
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
         }
       });
     }
