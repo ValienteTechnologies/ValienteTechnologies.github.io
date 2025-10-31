@@ -11,6 +11,8 @@
   scrollbar-color: #fed136 transparent;
   will-change: scroll-position; // Hint browser for better performance
   backface-visibility: hidden; // Force hardware acceleration
+  contain: layout style paint; // CSS containment for performance
+  transform: translateZ(0); // Force GPU acceleration
   
   &::-webkit-scrollbar {
     height: 8px;
@@ -29,5 +31,12 @@
     flex: 0 0 auto;
     min-width: 200px;
     padding: 10px;
+    transform: translateZ(0); // Force GPU acceleration for child elements
+    will-change: transform; // Optimize child rendering
+  }
+  
+  img {
+    image-rendering: -webkit-optimize-contrast; // Optimize image rendering
+    transform: translateZ(0); // Force GPU acceleration for images
   }
 }

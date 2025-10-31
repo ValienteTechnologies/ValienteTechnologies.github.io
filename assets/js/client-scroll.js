@@ -58,17 +58,40 @@
       let animationFrameId;
       let direction = 1; // 1 for right, -1 for left
       
+      // Cache max scroll to avoid recalculating every frame
+      let maxScroll = scrollingElement.scrollWidth - scrollingElement.clientWidth;
+      let maxScrollCacheTime = performance.now();
+      const MAX_SCROLL_CACHE_DURATION = 1000; // Recalculate max scroll every 1 second
+      
+      // Helper to recalculate max scroll when needed
+      function updateMaxScroll() {
+        const now = performance.now();
+        if (now - maxScrollCacheTime > MAX_SCROLL_CACHE_DURATION) {
+          maxScroll = scrollingElement.scrollWidth - scrollingElement.clientWidth;
+          maxScrollCacheTime = now;
+        }
+      }
+      
       // Sync scrollPosition with actual scroll position when user manually scrolls
       function syncScrollPosition() {
         scrollPosition = scrollingElement.scrollLeft;
+        updateMaxScroll(); // Update cache on manual scroll
       }
       
-      // Listen for manual scroll events to keep scrollPosition in sync
+      // Throttled scroll handler to reduce overhead
       let scrollTimeout;
+      let lastScrollTime = 0;
+      const SCROLL_THROTTLE = 16; // ~60fps
+      
       scrollingElement.addEventListener('scroll', function() {
         // Only sync if auto-scroll is paused (user is manually scrolling)
         if (isPaused) {
-          scrollPosition = scrollingElement.scrollLeft;
+          const now = performance.now();
+          if (now - lastScrollTime >= SCROLL_THROTTLE) {
+            scrollPosition = scrollingElement.scrollLeft;
+            lastScrollTime = now;
+            updateMaxScroll();
+          }
           
           // Clear existing timeout
           if (scrollTimeout) {
@@ -88,6 +111,7 @@
       scrollingElement.addEventListener('mouseleave', function() {
         // Sync scroll position before resuming
         scrollPosition = scrollingElement.scrollLeft;
+        updateMaxScroll(); // Update cache on resume
         isPaused = false;
       });
       
@@ -133,9 +157,9 @@
           // Wait for momentum scrolling to settle
           setTimeout(function() {
             scrollPosition = scrollingElement.scrollLeft;
+            updateMaxScroll(); // Update cache after touch
             
             // Determine scroll direction based on current position
-            const maxScroll = scrollingElement.scrollWidth - scrollingElement.clientWidth;
             if (scrollPosition >= maxScroll - 1) {
               direction = -1; // At end, go left
             } else if (scrollPosition <= 1) {
@@ -155,6 +179,7 @@
           touchTimeout = setTimeout(function() {
             // Final sync before resuming
             scrollPosition = scrollingElement.scrollLeft;
+            updateMaxScroll(); // Update cache before resuming
             isPaused = false;
           }, 2000);
         }
@@ -170,10 +195,12 @@
           // Sync scroll position
           setTimeout(function() {
             scrollPosition = scrollingElement.scrollLeft;
+            updateMaxScroll(); // Update cache
           }, 300);
           // Resume after a delay
           touchTimeout = setTimeout(function() {
             scrollPosition = scrollingElement.scrollLeft;
+            updateMaxScroll(); // Update cache
             isPaused = false;
           }, 2000);
         }
@@ -181,14 +208,20 @@
       
       // Auto-scroll animation
       let lastTime = performance.now();
+      let frameCount = 0;
       
       function animate(currentTime = performance.now()) {
+        // Skip frames if paused to save CPU
         if (!isPaused) {
-          const maxScroll = scrollingElement.scrollWidth - scrollingElement.clientWidth;
+          // Update max scroll cache periodically (every 60 frames ~1 second at 60fps)
+          frameCount++;
+          if (frameCount % 60 === 0) {
+            updateMaxScroll();
+          }
           
           if (maxScroll > 0) {
-            // Calculate delta time for frame-rate independent scrolling
-            const deltaTime = currentTime - lastTime;
+            // Clamp deltaTime to prevent large jumps when tab becomes active again
+            const deltaTime = Math.min(currentTime - lastTime, 100); // Cap at 100ms
             const pixelsPerMs = scrollSpeed / 16.67; // Convert to pixels per millisecond (assuming 60fps baseline)
             const deltaScroll = pixelsPerMs * deltaTime * direction;
             
@@ -198,12 +231,15 @@
             if (scrollPosition >= maxScroll) {
               direction = -1;
               scrollPosition = maxScroll;
+              updateMaxScroll(); // Update cache on boundary hit
             } else if (scrollPosition <= 0) {
               direction = 1;
               scrollPosition = 0;
+              updateMaxScroll(); // Update cache on boundary hit
             }
             
             // Use requestAnimationFrame timing for smooth scrolling
+            // Use requestAnimationFrame to batch scroll updates
             scrollingElement.scrollLeft = scrollPosition;
           }
         }
@@ -211,6 +247,26 @@
         lastTime = currentTime;
         animationFrameId = requestAnimationFrame(animate);
       }
+      
+      // Pause when tab is hidden (Page Visibility API)
+      let wasPausedByVisibility = false;
+      function handleVisibilityChange() {
+        if (document.hidden) {
+          if (!isPaused) {
+            wasPausedByVisibility = true;
+            isPaused = true;
+          }
+        } else {
+          if (wasPausedByVisibility) {
+            scrollPosition = scrollingElement.scrollLeft;
+            updateMaxScroll();
+            isPaused = false;
+            wasPausedByVisibility = false;
+          }
+        }
+      }
+      
+      document.addEventListener('visibilitychange', handleVisibilityChange);
       
       // Start animation
       animate();
@@ -226,6 +282,7 @@
         if (scrollTimeout) {
           clearTimeout(scrollTimeout);
         }
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
       });
     }
   }
