@@ -2,10 +2,29 @@
 #scrolling-clients {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
-}
-
-#col-md-3 col-sm-6 {
-  flex: 0 0 auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #fed136 transparent;
+  
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #fed136;
+    border-radius: 4px;
+  }
+  
+  > div {
+    flex: 0 0 auto;
+    min-width: 200px;
+    padding: 10px;
+  }
 }
