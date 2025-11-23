@@ -16,7 +16,7 @@
   
   // Dynamic settings based on device
   function getNodeCount() {
-    return isDesktop() ? 120 : 50;
+    return isDesktop() ? 180 : 60;
   }
   
   function getConnectionDistance() {
