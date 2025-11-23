@@ -48,6 +48,7 @@
   <!-- Header -->
   {% if site.locale and site.locale != "" and site.locale != nil %}
   <header class="masthead">
+    <canvas id="meshNetwork" class="mesh-network-canvas"></canvas>
     <div class="container">
       <div class="intro-text">
 	  {%- if site.data.sitetext[site.locale].header.title -%}
@@ -64,6 +65,7 @@
   </header>
   {% else %}
   <header class="masthead">
+    <canvas id="meshNetwork" class="mesh-network-canvas"></canvas>
     <div class="container">
       <div class="intro-text">
 	  {%- if site.data.sitetext.header.title -%}
