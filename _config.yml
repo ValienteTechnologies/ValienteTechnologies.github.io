@@ -23,9 +23,8 @@ locale: "tr-TR"
 logo:
   path: assets\img\valientetitle.svg
 
-
 analytics:
-  google: G-L3H5QZKNQ3
+  google: G-FF9YHPMVJL
 
 collections:
   portfolio:
