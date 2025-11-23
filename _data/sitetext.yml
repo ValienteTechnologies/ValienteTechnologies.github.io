@@ -52,8 +52,14 @@ tr: &DEFAULT_TR
         desc: "Ruby Cyber Labs, kapsamlı hizmet yelpazesi sunan bir siber güvenlik ve dijital adli bilişim şirketidir."
         image: assets/img/partners/ruby.png
       - title: "Sigmacert Global"
-        desc: "Sigmacert Global, belgelendirme, denetim ve sertifikasyon kuruluşudur."
+        desc: "Sigmacert Global, denetim ve sertifikasyon hizmetleri sunan ve ISO standartları eğitimleri veren bir şirkettir."
         image: assets/img/partners/sigmacert.png
+      - title: "Uzman Bilgi Teknolojileri"
+        desc: "Uzman Bilgi Teknolojileri, işletmenizin tüm sunucu, ağ ve donanım altyapısını yöneten bir firmadır"
+        image: assets/img/partners/uzman.png
+      - title: "Biga Bilişim"
+        desc: "Biga Bilişim, kamera, VoIP ve fiber ağ altyapılarının entegre edildiği profesyonel çözümler sunar."
+        image: assets/img/partners/biga.png
     end: "Yolculuğun <br> Bir Parçası <br> Olun!"
 
   references:
