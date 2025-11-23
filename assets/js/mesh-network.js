@@ -32,9 +32,9 @@
   const nodeRadius = 2;
   const lineWidth = 1;
   const nodeColor = 'rgba(255, 255, 255, 0.8)';
-  const lineColor = 'rgba(255, 255, 255, 0.2)';
+  const lineColor = 'rgba(255, 255, 255, 0.5)';
   const mouseNodeColor = 'rgba(255, 255, 255, 1)';
-  const mouseLineColor = 'rgba(255, 255, 255, 0.4)';
+  const mouseLineColor = 'rgba(255, 255, 255, 0.7)';
 
   // Cache for connection distance squared
   let maxDistanceSquared = 0;
@@ -213,7 +213,7 @@
     if (pathIndex > 0) {
       ctx.lineWidth = lineWidth;
       ctx.strokeStyle = lineColor;
-      ctx.globalAlpha = 0.2;
+      ctx.globalAlpha = 0.5;
       ctx.beginPath();
       
       for (let i = 0; i < pathIndex; i += 4) {
@@ -268,7 +268,7 @@
     if (pathIndex > 0) {
       ctx.lineWidth = lineWidth * 1.5;
       ctx.strokeStyle = mouseLineColor;
-      ctx.globalAlpha = 0.4;
+      ctx.globalAlpha = 0.7;
       ctx.beginPath();
       
       for (let i = 0; i < pathIndex; i += 2) {
