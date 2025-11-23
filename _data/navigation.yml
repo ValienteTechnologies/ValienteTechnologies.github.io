@@ -7,11 +7,11 @@ tr: &DEFAULT_TR
     - title: "Referanslar"
       section: references
     - title: "Hakkımızda"
-      section: about
+      url: /about
     - title: "İş Ortakları"
       section: partners
     - title: "Blog"
-      section: blog
+      url: /blog/
     - title: "İletişim"
       section: contact
 tr-TR:
