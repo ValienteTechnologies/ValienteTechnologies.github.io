@@ -26,7 +26,7 @@
   }
   
   function getConnectionDistance() {
-    return isDesktop() ? 180 : 150;
+    return isDesktop() ? 150 : 75;
   }
   
   const nodeRadius = 2;
