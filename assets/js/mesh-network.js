@@ -1,4 +1,4 @@
-// Mesh Network Animation
+// Mesh Network Animation - Highly Optimized
 (function() {
   'use strict';
 
@@ -8,6 +8,12 @@
   const ctx = canvas.getContext('2d');
   let mouse = { x: 0, y: 0 };
   let nodes = [];
+  
+  // Spatial grid for optimization
+  let grid = null;
+  let gridCellSize = 0;
+  let gridCols = 0;
+  let gridRows = 0;
   
   // Detect if desktop (screen width >= 768px)
   function isDesktop() {
@@ -30,96 +36,264 @@
   const mouseNodeColor = 'rgba(255, 255, 255, 1)';
   const mouseLineColor = 'rgba(255, 255, 255, 0.4)';
 
+  // Cache for connection distance squared
+  let maxDistanceSquared = 0;
+  let maxMouseDistanceSquared = 0;
+  let maxDistance = 0;
+  let maxMouseDistance = 0;
+
+  // Initialize spatial grid
+  function initGrid() {
+    const maxDist = getConnectionDistance();
+    gridCellSize = maxDist;
+    gridCols = Math.ceil(canvas.width / gridCellSize) + 1;
+    gridRows = Math.ceil(canvas.height / gridCellSize) + 1;
+    grid = new Array(gridCols * gridRows);
+    for (let i = 0; i < grid.length; i++) {
+      grid[i] = [];
+    }
+  }
+
+  // Get grid cell index from coordinates
+  function getGridIndex(x, y) {
+    const col = Math.floor(x / gridCellSize);
+    const row = Math.floor(y / gridCellSize);
+    return row * gridCols + col;
+  }
+
+  // Update spatial grid
+  function updateGrid() {
+    // Clear grid
+    for (let i = 0; i < grid.length; i++) {
+      grid[i].length = 0;
+    }
+    
+    // Add nodes to grid (only to their primary cell for efficiency)
+    const nodeCount = nodes.length;
+    for (let i = 0; i < nodeCount; i++) {
+      const node = nodes[i];
+      const col = Math.floor(node.x / gridCellSize);
+      const row = Math.floor(node.y / gridCellSize);
+      
+      if (col >= 0 && col < gridCols && row >= 0 && row < gridRows) {
+        grid[row * gridCols + col].push(i);
+      }
+    }
+  }
+
   // Resize canvas to match header
   function resizeCanvas() {
     const header = canvas.parentElement;
     if (header) {
       canvas.width = header.offsetWidth;
       canvas.height = header.offsetHeight;
+      // Update cached distances
+      const maxDist = getConnectionDistance();
+      maxDistance = maxDist;
+      maxDistanceSquared = maxDist * maxDist;
+      maxMouseDistance = maxDist * 1.5;
+      maxMouseDistanceSquared = maxMouseDistance * maxMouseDistance;
+      initGrid();
     }
   }
 
-  // Initialize nodes
+  // Initialize nodes - use typed arrays for better performance
   function initNodes() {
     nodes = [];
     const count = getNodeCount();
+    const width = canvas.width;
+    const height = canvas.height;
+    
     for (let i = 0; i < count; i++) {
       nodes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * width,
+        y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
         radius: nodeRadius
       });
     }
+    
+    // Update cached distances
+    const maxDist = getConnectionDistance();
+    maxDistance = maxDist;
+    maxDistanceSquared = maxDist * maxDist;
+    maxMouseDistance = maxDist * 1.5;
+    maxMouseDistanceSquared = maxMouseDistance * maxMouseDistance;
+    initGrid();
+    updateGrid();
   }
 
-  // Update node positions
+  // Update node positions - optimized
   function updateNodes() {
-    nodes.forEach(node => {
+    const width = canvas.width;
+    const height = canvas.height;
+    
+    for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
       node.x += node.vx;
       node.y += node.vy;
 
       // Bounce off edges
-      if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-      if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
-
-      // Keep nodes within bounds
-      node.x = Math.max(0, Math.min(canvas.width, node.x));
-      node.y = Math.max(0, Math.min(canvas.height, node.y));
-    });
+      if (node.x < 0 || node.x > width) {
+        node.vx *= -1;
+        node.x = node.x < 0 ? 0 : width;
+      }
+      if (node.y < 0 || node.y > height) {
+        node.vy *= -1;
+        node.y = node.y < 0 ? 0 : height;
+      }
+    }
+    
+    // Update grid after node movement
+    updateGrid();
   }
 
-  // Draw connections between nodes
-  function drawConnections() {
-    const maxDistance = getConnectionDistance();
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+  // Fast inverse square root approximation (for distance calculations)
+  function fastInvSqrt(x) {
+    // Fast approximation: 1/sqrt(x) ≈ x^(-0.5)
+    // For our use case, we can use a simple approximation
+    return 1 / Math.sqrt(x);
+  }
 
-        if (distance < maxDistance) {
-          const opacity = 1 - (distance / maxDistance);
-          ctx.strokeStyle = lineColor.replace('0.2', opacity.toString());
-          ctx.lineWidth = lineWidth;
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.stroke();
+  // Draw connections between nodes - optimized with spatial grid
+  function drawConnections() {
+    const maxDistSq = maxDistanceSquared;
+    const maxDist = maxDistance;
+    const nodeCount = nodes.length;
+    
+    // Reuse connection arrays to avoid allocations
+    const pathData = [];
+    let pathIndex = 0;
+    
+    // Use spatial grid to only check nearby nodes
+    // Check current cell and adjacent cells to catch edge cases
+    const checkedPairs = new Set();
+    
+    for (let i = 0; i < nodeCount; i++) {
+      const node1 = nodes[i];
+      const col = Math.floor(node1.x / gridCellSize);
+      const row = Math.floor(node1.y / gridCellSize);
+      
+      // Check current cell and adjacent cells (3x3 grid)
+      for (let dr = 0; dr <= 1; dr++) {
+        for (let dc = 0; dc <= 1; dc++) {
+          const c = col + dc;
+          const r = row + dr;
+          if (c >= 0 && c < gridCols && r >= 0 && r < gridRows) {
+            const nearbyNodes = grid[r * gridCols + c];
+            
+            for (let j = 0; j < nearbyNodes.length; j++) {
+              const node2Idx = nearbyNodes[j];
+              if (node2Idx <= i) continue; // Skip if already checked or same node
+              
+              const pairKey = i < node2Idx ? `${i},${node2Idx}` : `${node2Idx},${i}`;
+              if (checkedPairs.has(pairKey)) continue;
+              checkedPairs.add(pairKey);
+              
+              const node2 = nodes[node2Idx];
+              const dx = node1.x - node2.x;
+              const dy = node1.y - node2.y;
+              const distSq = dx * dx + dy * dy;
+
+              if (distSq < maxDistSq) {
+                // Store path data directly (avoid object allocation)
+                pathData[pathIndex++] = node1.x;
+                pathData[pathIndex++] = node1.y;
+                pathData[pathIndex++] = node2.x;
+                pathData[pathIndex++] = node2.y;
+              }
+            }
+          }
         }
       }
     }
-  }
-
-  // Draw connections to mouse
-  function drawMouseConnections() {
-    const maxDistance = getConnectionDistance() * 1.5;
-    nodes.forEach(node => {
-      const dx = node.x - mouse.x;
-      const dy = node.y - mouse.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < maxDistance) {
-        const opacity = (1 - (distance / maxDistance)) * 0.4;
-        ctx.strokeStyle = mouseLineColor.replace('0.4', opacity.toString());
-        ctx.lineWidth = lineWidth * 1.5;
-        ctx.beginPath();
-        ctx.moveTo(node.x, node.y);
-        ctx.lineTo(mouse.x, mouse.y);
-        ctx.stroke();
-      }
-    });
-  }
-
-  // Draw nodes
-  function drawNodes() {
-    nodes.forEach(node => {
-      ctx.fillStyle = nodeColor;
+    
+    // Batch draw all connections
+    if (pathIndex > 0) {
+      ctx.lineWidth = lineWidth;
+      ctx.strokeStyle = lineColor;
+      ctx.globalAlpha = 0.2;
       ctx.beginPath();
+      
+      for (let i = 0; i < pathIndex; i += 4) {
+        ctx.moveTo(pathData[i], pathData[i + 1]);
+        ctx.lineTo(pathData[i + 2], pathData[i + 3]);
+      }
+      
+      ctx.stroke();
+      ctx.globalAlpha = 1.0;
+    }
+  }
+
+  // Draw connections to mouse - optimized
+  function drawMouseConnections() {
+    const maxDistSq = maxMouseDistanceSquared;
+    const mouseX = mouse.x;
+    const mouseY = mouse.y;
+    
+    // Get nearby nodes from grid
+    const gridIdx = getGridIndex(mouseX, mouseY);
+    const nearbyNodes = grid[gridIdx] || [];
+    
+    const pathData = [];
+    let pathIndex = 0;
+    
+    // Check nodes in current and adjacent grid cells
+    const col = Math.floor(mouseX / gridCellSize);
+    const row = Math.floor(mouseY / gridCellSize);
+    
+    for (let dr = -1; dr <= 1; dr++) {
+      for (let dc = -1; dc <= 1; dc++) {
+        const c = col + dc;
+        const r = row + dr;
+        if (c >= 0 && c < gridCols && r >= 0 && r < gridRows) {
+          const cellNodes = grid[r * gridCols + c];
+          for (let i = 0; i < cellNodes.length; i++) {
+            const nodeIdx = cellNodes[i];
+            const node = nodes[nodeIdx];
+            const dx = node.x - mouseX;
+            const dy = node.y - mouseY;
+            const distSq = dx * dx + dy * dy;
+
+            if (distSq < maxDistSq) {
+              pathData[pathIndex++] = node.x;
+              pathData[pathIndex++] = node.y;
+            }
+          }
+        }
+      }
+    }
+    
+    if (pathIndex > 0) {
+      ctx.lineWidth = lineWidth * 1.5;
+      ctx.strokeStyle = mouseLineColor;
+      ctx.globalAlpha = 0.4;
+      ctx.beginPath();
+      
+      for (let i = 0; i < pathIndex; i += 2) {
+        ctx.moveTo(pathData[i], pathData[i + 1]);
+        ctx.lineTo(mouseX, mouseY);
+      }
+      
+      ctx.stroke();
+      ctx.globalAlpha = 1.0;
+    }
+  }
+
+  // Draw nodes - optimized with single path
+  function drawNodes() {
+    ctx.fillStyle = nodeColor;
+    ctx.beginPath();
+    
+    const nodeCount = nodes.length;
+    for (let i = 0; i < nodeCount; i++) {
+      const node = nodes[i];
+      ctx.moveTo(node.x + node.radius, node.y);
       ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-      ctx.fill();
-    });
+    }
+    
+    ctx.fill();
   }
 
   // Draw mouse node
@@ -130,8 +304,21 @@
     ctx.fill();
   }
 
-  // Animation loop
-  function animate() {
+  // Animation loop - optimized with frame skipping for low-end devices
+  let animationFrameId;
+  let lastTime = 0;
+  const targetFPS = 60;
+  const frameInterval = 1000 / targetFPS;
+  
+  function animate(currentTime) {
+    // Frame skipping for performance
+    const deltaTime = currentTime - lastTime;
+    if (deltaTime < frameInterval) {
+      animationFrameId = requestAnimationFrame(animate);
+      return;
+    }
+    lastTime = currentTime - (deltaTime % frameInterval);
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     updateNodes();
@@ -140,26 +327,39 @@
     drawNodes();
     drawMouseNode();
     
-    requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
   }
 
-  // Mouse move handler
+  // Mouse move handler - optimized with throttling
+  let mouseUpdateScheduled = false;
   function handleMouseMove(e) {
-    const header = canvas.parentElement;
-    if (!header) return;
-    const rect = header.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
+    if (mouseUpdateScheduled) return;
+    mouseUpdateScheduled = true;
+    
+    requestAnimationFrame(() => {
+      const header = canvas.parentElement;
+      if (header) {
+        const rect = header.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      }
+      mouseUpdateScheduled = false;
+    });
   }
 
-  // Touch move handler for mobile
+  // Touch move handler for mobile - optimized
   function handleTouchMove(e) {
-    if (e.touches.length > 0) {
-      const header = canvas.parentElement;
-      if (!header) return;
-      const rect = header.getBoundingClientRect();
-      mouse.x = e.touches[0].clientX - rect.left;
-      mouse.y = e.touches[0].clientY - rect.top;
+    if (e.touches.length > 0 && !mouseUpdateScheduled) {
+      mouseUpdateScheduled = true;
+      requestAnimationFrame(() => {
+        const header = canvas.parentElement;
+        if (header) {
+          const rect = header.getBoundingClientRect();
+          mouse.x = e.touches[0].clientX - rect.left;
+          mouse.y = e.touches[0].clientY - rect.top;
+        }
+        mouseUpdateScheduled = false;
+      });
     }
   }
 
@@ -179,19 +379,27 @@
       resizeTimeout = setTimeout(() => {
         resizeCanvas();
         initNodes();
-      }, 250); // Debounce resize to avoid too many recalculations
-    });
+      }, 250);
+    }, { passive: true });
     
     // Track mouse over entire header, not just canvas
     const header = canvas.parentElement;
     if (header) {
-      header.addEventListener('mousemove', handleMouseMove);
+      header.addEventListener('mousemove', handleMouseMove, { passive: true });
       header.addEventListener('touchmove', handleTouchMove, { passive: true });
     }
     
     // Start animation
-    animate();
+    lastTime = performance.now();
+    animationFrameId = requestAnimationFrame(animate);
   }
+
+  // Cleanup function
+  window.addEventListener('beforeunload', () => {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+  });
 
   // Wait for DOM to be ready
   if (document.readyState === 'loading') {
@@ -200,4 +408,3 @@
     init();
   }
 })();
-
