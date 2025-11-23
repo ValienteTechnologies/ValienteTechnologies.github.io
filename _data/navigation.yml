@@ -4,14 +4,14 @@ tr: &DEFAULT_TR
   nav:
     - title: "Hizmetler"
       section: services
-    - title: "Broşürler"
-      section: portfolio
     - title: "Referanslar"
       section: references
     - title: "Hakkımızda"
       section: about
     - title: "İş Ortakları"
       section: partners
+    - title: "Blog"
+      section: blog
     - title: "İletişim"
       section: contact
 tr-TR:
