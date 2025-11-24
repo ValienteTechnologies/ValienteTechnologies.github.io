@@ -5,7 +5,7 @@
 {% else %}
   {% assign contact = site.data.sitetext.contact %}
 {% endif %}
-{% assign fallback_points = "24/7 güvenlik desteği|Uzaktan ve yerinde danışmanlık|İhtiyacınıza özel teklif" | split: "|" %}
+{% assign fallback_points = "24/7 destek|Uzaktan ve yerinde danışmanlık|İhtiyacınıza özel teklif" | split: "|" %}
 {% assign contact_points = contact.points | default: fallback_points %}
 <section class="page-section contact-section" id="{{ contact.section | default: "contact" }}">
   <div class="contact-gradient" aria-hidden="true"></div>
