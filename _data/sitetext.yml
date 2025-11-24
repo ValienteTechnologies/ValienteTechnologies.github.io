@@ -8,6 +8,7 @@ tr: &DEFAULT_TR
     buttonlink: "#services"
 
   services:
+    eyebrow: "Profesyonel"
     title: "Hizmetlerimiz"
     text: "İşletmenizi güvenli, ölçeklenebilir ve geleceğe hazır tutmak için özelleştirilmiş BT çözümleri."
     section: services
@@ -16,7 +17,7 @@ tr: &DEFAULT_TR
         desc: "Kurumsal verimliliği artırmak için modern BT mimarileri, altyapı planlama, sistem entegrasyonu ile uçtan uca teknoloji desteği"
         icon: fas fa-cogs
       - title: "Siber Güvenlik"
-        desc: "<strong>Sızma testleri</strong> (OSSTMM, OWASP, PTES ve ISSAF metodolojilerine uygun şekilde), DDoS, kaynak kod analizi, web ve mobil uygulama güvenliği, sosyal mühendislik ve tehdit istihbaratı hizmetleri"
+        desc: "<strong>Sızma testleri</strong> (OSSTMM, OWASP, PTES ve ISSAF metodolojilerine uygun şekilde), DDoS, kaynak kod analizi, web ve mobil <strong>uygulama güvenliği</strong>, sosyal mühendislik ve tehdit istihbaratı hizmetleri"
         icon: fas fa-shield-alt
       - title: "Uyumluluk Denetimi"
         desc: "<strong>NIST</strong>, <strong>ISO 27001</strong> ve <strong>ISO 27701</strong> gibi standartlara göre değerlendirmeler ile yasal ve sektörel uyumluluk denetimleri ve eğitimleri"

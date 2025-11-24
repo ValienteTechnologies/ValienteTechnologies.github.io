@@ -1,58 +1,43 @@
 <!-- Services -->
-{% if site.locale and site.locale != "" and site.locale != nil %}
-  <section class="page-section" id="{{ site.data.sitetext[site.locale].services.section | default: "services" }}">
-    <div class="container">
-	
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].services.title | default: "Services" }}</h2>
-          {% if site.data.sitetext[site.locale].services.text %}
-		  <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].services.text }}</h3>
-		  {% endif %}
-        </div>
+{% assign has_locale = site.locale and site.locale != "" and site.locale != nil %}
+{% if has_locale %}
+  {% assign services = site.data.sitetext[site.locale].services %}
+{% else %}
+  {% assign services = site.data.sitetext.services %}
+{% endif %}
+{% if services %}
+<section class="page-section services-section" id="{{ services.section | default: "services" }}">
+  <div class="services-background" aria-hidden="true"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-9">
+        <p class="services-eyebrow">{{ services.eyebrow | default: "Profesyonel" }}</p>
+        <h2 class="section-heading text-uppercase">{{ services.title | default: "Services" }}</h2>
+        {% if services.text %}
+        <p class="section-subheading text-muted services-lede">{{ services.text }}</p>
+        {% endif %}
       </div>
-	  
-      <div class="row text-center">
-	  {% for service in site.data.sitetext[site.locale].services.list %}
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+    </div>
+
+    <div class="services-grid">
+      {% for service in services.list %}
+      <article class="service-card">
+        <div class="service-card__icon">
+          <span class="fa-stack">
+            <i class="fas fa-circle fa-stack-2x"></i>
             <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">{{ service.title | markdownify }}</h4>
-          {% if service.desc %}<div class="text-muted">{{ service.desc | markdownify }}</div>{% endif %}
         </div>
-	  {% endfor %}
-      </div>
-	  
+        <div class="service-card__body">
+          <h3 class="service-heading">{{ service.title | markdownify | strip_html }}</h3>
+          {% if service.desc %}
+          <div class="service-card__desc text-muted">{{ service.desc | markdownify }}</div>
+          {% endif %}
+        </div>
+        <div class="service-card__shine" aria-hidden="true"></div>
+      </article>
+      {% endfor %}
     </div>
-  </section>
-{% else %}
-<section class="page-section" id="{{ site.data.sitetext.services.section | default: "services" }}">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.services.title | default: "Services" }}</h2>
-        {% if site.data.sitetext.services.text %}
-    <h3 class="section-subheading text-muted">{{ site.data.sitetext.services.text }}</h3>
-    {% endif %}
-      </div>
-    </div>
-  
-    <div class="row text-center">
-  {% for service in site.data.sitetext.services.list %}
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fas fa-circle fa-stack-2x text-primary"></i>
-          <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
-        </span>
-        <h4 class="service-heading">{{ service.title | markdownify }}</h4>
-        {% if service.desc %}<div class="text-muted">{{ service.desc | markdownify }}</div>{% endif %}
-      </div>
-  {% endfor %}
-    </div>
-  
   </div>
 </section>
 {% endif %}

@@ -1,5 +1,165 @@
 // Styling for the services section
+$services-bg-dark: #0c1540;
+$services-bg-deep: #050d29;
+$services-accent: $primary;
+$services-accent-soft: rgba($primary, 0.35);
+$services-accent-bright: lighten($primary, 8%);
+$services-highlight-wash: rgba(255, 255, 255, 0.08);
+
+.services-section {
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  color: rgba(252, 253, 255, 0.95);
+  overflow: hidden;
+
+  .section-heading {
+    position: relative;
+    display: inline-block;
+    color: #f5f7ff;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -0.75rem;
+      width: 110px;
+      height: 3px;
+      transform: translateX(-50%);
+      background: linear-gradient(
+        90deg,
+        rgba($services-accent, 0),
+        rgba($services-accent, 0.8),
+        rgba($services-accent, 0)
+      );
+    }
+  }
+
+  .services-lede {
+    margin: 1rem auto 0;
+    max-width: 620px;
+    color: rgba(248, 250, 255, 0.9);
+  }
+
+  .services-background {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba($services-accent, 0.35), transparent 60%),
+                radial-gradient(circle at 85% 15%, rgba(lighten($services-accent, 30%), 0.25), transparent 55%),
+                linear-gradient(135deg, lighten($services-bg-deep, 6%) 0%, lighten($services-bg-dark, 10%) 80%);
+    z-index: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(#ffffff, 0.04), transparent 60%);
+    }
+  }
+
+  .services-eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba($services-accent-bright, 0.8);
+    margin-bottom: 0.5rem;
+  }
+
+  .services-grid {
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+}
+
+.service-card {
+  position: relative;
+  padding: 2.25rem;
+  border-radius: 1.5rem;
+  background: rgba(18, 24, 62, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px rgba(5, 12, 42, 0.65);
+  overflow: hidden;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease,
+    background 200ms ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($services-accent, 0.35);
+    background: rgba(28, 34, 82, 0.95);
+    box-shadow: 0 30px 60px rgba(5, 12, 42, 0.65), 0 0 25px rgba($services-accent, 0.2);
+  }
+}
+
+.service-card__icon {
+  margin-bottom: 1.25rem;
+
+  .fa-stack {
+    font-size: 2.5rem;
+
+    .fa-circle {
+      color: rgba($primary, 0.4);
+    }
+
+    .fa-inverse {
+      color: lighten($primary, 15%);
+      text-shadow: 0 8px 20px rgba($primary, 0.4);
+    }
+  }
+}
+
 .service-heading {
-  margin: 15px 0;
+  margin: 0 0 0.65rem;
   text-transform: none;
+  font-size: 1.25rem;
+  color: #f5f7ff;
+
+  p {
+    margin: 0;
+  }
+}
+
+.service-card__desc {
+  color: rgba(248, 250, 255, 0.92);
+
+  p {
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: $services-accent-bright;
+  }
+}
+
+.services-section .text-muted {
+  color: rgba(248, 250, 255, 0.9) !important;
+}
+
+.service-card__shine {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.25), transparent 50%),
+              radial-gradient(circle at 90% 20%, rgba(lighten($services-accent, 25%), 0.25), transparent 50%),
+              linear-gradient(120deg, rgba($services-highlight-wash, 0.4), rgba($services-accent-soft, 0.15));
+  opacity: 0;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+}
+
+.service-card:hover .service-card__shine {
+  opacity: 1;
+}
+
+@media (max-width: 575px) {
+  .services-section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .service-card {
+    padding: 1.75rem;
+  }
 }
