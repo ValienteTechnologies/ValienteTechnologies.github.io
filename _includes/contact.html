@@ -90,7 +90,9 @@
               <div class="form-field">
                 <label for="subject">{{ contact.subject | default: "Subject" }}</label>
                 <input name="subject" class="form-control" id="subject" type="text"
-                  placeholder="{{ contact.subject | default: "Subject" }}">
+                  placeholder="{{ contact.subject | default: "Subject" }}"
+                  required="required"
+                  data-validation-required-message="{{ contact.subject-validation | default: "Please enter a subject." }}">
               </div>
               <div class="form-field">
                 <label for="message">{{ contact.message | default: "Message*" }}</label>

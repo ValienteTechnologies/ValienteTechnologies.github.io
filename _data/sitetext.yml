@@ -126,7 +126,7 @@ tr: &DEFAULT_TR
     phone-validation: "Lütfen telefon numaranızı girin."
     message: "Mesajınız*"
     message-validation: "Lütfen bir mesaj girin."
-    subject: "Konu"
+    subject: "Konu*"
     submit: "Gönder"
 
   footer:
