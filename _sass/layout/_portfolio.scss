@@ -81,6 +81,8 @@
     h2 {
       font-size: 3em;
       margin-bottom: 15px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
     p {
       margin-bottom: 30px;
@@ -134,6 +136,17 @@
         -ms-transform: rotate(90deg);
         transform: rotate(90deg);
         background-color: $gray-900;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-modal {
+    .modal-content {
+      padding: 70px 0;
+      h2 {
+        font-size: 2.25em;
       }
     }
   }
