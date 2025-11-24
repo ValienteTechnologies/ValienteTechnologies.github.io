@@ -2,6 +2,19 @@
 body {
   overflow-x: hidden;
   @include body-font;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
 }
 
 p {
