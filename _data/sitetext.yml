@@ -115,7 +115,7 @@ tr: &DEFAULT_TR
 
   contact:
     eyebrow: "Erişilebilir"
-    title: "Bizimle İletişime Geçin"
+    title: "İletişime Geçin"
     text: "İşletmenize nasıl destek olabileceğimizi konuşalım."
     section: contact
     name: "Ad Soyad*"
