@@ -2,6 +2,8 @@
 .footer {
   padding: 25px 0;
   text-align: center;
+  background: linear-gradient(135deg, $valiente-midnight, $valiente-ink);
+  color: rgba(255, 255, 255, 0.85);
   span.copyright {
     font-size: 90%;
     line-height: 40px;
@@ -32,11 +34,11 @@ ul.social-buttons {
       color: white;
       border-radius: 100%;
       outline: none;
-      background-color: $gray-900;
+      background-color: $valiente-ink;
       &:active,
       &:focus,
       &:hover {
-        background-color: $primary;
+        background-color: $valiente-magenta;
       }
     }
   }

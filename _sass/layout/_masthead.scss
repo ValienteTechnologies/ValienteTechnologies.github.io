@@ -25,20 +25,13 @@ header.masthead {
   // Animated colorful gradient background - smoother with more color stops
   background: linear-gradient(
     135deg,
-    $primary 0%,
-    lighten($primary, 5%) 8%,
-    #7a1aff 16%,
-    #6a00ff 24%,
-    #8e2de2 32%,
-    #9d2aff 40%,
-    #7a1aff 48%,
-    #6a00ff 56%,
-    #4a00e0 64%,
-    #5a0aff 72%,
-    #6a1aff 80%,
-    darken($primary, 8%) 88%,
-    darken($primary, 4%) 96%,
-    $primary 100%
+    $valiente-midnight 0%,
+    $valiente-ink 16%,
+    $valiente-violet 32%,
+    $valiente-fuchsia 48%,
+    $valiente-magenta 64%,
+    $valiente-rose 82%,
+    $valiente-ink 100%
   );
   background-size: 300% 300%;
   animation: gradientShift 20s ease-in-out infinite;
@@ -71,7 +64,7 @@ header.masthead {
     background: 
       radial-gradient(ellipse 60% 40% at 20% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
       radial-gradient(ellipse 50% 50% at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 60% at 50% 20%, rgba(138, 43, 226, 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 60% at 50% 20%, rgba($valiente-violet, 0.25) 0%, transparent 50%),
       radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.3), transparent),
       radial-gradient(2px 2px at 60% 70%, rgba(255, 255, 255, 0.2), transparent),
       radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.4), transparent),

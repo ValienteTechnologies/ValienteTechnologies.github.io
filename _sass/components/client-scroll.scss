@@ -8,7 +8,7 @@
   -webkit-overflow-scrolling: touch;
   touch-action: pan-x;
   scrollbar-width: thin;
-  scrollbar-color: #fed136 transparent;
+  scrollbar-color: $valiente-magenta transparent;
   will-change: scroll-position; // Hint browser for better performance
   backface-visibility: hidden; // Force hardware acceleration
   contain: layout style paint; // CSS containment for performance
@@ -23,7 +23,7 @@
   }
   
   &::-webkit-scrollbar-thumb {
-    background-color: #fed136;
+    background-color: $valiente-magenta;
     border-radius: 4px;
   }
   

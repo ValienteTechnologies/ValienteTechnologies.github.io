@@ -1,6 +1,6 @@
 // Styling for the navbar
 #mainNav {
-  background-color: $gray-900;
+  background: linear-gradient(135deg, $valiente-midnight, $valiente-ink);
   .navbar-toggler {
     font-size: 12px;
     right: 0;
@@ -23,7 +23,7 @@
   }
   .navbar-nav {
     .nav-item {
-      .nav-link {
+    .nav-link {
         font-size: 90%;
         font-weight: 400;
         padding: 0.75em 0;
@@ -32,7 +32,7 @@
         @include heading-font;
         &.active,
         &:hover {
-          color: $primary;
+        color: $valiente-magenta;
         }
       }
     }
@@ -63,7 +63,7 @@
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-900;
+      background-color: rgba($valiente-midnight, 0.98);
       .navbar-brand {
         font-size: 1.25em;
         padding: 12px 0;

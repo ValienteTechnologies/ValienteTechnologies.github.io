@@ -21,6 +21,14 @@ $primary: {{ site.data.style.highlight | default: "#fed136" }} !default;
 $white: {{ site.data.style.white | default: "#fff" }} !default;
 $black: {{ site.data.style.black | default: "#000" }} !default;
 
+// Valiente palette (derived from assets/valiente.svg)
+$valiente-midnight: #1a0b2f !default;
+$valiente-ink: #310b5d !default;
+$valiente-violet: #63068c !default;
+$valiente-fuchsia: #ab0693 !default;
+$valiente-magenta: $primary !default;
+$valiente-rose: lighten($valiente-magenta, 12%) !default;
+
 // Custom Images
 $header-image: "{{ site.data.style.header-image }}";
 $contact-image: "{{ site.data.style.contact-image }}";
