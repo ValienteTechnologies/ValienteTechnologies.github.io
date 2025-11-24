@@ -1,6 +1,6 @@
 <!-- Portfolio Grid -->
 {% if site.locale and site.locale != "" and site.locale != nil %}
-<section class="bg-light page-section" id="{{ site.data.sitetext.portfolio.section | default: "portfolio" }}">
+<section class="page-section portfolio-section" id="{{ site.data.sitetext[site.locale].portfolio.section | default: "portfolio" }}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -8,28 +8,34 @@
         <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].portfolio.text | markdownify }}</h3>
       </div>
     </div>
-    <div class="row">
+    <div class="row portfolio-grid">
 	{% for project in site.portfolio %}
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
+      <div class="col-lg-4 col-md-6 portfolio-item">
+        <a class="portfolio-card" data-toggle="modal" href="#p{{ forloop.index }}">
+          <div class="portfolio-card__media">
+            <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+            <div class="portfolio-card__overlay">
+              <i class="{{ site.data.style.portfolio-icon | default: "fas fa-info-circle fa-2x" }}"></i>
+              <span>{{ site.data.sitetext[site.locale].portfolio.cta | default: "Detayları Gör" }}</span>
             </div>
           </div>
-          <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="">
+          <div class="portfolio-card__content">
+            <span class="portfolio-card__eyebrow">{{ project.category | default: "Öne Çıkan Çalışma" }}</span>
+            <h4>{{ project.caption.title }}</h4>
+            <p>{{ project.caption.subtitle }}</p>
+            <span class="portfolio-card__cta">
+              {{ site.data.sitetext[site.locale].portfolio.cta | default: "Detayları Gör" }}
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </div>
         </a>
-        <div class="portfolio-caption">
-          <h4>{{ project.caption.title }}</h4>
-          <p class="text-muted">{{ project.caption.subtitle }}</p>
-        </div>
       </div>
 	{% endfor %}
     </div>
   </div>
 </section>
 {% else %}
-<section class="bg-light page-section" id="{{ site.data.sitetext.portfolio.section | default: "portfolio" }}">
+<section class="page-section portfolio-section" id="{{ site.data.sitetext.portfolio.section | default: "portfolio" }}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -37,21 +43,27 @@
         <h3 class="section-subheading text-muted">{{ site.data.sitetext.portfolio.text | markdownify }}</h3>
       </div>
     </div>
-    <div class="row">
+    <div class="row portfolio-grid">
 	{% for project in site.portfolio %}
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
+      <div class="col-lg-4 col-md-6 portfolio-item">
+        <a class="portfolio-card" data-toggle="modal" href="#p{{ forloop.index }}">
+          <div class="portfolio-card__media">
+            <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+            <div class="portfolio-card__overlay">
+              <i class="{{ site.data.style.portfolio-icon | default: "fas fa-info-circle fa-2x" }}"></i>
+              <span>{{ site.data.sitetext.portfolio.cta | default: "View details" }}</span>
             </div>
           </div>
-          <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="">
+          <div class="portfolio-card__content">
+            <span class="portfolio-card__eyebrow">{{ project.category | default: "Featured Work" }}</span>
+            <h4>{{ project.caption.title }}</h4>
+            <p>{{ project.caption.subtitle }}</p>
+            <span class="portfolio-card__cta">
+              {{ site.data.sitetext.portfolio.cta | default: "View details" }}
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </div>
         </a>
-        <div class="portfolio-caption">
-          <h4>{{ project.caption.title }}</h4>
-          <p class="text-muted">{{ project.caption.subtitle }}</p>
-        </div>
       </div>
 	{% endfor %}
     </div>
