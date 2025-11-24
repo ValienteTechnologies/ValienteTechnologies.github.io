@@ -106,8 +106,8 @@
     position: absolute;
     top: 25px;
     right: 25px;
-    width: 75px;
-    height: 75px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     background-color: transparent;
     &:hover {
@@ -117,8 +117,8 @@
       /* Safari and Chrome */
       z-index: 1051;
       width: 1px;
-      height: 75px;
-      margin-left: 35px;
+      height: 30px;
+      margin-left: 14px;
       /* IE 9 */
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -128,7 +128,7 @@
         /* Safari and Chrome */
         z-index: 1052;
         width: 1px;
-        height: 75px;
+        height: 30px;
         /* IE 9 */
         -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
