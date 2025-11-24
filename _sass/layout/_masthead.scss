@@ -33,11 +33,11 @@ header.masthead {
     135deg,
     $valiente-midnight 0%,
     $valiente-ink 16%,
-    $valiente-violet 32%,
-    $valiente-fuchsia 48%,
-    $valiente-magenta 64%,
-    $valiente-rose 82%,
-    $valiente-ink 100%
+    darken($valiente-violet, 5%) 32%,
+    darken($valiente-fuchsia, 5%) 48%,
+    darken($valiente-magenta, 7%) 64%,
+    darken($valiente-rose, 12%) 82%,
+    darken($valiente-ink, 6%) 100%
   );
   background-size: 300% 300%;
   animation: gradientShift 20s ease-in-out infinite;
