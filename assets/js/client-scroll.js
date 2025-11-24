@@ -54,7 +54,7 @@
       let isPaused = false;
       // Detect mobile/touch devices for faster scrolling
       const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      const scrollSpeed = isMobile ? 2.0 : 1.0; // Faster on mobile, smooth on desktop
+      const scrollSpeed = isMobile ? 3.0 : 1.0; // Faster on mobile, smooth on desktop
       let animationFrameId;
       let direction = 1; // 1 for right, -1 for left
       
