@@ -114,6 +114,7 @@ tr: &DEFAULT_TR
         logo: assets/img/clients/tsk.png
 
   contact:
+    eyebrow: "Erişilebilir"
     title: "Bizimle İletişime Geçin"
     text: "İşletmenize nasıl destek olabileceğimizi konuşalım."
     section: contact
@@ -125,7 +126,7 @@ tr: &DEFAULT_TR
     phone-validation: "Lütfen telefon numaranızı girin."
     message: "Mesajınız*"
     message-validation: "Lütfen bir mesaj girin."
-    subject: "Web Sitesinden Yeni Talep"
+    subject: "Konu"
     submit: "Gönder"
 
   footer:
