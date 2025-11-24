@@ -252,15 +252,53 @@
 
     .btn {
       min-width: 220px;
+      position: relative;
+      transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
     }
   }
 
   .btn {
     box-shadow: 0 15px 35px rgba($primary, 0.35);
+
+    &.is-loading {
+      color: rgba(255, 255, 255, 0.7);
+      pointer-events: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1.15rem;
+        height: 1.15rem;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.35);
+        border-top-color: #fff;
+        right: 1.5rem;
+        top: 50%;
+        margin-top: -0.575rem;
+        animation: contact-button-spin 0.8s linear infinite;
+      }
+    }
+
+    &.is-success {
+      background: linear-gradient(120deg, #2ed19c, #20b883);
+      box-shadow: 0 20px 35px rgba(#20b883, 0.35);
+    }
+
+    &.is-error {
+      background: linear-gradient(120deg, #ff6b6b, #f74b7d);
+      box-shadow: 0 20px 35px rgba(#f74b7d, 0.35);
+    }
   }
 
   .text-muted {
     color: rgba(248, 250, 255, 0.85) !important;
+  }
+
+  .form-control.contact-field-error {
+    border-color: rgba(#ff6b6b, 0.85);
+    box-shadow: 0 0 0 3px rgba(#ff6b6b, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    animation: contact-field-shake 450ms ease;
   }
 }
 
@@ -276,5 +314,39 @@
     .contact-form-actions .btn {
       width: 100%;
     }
+  }
+}
+
+@keyframes contact-button-spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes contact-field-shake {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-6px);
+  }
+  30% {
+    transform: translateX(6px);
+  }
+  45% {
+    transform: translateX(-4px);
+  }
+  60% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

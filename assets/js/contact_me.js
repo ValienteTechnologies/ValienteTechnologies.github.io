@@ -2,69 +2,108 @@
 ---
 $(function() {
 
-  $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
+  var $fields = $("#contactForm input,#contactForm textarea");
+  var $submitButton = $("#sendMessageButton");
+  var buttonTexts = {
+    default: $.trim($submitButton.data("default-text")) || $.trim($submitButton.text()) || "✉️",
+    sending: $.trim($submitButton.data("sending-text")) || "⏳",
+    success: $.trim($submitButton.data("success-text")) || "✅",
+    error: $.trim($submitButton.data("error-text")) || "⚠️",
+    invalid: $.trim($submitButton.data("invalid-text")) || "❗️",
+  };
+
+  function setButtonState(state, label) {
+    $submitButton.removeClass("is-loading is-success is-error");
+    if (state) {
+      $submitButton.addClass("is-" + state);
+    }
+    $submitButton.text(label || buttonTexts.default);
+  }
+
+  function scheduleButtonReset(delay) {
+    setTimeout(function() {
+      setButtonState(null, buttonTexts.default);
+    }, delay || 2400);
+  }
+
+  function flagInvalidFields(targets) {
+    var $targets = targets && targets.length ? targets : $fields.filter(function() {
+      if (typeof this.checkValidity === "function") {
+        return !this.checkValidity();
+      }
+      return this.hasAttribute("required") && !$(this).val().trim();
+    });
+
+    $targets.each(function() {
+      var $field = $(this);
+      $field.addClass("contact-field-error");
+      setTimeout(function() {
+        $field.removeClass("contact-field-error");
+      }, 1200);
+    });
+
+    return $targets.length;
+  }
+
+  $fields.on("input blur", function() {
+    var $field = $(this);
+    if ($field.val().trim().length) {
+      $field.removeClass("contact-field-error");
+    }
+  });
+
+  $fields.jqBootstrapValidation({
     preventSubmit: true,
     submitError: function($form, event, errors) {
-      // additional error messages or events
+      setButtonState("error", buttonTexts.invalid);
+      flagInvalidFields();
+      scheduleButtonReset();
     },
     submitSuccess: function($form, event) {
       event.preventDefault(); // prevent default submit behaviour
-      // get values from FORM
-	  var url = "https://formspree.io/" + "{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}";
-      var name = $("input#name").val();
-      var email = $("input#email").val();
-      var phone = $("input#phone").val();
-      var subject = $("input#subject").val();
-      var message = $("textarea#message").val();
-      var firstName = name; // For Success/Failure Message
-      // Check for white space in name for Success/Fail message
-      if (firstName.indexOf(' ') >= 0) {
-        firstName = name.split(' ').slice(0, -1).join(' ');
+      var url = "https://formspree.io/" + "{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}";
+      var payload = {
+        name: $("input#name").val(),
+        phone: $("input#phone").val(),
+        email: $("input#email").val(),
+        subject: $("input#subject").val(),
+        message: $("textarea#message").val()
+      };
+
+      var emptyFields = $fields.filter(function() {
+        return !$.trim($(this).val());
+      });
+      if (emptyFields.length) {
+        $submitButton.prop("disabled", false);
+        setButtonState("error", buttonTexts.invalid);
+        flagInvalidFields(emptyFields);
+        scheduleButtonReset();
+        return;
       }
-      $this = $("#sendMessageButton");
-      $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+
+      $submitButton.prop("disabled", true); // Disable submit button during request
+      setButtonState("loading", buttonTexts.sending);
+
       $.ajax({
         url: url,
         type: "POST",
-	dataType: "json",
-        data: {
-          name: name,
-          phone: phone,
-          email: email,
-          subject: subject,
-          message: message
+        dataType: "json",
+        headers: {
+          Accept: "application/json"
         },
+        data: payload,
         cache: false,
-
-		success: function() {
-          // Success message
-          $('#success').html("<div class='alert alert-success'>");
-          $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            .append("</button>");
-          $('#success > .alert-success')
-            .append("<strong>Your message has been sent. </strong>");
-          $('#success > .alert-success')
-            .append('</div>');
-          //clear all fields
-          $('#contactForm').trigger("reset");
-        },
-
-        error: function() {
-          // Fail message
-          $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!"));
-          $('#success > .alert-danger').append('</div>');
-          //clear all fields
-          $('#contactForm').trigger("reset");
-        },
-
-        complete: function() {
-          setTimeout(function() {
-            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-          }, 1000);
-        }
+      }).done(function() {
+        setButtonState("success", buttonTexts.success);
+        $("#contactForm").trigger("reset");
+        scheduleButtonReset(2600);
+      }).fail(function() {
+        setButtonState("error", buttonTexts.error);
+        scheduleButtonReset(3000);
+      }).always(function() {
+        setTimeout(function() {
+          $submitButton.prop("disabled", false); // Re-enable submit button after short delay
+        }, 600);
       });
     },
     filter: function() {
@@ -76,9 +115,4 @@ $(function() {
     e.preventDefault();
     $(this).tab("show");
   });
-});
-
-/*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
-  $('#success').html('');
 });

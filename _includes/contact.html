@@ -105,9 +105,15 @@
             <input type="hidden" name="_subject" id="email-subject"
               value="{{ contact.subject | default: "Contact Form Submission" }}">
             <div class="contact-form-actions text-center">
-              <div id="success"></div>
-              <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">
-                {{ contact.submit | default: "Send Message" }}
+              <button id="sendMessageButton"
+                class="btn btn-primary btn-xl text-uppercase"
+                type="submit"
+                data-default-text="{{ contact.submit | default: "✉️" }}"
+                data-sending-text="{{ contact.submit_sending | default: "⏳" }}"
+                data-success-text="{{ contact.submit_success | default: "✅" }}"
+                data-error-text="{{ contact.submit_error | default: "⚠️" }}"
+                data-invalid-text="{{ contact.submit_invalid | default: "❗️" }}">
+                {{ contact.submit | default: "✉️" }}
               </button>
             </div>
             <input type="text" name="_gotcha" style="display:none">
