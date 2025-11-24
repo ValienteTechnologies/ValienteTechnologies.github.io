@@ -32,24 +32,33 @@
 	  <!-- Set active nav link based on current URL -->
 	  <script>
 	  (function() {
-	    var currentPath = window.location.pathname.replace(/\/$/, '').replace(/\.html$/, '');
-	    if (currentPath === '') currentPath = '/';
-	    
-	    document.querySelectorAll('#mainNav .nav-link').forEach(function(link) {
-	      var linkPath = link.getAttribute('href');
-	      if (linkPath.indexOf('#') === 0) return; // Skip anchor links
-	      
-	      linkPath = linkPath.replace(/\/$/, '').replace(/\.html$/, '');
-	      if (linkPath === '') linkPath = '/';
-	      
-	      if (linkPath === currentPath || 
-	          (currentPath !== '/' && currentPath.indexOf(linkPath) !== -1 && linkPath !== '/') ||
-	          (linkPath !== '/' && linkPath.indexOf(currentPath) !== -1 && currentPath !== '/')) {
+	    var navLinks = document.querySelectorAll('#mainNav .nav-link');
+	    if (!navLinks.length) return;
+
+	    var normalize = function(path) {
+	      if (!path) return '/';
+	      var a = document.createElement('a');
+	      a.href = path;
+	      var clean = (a.pathname || '/')
+	        .replace(/\/index\.html$/, '/')
+	        .replace(/\.html$/, '');
+	      if (clean.length > 1 && clean.endsWith('/')) {
+	        clean = clean.slice(0, -1);
+	      }
+	      return clean || '/';
+	    };
+
+	    var currentPath = normalize(window.location.pathname);
+
+	    navLinks.forEach(function(link) {
+	      var href = link.getAttribute('href');
+	      if (!href || href.charAt(0) === '#' || href.indexOf('http') === 0) return;
+
+	      var linkPath = normalize(href);
+	      if (linkPath === currentPath) {
 	        link.classList.add('active');
-	        link.style.color = '#8a00c4'; // Force color as fallback
 	      } else {
 	        link.classList.remove('active');
-	        link.style.color = '';
 	      }
 	    });
 	  })();
