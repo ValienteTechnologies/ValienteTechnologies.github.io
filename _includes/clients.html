@@ -1,6 +1,6 @@
 <!-- References -->
 {% if site.locale and site.locale != "" and site.locale != nil %}
-  <section class="page-section" id="{{ site.data.sitetext[site.locale].references.section | default: "references" }}">
+  <section class="page-section references-section" id="{{ site.data.sitetext[site.locale].references.section | default: "references" }}">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -10,11 +10,17 @@
           {% endif %}
         </div>
       </div>
-      <div class="row" {% if site.data.sitetext[site.locale].references.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
+      <div class="row references-grid" {% if site.data.sitetext[site.locale].references.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
 	    {% for client in site.data.sitetext[site.locale].references.list %}
-        <div class="col-md-3 col-sm-6">
-          <a href="{{ client.url }}">
-            <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" style="max-height: 100px">
+        <div class="col-md-3 col-sm-6 reference-item">
+          <a class="reference-card" href="{{ client.url }}" aria-label="{{ client.title }}">
+            <div class="reference-card__glow"></div>
+            <div class="reference-card__logo">
+              <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" loading="lazy">
+            </div>
+            {% if client.title %}
+            <span class="reference-card__name">{{ client.title }}</span>
+            {% endif %}
           </a>
         </div>
 	    {% endfor %}
@@ -22,7 +28,7 @@
     </div>
   </section>
 {% else %}
-<section class="page-section" id="{{ site.data.sitetext.references.section | default: "references" }}">
+<section class="page-section references-section" id="{{ site.data.sitetext.references.section | default: "references" }}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -32,11 +38,17 @@
         {% endif %}
       </div>
     </div>
-    <div class="row" {% if site.data.sitetext.references.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
+    <div class="row references-grid" {% if site.data.sitetext.references.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
     {% for client in site.data.sitetext.references.list %}
-      <div class="col-md-3 col-sm-6">
-        <a href="{{ client.url }}">
-          <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" style="max-height: 100px">
+      <div class="col-md-3 col-sm-6 reference-item">
+        <a class="reference-card" href="{{ client.url }}" aria-label="{{ client.title }}">
+          <div class="reference-card__glow"></div>
+          <div class="reference-card__logo">
+            <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" loading="lazy">
+          </div>
+          {% if client.title %}
+          <span class="reference-card__name">{{ client.title }}</span>
+          {% endif %}
         </a>
       </div>
     {% endfor %}

@@ -70,46 +70,46 @@ tr: &DEFAULT_TR
     max-height: 100px
     horizontal-scrolling: "yes"
     list:
-      - title: "alarko"
+      - title: "Alarko Holding"
         url: https://www.alarko.com.tr/
         logo: assets/img/clients/alarko.png
-      - title: "baksoftarge"
+      - title: "BakSoft Ar-Ge"
         url: https://www.baksoftarge.com/
         logo: assets/img/clients/baksoftarge.png
-      - title: "cenal"
+      - title: "CENAL Elektrik Üretim A.Ş."
         url: https://www.cenal.com.tr/
         logo: assets/img/clients/cenal.png
-      - title: "coretechbilisim"
+      - title: "Coretech Bilişim"
         url: https://coretechbilisim.com/
         logo: assets/img/clients/coretechbilisim.png
-      - title: "cwenerji"
+      - title: "CW Enerji"
         url: https://cw-enerji.com/
         logo: assets/img/clients/cwenerji.png
-      - title: "egeas"
+      - title: "EGE A.Ş."
         url: https://www.egeas.com.tr/
         logo: assets/img/clients/egeas.png
-      - title: "icisleri"
+      - title: "T.C. İçişleri Bakanlığı"
         url: https://www.icisleri.gov.tr/
         logo: assets/img/clients/icisleri.png
-      - title: "maxguvenlik"
+      - title: "Max Security International"
         url: https://maxguvenlik.com/
         logo: assets/img/clients/maxguvenlik.png
-      - title: "megasarayhotels"
+      - title: "Megasaray Hotels"
         url: https://www.megasarayhotels.com/
         logo: assets/img/clients/megasarayhotels.png
-      - title: "rawbeach"
+      - title: "Raw Beach Hotel"
         url: https://www.instagram.com/rawbeachhotel
         logo: assets/img/clients/rawbeach.png
-      - title: "sahinler"
+      - title: "Şahinler Holding"
         url: https://sahinlerholding.com.tr/
         logo: assets/img/clients/sahinler.png
-      - title: "stm"
+      - title: "STM Savunma"
         url: https://www.stm.com.tr/
         logo: assets/img/clients/stm.png
-      - title: "teurope"
+      - title: "Tactical Europe"
         url: https://www.tacticaleurope.com/
         logo: assets/img/clients/teurope.png
-      - title: "tsk"
+      - title: "Türk Silahlı Kuvvetleri"
         url: https://www.tsk.tr/
         logo: assets/img/clients/tsk.png
 
