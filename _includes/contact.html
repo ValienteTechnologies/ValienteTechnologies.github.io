@@ -16,10 +16,10 @@
           <div class="contact-panel__content">
             <div>
               <h2 class="section-heading text-uppercase">
-                {{ contact.title | markdownify | default: "Contact Us" | strip_html }}
+                {{ contact.title | default: "Contact Us" | markdownify }}
               </h2>
               {% if contact.text %}
-              <p class="contact-lede text-muted">{{ contact.text }}</p>
+              <h3 class="section-subheading text-muted contact-lede">{{ contact.text | markdownify }}</h3>
               {% endif %}
             </div>
             <ul class="contact-highlights">

@@ -14,25 +14,7 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
   overflow: hidden;
 
   .section-heading {
-    position: relative;
-    display: inline-block;
     color: #f5f7ff;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -0.75rem;
-      width: 110px;
-      height: 3px;
-      transform: translateX(-50%);
-      background: linear-gradient(
-        90deg,
-        rgba($services-accent, 0),
-        rgba($services-accent, 0.8),
-        rgba($services-accent, 0)
-      );
-    }
   }
 
   .services-lede {

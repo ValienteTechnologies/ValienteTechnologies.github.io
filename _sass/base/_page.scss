@@ -17,6 +17,34 @@ footer {
   width: 100%;
 }
 
+.page-section {
+  --section-halo-color: #{rgba($primary, 0.85)};
+  --section-halo-width: 110px;
+  --section-halo-thickness: 3px;
+  --section-halo-gap: 0.8rem;
+
+  .section-heading {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: var(--section-halo-gap);
+      width: var(--section-halo-width);
+      height: var(--section-halo-thickness);
+      transform: translateX(-50%);
+      background: linear-gradient(
+        90deg,
+        rgba($primary, 0),
+        var(--section-halo-color),
+        rgba($primary, 0)
+      );
+    }
+  }
+}
+
 p {
   line-height: 1.75;
 }
