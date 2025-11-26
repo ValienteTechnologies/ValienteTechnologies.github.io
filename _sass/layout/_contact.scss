@@ -63,14 +63,6 @@
     pointer-events: none;
   }
 
-  .contact-eyebrow {
-    letter-spacing: 0.24em;
-    font-size: 0.85rem;
-    color: rgba($primary, 0.75);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
   .contact-lede {
     color: rgba(248, 250, 255, 0.9);
   }
@@ -81,11 +73,11 @@
 
   .contact-highlights {
     list-style: none;
-    margin: 0;
+    margin: -5rem 0 0 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 2rem;
 
     li {
       display: flex;
