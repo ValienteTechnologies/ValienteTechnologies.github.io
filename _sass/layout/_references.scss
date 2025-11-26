@@ -3,6 +3,11 @@
   position: relative;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.9);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background:
     radial-gradient(circle at 20% 20%, rgba($valiente-magenta, 0.18), transparent 55%),
     radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.15), transparent 45%),
