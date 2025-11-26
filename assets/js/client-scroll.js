@@ -28,15 +28,26 @@
     // Wait for images to load to get accurate scroll width
     const images = scrollingElement.querySelectorAll('img');
     let imagesLoaded = 0;
+    let scrollingStarted = false;
     
     function checkImagesLoaded() {
       imagesLoaded++;
-      if (imagesLoaded === images.length) {
+      if (imagesLoaded === images.length && !scrollingStarted) {
+        scrollingStarted = true;
         startScrolling();
       }
     }
     
+    // Fallback: start scrolling after 500ms even if images aren't fully loaded
+    const fallbackTimeout = setTimeout(function() {
+      if (!scrollingStarted) {
+        scrollingStarted = true;
+        startScrolling();
+      }
+    }, 500);
+    
     if (images.length === 0) {
+      clearTimeout(fallbackTimeout);
       startScrolling();
     } else {
       images.forEach(function(img) {
