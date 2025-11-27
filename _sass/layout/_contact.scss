@@ -5,6 +5,10 @@
   padding-bottom: 6rem;
   color: rgba(249, 251, 255, 0.95);
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .section-heading {
     color: #fff;

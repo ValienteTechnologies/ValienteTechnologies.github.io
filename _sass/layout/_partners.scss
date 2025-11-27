@@ -1,6 +1,10 @@
 // Styling for the partners section
 section#partners {
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: radial-gradient(circle at 15% 20%, rgba($valiente-magenta, 0.15), transparent 55%),
               radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.12), transparent 45%),
               linear-gradient(135deg, darken($valiente-midnight, 4%), $valiente-ink);
