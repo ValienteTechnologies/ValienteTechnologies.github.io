@@ -5,6 +5,8 @@ section#partners {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
   background: radial-gradient(circle at 15% 20%, rgba($valiente-magenta, 0.15), transparent 55%),
               radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.12), transparent 45%),
               linear-gradient(135deg, darken($valiente-midnight, 4%), $valiente-ink);

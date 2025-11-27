@@ -9,6 +9,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 
   .section-heading {
     color: #fff;

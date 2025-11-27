@@ -9,6 +9,8 @@ header.masthead {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
   
   // Mesh network canvas
   .mesh-network-canvas {

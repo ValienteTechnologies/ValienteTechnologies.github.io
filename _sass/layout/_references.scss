@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
   background:
     radial-gradient(circle at 20% 20%, rgba($valiente-magenta, 0.18), transparent 55%),
     radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.15), transparent 45%),

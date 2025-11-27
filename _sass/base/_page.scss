@@ -1,4 +1,9 @@
 // Global styling for this template
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
 body {
   overflow-x: hidden;
   @include body-font;

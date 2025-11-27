@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
   background:
     radial-gradient(circle at 18% 20%, rgba($valiente-magenta, 0.2), transparent 55%),
     radial-gradient(circle at 85% 0%, rgba($valiente-rose, 0.18), transparent 45%),
