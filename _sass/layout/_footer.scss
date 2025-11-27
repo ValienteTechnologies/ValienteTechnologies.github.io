@@ -4,6 +4,8 @@
   text-align: center;
   background: linear-gradient(135deg, $valiente-midnight, $valiente-ink);
   color: rgba(255, 255, 255, 0.85);
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
   span.copyright {
     font-size: 90%;
     line-height: 40px;
