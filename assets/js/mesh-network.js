@@ -81,12 +81,27 @@
     }
   }
 
+  // Track previous canvas dimensions
+  let prevCanvasWidth = 0;
+  let prevCanvasHeight = 0;
+  
   // Resize canvas to match header
   function resizeCanvas() {
     const header = canvas.parentElement;
     if (header) {
-      canvas.width = header.offsetWidth;
-      canvas.height = header.offsetHeight;
+      const newWidth = header.offsetWidth;
+      const newHeight = header.offsetHeight;
+      
+      // Check if dimensions actually changed significantly
+      const widthChanged = Math.abs(newWidth - prevCanvasWidth) > 50;
+      const heightChanged = Math.abs(newHeight - prevCanvasHeight) > 50;
+      const shouldReinitNodes = widthChanged || heightChanged;
+      
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+      prevCanvasWidth = newWidth;
+      prevCanvasHeight = newHeight;
+      
       // Update cached distances
       const maxDist = getConnectionDistance();
       maxDistance = maxDist;
@@ -94,7 +109,10 @@
       maxMouseDistance = maxDist * 1.5;
       maxMouseDistanceSquared = maxMouseDistance * maxMouseDistance;
       initGrid();
+      
+      return shouldReinitNodes;
     }
+    return false;
   }
 
   // Initialize nodes - use typed arrays for better performance
@@ -377,8 +395,13 @@
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        resizeCanvas();
-        initNodes();
+        const shouldReinitNodes = resizeCanvas();
+        if (shouldReinitNodes) {
+          initNodes();
+        } else {
+          // Just update the grid for minor resizes
+          updateGrid();
+        }
       }, 250);
     }, { passive: true });
     
