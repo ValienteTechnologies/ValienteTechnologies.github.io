@@ -62,44 +62,37 @@
       <div class="col-lg-6 mb-4 mb-lg-0">
         <div class="contact-panel contact-panel--form h-100">
           <div class="contact-panel__glow" aria-hidden="true"></div>
-          <form id="contactForm"
-            action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"
-            novalidate="novalidate" method="POST">
+          <form id="contactForm" method="POST" novalidate>
             <div class="contact-form-fields">
               <div class="form-field">
                 <label for="name">{{ contact.name | default: "Name*" }}</label>
                 <input name="name" class="form-control" id="name" type="text"
                   placeholder="{{ contact.name | default: "Name*" }}"
-                  required="required"
-                  data-validation-required-message="{{ contact.name-validation | default: "Please enter your name." }}">
+                  required="required">
               </div>
               <div class="form-field">
                 <label for="email">{{ contact.email | default: "Email*" }}</label>
                 <input name="_replyto" class="form-control" id="email" type="email"
                   placeholder="{{ contact.email | default: "Email*" }}"
-                  required="required"
-                  data-validation-required-message="{{ contact.email-validation | default: "Please enter your email address." }}">
+                  required="required">
               </div>
               <div class="form-field">
                 <label for="phone">{{ contact.phone | default: "Phone Number*" }}</label>
                 <input name="phone" class="form-control" id="phone" type="tel"
                   placeholder="{{ contact.phone | default: "Phone Number*" }}"
-                  required="required"
-                  data-validation-required-message="{{ contact.phone-validation | default: "Please enter your phone number." }}">
+                  required="required">
               </div>
               <div class="form-field">
                 <label for="subject">{{ contact.subject | default: "Subject" }}</label>
                 <input name="subject" class="form-control" id="subject" type="text"
                   placeholder="{{ contact.subject | default: "Subject" }}"
-                  required="required"
-                  data-validation-required-message="{{ contact.subject-validation | default: "Please enter a subject." }}">
+                  required="required">
               </div>
               <div class="form-field">
                 <label for="message">{{ contact.message | default: "Message*" }}</label>
                 <textarea name="message" class="form-control" id="message"
                   placeholder="{{ contact.message | default: "Message*" }}"
-                  required="required"
-                  data-validation-required-message="{{ contact.message-validation | default: "Please enter a message." }}"></textarea>
+                  required="required"></textarea>
               </div>
             </div>
             <input type="hidden" name="_subject" id="email-subject"
@@ -107,13 +100,8 @@
             <div class="contact-form-actions text-center">
               <button id="sendMessageButton"
                 class="btn btn-primary btn-xl text-uppercase"
-                type="submit"
-                data-default-text="{{ contact.submit | default: "✉️" }}"
-                data-sending-text="{{ contact.submit_sending | default: "⏳" }}"
-                data-success-text="{{ contact.submit_success | default: "✅" }}"
-                data-error-text="{{ contact.submit_error | default: "⚠️" }}"
-                data-invalid-text="{{ contact.submit_invalid | default: "❗️" }}">
-                {{ contact.submit | default: "✉️" }}
+                type="submit">
+                <i class="fas fa-paper-plane"></i>
               </button>
             </div>
             <input type="text" name="_gotcha" style="display:none">
