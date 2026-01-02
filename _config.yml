@@ -21,7 +21,7 @@ description: "Valiente Technologies siber gÃ¼venlik ve bilgi teknolojileri alanÄ
 author     : Valiente Technologies
 locale: "tr-TR"
 logo:
-  path: assets\img\valientetitle.svg
+  path: assets/img/valiente/valientetitle.svg
 
 analytics:
   google: G-FF9YHPMVJL
