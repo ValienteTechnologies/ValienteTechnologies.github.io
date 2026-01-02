@@ -7,7 +7,7 @@ alt: Bulut depolama ve veri yedekleme broşürü
 caption:
   title: Bulut Yedekleme
   subtitle: Fidye yazılım koruması
-  thumbnail: assets/img/portfolio/thumbnail.png
+  thumbnail: assets/img/valiente/thumbnail.png
 ---
 
 Bulut tabanlı yedekleme çözümlerimiz, kritik verilerinizi güvenli şekilde saklamanızı, her yerden erişmenizi ve olası sistem arızalarında iş sürekliliğini sağlamanızı mümkün kılar.
