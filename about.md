@@ -23,16 +23,16 @@ Küresel ölçekte tanınan, güven veren ve ileri teknoloji çözümleriyle sek
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 40px 0;">
   <div style="flex: 0 0 auto; text-align: center;">
-    <img src="assets/img/about/iso.png" alt="ISO" style="max-width: 150px; height: auto; width: 100%;">
+    <img src="/assets/img/about/iso.png" alt="ISO" style="max-width: 150px; height: auto; width: 100%;">
   </div>
   <div style="flex: 0 0 auto; text-align: center;">
-    <img src="assets/img/about/oscp.png" alt="OSCP" style="max-width: 150px; height: auto; width: 100%;">
+    <img src="/assets/img/about/oscp.png" alt="OSCP" style="max-width: 150px; height: auto; width: 100%;">
   </div>
   <div style="flex: 0 0 auto; text-align: center;">
-    <img src="assets/img/about/redhat.png" alt="Red Hat" style="max-width: 150px; height: auto; width: 100%;">
+    <img src="/assets/img/about/redhat.png" alt="Red Hat" style="max-width: 150px; height: auto; width: 100%;">
   </div>
   <div style="flex: 0 0 auto; text-align: center;">
-    <img src="assets/img/about/tse.png" alt="TSE" style="max-width: 150px; height: auto; width: 100%;">
+    <img src="/assets/img/about/tse.png" alt="TSE" style="max-width: 150px; height: auto; width: 100%;">
   </div>
 </div>
 

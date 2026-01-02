@@ -1,13 +1,13 @@
 ---
 title: Bulut Yedekleme
 subtitle: Güvenli, Ölçeklenebilir ve Kesintisiz Veri Koruması
-image: assets/img/portfolio/backup.png
+image: /assets/img/portfolio/backup.png
 alt: Bulut depolama ve veri yedekleme broşürü
 
 caption:
   title: Bulut Yedekleme
   subtitle: Fidye yazılım koruması
-  thumbnail: assets/img/valiente/thumbnail.png
+  thumbnail: /assets/img/valiente/thumbnail.png
 ---
 
 Bulut tabanlı yedekleme çözümlerimiz, kritik verilerinizi güvenli şekilde saklamanızı, her yerden erişmenizi ve olası sistem arızalarında iş sürekliliğini sağlamanızı mümkün kılar.
