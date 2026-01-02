@@ -2,11 +2,14 @@
 #pagecontainer {
   // Account for fixed navbar and ensure vertical centering
   padding-top: 100px;
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   
   // Make sure row takes full height for vertical centering
   .row {
     min-height: calc(100vh - 100px);
+    flex: 1;
   }
   
   // Error page specific styling
@@ -62,7 +65,7 @@
   // Responsive navbar spacing - matches page layout
   @media (min-width: 992px) {
     padding-top: 150px;
-    min-height: calc(100vh - 150px);
+    min-height: 100vh;
     
     .row {
       min-height: calc(100vh - 150px);
