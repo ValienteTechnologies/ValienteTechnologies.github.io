@@ -2,7 +2,7 @@
 # -----------------
 tr: &DEFAULT_TR
   header:
-    title: Siber güvenlikte erken önlem, en mantıklı çözümdür
+    title: Denetim zorunluluktur, güvenlik ise bilinçli bir strateji
     text: Güvenilir ve Cesur
     button: Keşfet
     buttonlink: "#services"
