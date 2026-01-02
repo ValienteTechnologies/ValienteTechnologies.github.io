@@ -13,15 +13,6 @@ section#partners {
   color: rgba(255, 255, 255, 0.9);
   overflow: hidden;
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('../valiente.svg') center/75% auto no-repeat;
-    opacity: 0.025;
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
 
   .section-heading {
     color: #fff;

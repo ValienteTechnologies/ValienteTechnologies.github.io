@@ -14,15 +14,6 @@
     radial-gradient(circle at 85% 0%, rgba($valiente-rose, 0.18), transparent 45%),
     linear-gradient(135deg, darken($valiente-midnight, 8%), $valiente-ink);
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('../valiente.svg') center/70% auto no-repeat;
-    opacity: 0.02;
-    pointer-events: none;
-  }
-
   .section-heading {
     color: #fff;
   }
