@@ -2,7 +2,7 @@
 # -----------------
 tr: &DEFAULT_TR
   header:
-    title: Denetim zorunluluktur, güvenlik ise bilinçli bir strateji
+    title: Denetim bir gerekliliktir, güvenlik ise strateji.
     text: Güvenilir ve Cesur
     button: Keşfet
     buttonlink: "#services"
