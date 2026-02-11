@@ -46,8 +46,8 @@
                 <div class="testimonial-card__body">
                   {% if t.quote %}
                   <blockquote class="testimonial-quote mb-4">
-                    <i class="fas fa-quote-left mr-2 text-muted"></i>
-                    {{ t.quote | markdownify }}
+                    {% comment %} Remove the FontAwesome <i> tag if you're using CSS pseudo-elements for quotes {% endcomment %}
+                    {{ t.quote | markdownify | replace: '<p>', '' | replace: '</p>', '' }}
                   </blockquote>
                   {% endif %}
 

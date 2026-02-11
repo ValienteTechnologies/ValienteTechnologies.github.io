@@ -29,6 +29,9 @@
   .carousel-inner {
     position: relative;
     z-index: 1;
+    min-height: 300px; // Ensure consistent height for varying testimonial lengths
+    display: flex;
+    align-items: center;
   }
 
   .carousel-indicators {
@@ -68,7 +71,7 @@
   @include surface-card($radius-card-lg);
   padding: calc(var(--space-card-padding-lg) + 0.25rem) var(--space-card-padding-lg) var(--space-card-padding-lg);
   background: rgba($valiente-midnight, 0.86);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1); // Keep border subtle
   @include backdrop-blur(16px);
   box-shadow: 0 18px 45px rgba(6, 3, 20, 0.65);
   overflow: hidden;
@@ -83,7 +86,7 @@
     background:
       linear-gradient(135deg, rgba($valiente-magenta, 0.85), rgba($valiente-rose, 0.4))
       border-box;
-    opacity: 0.4;
+    opacity: 0.2; // Slightly reduce gradient intensity
     mix-blend-mode: screen;
     pointer-events: none;
     z-index: 0;
@@ -142,7 +145,8 @@
   &::after {
     font-size: 1.6rem;
     color: rgba($valiente-rose, 0.9);
-    vertical-align: text-top;
+    vertical-align: middle; // Better alignment with text baseline
+    line-height: 0;         // Prevent pseudo-elements from affecting line height
   }
 
   &::before {
