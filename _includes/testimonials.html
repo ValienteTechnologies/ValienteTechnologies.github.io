@@ -1,0 +1,87 @@
+<!-- Testimonials -->
+{% assign has_locale = site.locale and site.locale != "" and site.locale != nil %}
+{% if has_locale %}
+  {% assign testimonials = site.data.sitetext[site.locale].testimonials %}
+{% else %}
+  {% assign testimonials = site.data.sitetext.testimonials %}
+{% endif %}
+{% if testimonials %}
+<section class="page-section testimonials-section" id="{{ testimonials.section | default: "testimonials" }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">
+          {{ testimonials.title | default: "Testimonials" | markdownify }}
+        </h2>
+        {% if testimonials.text %}
+        <h3 class="section-subheading text-muted">
+          {{ testimonials.text | markdownify }}
+        </h3>
+        {% endif %}
+      </div>
+    </div>
+
+    <div id="testimonialsCarousel"
+         class="carousel slide carousel-fade testimonials-carousel"
+         data-ride="carousel"
+         data-interval="{{ testimonials.interval | default: 5000 }}"
+         data-pause="hover"
+         data-wrap="true"
+         data-keyboard="true">
+      <ol class="carousel-indicators">
+        {% for t in testimonials.list %}
+        <li data-target="#testimonialsCarousel"
+            data-slide-to="{{ forloop.index0 }}"
+            class="{% if forloop.first %}active{% endif %}"></li>
+        {% endfor %}
+      </ol>
+
+      <div class="carousel-inner">
+        {% for t in testimonials.list %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <article class="testimonial-card text-center mx-auto">
+                <div class="testimonial-card__glow"></div>
+                <div class="testimonial-card__body">
+                  {% if t.quote %}
+                  <blockquote class="testimonial-quote mb-4">
+                    <i class="fas fa-quote-left mr-2 text-muted"></i>
+                    {{ t.quote | markdownify }}
+                  </blockquote>
+                  {% endif %}
+
+                  <div class="testimonial-meta">
+                    {% if t.company %}
+                    <h4 class="testimonial-company mb-1">{{ t.company }}</h4>
+                    {% endif %}
+
+                    {% if t.person or t.title %}
+                    <p class="testimonial-person text-muted mb-0">
+                      {% if t.person %}<strong>{{ t.person }}</strong>{% endif %}
+                      {% if t.person and t.title %} &mdash; {% endif %}
+                      {% if t.title %}{{ t.title }}{% endif %}
+                    </p>
+                    {% endif %}
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <a class="carousel-control-prev" href="#testimonialsCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#testimonialsCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endif %}
+<!-- End Testimonials -->
