@@ -68,12 +68,26 @@
   @include surface-card($radius-card-lg);
   padding: 2.5rem 2.25rem 2.25rem;
   background: rgba($valiente-midnight, 0.86);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   @include backdrop-blur(16px);
   box-shadow: 0 30px 80px rgba(6, 3, 20, 0.85);
   overflow: hidden;
   transform-origin: center;
   animation: testimonial-float 14s ease-in-out infinite alternate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background:
+      linear-gradient(135deg, rgba($valiente-magenta, 0.85), rgba($valiente-rose, 0.4))
+      border-box;
+    opacity: 0.4;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 0;
+  }
 
   &:hover {
     transform: translateY(-6px) scale(1.01);
@@ -107,14 +121,18 @@
 .testimonial-quote {
   position: relative;
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   max-width: 52rem;
   margin-inline: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 
   i {
-    font-size: 1.25rem;
-    color: rgba($valiente-rose, 0.85);
+    font-size: 1.4rem;
+    color: rgba($valiente-rose, 0.92);
+    filter: drop-shadow(0 0 12px rgba($valiente-rose, 0.65));
   }
 
   p {
