@@ -25,7 +25,7 @@ tr: &DEFAULT_TR
         icon: fas fa-code
 
       - title: "Bulut Güvenliği"
-        desc: "Altyapınızı verimli çalışır halde tutmak ve kesinti süresini en aza indirmek için proaktif izleme, bakım, destek ve yönetim"
+        desc: "AWS, Azure ve Google Cloud ortamlarında <strong>konfigürasyon denetimi</strong> ve verilerinizi <strong>fidye yazılımlarına</strong> karşı koruyan güvenli bulut mimarisi çözümleri."
         icon: fas fa-cloud
 
       - title: "Son Kullanıcı Testleri"
