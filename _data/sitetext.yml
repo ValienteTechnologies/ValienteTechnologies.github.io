@@ -135,14 +135,14 @@ tr: &DEFAULT_TR
         logo: /assets/img/clients/tsk.png
 
   testimonials:
-    title: "Müşteri Görüşleri"
-    text: "Sunduğumuz hizmetler hakkında iş ortaklarımızın görüşleri."
+    title: "Geri Bildirimlerimiz"
+    text: "Sunduğumuz hizmetler hakkında müşterilerimizin görüşleri."
     section: testimonials
     list:
       - company: "Örnek Şirket"
         person: "Ad Soyad"
         title: "Unvan"
-        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı. Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
 
       - company: "Örnek Şirket"
         person: "Ad Soyad"
