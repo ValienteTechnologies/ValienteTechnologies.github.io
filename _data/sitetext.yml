@@ -16,7 +16,7 @@ tr: &DEFAULT_TR
         desc: "Kurumsal ağ, sistem ve altyapıdaki açıkları belirlemek için <strong>OSSTMM, OWASP</strong> ve <strong>PTES</strong> metodolojileriyle gerçekleştirilen kapsamlı güvenlik kontrolleri ve risk analizleri."
         icon: fas fa-user-secret
       - title: "Red Teaming"
-        desc: "<strong>Sızma testleri</strong> (OSSTMM, OWASP, PTES ve ISSAF metodolojilerine uygun şekilde), DDoS, kaynak kod analizi, web ve mobil <strong>uygulama güvenliği</strong>, sosyal mühendislik ve tehdit istihbaratı hizmetleri"
+        desc: "Gerçek dünya saldırı senaryolarını simüle ederek kurumun <strong>tespit ve müdahale kapasitesini</strong> ölçen, çok katmanlı ve hedef odaklı proaktif güvenlik operasyonları."
         icon: fas fa-crosshairs
       - title: "Uygulama Güvenliği"
         desc: "<strong>NIST</strong>, <strong>ISO 27001</strong> ve <strong>ISO 27701</strong> gibi standartlara göre değerlendirmeler ile yasal ve sektörel uyumluluk denetimleri ve eğitimleri"
