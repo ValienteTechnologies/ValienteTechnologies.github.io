@@ -8,16 +8,10 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
 
 .services-section {
   position: relative;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-block: var(--space-section-y);
   color: rgba(252, 253, 255, 0.95);
   overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  @include full-viewport-section;
 
   .section-heading {
     color: #f5f7ff;
@@ -64,11 +58,11 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
 
 .service-card {
   position: relative;
-  padding: 2.25rem;
-  border-radius: 1.5rem;
+  padding: var(--space-card-padding-lg);
+  border-radius: var(--radius-card-lg);
   background: rgba($valiente-midnight, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 45px rgba($valiente-midnight, 0.65);
+  box-shadow: var(--shadow-elevated);
   overflow: hidden;
   transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease,
     background 200ms ease;
@@ -142,8 +136,7 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
 
 @media (max-width: 575px) {
   .services-section {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding-block: var(--space-section-y-sm);
   }
 
   .service-card {

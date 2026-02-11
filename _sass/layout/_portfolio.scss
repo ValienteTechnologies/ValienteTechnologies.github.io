@@ -3,12 +3,7 @@
   position: relative;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.92);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  @include full-viewport-section;
   background:
     radial-gradient(circle at 18% 20%, rgba($valiente-magenta, 0.2), transparent 55%),
     radial-gradient(circle at 85% 0%, rgba($valiente-rose, 0.18), transparent 45%),
@@ -38,15 +33,13 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border-radius: 1.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  @include surface-card($radius-card-lg);
   padding: 1.5rem;
   width: 100%;
   text-decoration: none;
   color: inherit;
   background: rgba($valiente-midnight, 0.85);
-  box-shadow: 0 25px 55px rgba(5, 4, 20, 0.55);
-  backdrop-filter: blur(12px);
+  @include backdrop-blur(12px);
   transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 
   &:hover,

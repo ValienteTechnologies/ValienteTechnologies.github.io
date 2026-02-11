@@ -1,6 +1,8 @@
-// Variables
+// Design system variables (SCSS layer)
+// Use these for theme-able values. Runtime overrides should use the
+// matching CSS custom properties defined in `_page.scss`.
 
-// Restated Bootstrap Variables
+// Grays (Bootstrap-compatible scale)
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -10,3 +12,16 @@ $gray-600: #868e96 !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
+
+// Layout scale
+$space-section-y: 6rem !default;
+$space-section-y-sm: 4.5rem !default;
+$space-card-padding-lg: 2.25rem !default;
+
+// Radius scale
+$radius-card-lg: 1.5rem !default;
+$radius-card-md: 1.25rem !default;
+
+// Elevation (does not depend on theme palette so it can be used safely
+// before brand colors are defined in `agency.scss`)
+$shadow-elevated: 0 20px 45px rgba(0, 0, 0, 0.65) !default;

@@ -1,4 +1,34 @@
 // Global styling for this template
+
+// Design tokens exposed as CSS custom properties so that
+// spacing, colors and typography have a single source of truth.
+:root {
+  /* Colors */
+  --color-primary: #{$primary};
+  --color-page-bg: #{$valiente-midnight};
+  --color-page-surface: #{$valiente-ink};
+  --color-text-on-dark: rgba(255, 255, 255, 0.9);
+  --color-text-muted-on-dark: rgba(255, 255, 255, 0.75);
+
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading: "Montserrat", var(--font-body);
+
+  /* Layout & spacing */
+  --space-section-y: 6rem;
+  --space-section-y-sm: 4.5rem;
+  --space-card-padding-lg: 2.25rem;
+
+  /* Radii */
+  --radius-card-lg: 1.5rem;
+  --radius-card-md: 1.25rem;
+
+  /* Shadows */
+  --shadow-elevated: 0 20px 45px rgba(#{$valiente-midnight}, 0.65);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
@@ -81,7 +111,7 @@ h6 {
 }
 
 .page-section {
-  padding: 100px 0;
+  padding-block: var(--space-section-y);
   h2.section-heading {
     font-size: 40px;
     margin-top: 0;

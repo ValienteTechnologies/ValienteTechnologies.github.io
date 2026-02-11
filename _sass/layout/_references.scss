@@ -2,14 +2,9 @@
 .references-section {
   position: relative;
   overflow: hidden;
-  color: rgba(255, 255, 255, 0.9);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  color: var(--color-text-on-dark);
+  @include full-viewport-section;
   align-items: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
   background:
     radial-gradient(circle at 20% 20%, rgba($valiente-magenta, 0.18), transparent 55%),
     radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.15), transparent 45%),
@@ -49,10 +44,8 @@
   position: relative;
   width: 100%;
   padding: 1.75rem 1.5rem;
-  border-radius: 1.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  @include surface-card($radius-card-md);
   background: rgba($valiente-midnight, 0.8);
-  box-shadow: 0 18px 45px rgba(10, 5, 25, 0.55);
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -61,7 +54,7 @@
   align-items: center;
   gap: 1rem;
   overflow: hidden;
-  backdrop-filter: blur(10px);
+  @include backdrop-blur(10px);
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 
   &:hover,

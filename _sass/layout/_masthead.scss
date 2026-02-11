@@ -4,13 +4,8 @@ header.masthead {
   color: white;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include full-viewport-section;
   align-items: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
   
   // Mesh network canvas
   .mesh-network-canvas {

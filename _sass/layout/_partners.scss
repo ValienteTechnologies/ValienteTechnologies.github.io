@@ -1,12 +1,7 @@
 // Styling for the partners section
 section#partners {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  @include full-viewport-section;
   background: radial-gradient(circle at 15% 20%, rgba($valiente-magenta, 0.15), transparent 55%),
               radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.12), transparent 45%),
               linear-gradient(135deg, darken($valiente-midnight, 4%), $valiente-ink);
@@ -25,16 +20,14 @@ section#partners {
 
 .partner-card {
   background: rgba($valiente-midnight, 0.8);
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 60px rgba(5, 6, 20, 0.55);
+  @include surface-card($radius-card-lg);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  backdrop-filter: blur(12px);
+  @include backdrop-blur(12px);
   
   &:hover {
     transform: translateY(-10px) scale(1.01);

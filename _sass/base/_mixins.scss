@@ -4,18 +4,44 @@
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 @mixin script-font {
   font-family: "Kaushan Script", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 @mixin body-font {
   font-family: /*'Roboto Slab',*/ -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 @mixin heading-font {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+// Layout & section mixins
+// Ensures a consistent, full‑viewport section layout with snap scrolling.
+@mixin full-viewport-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+// Glassy surface card with shared border + shadow.
+@mixin surface-card($radius: $radius-card-lg) {
+  border-radius: $radius;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: $shadow-elevated;
+}
+
+// Shared backdrop blur utility.
+@mixin backdrop-blur($amount: 12px) {
+  backdrop-filter: blur($amount);
 }
