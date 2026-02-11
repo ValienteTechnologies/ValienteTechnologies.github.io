@@ -9,7 +9,7 @@ tr: &DEFAULT_TR
 
   services:
     title: "Hizmetlerimiz"
-    text: "İşletmenizi güvenli, ölçeklenebilir ve geleceğe hazır tutmak için özelleştirilmiş BT çözümleri."
+    text: "Şirketinizin siber güvenlik duruşunu güçlendirmek için optimize edilmiş profesyonel çözümler."
     section: services
     list:
       - title: "Sızma Testleri"
