@@ -12,11 +12,11 @@
 
 
   .section-heading {
-    color: #fff;
+    color: var(--color-text-on-dark);
   }
 
   .section-subheading {
-    color: rgba(255, 255, 255, 0.75) !important;
+    color: var(--color-text-muted-on-dark) !important;
   }
 }
 

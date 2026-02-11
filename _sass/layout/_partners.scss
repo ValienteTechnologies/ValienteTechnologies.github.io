@@ -10,11 +10,11 @@ section#partners {
 
 
   .section-heading {
-    color: #fff;
+    color: var(--color-text-on-dark);
   }
 
   .section-subheading {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: var(--color-text-muted-on-dark) !important;
   }
 }
 
@@ -107,7 +107,7 @@ section#partners {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 0.75rem;
-      color: #fff;
+      color: var(--color-text-on-dark);
       @include heading-font;
     }
     

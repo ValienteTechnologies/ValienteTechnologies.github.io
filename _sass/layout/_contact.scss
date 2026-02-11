@@ -7,7 +7,7 @@
   @include full-viewport-section;
 
   .section-heading {
-    color: #fff;
+    color: var(--color-text-on-dark);
   }
 
   .contact-gradient {
@@ -126,7 +126,7 @@
       .value {
         margin: 0;
         font-weight: 600;
-        color: #fff;
+        color: var(--color-text-on-dark);
       }
 
       &:hover {
@@ -159,7 +159,7 @@
       padding: 0.35rem 0.9rem;
       border-radius: 999px;
       background: rgba($primary, 0.2);
-      color: #fff;
+      color: var(--color-text-on-dark);
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -190,7 +190,7 @@
     border-radius: 0.9rem;
     border: 1px solid rgba(255, 255, 255, 0.18);
     background: rgba(255, 255, 255, 0.08);
-    color: #fff;
+    color: var(--color-text-on-dark);
     transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
 
     &:focus {
@@ -261,7 +261,7 @@
     }
 
     &.is-loading {
-      color: #fff;
+      color: var(--color-text-on-dark);
       pointer-events: none;
       background: linear-gradient(120deg, lighten($primary, 5%), $primary);
       
@@ -271,8 +271,12 @@
     }
 
     &.is-success {
-      background: linear-gradient(120deg, #2ed19c, #20b883);
-      box-shadow: 0 20px 35px rgba(#20b883, 0.35);
+      background: linear-gradient(
+        120deg,
+        lighten($primary, 18%),
+        lighten($primary, 10%)
+      );
+      box-shadow: 0 20px 35px rgba(lighten($primary, 10%), 0.35);
       
       i {
         animation: contact-icon-pop 400ms ease;
@@ -280,8 +284,12 @@
     }
 
     &.is-error {
-      background: linear-gradient(120deg, #ff6b6b, #f74b7d);
-      box-shadow: 0 20px 35px rgba(#f74b7d, 0.35);
+      background: linear-gradient(
+        120deg,
+        lighten($valiente-rose, 4%),
+        $valiente-rose
+      );
+      box-shadow: 0 20px 35px rgba($valiente-rose, 0.35);
       
       i {
         animation: contact-icon-shake 500ms ease;
@@ -289,8 +297,12 @@
     }
 
     &.is-validation-error {
-      background: linear-gradient(120deg, #ff9f43, #ff8c00);
-      box-shadow: 0 20px 35px rgba(#ff8c00, 0.35);
+      background: linear-gradient(
+        120deg,
+        lighten($primary, 16%),
+        lighten($primary, 8%)
+      );
+      box-shadow: 0 20px 35px rgba(lighten($primary, 8%), 0.35);
       
       i {
         animation: contact-icon-bounce 600ms ease;
@@ -303,8 +315,8 @@
   }
 
   .form-control.contact-field-error {
-    border-color: rgba(#ff6b6b, 0.85);
-    box-shadow: 0 0 0 3px rgba(#ff6b6b, 0.35);
+    border-color: rgba($valiente-rose, 0.85);
+    box-shadow: 0 0 0 3px rgba($valiente-rose, 0.35);
     background: rgba(255, 255, 255, 0.05);
     animation: contact-field-shake 450ms ease;
   }
