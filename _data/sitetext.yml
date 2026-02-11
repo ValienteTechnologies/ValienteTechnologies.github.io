@@ -29,7 +29,7 @@ tr: &DEFAULT_TR
         icon: fas fa-cloud
 
       - title: "Son Kullanıcı Testleri"
-        desc: "Tehdit tespiti ve hızlı olay müdahalesi ile gelişen siber tehditlere karşı savunma ve siber güvenlik danışmanlığı"
+        desc: "Kurumunuza özel <strong>Phishing (Oltalama) simülasyonları</strong> ve sosyal mühendislik senaryoları ile çalışan farkındalığını ölçen ve insan odaklı riskleri minimize eden analizler."
         icon: fas fa-user-shield
 
       - title: "Uyumluluk ve Denetim"
