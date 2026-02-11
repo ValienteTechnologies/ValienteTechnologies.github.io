@@ -12,24 +12,24 @@ tr: &DEFAULT_TR
     text: "İşletmenizi güvenli, ölçeklenebilir ve geleceğe hazır tutmak için özelleştirilmiş BT çözümleri."
     section: services
     list:
-      - title: "Bilgi Teknolojileri "
+      - title: "Sızma Testleri"
         desc: "Kurumsal verimliliği artırmak için modern BT mimarileri, altyapı planlama, sistem entegrasyonu ile uçtan uca teknoloji desteği"
-        icon: fas fa-cogs
-      - title: "Siber Güvenlik"
+        icon: fas fa-user-secret
+      - title: "Red Teaming"
         desc: "<strong>Sızma testleri</strong> (OSSTMM, OWASP, PTES ve ISSAF metodolojilerine uygun şekilde), DDoS, kaynak kod analizi, web ve mobil <strong>uygulama güvenliği</strong>, sosyal mühendislik ve tehdit istihbaratı hizmetleri"
-        icon: fas fa-shield-alt
-      - title: "Uyumluluk Denetimi"
+        icon: fas fa-crosshairs
+      - title: "Uygulama Güvenliği"
         desc: "<strong>NIST</strong>, <strong>ISO 27001</strong> ve <strong>ISO 27701</strong> gibi standartlara göre değerlendirmeler ile yasal ve sektörel uyumluluk denetimleri ve eğitimleri"
-        icon: fas fa-file-contract
-      - title: "Yönetilen BT (MSP)"
-        desc: "Altyapınızı verimli çalışır halde tutmak ve kesinti süresini en aza indirmek için proaktif izleme, bakım, destek ve yönetim"
         icon: fas fa-code
-      - title: "Yönetilen Güvenlik (MSSP)"
-        desc: "Tehdit tespiti ve hızlı olay müdahalesi ile gelişen siber tehditlere karşı savunma ve siber güvenlik danışmanlığı"
-        icon: fas fa-building
-      - title: "Bulut Çözümleri"
-        desc: "Esneklik, büyüme ve iş sürekliliği için özelleştirilmiş, ölçeklenebilir ve güvenli bulut altyapısı, barındırma ve <strong>fidye yazılımlara karşı yedekleme çözümleri</strong>"
+      - title: "Bulut Güvenliği"
+        desc: "Altyapınızı verimli çalışır halde tutmak ve kesinti süresini en aza indirmek için proaktif izleme, bakım, destek ve yönetim"
         icon: fas fa-cloud
+      - title: "Son Kullanıcı Testleri"
+        desc: "Tehdit tespiti ve hızlı olay müdahalesi ile gelişen siber tehditlere karşı savunma ve siber güvenlik danışmanlığı"
+        icon: fas fa-user-shield
+      - title: "Uyumluluk ve Denetim"
+        desc: "Esneklik, büyüme ve iş sürekliliği için özelleştirilmiş, ölçeklenebilir ve güvenli bulut altyapısı, barındırma ve <strong>fidye yazılımlara karşı yedekleme çözümleri</strong>"
+        icon: fas fa-clipboard-check
 
   portfolio:
     title: "Broşürlerimiz"
