@@ -8,7 +8,6 @@ tr: &DEFAULT_TR
     buttonlink: "#services"
 
   services:
-    eyebrow: "Profesyonel"
     title: "Hizmetlerimiz"
     text: "İşletmenizi güvenli, ölçeklenebilir ve geleceğe hazır tutmak için özelleştirilmiş BT çözümleri."
     section: services
@@ -114,7 +113,6 @@ tr: &DEFAULT_TR
         logo: /assets/img/clients/tsk.png
 
   contact:
-    eyebrow: "Erişilebilir"
     title: "İletişime Geçin"
     text: "İşletmenize nasıl destek olabileceğimizi konuşalım."
     section: contact
