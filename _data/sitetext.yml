@@ -33,7 +33,7 @@ tr: &DEFAULT_TR
         icon: fas fa-user-shield
 
       - title: "Uyumluluk ve Denetim"
-        desc: "Esneklik, büyüme ve iş sürekliliği için özelleştirilmiş, ölçeklenebilir ve güvenli bulut altyapısı, barındırma ve <strong>fidye yazılımlara karşı yedekleme çözümleri</strong>"
+        desc: "<strong>KVKK, GDPR, ISO 27001</strong> ve <strong>NIST</strong> standartlarına uyum süreçlerinde profesyonel danışmanlık, boşluk analizi ve kurumsal farkındalık eğitimleri."
         icon: fas fa-clipboard-check
 
   portfolio:
