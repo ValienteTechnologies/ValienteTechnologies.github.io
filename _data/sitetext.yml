@@ -139,10 +139,10 @@ tr: &DEFAULT_TR
     text: "Sunduğumuz hizmetler hakkında müşterilerimizin görüşleri."
     section: testimonials
     list:
-      - company: "Örnek Şirket"
-        person: "Ad Soyad"
-        title: "Unvan"
-        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı. Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+      - company: "Enelsa Endüstriyel Elektronik"
+        person: "Ahmet Ulaş Polat"
+        title: "IT Manager"
+        quote: "Operasyonumuzu aksatmadan, networkü yormadan titizlikle çalıştılar. Teknik derinlikleri ve raporlama sonrası verdikleri destekle kaliteli bir iş çıkardılar."
 
       - company: "Örnek Şirket"
         person: "Ad Soyad"
