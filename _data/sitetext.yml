@@ -13,7 +13,7 @@ tr: &DEFAULT_TR
     section: services
     list:
       - title: "Sızma Testleri"
-        desc: "Kurumsal verimliliği artırmak için modern BT mimarileri, altyapı planlama, sistem entegrasyonu ile uçtan uca teknoloji desteği"
+        desc: "Kurumsal ağ, sistem ve altyapıdaki açıkları belirlemek için <strong>OSSTMM, OWASP</strong> ve <strong>PTES</strong> metodolojileriyle gerçekleştirilen kapsamlı güvenlik kontrolleri ve risk analizleri."
         icon: fas fa-user-secret
       - title: "Red Teaming"
         desc: "<strong>Sızma testleri</strong> (OSSTMM, OWASP, PTES ve ISSAF metodolojilerine uygun şekilde), DDoS, kaynak kod analizi, web ve mobil <strong>uygulama güvenliği</strong>, sosyal mühendislik ve tehdit istihbaratı hizmetleri"
