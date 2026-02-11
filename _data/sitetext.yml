@@ -134,6 +134,21 @@ tr: &DEFAULT_TR
         url: https://www.tsk.tr/
         logo: /assets/img/clients/tsk.png
 
+  testimonials:
+    title: "Müşteri Görüşleri"
+    text: "Sunduğumuz hizmetler hakkında iş ortaklarımızın görüşleri."
+    section: testimonials
+    list:
+      - company: "Örnek Şirket"
+        person: "Ad Soyad"
+        title: "Unvan"
+        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+
+      - company: "Örnek Şirket"
+        person: "Ad Soyad"
+        title: "Unvan"
+        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+
   contact:
     title: "İletişime Geçin"
     text: "İşletmenize nasıl destek olabileceğimizi konuşalım."
