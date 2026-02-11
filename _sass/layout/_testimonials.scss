@@ -35,7 +35,7 @@
   }
 
   .carousel-indicators {
-    bottom: 0;
+    bottom: -1rem; // Nudge indicators slightly below the carousel content
 
     li {
       width: 11px;
@@ -210,7 +210,7 @@
   }
 
   .testimonials-carousel .carousel-indicators {
-    bottom: 0.2rem;
+    bottom: -0.4rem; // Slightly below on small screens as well
   }
 }
 
