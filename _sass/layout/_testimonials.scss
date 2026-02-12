@@ -23,8 +23,8 @@
 
 .testimonials-carousel {
   position: relative;
-  margin-top: 3rem;
-  padding-bottom: 2.75rem;
+  margin-top: calc($space-grid-margin + 0.5rem);
+  padding-bottom: calc($space-grid-margin + 0.25rem);
 
   .carousel-inner {
     position: relative;
@@ -69,9 +69,9 @@
 .testimonial-card {
   position: relative;
   @include surface-card($radius-card-lg);
-  padding: calc(var(--space-card-padding-lg) + 0.25rem) var(--space-card-padding-lg) var(--space-card-padding-lg);
+  padding: calc(var(--space-card-padding-lg) + #{$space-gap-xs}) var(--space-card-padding-lg) var(--space-card-padding-lg);
   background: rgba($valiente-midnight, 0.86);
-  border: 1px solid rgba(255, 255, 255, 0.1); // Keep border subtle
+  border: 1px solid $border-surface;
   @include backdrop-blur(16px);
   box-shadow: 0 18px 45px rgba(6, 3, 20, 0.65);
   overflow: hidden;
@@ -123,7 +123,7 @@
 
 .testimonial-quote {
   position: relative;
-  font-size: 1.1rem;
+  font-size: var(--font-size-xl);
   line-height: 1.75;
   letter-spacing: 0.01em;
   font-weight: 400;
@@ -161,11 +161,11 @@
 }
 
 .testimonial-meta {
-  margin-top: 1.75rem;
+  margin-top: calc($space-grid-margin - 0.75rem);
 }
 
 .testimonial-company {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
@@ -173,7 +173,7 @@
 }
 
 .testimonial-person {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: rgba(220, 225, 245, 0.92) !important;
 
   strong {
@@ -181,27 +181,27 @@
   }
 }
 
-@media (max-width: 767px) {
+@include media-max($breakpoint-md - 1px) {
   .testimonials-section {
     padding-block: var(--space-section-y-sm);
   }
 
   .testimonial-card {
-    padding: 1.75rem 1.5rem 1.6rem;
+    padding: calc($space-grid-margin - 0.75rem) var(--space-gap-xl) calc($space-grid-margin - 0.9rem);
     margin-inline: -0.25rem;
     box-shadow: 0 18px 50px rgba(6, 3, 20, 0.7);
     animation: none;
   }
 
   .testimonial-quote {
-    font-size: 0.98rem;
+    font-size: var(--font-size-base);
     line-height: 1.7;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
   }
 
   .testimonials-carousel {
-    margin-top: 2.25rem;
-    padding-bottom: 2.1rem;
+    margin-top: calc($space-grid-margin - 0.25rem);
+    padding-bottom: calc($space-grid-margin - 0.4rem);
   }
 
   .testimonials-carousel .carousel-control-prev,

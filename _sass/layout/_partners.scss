@@ -1,6 +1,7 @@
 // Styling for the partners section
 section#partners {
   position: relative;
+  padding-block: var(--space-section-y);
   @include full-viewport-section;
   color: var(--color-text-on-dark);
   overflow: hidden;
@@ -22,7 +23,7 @@ section#partners {
   @include surface-card($radius-card-lg);
   overflow: hidden;
   height: 100%;
-  min-height: 200px;
+  min-height: 12.5rem;
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -95,20 +96,20 @@ section#partners {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: calc(var(--space-card-padding-lg) * 0.5);
+    padding: calc(var(--space-card-padding-lg) * #{$space-card-padding-panel});
   }
 
   .partner-card__header {
     display: flex;
     align-items: flex-start;
     padding: 0;
-    margin-bottom: 0.6rem;
+    margin-bottom: $space-gap-md;
   }
 
   .partner-card__title {
-    font-size: 1.05rem;
+    font-size: var(--font-size-lg);
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: $letter-spacing-label;
     text-transform: uppercase;
     margin: 0;
     line-height: 1.2;
@@ -126,7 +127,7 @@ section#partners {
   }
 
   .partner-card__desc {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: 0.01em;
@@ -141,36 +142,35 @@ section#partners {
   }
 }
 
-// Responsive adjustments
-@media (max-width: 767px) {
+@include media-max($breakpoint-md - 1px) {
   .partner-card {
-    min-height: 180px;
+    min-height: 11.25rem;
 
     .partner-card__content {
-      padding: calc(var(--space-card-padding-lg) * 0.4);
+      padding: calc(var(--space-card-padding-lg) * #{$space-card-padding-sm});
     }
 
     .partner-card__title {
-      font-size: 0.95rem;
-      letter-spacing: 0.06em;
+      font-size: var(--font-size-base);
+      letter-spacing: $letter-spacing-tight;
     }
 
     .partner-card__desc {
-      font-size: 0.85rem;
+      font-size: var(--font-size-sm);
     }
   }
 }
 
-@media (min-width: 992px) {
+@include media-min($breakpoint-lg) {
   .partner-card {
-    min-height: 220px;
+    min-height: 13.75rem;
 
     .partner-card__content {
-      padding: calc(var(--space-card-padding-lg) * 0.55);
+      padding: calc(var(--space-card-padding-lg) * #{$space-card-padding-panel});
     }
 
     .partner-card__title {
-      font-size: 1.1rem;
+      font-size: var(--font-size-xl);
     }
   }
 }

@@ -31,18 +31,18 @@
 }
 
 .references-grid {
-  margin-top: 2.5rem;
-  row-gap: 1.75rem;
+  margin-top: $space-grid-margin;
+  row-gap: var(--space-gap-xl);
   position: relative;
   z-index: 1;
 }
 
 #scrolling-clients.references-grid {
   flex-wrap: nowrap;
-  gap: 1.25rem;
+  gap: var(--space-gap-lg);
 
   .reference-item {
-    min-width: 240px;
+    min-width: calc(var(--form-field-min-width) + 20px);
   }
 }
 
@@ -53,7 +53,7 @@
 .reference-card {
   position: relative;
   width: 100%;
-  padding: 1.75rem 1.5rem;
+  padding: calc(var(--space-card-padding-lg) * 0.78) var(--space-gap-xl);
   @include surface-card($radius-card-md);
   background: rgba($valiente-midnight, 0.8);
   text-align: center;
@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-gap);
   overflow: hidden;
   @include backdrop-blur(10px);
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
@@ -99,7 +99,7 @@
 
 .reference-card__logo {
   width: 100%;
-  height: 110px;
+  height: 6.875rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,27 +113,26 @@
 }
 
 .reference-card__name {
-  // hide the name
-  display: none; 
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  display: none;
+  font-size: var(--font-size-base);
+  letter-spacing: $letter-spacing-label;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   @include heading-font;
 }
 
-@media (max-width: 575px) {
+@include media-max($breakpoint-sm - 1px) {
   .reference-card {
-    padding: 1.5rem 1.25rem;
+    padding: var(--space-gap-xl) var(--space-gap-lg);
   }
 
   .reference-card__logo {
-    height: 90px;
+    height: 5.625rem;
   }
 
   .reference-card__name {
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
+    font-size: var(--font-size-sm);
+    letter-spacing: $letter-spacing-tight;
   }
 }
 

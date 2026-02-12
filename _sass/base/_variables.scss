@@ -24,9 +24,48 @@ $space-section-y: 6rem !default;
 $space-section-y-sm: 4.5rem !default;
 $space-card-padding-lg: 2.25rem !default;
 
+// Gap scale (consistent across sections)
+$space-gap-xs: 0.35rem !default;
+$space-gap-sm: 0.5rem !default;
+$space-gap-md: 0.75rem !default;
+$space-gap: 1rem !default;
+$space-gap-lg: 1.25rem !default;
+$space-gap-xl: 1.5rem !default;
+
+// Grid/content spacing
+$space-grid-margin: 2.5rem !default;
+$space-card-padding-sm: 0.4 !default; // multiplier of --space-card-padding-lg
+$space-card-padding-md: 0.45 !default;
+$space-card-padding-panel: 0.55 !default;
+
+// Typography scale
+$font-size-xs: 0.8rem !default;
+$font-size-sm: 0.85rem !default;
+$font-size-base: 0.95rem !default;
+$font-size-md: 1rem !default;
+$font-size-lg: 1.05rem !default;
+$font-size-xl: 1.1rem !default;
+$letter-spacing-label: 0.08em !default;
+$letter-spacing-tight: 0.06em !default;
+
+// Icon sizes
+$icon-size-sm: 34px !default;
+$icon-size-md: 42px !default;
+
 // Radius scale
 $radius-card-lg: 1.5rem !default;
 $radius-card-md: 1.25rem !default;
+$radius-input: 0.9rem !default;
+
+// Form
+$textarea-min-height: 8rem !default;
+$form-field-min-width: 220px !default;
+
+// Surface/border (for dark theme cards)
+$border-surface: rgba(255, 255, 255, 0.12) !default;
+$border-surface-muted: rgba(255, 255, 255, 0.18) !default;
+$surface-subtle: rgba(255, 255, 255, 0.05) !default;
+$surface-input: rgba(255, 255, 255, 0.08) !default;
 
 // Elevation (does not depend on theme palette so it can be used safely
 // before brand colors are defined in `agency.scss`)
