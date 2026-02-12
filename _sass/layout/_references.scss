@@ -18,6 +18,16 @@
   .section-subheading {
     color: var(--color-text-muted-on-dark) !important;
   }
+
+  .btn {
+    box-shadow: 0 15px 35px rgba($primary, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 45px rgba($primary, 0.45);
+    }
+  }
 }
 
 .references-grid {
