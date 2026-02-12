@@ -146,20 +146,15 @@ tr: &DEFAULT_TR
         title: "IT Manager"
         quote: "Operasyonumuzu aksatmadan, networkü yormadan titizlikle çalıştılar. Teknik derinlikleri ve raporlama sonrası verdikleri destek ile kaliteli bir iş çıkardılar."
 
-      - company: "test1"
-        person: "Ad Soyad"
-        title: "Unvan"
-        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+      - company: "CENAL Elektrik Üretim"
+        person: "Mehmet Akif Karahan"
+        title: "IT Specialist"
+        quote: "Quos consequuntur et pariatur et. Aut qui quia exercitationem ut ut officia repellendus eum. Nisi nemo neque magnam sint alias provident laudantium minima"
 
-      - company: "test2"
-        person: "Ad Soyad"
-        title: "Unvan"
-        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
-
-      - company: "Örnektest3"
-        person: "Ad Soyad"
-        title: "Unvan"
-        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+      - company: "Megasaray Hotels"
+        person: "Şükrü Kavurmacı"
+        title: "Group IT Manager"
+        quote: "A quaerat ea doloribus ut iure unde. Illo quia ut officia natus quis quaerat. Dolore nihil eum aliquam rerum possimus consequatur nulla. Labore voluptatem hic sit"
 
   contact:
     title: "İletişime Geçin"
