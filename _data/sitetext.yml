@@ -59,7 +59,7 @@ tr: &DEFAULT_TR
       - title: "Sigmacert Global"
         desc: "Sigmacert Global, denetim ve sertifikasyon hizmetleri sunan ve ISO standartları eğitimleri veren bir şirkettir."
         image: /assets/img/partners/sigmacert.png
-      - title: "Uzman Bilgi Teknolojileri"
+      - title: "Uzman Bilişim"
         desc: "Uzman Bilgi Teknolojileri, işletmenizin tüm sunucu, ağ ve donanım altyapısını yöneten bir firmadır."
         image: /assets/img/partners/uzman.png
       - title: "Biga Bilişim"
@@ -71,6 +71,8 @@ tr: &DEFAULT_TR
     title: "Referanslarımız"
     text: "Güvenilir çözümlerimizle hizmet verdiğimiz değerli müşterilerimiz."
     section: references
+    testimonials-button: "Geri Bildirimler"
+    testimonials-buttonlink: "#testimonials"
     max-height: 100px
     horizontal-scrolling: "yes"
     list:
@@ -144,7 +146,17 @@ tr: &DEFAULT_TR
         title: "IT Manager"
         quote: "Operasyonumuzu aksatmadan, networkü yormadan titizlikle çalıştılar. Teknik derinlikleri ve raporlama sonrası verdikleri destek ile kaliteli bir iş çıkardılar."
 
-      - company: "Örnek Şirket"
+      - company: "test1"
+        person: "Ad Soyad"
+        title: "Unvan"
+        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+
+      - company: "test2"
+        person: "Ad Soyad"
+        title: "Unvan"
+        quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
+
+      - company: "Örnektest3"
         person: "Ad Soyad"
         title: "Unvan"
         quote: "Valiente Technologies ile çalışmak, güvenlik duruşumuzu bir üst seviyeye taşıdı."
