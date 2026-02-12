@@ -45,11 +45,11 @@ body {
 .site-content {
   flex: 1 0 auto;
   width: 100%;
-  scroll-snap-align: start;
 }
 
 #pagecontainer {
   scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 footer {
