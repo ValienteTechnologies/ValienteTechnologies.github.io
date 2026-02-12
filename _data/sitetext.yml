@@ -149,12 +149,12 @@ tr: &DEFAULT_TR
       - company: "CENAL Elektrik Üretim"
         person: "Mehmet Akif Karahan"
         title: "IT Specialist"
-        quote: "Quos consequuntur et pariatur et. Aut qui quia exercitationem ut ut officia repellendus eum. Nisi nemo neque magnam sint alias provident laudantium minima"
+        quote: "Gerçek bir saldırı senaryosu istedik ve memnun kaldık. Açıklarımızı görmemizi sağlayan, teknik derinliği yüksek ve profesyonel bir kadro."
 
       - company: "Megasaray Hotels"
         person: "Şükrü Kavurmacı"
         title: "Group IT Manager"
-        quote: "A quaerat ea doloribus ut iure unde. Illo quia ut officia natus quis quaerat. Dolore nihil eum aliquam rerum possimus consequatur nulla. Labore voluptatem hic sit"
+        quote: "ISO 27001 sürecinde eksiklikleri da görmek adına birlikte çalıştık. Çok yönlü kapsamlı testler yaptılar ve birçok kritik zafiyeti kapatmamıza yardımcı oldular."
 
   contact:
     title: "İletişime Geçin"
