@@ -54,13 +54,16 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* mobile-first: 1 column by default */
     gap: 1.25rem;
+    width: 100%;
+    min-width: 0;
   }
 }
 
 .service-card {
   position: relative;
+  min-width: 0;
   padding: calc(var(--space-card-padding-lg) * 0.45) calc(var(--space-card-padding-lg) * 0.5);
   @include surface-card($radius-card-lg);
   background: rgba($valiente-midnight, 0.88);
@@ -122,14 +125,14 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
 }
 
 .service-card__body {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   flex-grow: 1;
 }
 
 .service-card__desc {
   color: var(--color-text-muted-on-dark);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.55;
   margin: 0;
 
   p {
@@ -160,19 +163,15 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
   opacity: 1;
 }
 
-@media (max-width: 991px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+@include media-min($breakpoint-md) {
+  .services-section .services-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 575px) {
+@include media-max($breakpoint-sm - 1px) {
   .services-section {
     padding-block: var(--space-section-y-sm);
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
   }
 
   .service-card {

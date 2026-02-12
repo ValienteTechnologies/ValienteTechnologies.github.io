@@ -45,3 +45,16 @@
 @mixin backdrop-blur($amount: 12px) {
   backdrop-filter: blur($amount);
 }
+
+// Breakpoint mixins – use variables instead of raw pixels.
+@mixin media-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
