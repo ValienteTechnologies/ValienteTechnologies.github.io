@@ -21,18 +21,20 @@
     <div class="services-grid">
       {% for service in services.list %}
       <article class="service-card">
-        <div class="service-card__icon">
-          <span class="fa-stack">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
-          </span>
+        <div class="service-card__header">
+          <h3 class="service-card__title">{{ service.title | markdownify | strip_html }}</h3>
+          <div class="service-card__icon">
+            <span class="fa-stack">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
         </div>
+        {% if service.desc %}
         <div class="service-card__body">
-          <h3 class="service-heading">{{ service.title | markdownify | strip_html }}</h3>
-          {% if service.desc %}
           <div class="service-card__desc text-muted">{{ service.desc | markdownify }}</div>
-          {% endif %}
         </div>
+        {% endif %}
         <div class="service-card__shine" aria-hidden="true"></div>
       </article>
       {% endfor %}
