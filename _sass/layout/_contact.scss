@@ -2,7 +2,7 @@
 .contact-section {
   position: relative;
   padding-block: var(--space-section-y);
-  color: rgba(249, 251, 255, 0.95);
+  color: var(--color-text-on-dark);
   overflow: hidden;
   @include full-viewport-section;
 
@@ -25,7 +25,7 @@
     position: relative;
     z-index: 1;
     @include surface-card($radius-card-lg);
-    padding: clamp(1.25rem, calc(0.75rem + 1.5vw), 2rem);
+    padding: clamp(1.25rem, calc(var(--space-card-padding-lg) * 0.55), var(--space-card-padding-lg));
     background: rgba($valiente-midnight, 0.9);
     @include backdrop-blur(18px);
     min-height: 100%;
@@ -62,7 +62,7 @@
   }
 
   .contact-lede {
-    color: rgba(248, 250, 255, 0.9);
+    color: var(--color-text-muted-on-dark);
   }
 
   .contact-panel__content > * {
@@ -71,7 +71,7 @@
 
   .contact-highlights {
     list-style: none;
-    margin: -3rem 0 0 0;
+    margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@
       align-items: center;
       gap: 0.8rem;
       font-size: 0.95rem;
-      color: rgba(252, 253, 255, 0.92);
+      color: var(--color-text-on-dark);
     }
 
     &__icon {
@@ -108,7 +108,7 @@
       align-items: center;
       gap: 0.9rem;
       padding: 0.7rem 1rem;
-      border-radius: 1rem;
+      border-radius: var(--radius-card-md);
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: rgba(255, 255, 255, 0.05);
       text-decoration: none;
@@ -120,7 +120,7 @@
         font-size: 0.8rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.72);
+        color: var(--color-text-muted-on-dark);
       }
 
       .value {
@@ -167,7 +167,7 @@
 
     p {
       margin-top: 0.6rem;
-      color: rgba(255, 255, 255, 0.85);
+      color: var(--color-text-muted-on-dark);
     }
   }
 
@@ -182,7 +182,7 @@
     text-transform: uppercase;
     display: block;
     margin-bottom: 0.35rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-text-muted-on-dark);
   }
 
   .form-control {
