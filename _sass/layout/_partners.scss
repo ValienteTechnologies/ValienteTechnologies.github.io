@@ -2,11 +2,11 @@
 section#partners {
   position: relative;
   @include full-viewport-section;
-  background: radial-gradient(circle at 15% 20%, rgba($valiente-magenta, 0.15), transparent 55%),
-              radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.12), transparent 45%),
-              linear-gradient(135deg, darken($valiente-midnight, 4%), $valiente-ink);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-on-dark);
   overflow: hidden;
+  background: radial-gradient(circle at 15% 20%, rgba($valiente-magenta, 0.18), transparent 55%),
+              radial-gradient(circle at 80% 10%, rgba($valiente-rose, 0.15), transparent 45%),
+              linear-gradient(135deg, darken($valiente-midnight, 4%), $valiente-ink);
 
   .section-heading {
     color: var(--color-text-on-dark);
@@ -18,84 +18,122 @@ section#partners {
 }
 
 .partner-card {
-  background: rgba($valiente-midnight, 0.8);
+  position: relative;
   @include surface-card($radius-card-lg);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   overflow: hidden;
   height: 100%;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  @include backdrop-blur(12px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
 
   &:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 25px 60px rgba(5, 6, 20, 0.7);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 30px 70px rgba(5, 6, 20, 0.75);
     border-color: rgba($valiente-magenta, 0.55);
 
-    .partner-card__logo img {
-      transform: scale(1.05);
-      filter: grayscale(0%);
+    .partner-card__bg img {
+      transform: scale(1.25) rotate(-10deg);
+      filter: grayscale(0%) brightness(0.95);
+      opacity: 0.82;
     }
+
+    .partner-card__overlay {
+      background: linear-gradient(
+        180deg,
+        rgba($valiente-midnight, 0.62) 0%,
+        rgba($valiente-ink, 0.78) 40%,
+        rgba($valiente-midnight, 0.85) 100%
+      );
+    }
+
+  }
+
+  // Background layer – partner logo
+  .partner-card__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: -10%;
+      width: 120%;
+      height: 120%;
+      object-fit: contain;
+      object-position: center;
+      transform-origin: center center;
+      filter: grayscale(10%) brightness(0.68);
+      opacity: 0.72;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  filter 0.5s ease,
+                  opacity 0.5s ease;
+    }
+  }
+
+  // Overlay for text readability (uses existing $valiente-* palette)
+  .partner-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba($valiente-midnight, 0.7) 0%,
+      rgba($valiente-ink, 0.82) 40%,
+      rgba($valiente-midnight, 0.88) 100%
+    );
+    transition: opacity 0.5s ease, background 0.5s ease;
+  }
+
+  // Content layer
+  .partner-card__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: calc(var(--space-card-padding-lg) * 0.5);
   }
 
   .partner-card__header {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.75rem;
-    padding: calc(var(--space-card-padding-lg) * 0.45) calc(var(--space-card-padding-lg) * 0.45) 0;
-    min-height: 0;
-    flex-shrink: 0;
+    padding: 0;
+    margin-bottom: 0.6rem;
   }
 
   .partner-card__title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     margin: 0;
-    padding-right: 0.5rem;
-    line-height: 1.25;
-    color: var(--color-text-on-dark);
+    line-height: 1.2;
+    color: rgba($valiente-rose, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 0 20px rgba($valiente-rose, 0.2);
     @include heading-font;
     flex: 1 1 auto;
     min-width: 0;
   }
 
-  .partner-card__logo {
-    flex-shrink: 0;
-    width: 56px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba($valiente-ink, 0.5), rgba($valiente-magenta, 0.15));
-    border-radius: calc(var(--radius-card-md) * 0.3);
-    padding: 0.35rem;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      transition: transform 0.35s ease, filter 0.35s ease;
-      filter: grayscale(15%) brightness(1.05);
-    }
-  }
-
   .partner-card__body {
-    padding: 0.65rem calc(var(--space-card-padding-lg) * 0.45) calc(var(--space-card-padding-lg) * 0.45);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
   }
 
   .partner-card__desc {
-    color: var(--color-text-muted-on-dark);
-    font-size: 0.875rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
     margin: 0;
     flex-grow: 1;
+    color: var(--color-text-muted-on-dark);
+    @include body-font;
 
     p {
       margin-bottom: 0;
@@ -106,46 +144,33 @@ section#partners {
 // Responsive adjustments
 @media (max-width: 767px) {
   .partner-card {
-    .partner-card__header {
-      padding: calc(var(--space-card-padding-lg) * 0.38) calc(var(--space-card-padding-lg) * 0.38) 0;
+    min-height: 180px;
+
+    .partner-card__content {
+      padding: calc(var(--space-card-padding-lg) * 0.4);
     }
 
     .partner-card__title {
       font-size: 1rem;
-    }
-
-    .partner-card__logo {
-      width: 48px;
-      height: 36px;
-    }
-
-    .partner-card__body {
-      padding: 0.5rem calc(var(--space-card-padding-lg) * 0.38) calc(var(--space-card-padding-lg) * 0.38);
+      letter-spacing: 0.06em;
     }
 
     .partner-card__desc {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
   }
 }
 
 @media (min-width: 992px) {
   .partner-card {
-    .partner-card__header {
-      padding: calc(var(--space-card-padding-lg) * 0.5) calc(var(--space-card-padding-lg) * 0.5) 0;
+    min-height: 220px;
+
+    .partner-card__content {
+      padding: calc(var(--space-card-padding-lg) * 0.55);
     }
 
     .partner-card__title {
-      font-size: 1.15rem;
-    }
-
-    .partner-card__logo {
-      width: 60px;
-      height: 44px;
-    }
-
-    .partner-card__body {
-      padding: 0.75rem calc(var(--space-card-padding-lg) * 0.5) calc(var(--space-card-padding-lg) * 0.5);
+      font-size: 1.2rem;
     }
   }
 }
