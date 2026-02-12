@@ -16,34 +16,34 @@
 
   .section-subheading {
     color: var(--color-text-muted-on-dark) !important;
-    max-width: 640px;
+    max-width: 40rem;
     margin-inline: auto;
   }
 }
 
 .testimonials-carousel {
   position: relative;
-  margin-top: calc($space-grid-margin + 0.5rem);
-  padding-bottom: calc($space-grid-margin + 0.25rem);
+  margin-top: var(--space-gap-lg);
+  padding-bottom: calc(var(--indicator-gap) + var(--space-gap-lg));
 
   .carousel-inner {
     position: relative;
     z-index: 1;
-    min-height: 300px; // Ensure consistent height for varying testimonial lengths
+    min-height: var(--carousel-min-height);
     display: flex;
     align-items: center;
   }
 
   .carousel-indicators {
-    bottom: -1rem; // Nudge indicators slightly below the carousel content
+    bottom: calc(-1 * var(--indicator-gap));
 
     li {
-      width: 11px;
-      height: 11px;
+      width: $indicator-dot-size;
+      height: $indicator-dot-size;
       border-radius: 999px;
       background-color: rgba(255, 255, 255, 0.35);
       border: none;
-      margin: 0 5px;
+      margin: 0 var(--space-gap-sm);
       transition: transform 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
       opacity: 0.7;
 
@@ -69,7 +69,7 @@
 .testimonial-card {
   position: relative;
   @include surface-card($radius-card-lg);
-  padding: calc(var(--space-card-padding-lg) + #{$space-gap-xs}) var(--space-card-padding-lg) var(--space-card-padding-lg);
+  padding: var(--space-card-padding-lg);
   background: rgba($valiente-midnight, 0.86);
   border: 1px solid $border-surface;
   @include backdrop-blur(16px);
@@ -123,6 +123,7 @@
 
 .testimonial-quote {
   position: relative;
+  margin-bottom: 0;
   font-size: var(--font-size-xl);
   line-height: 1.75;
   letter-spacing: 0.01em;
@@ -143,7 +144,7 @@
 
   &::before,
   &::after {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: rgba($valiente-rose, 0.9);
     vertical-align: middle; // Better alignment with text baseline
     line-height: 0;         // Prevent pseudo-elements from affecting line height
@@ -151,17 +152,17 @@
 
   &::before {
     content: open-quote;
-    margin-right: 0.2rem;
+    margin-right: $space-gap-xs;
   }
 
   &::after {
     content: close-quote;
-    margin-left: 0.2rem;
+    margin-left: $space-gap-xs;
   }
 }
 
 .testimonial-meta {
-  margin-top: calc($space-grid-margin - 0.75rem);
+  margin-top: var(--space-gap-md);
 }
 
 .testimonial-company {
@@ -187,8 +188,8 @@
   }
 
   .testimonial-card {
-    padding: calc($space-grid-margin - 0.75rem) var(--space-gap-xl) calc($space-grid-margin - 0.9rem);
-    margin-inline: -0.25rem;
+    padding: var(--space-gap-xl);
+    margin-inline: calc(-1 * $space-gap-xs);
     box-shadow: 0 18px 50px rgba(6, 3, 20, 0.7);
     animation: none;
   }
@@ -200,8 +201,8 @@
   }
 
   .testimonials-carousel {
-    margin-top: calc($space-grid-margin - 0.25rem);
-    padding-bottom: calc($space-grid-margin - 0.4rem);
+    margin-top: var(--space-gap);
+    padding-bottom: calc(var(--indicator-gap) + var(--space-gap));
   }
 
   .testimonials-carousel .carousel-control-prev,
@@ -210,7 +211,7 @@
   }
 
   .testimonials-carousel .carousel-indicators {
-    bottom: -0.4rem; // Slightly below on small screens as well
+    bottom: calc(-1 * var(--space-gap-md));
   }
 }
 

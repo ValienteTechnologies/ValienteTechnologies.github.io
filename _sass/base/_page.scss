@@ -44,6 +44,11 @@
   --textarea-min-height: #{$textarea-min-height};
   --form-field-min-width: #{$form-field-min-width};
 
+  /* Carousel */
+  --carousel-min-height: #{$carousel-min-height};
+  --indicator-gap: #{$indicator-gap};
+  --indicator-dot-size: #{$indicator-dot-size};
+
   /* Shadows */
   --shadow-elevated: 0 20px 45px rgba(#{$valiente-midnight}, 0.65);
 }

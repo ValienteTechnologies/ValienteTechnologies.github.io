@@ -61,6 +61,11 @@ $radius-input: 0.9rem !default;
 $textarea-min-height: 8rem !default;
 $form-field-min-width: 220px !default;
 
+// Carousel (testimonials)
+$carousel-min-height: 18.75rem !default;
+$indicator-gap: 1.5rem !default;
+$indicator-dot-size: 0.6875rem !default;
+
 // Surface/border (for dark theme cards)
 $border-surface: rgba(255, 255, 255, 0.12) !default;
 $border-surface-muted: rgba(255, 255, 255, 0.18) !default;
