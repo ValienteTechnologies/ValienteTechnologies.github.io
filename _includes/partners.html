@@ -12,12 +12,14 @@
         {%- for event in site.data.sitetext[site.locale].partners.events -%}
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="partner-card">
-            <div class="partner-card-image">
-              <img class="img-fluid" src="{{ event.image }}" alt="{{ event.title | default: ""}}">
+            <div class="partner-card__header">
+              <h4 class="partner-card__title">{{ event.title }}</h4>
+              <div class="partner-card__logo">
+                <img class="img-fluid" src="{{ event.image }}" alt="{{ event.title | default: ""}}">
+              </div>
             </div>
-            <div class="partner-card-content">
-              <h4 class="partner-card-title">{{ event.title }}</h4>
-              <p class="partner-card-desc">{{ event.desc | markdownify }}</p>
+            <div class="partner-card__body">
+              <p class="partner-card__desc">{{ event.desc | markdownify }}</p>
             </div>
           </div>
         </div>
@@ -38,12 +40,14 @@
       {%- for event in site.data.sitetext.partners.events -%}
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="partner-card">
-          <div class="partner-card-image">
-            <img class="img-fluid" src="{{ event.image }}" alt="{{ event.title | default: ""}}">
+          <div class="partner-card__header">
+            <h4 class="partner-card__title">{{ event.title }}</h4>
+            <div class="partner-card__logo">
+              <img class="img-fluid" src="{{ event.image }}" alt="{{ event.title | default: ""}}">
+            </div>
           </div>
-          <div class="partner-card-content">
-            <h4 class="partner-card-title">{{ event.title }}</h4>
-            <p class="partner-card-desc">{{ event.desc | markdownify }}</p>
+          <div class="partner-card__body">
+            <p class="partner-card__desc">{{ event.desc | markdownify }}</p>
           </div>
         </div>
       </div>
