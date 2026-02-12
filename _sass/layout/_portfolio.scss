@@ -21,21 +21,40 @@
 
 .portfolio-grid {
   margin-top: $space-grid-margin;
-  row-gap: calc($space-grid-margin - 0.5rem);
+  row-gap: $space-grid-margin;
   position: relative;
   z-index: 1;
+  justify-content: center;
 }
 
 .portfolio-item {
   display: flex;
+  // Computer: 5 columns | Tablet: 3 columns | Mobile: 1 column
+  @include media-min($breakpoint-lg) {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+  @include media-min($breakpoint-md) {
+    @include media-max($breakpoint-lg - 1px) {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+  // Mobile: 1 column, centered
+  @include media-max($breakpoint-md - 1px) {
+    flex: 0 0 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .portfolio-card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-gap-xl);
-  @include surface-card($radius-card-lg);
-  padding: var(--space-gap-xl);
+  gap: var(--space-gap-lg);
+  @include surface-card($radius-card-md);
+  padding: var(--space-gap-lg);
   width: 100%;
   text-decoration: none;
   color: inherit;
@@ -45,7 +64,7 @@
 
   &:hover,
   &:focus-visible {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
     border-color: rgba($valiente-magenta, 0.55);
     box-shadow: 0 35px 70px rgba(5, 4, 20, 0.7);
     text-decoration: none;
@@ -66,7 +85,7 @@
 
 .portfolio-card__media {
   position: relative;
-  border-radius: var(--radius-card-md);
+  border-radius: var(--radius-input);
   overflow: hidden;
 
   img {
@@ -106,12 +125,14 @@
 
   h4 {
     margin: 0;
+    font-size: var(--font-size-md);
     color: var(--color-text-on-dark);
     @include heading-font;
   }
 
   p {
     margin: 0;
+    font-size: var(--font-size-sm);
     color: rgba(255, 255, 255, 0.8);
   }
 }
@@ -212,9 +233,13 @@
 }
 
 @include media-max($breakpoint-md - 1px) {
+  .portfolio-grid {
+    row-gap: calc($space-grid-margin + 0.5rem);
+  }
+
   .portfolio-card {
     padding: var(--space-gap-lg);
-    gap: var(--space-gap-lg);
+    gap: var(--space-gap-md);
   }
 
   .portfolio-card__eyebrow {
