@@ -1,17 +1,18 @@
 <head>
   {% if site.analytics.google %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
+  <!-- Google Analytics: deferred until after load to avoid forced reflow on LCP -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "{{ site.analytics.google }}");
+    function gtag() { dataLayer.push(arguments); }
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', '{{ site.analytics.google }}');
+    });
   </script>
-  <!-- End Google Analytics -->
   {% endif %}
 
   <meta charset="utf-8">
