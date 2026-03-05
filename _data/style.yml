@@ -5,11 +5,6 @@ highlight: "#e22388"
 # white: "#FF0000"
 # black: "#000"
 
-# Image Customization
-header-image: "../img/header.png"
-contact-image: "../img/contact.png"
-
-
 #Font Awesome icon for portfolio grid when an item is hovered over
 portfolio-icon: fas fa-info-circle fa-2x #default: fas fa-plus fa-3x
 
