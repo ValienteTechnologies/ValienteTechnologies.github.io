@@ -102,8 +102,10 @@
             <div class="contact-form-actions text-center">
               <button id="sendMessageButton"
                 class="btn btn-primary btn-xl text-uppercase"
-                type="submit">
-                <i class="fas fa-paper-plane"></i>
+                type="submit"
+                aria-label="{{ contact.submit | default: 'Gönder' }}">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                <span>{{ contact.submit | default: "Gönder" }}</span>
               </button>
             </div>
             <input type="text" name="_gotcha" style="display:none">
