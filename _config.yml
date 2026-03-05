@@ -29,6 +29,9 @@ analytics:
 collections:
   portfolio:
 
+plugins:
+  - jekyll-sitemap
+
 markdown: kramdown
 
 formspree_form_path: "f/xwpbqjer"
