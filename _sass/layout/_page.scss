@@ -1,0 +1,43 @@
+// Styling for generic inner pages (about, legal, etc.)
+
+body.page-layout {
+  background: $valiente-midnight;
+  color: var(--color-text-on-dark);
+
+  main.site-content {
+    background: transparent;
+  }
+}
+
+body.page-layout #pagecontainer {
+  padding-top: 5rem;     // clears mobile navbar
+  padding-bottom: 3rem;
+  color: var(--color-text-on-dark);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  p, li {
+    color: var(--color-text-muted-on-dark);
+  }
+
+  a {
+    color: $primary;
+    &:hover {
+      color: lighten($primary, 10%);
+    }
+  }
+
+  hr {
+    border-color: $border-surface;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding-top: 7rem;   // clears desktop navbar
+  }
+}
