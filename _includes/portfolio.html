@@ -15,7 +15,7 @@
           <div class="portfolio-card__media">
             <picture>
               <source srcset="{{ project.caption.thumbnail | replace: '.png', '.webp' }}" type="image/webp">
-              <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+              <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" width="400" height="300" loading="lazy">
             </picture>
             <div class="portfolio-card__overlay">
               <i class="{{ site.data.style.portfolio-icon | default: "fas fa-info-circle fa-2x" }}"></i>
@@ -52,7 +52,7 @@
           <div class="portfolio-card__media">
             <picture>
               <source srcset="{{ project.caption.thumbnail | replace: '.png', '.webp' }}" type="image/webp">
-              <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+              <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" width="400" height="300" loading="lazy">
             </picture>
             <div class="portfolio-card__overlay">
               <i class="{{ site.data.style.portfolio-icon | default: "fas fa-info-circle fa-2x" }}"></i>
