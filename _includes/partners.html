@@ -15,7 +15,7 @@
             <div class="partner-card__bg" aria-hidden="true">
               <picture>
                 <source srcset="{{ event.image | replace: '.png', '.webp' }}" type="image/webp">
-                <img src="{{ event.image }}" alt="" loading="lazy">
+                <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
               </picture>
             </div>
             <div class="partner-card__overlay"></div>
@@ -47,7 +47,7 @@
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="partner-card">
           <div class="partner-card__bg" aria-hidden="true">
-            <img src="{{ event.image }}" alt="">
+            <img src="{{ event.image }}" alt="{{ event.title }}">
           </div>
           <div class="partner-card__overlay"></div>
           <div class="partner-card__content">
