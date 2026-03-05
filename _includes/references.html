@@ -13,7 +13,7 @@
       <div class="row references-grid" {% if site.data.sitetext[site.locale].references.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
 	    {% for client in site.data.sitetext[site.locale].references.list %}
         <div class="col-md-3 col-sm-6 reference-item">
-          <a class="reference-card" href="{{ client.url }}" aria-label="{{ client.title }}">
+          <div class="reference-card">
             <div class="reference-card__glow"></div>
             <div class="reference-card__logo">
               <picture>
@@ -24,7 +24,7 @@
             {% if client.title %}
             <span class="reference-card__name">{{ client.title }}</span>
             {% endif %}
-          </a>
+          </div>
         </div>
 	    {% endfor %}
       </div>
@@ -51,7 +51,7 @@
     <div class="row references-grid" {% if site.data.sitetext.references.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
     {% for client in site.data.sitetext.references.list %}
       <div class="col-md-3 col-sm-6 reference-item">
-        <a class="reference-card" href="{{ client.url }}" aria-label="{{ client.title }}">
+        <div class="reference-card">
           <div class="reference-card__glow"></div>
           <div class="reference-card__logo">
             <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" loading="lazy">
@@ -59,7 +59,7 @@
           {% if client.title %}
           <span class="reference-card__name">{{ client.title }}</span>
           {% endif %}
-        </a>
+        </div>
       </div>
     {% endfor %}
     </div>
