@@ -23,21 +23,26 @@
 
   <title>{% if page.title %}{{ page.title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
+  <!-- Preconnect to font origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- Bootstrap core CSS -->
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Custom fonts for this template -->
-  <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- FontAwesome: non-render-blocking -->
+  <link rel="preload" href="/assets/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/all.min.css"></noscript>
+
+  <!-- Custom fonts: non-render-blocking with display=swap -->
   {% if site.data.style.fonts_urls %}
     {% for font_url in site.data.style.fonts_urls %}
-      <link href="{{font_url}}" rel="stylesheet" type="text/css">
+      <link rel="preload" href="{{font_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="{{font_url}}"></noscript>
     {% endfor %}
   {% else %}
-    <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"></noscript>
   {% endif %}
   <!-- Custom styles for this theme -->
   <!--<link href="/assets/css/agency.min.css" rel="stylesheet">-->

@@ -15,10 +15,7 @@ portfolio-icon: fas fa-info-circle fa-2x #default: fas fa-plus fa-3x
 
 # Add custom fonts
 fonts_urls:
-    - "https://fonts.googleapis.com/css?family=Montserrat:400,700"
-    - "https://fonts.googleapis.com/css?family=Kanit:Bold"
-    - "https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic"
-    - "https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+    - "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kanit:wght@700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"
 
 # Set custom fonts
 fonts:
