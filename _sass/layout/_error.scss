@@ -1,110 +1,85 @@
-// Styling for error pages (404, 500, etc.)
-// Space-themed dark background — body bg set inline in error layout
+// Styling for error pages — space-themed, fits 100vh, no scroll
 #pagecontainer {
   color: #fff;
-
-  .error-title {
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-top: 1.25rem;
-    opacity: 0.9;
-  }
-
-  .error-home-btn {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.7rem 2rem;
-    background: #e22388;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    border-radius: 3px;
-    transition: background 0.2s ease;
-
-    &:hover,
-    &:focus {
-      background: darken(#e22388, 10%);
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-}
-
-#pagecontainer {
-  padding-top: 6.25rem;
   min-height: 100vh;
+  padding-top: 4rem;     // clears mobile navbar (~56px)
+  padding-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
-  
-  // Make sure row takes full height for vertical centering
-  .row {
-    min-height: calc(100vh - 6.25rem);
+  justify-content: center;
+  box-sizing: border-box;
+
+  // Bootstrap row: fill remaining height, center content
+  > .row {
     flex: 1;
+    min-height: 0;
+    width: 100%;
+    margin: 0;
   }
-  
-  // Error page specific styling
+
   .error-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    
-    // Responsive SVG/image container
+
+    .error-title {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin: 0 0 0.75rem;
+      opacity: 0.9;
+    }
+
+    .error-home-btn {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      padding: 0.6rem 1.75rem;
+      background: #e22388;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s ease;
+
+      &:hover,
+      &:focus {
+        background: darken(#e22388, 10%);
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
     .error-image {
       width: 100%;
-      max-width: 700px;
-      height: auto;
-      margin: 0 auto;
-      
-      img,
-      svg {
-        width: 100%;
-        height: auto;
+
+      img {
         display: block;
+        margin: 0 auto;
+        width: auto;
         max-width: 100%;
+        // Constrain height so title + button + image all fit in viewport
+        max-height: calc(100vh - 13rem); // 4rem padding-top + ~3.5rem title+btn + margins
         object-fit: contain;
       }
     }
-    
-    // Responsive sizing
-    @include media-max($breakpoint-md - 1px) {
-      padding: 2rem 1rem;
-      
-      .error-image {
-        max-width: 100%;
-        padding: 0 1rem;
-      }
-    }
-    
-    @media (min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-lg - 1px}) {
-      .error-image {
-        max-width: 600px;
-      }
-    }
-    
-    @include media-min($breakpoint-lg) {
-      .error-image {
-        max-width: 700px;
-      }
-    }
   }
-  
-  @include media-min($breakpoint-lg) {
-    padding-top: 9.375rem;
-    min-height: 100vh;
 
-    .row {
-      min-height: calc(100vh - 9.375rem);
+  @media (min-width: 992px) {
+    padding-top: 6.5rem; // clears desktop navbar (~100px)
+
+    .error-content {
+      .error-image img {
+        max-height: calc(100vh - 16rem);
+      }
     }
   }
 }
-
