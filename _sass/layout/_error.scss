@@ -1,4 +1,43 @@
 // Styling for error pages (404, 500, etc.)
+// Space-themed dark background — body bg set inline in error layout
+#pagecontainer {
+  color: #fff;
+
+  .error-title {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 1.25rem;
+    opacity: 0.9;
+  }
+
+  .error-home-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 2rem;
+    background: #e22388;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+
+    &:hover,
+    &:focus {
+      background: darken(#e22388, 10%);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
 #pagecontainer {
   padding-top: 6.25rem;
   min-height: 100vh;

@@ -1,6 +1,30 @@
 ---
 layout: default
 ---
+<style>
+  body {
+    background: #0a0a1e !important;
+  }
+  main.site-content {
+    background: transparent;
+  }
+  #space-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #pagecontainer {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+<canvas id="space-canvas"></canvas>
+
 {% include nav.html %}
 
 <div class="container" id="pagecontainer">
@@ -11,3 +35,4 @@ layout: default
   </div>
 </div>
 
+<script src="/assets/js/space-bg.js"></script>
