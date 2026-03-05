@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Gizlilik Politikası
+description: "Valiente Technologies gizlilik politikası ve kişisel veri işleme hakkında bilgi."
 ---
 <div class="col-lg-12 text-center">
 	<h2 class="section-heading text-uppercase">Gizlilik Politikası</h2>
