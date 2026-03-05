@@ -35,27 +35,8 @@
       opacity: 0.9;
     }
 
-    .error-home-btn {
-      display: inline-block;
+    .btn {
       margin-bottom: 1.25rem;
-      padding: 0.6rem 1.75rem;
-      background: #e22388;
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      border-radius: 3px;
-      transition: background 0.2s ease;
-
-      &:hover,
-      &:focus {
-        background: darken(#e22388, 10%);
-        color: #fff;
-        text-decoration: none;
-      }
     }
 
     .error-image {
