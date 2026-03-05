@@ -18,8 +18,9 @@
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+  // darken($primary, 8%) ≈ #c51a74 → 5.56:1 contrast with white (WCAG AA)
+  background-color: darken($primary, 8%);
+  border-color: darken($primary, 8%);
 
   &:active,
   &:focus,
