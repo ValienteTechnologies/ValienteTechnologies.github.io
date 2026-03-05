@@ -32,6 +32,9 @@ collections:
 plugins:
   - jekyll-sitemap
 
+exclude:
+  - scripts/
+
 markdown: kramdown
 
 formspree_form_path: "f/xwpbqjer"
