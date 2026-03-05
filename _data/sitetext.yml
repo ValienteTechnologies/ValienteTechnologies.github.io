@@ -3,7 +3,7 @@
 tr: &DEFAULT_TR
   header:
     title: Denetim bir gerekliliktir, güvenlik ise strateji.
-    text: Güvenilir ve Cesur
+    text: Sızma Testi ve Siber Güvenlik Hizmetleri
     button: Keşfet
     buttonlink: "#services"
 
