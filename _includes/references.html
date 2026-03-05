@@ -16,7 +16,10 @@
           <a class="reference-card" href="{{ client.url }}" aria-label="{{ client.title }}">
             <div class="reference-card__glow"></div>
             <div class="reference-card__logo">
-              <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" loading="lazy">
+              <picture>
+                <source srcset="{{ client.logo | replace: '.png', '.webp' }}" type="image/webp">
+                <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" loading="lazy">
+              </picture>
             </div>
             {% if client.title %}
             <span class="reference-card__name">{{ client.title }}</span>

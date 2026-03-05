@@ -13,7 +13,10 @@
       <div class="col-lg-4 col-md-6 portfolio-item">
         <a class="portfolio-card" data-toggle="modal" href="#p{{ forloop.index }}">
           <div class="portfolio-card__media">
-            <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+            <picture>
+              <source srcset="{{ project.caption.thumbnail | replace: '.png', '.webp' }}" type="image/webp">
+              <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+            </picture>
             <div class="portfolio-card__overlay">
               <i class="{{ site.data.style.portfolio-icon | default: "fas fa-info-circle fa-2x" }}"></i>
               <span>{{ site.data.sitetext[site.locale].portfolio.cta | default: "Detayları Gör" }}</span>
@@ -47,7 +50,10 @@
       <div class="col-lg-4 col-md-6 portfolio-item">
         <a class="portfolio-card" data-toggle="modal" href="#p{{ forloop.index }}">
           <div class="portfolio-card__media">
-            <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+            <picture>
+              <source srcset="{{ project.caption.thumbnail | replace: '.png', '.webp' }}" type="image/webp">
+              <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="{{ project.alt | default: project.title }}" loading="lazy">
+            </picture>
             <div class="portfolio-card__overlay">
               <i class="{{ site.data.style.portfolio-icon | default: "fas fa-info-circle fa-2x" }}"></i>
               <span>{{ site.data.sitetext.portfolio.cta | default: "View details" }}</span>
