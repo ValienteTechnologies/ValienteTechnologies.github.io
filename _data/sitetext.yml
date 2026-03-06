@@ -159,19 +159,23 @@ tr: &DEFAULT_TR
     certifications:
       title: "Sertifikalarımız"
       section: certifications
+      iso:
+        title: "ISO/IEC 27001:2022"
+        desc: "Bilgi Güvenliği Yönetim Sistemi alanında uluslararası geçerliliğe sahip bu sertifika, kurumumuzun veri güvenliği süreçlerinin en yüksek standartları karşıladığını belgeler."
+        image: /assets/img/about/iso.png
+        url: /assets/docs/iso27001.pdf
       list:
-        - title: "ISO 27001"
-          desc: "Bilgi güvenliği yönetim sistemi sertifikası."
-          image: /assets/img/about/iso.png
-          url: /assets/docs/iso27001.pdf
         - title: "OSCP"
-          desc: "Offensive Security Certified Professional sertifikası."
           image: /assets/img/about/oscp.png
+        - title: "OSWE"
+          image: /assets/img/about/oswe.png
+        - title: "CISSP"
+          image: /assets/img/about/cissp.png
+        - title: "eWPTXv2"
+          image: /assets/img/about/ewptxv2.png
         - title: "Red Hat"
-          desc: "Red Hat sertifikalı uzman belgesi."
           image: /assets/img/about/redhat.png
         - title: "TSE"
-          desc: "Türk Standardları Enstitüsü onay belgesi."
           image: /assets/img/about/tse.png
 
   contact:
