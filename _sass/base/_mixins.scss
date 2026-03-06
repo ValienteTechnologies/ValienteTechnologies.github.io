@@ -37,7 +37,7 @@
 // Glassy surface card with shared border + shadow.
 @mixin surface-card($radius: $radius-card-lg) {
   border-radius: $radius;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid $border-surface;
   box-shadow: $shadow-elevated;
 }
 

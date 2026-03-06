@@ -193,11 +193,11 @@
     &:focus {
       border-color: rgba($primary, 0.65);
       box-shadow: 0 0 0 3px rgba($primary, 0.25);
-      background: rgba(255, 255, 255, 0.14);
+      background: $surface-input-focus;
     }
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.5);
+      color: $text-placeholder;
       @include heading-font;
       font-size: var(--font-size-sm);
     }
@@ -318,7 +318,7 @@
   .form-control.contact-field-error {
     border-color: rgba($valiente-rose, 0.85);
     box-shadow: 0 0 0 3px rgba($valiente-rose, 0.35);
-    background: rgba(255, 255, 255, 0.05);
+    background: $surface-subtle;
     animation: contact-field-shake 450ms ease;
   }
 }

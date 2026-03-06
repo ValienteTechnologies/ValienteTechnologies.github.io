@@ -133,7 +133,7 @@
   p {
     margin: 0;
     font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.8);
+    color: $text-on-dark-dim;
   }
 }
 
@@ -152,7 +152,7 @@
   font-size: var(--font-size-sm);
   letter-spacing: $letter-spacing-label;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: $text-on-dark-muted;
   transition: color 0.3s ease;
 
   i {
@@ -169,7 +169,7 @@
     padding: 6.25rem 0;
     text-align: center;
     background: linear-gradient(135deg, lighten($valiente-midnight, 4%), $valiente-ink);
-    color: rgba(255, 255, 255, 0.9);
+    color: $text-on-dark;
     border: none;
     h2 {
       font-size: 3em;
@@ -193,7 +193,7 @@
     img {
       margin-bottom: 1.875rem;
       border-radius: var(--radius-input);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      box-shadow: $shadow-elevated;
     }
     button {
       cursor: pointer;

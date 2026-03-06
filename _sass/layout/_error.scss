@@ -1,6 +1,6 @@
 // Styling for error pages — space-themed, fits 100vh, no scroll
 #pagecontainer {
-  color: #fff;
+  color: $white;
   min-height: 100vh;
   padding-top: 4rem;     // clears mobile navbar (~56px)
   padding-bottom: 1.5rem;
@@ -25,7 +25,7 @@
     width: 100%;
 
     .error-title {
-      color: #fff;
+      color: $white;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.1rem;
       font-weight: 700;

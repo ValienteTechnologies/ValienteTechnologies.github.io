@@ -71,6 +71,16 @@ $border-surface: rgba(255, 255, 255, 0.12) !default;
 $border-surface-muted: rgba(255, 255, 255, 0.18) !default;
 $surface-subtle: rgba(255, 255, 255, 0.05) !default;
 $surface-input: rgba(255, 255, 255, 0.08) !default;
+$surface-input-focus: rgba(255, 255, 255, 0.14) !default;
+$surface-overlay-sm: rgba(255, 255, 255, 0.25) !default;
+$surface-overlay: rgba(255, 255, 255, 0.35) !default;
+
+// Text on dark surfaces
+$text-on-dark: rgba(255, 255, 255, 0.9) !default;
+$text-on-dark-subtle: rgba(255, 255, 255, 0.85) !default;
+$text-on-dark-dim: rgba(255, 255, 255, 0.8) !default;
+$text-on-dark-muted: rgba(255, 255, 255, 0.75) !default;
+$text-placeholder: rgba(255, 255, 255, 0.5) !default;
 
 // Elevation (does not depend on theme palette so it can be used safely
 // before brand colors are defined in `agency.scss`)

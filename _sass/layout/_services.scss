@@ -4,7 +4,6 @@ $services-bg-deep: $valiente-midnight;
 $services-accent: $primary;
 $services-accent-soft: rgba($primary, 0.35);
 $services-accent-bright: lighten($primary, 8%);
-$services-highlight-wash: rgba(255, 255, 255, 0.08);
 
 .services-section {
   position: relative;
@@ -157,9 +156,9 @@ $services-highlight-wash: rgba(255, 255, 255, 0.08);
 .service-card__shine {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.25), transparent 50%),
+  background: radial-gradient(circle at 10% 10%, $surface-overlay-sm, transparent 50%),
               radial-gradient(circle at 90% 20%, rgba(lighten($services-accent, 25%), 0.25), transparent 50%),
-              linear-gradient(120deg, rgba($services-highlight-wash, 0.4), rgba($services-accent-soft, 0.15));
+              linear-gradient(120deg, rgba($surface-input, 0.4), rgba($services-accent-soft, 0.15));
   opacity: 0;
   transition: opacity 250ms ease;
   pointer-events: none;
