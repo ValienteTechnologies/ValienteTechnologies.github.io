@@ -85,7 +85,7 @@ footer {
   --section-halo-color: #{rgba($primary, 0.85)};
   --section-halo-width: 110px;
   --section-halo-thickness: 3px;
-  --section-halo-gap: 0.8rem;
+  --section-halo-gap: 0.4rem;
 
   .section-heading {
     position: relative;
@@ -95,7 +95,7 @@ footer {
       content: "";
       position: absolute;
       left: 50%;
-      bottom: var(--section-halo-gap);
+      bottom: calc(-1 * var(--section-halo-gap));
       width: var(--section-halo-width);
       height: var(--section-halo-thickness);
       transform: translateX(-50%);
