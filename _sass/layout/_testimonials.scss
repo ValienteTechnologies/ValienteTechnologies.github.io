@@ -28,9 +28,8 @@
   .carousel-inner {
     position: relative;
     z-index: 1;
-    min-height: var(--carousel-min-height);
     display: flex;
-    align-items: center;
+    align-items: stretch;
   }
 
   .carousel-indicators {
@@ -68,7 +67,7 @@
 .testimonial-card {
   position: relative;
   @include surface-card($radius-card-lg);
-  padding: var(--space-card-padding-lg);
+  padding: var(--space-gap-xl);
   background: rgba($valiente-midnight, 0.86);
   border: 1px solid $border-surface;
   @include backdrop-blur(16px);
