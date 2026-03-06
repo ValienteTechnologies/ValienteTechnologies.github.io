@@ -52,10 +52,10 @@
     <div class="container">
       <div class="intro-text">
 	  {%- if site.data.sitetext[site.locale].header.title -%}
-        <div class="intro-lead-in">{{ site.data.sitetext[site.locale].header.title | markdownify }}</div>
+        <div class="intro-lead-in">{{ site.data.sitetext[site.locale].header.title }}</div>
 	  {%- endif -%}
 	  {%- if site.data.sitetext[site.locale].header.text -%}
-        <h1 class="intro-heading text-uppercase">{{ site.data.sitetext[site.locale].header.text | markdownify }}</h1>
+        <h1 class="intro-heading text-uppercase">{{ site.data.sitetext[site.locale].header.text }}</h1>
 	  {%- endif -%}
 	  {%- if site.data.sitetext[site.locale].header.button -%}
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext[site.locale].header.buttonlink }}">{{ site.data.sitetext[site.locale].header.button }}</a>
@@ -69,10 +69,10 @@
     <div class="container">
       <div class="intro-text">
 	  {%- if site.data.sitetext.header.title -%}
-        <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
+        <div class="intro-lead-in">{{ site.data.sitetext.header.title }}</div>
 	  {%- endif -%}
 	  {%- if site.data.sitetext.header.text -%}
-        <h1 class="intro-heading text-uppercase">{{ site.data.sitetext.header.text | markdownify }}</h1>
+        <h1 class="intro-heading text-uppercase">{{ site.data.sitetext.header.text }}</h1>
 	  {%- endif -%}
 	  {%- if site.data.sitetext.header.button -%}
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext.header.buttonlink }}">{{ site.data.sitetext.header.button }}</a>
