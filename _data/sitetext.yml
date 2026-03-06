@@ -9,7 +9,6 @@ tr: &DEFAULT_TR
 
   services:
     title: "Hizmetlerimiz"
-    text: "Şirketinizin siber güvenlik duruşunu güçlendirmek için optimize edilmiş profesyonel çözümler."
     section: services
     list:
       - title: "Sızma Testleri"
@@ -38,13 +37,11 @@ tr: &DEFAULT_TR
 
   portfolio:
     title: "Broşürlerimiz"
-    text: "Güvenliği nasıl artırdığımızı, operasyonları nasıl kolaylaştırdığımızı ve ölçeklenebilir büyümeyi nasıl mümkün kıldığımızı görün."
     section: portfolio
     closebutton: "Kapat"
 
   partners:
     title: "İş Ortaklarımız"
-    text: "Güvenilir, ölçeklenebilir ve güvenli çözümler sunmak için önde gelen teknoloji sağlayıcılarıyla çalışıyoruz."
     section: partners
     events:
       - title: "DT Cloud"
@@ -62,7 +59,6 @@ tr: &DEFAULT_TR
 
   references:
     title: "Referanslarımız"
-    text: "Güvenilir çözümlerimizle hizmet verdiğimiz değerli müşterilerimiz."
     section: references
     testimonials-button: "Geri Bildirimler"
     testimonials-buttonlink: "#testimonials"
@@ -131,7 +127,6 @@ tr: &DEFAULT_TR
 
   testimonials:
     title: "Geri Bildirimlerimiz"
-    text: "Sunduğumuz hizmetler hakkında müşterilerimizin görüşleri."
     section: testimonials
     list:
       - company: "Enelsa Endüstriyel Elektronik"
@@ -181,7 +176,6 @@ tr: &DEFAULT_TR
 
   contact:
     title: "İletişime Geçin"
-    text: "İşletmenize nasıl destek olabileceğimizi konuşalım."
     section: contact
     name: "Ad Soyad*"
     name-validation: "Lütfen adınızı girin."
