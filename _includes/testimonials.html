@@ -15,7 +15,7 @@
         </h2>
         {% if testimonials.text %}
         <h3 class="section-subheading text-muted">
-          {{ testimonials.text | markdownify }}
+          {{ testimonials.text }}
         </h3>
         {% endif %}
       </div>
@@ -47,7 +47,7 @@
                   {% if t.quote %}
                   <blockquote class="testimonial-quote mb-4">
                     {% comment %} Remove the FontAwesome <i> tag if you're using CSS pseudo-elements for quotes {% endcomment %}
-                    {{ t.quote | markdownify | replace: '<p>', '' | replace: '</p>', '' }}
+                    {{ t.quote }}
                   </blockquote>
                   {% endif %}
 
