@@ -50,18 +50,11 @@ tr: &DEFAULT_TR
       - title: "DT Cloud"
         desc: "DT Cloud, Türkiye'de güçlü bir varlığı olan küresel bir bulut bilişim şirketidir."
         image: /assets/img/partners/dt.png
-      - title: "Odoo"
-        desc: "Odoo, her büyüklükteki şirketin çeşitli operasyonlarını yönetmesine yardımcı olan bir iş yönetim yazılımı paketidir."
-        image: /assets/img/partners/odoo.png
-      - title: "Ruby Cyber Labs"
-        desc: "Ruby Cyber Labs, kapsamlı hizmet yelpazesi sunan bir siber güvenlik ve dijital adli bilişim şirketidir."
-        image: /assets/img/partners/ruby.png
+
       - title: "Sigmacert Global"
         desc: "Sigmacert Global, denetim ve sertifikasyon hizmetleri sunan ve ISO standartları eğitimleri veren bir şirkettir."
         image: /assets/img/partners/sigmacert.png
-      - title: "Uzman Bilişim"
-        desc: "Uzman Bilgi Teknolojileri, işletmenizin tüm sunucu, ağ ve donanım altyapısını yöneten bir firmadır."
-        image: /assets/img/partners/uzman.png
+
       - title: "Biga Bilişim"
         desc: "Biga Bilişim, kamera, VoIP ve fiber ağ altyapılarının entegre edildiği profesyonel çözümler sunar."
         image: /assets/img/partners/biga.png
