@@ -1,0 +1,91 @@
+<!-- About -->
+{% assign has_locale = site.locale and site.locale != "" and site.locale != nil %}
+{% if has_locale %}
+  {% assign about = site.data.sitetext[site.locale].about %}
+{% else %}
+  {% assign about = site.data.sitetext.about %}
+{% endif %}
+{% if about %}
+<section class="page-section about-section" id="{{ about.section | default: "about" }}">
+  <div class="about-background" aria-hidden="true"></div>
+  <div class="container">
+
+    <!-- Heading & body -->
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10">
+        <h2 class="section-heading text-uppercase">{{ about.title | default: "Hakkımızda" | markdownify | strip_html }}</h2>
+        {% if about.body %}
+        <div class="about-body">{{ about.body | markdownify }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="about-mv-grid">
+      <div class="about-mv-card about-mv-card--mission">
+        {% if about.mission.icon %}
+        <div class="about-mv-card__icon" aria-hidden="true">
+          <span class="fa-stack">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="{{ about.mission.icon }} fa-stack-1x fa-inverse"></i>
+          </span>
+        </div>
+        {% endif %}
+        <h3 class="about-mv-card__title">{{ about.mission.title | default: "Misyonumuz" }}</h3>
+        <div class="about-mv-card__text">{{ about.mission.text | markdownify }}</div>
+      </div>
+
+      <div class="about-mv-card about-mv-card--vision">
+        {% if about.vision.icon %}
+        <div class="about-mv-card__icon" aria-hidden="true">
+          <span class="fa-stack">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="{{ about.vision.icon }} fa-stack-1x fa-inverse"></i>
+          </span>
+        </div>
+        {% endif %}
+        <h3 class="about-mv-card__title">{{ about.vision.title | default: "Vizyonumuz" }}</h3>
+        <div class="about-mv-card__text">{{ about.vision.text | markdownify }}</div>
+      </div>
+    </div>
+
+    <!-- Certifications / Documents -->
+    {% if about.certifications %}
+    <div class="row justify-content-center text-center">
+      <div class="col-12">
+        <h3 class="about-certs-heading">{{ about.certifications.title | default: "Sertifikalarımız" }}</h3>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      {% for cert in about.certifications.list %}
+      <div class="col-md-6 col-lg-4 mb-4 d-flex">
+        <div class="about-cert-card w-100">
+          {% if cert.image %}
+          <div class="about-cert-card__image-wrap">
+            <picture>
+              <source srcset="{{ cert.image | replace: '.png', '.webp' }}" type="image/webp">
+              <img class="about-cert-card__image" src="{{ cert.image }}" alt="{{ cert.title }}" loading="lazy" width="130" height="80">
+            </picture>
+          </div>
+          {% endif %}
+          <h4 class="about-cert-card__title">{{ cert.title }}</h4>
+          {% if cert.desc %}
+          <div class="about-cert-card__desc">{{ cert.desc | markdownify }}</div>
+          {% endif %}
+          {% if cert.url %}
+          <div class="about-cert-card__cta">
+            <a href="{{ cert.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="{{ cert.title }} belgesini görüntüle (PDF)">
+              Görüntüle
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
+<!-- End About -->

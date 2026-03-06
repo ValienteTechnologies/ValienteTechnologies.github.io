@@ -149,6 +149,35 @@ tr: &DEFAULT_TR
         title: "Group IT Manager"
         quote: "ISO 27001 sürecinde eksiklikleri da görmek adına birlikte çalıştık. Çok yönlü kapsamlı testler yaptılar ve birçok kritik zafiyeti kapatmamıza yardımcı oldular."
 
+  about:
+    title: "Hakkımızda"
+    section: about
+    body: "Valiente Technologies, kurumların güvenlik açıklarını kötü niyetli saldırganlardan önce keşfetmesini ve kapatmasını sağlayan ofansif siber güvenlik uzmanları tarafından kurulmuş bir teknoloji girişimidir. Ana odağımız, gerçek dünyadaki saldırı tekniklerini birebir simüle ederek müşterilerimizin dijital altyapılarındaki zayıflıkları detaylı şekilde ortaya çıkarmak ve işletmelerin siber dayanıklılığını en üst düzeye taşımaktır."
+    mission:
+      title: "Misyonumuz"
+      text: "Dijital dünyada karşılaşılan güvenlik tehditlerine karşı yenilikçi, hızlı ve etkili çözümler sunarak kurumların verilerini güvenle yönetmelerini sağlamak. Teknolojiyi insan odaklı bir yaklaşımla birleştirerek siber riskleri minimuma indirmek ve tüm kullanıcılar için daha güvenli bir dijital ekosistem oluşturmaktır."
+      icon: fas fa-crosshairs
+    vision:
+      title: "Vizyonumuz"
+      text: "Küresel ölçekte tanınan, güven veren ve ileri teknoloji çözümleriyle sektör standartlarını belirleyen lider bir siber güvenlik şirketi olmak. Geleceğin tehditlerine bugünden hazırlıklı olarak, yapay zekâ destekli savunma teknolojileriyle dijital güvenliğin geleceğini şekillendirmektir."
+      icon: fas fa-user-shield
+    certifications:
+      title: "Sertifikalarımız"
+      list:
+        - title: "ISO 27001"
+          desc: "Bilgi güvenliği yönetim sistemi sertifikası."
+          image: /assets/img/about/iso.png
+          url: /assets/docs/iso27001.pdf
+        - title: "OSCP"
+          desc: "Offensive Security Certified Professional sertifikası."
+          image: /assets/img/about/oscp.png
+        - title: "Red Hat"
+          desc: "Red Hat sertifikalı uzman belgesi."
+          image: /assets/img/about/redhat.png
+        - title: "TSE"
+          desc: "Türk Standardları Enstitüsü onay belgesi."
+          image: /assets/img/about/tse.png
+
   contact:
     title: "İletişime Geçin"
     text: "İşletmenize nasıl destek olabileceğimizi konuşalım."

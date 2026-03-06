@@ -1,0 +1,187 @@
+// Styling for the about section
+$about-accent: $primary;
+
+.about-section {
+  position: relative;
+  padding-block: var(--space-section-y);
+  color: var(--color-text-on-dark);
+  overflow: hidden;
+  @include full-viewport-section;
+
+  .section-heading {
+    color: var(--color-text-on-dark);
+  }
+}
+
+.about-background {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 75%, rgba($valiente-violet, 0.3), transparent 55%),
+    radial-gradient(circle at 10% 20%, rgba($primary, 0.2), transparent 50%),
+    linear-gradient(135deg, darken($valiente-midnight, 5%) 0%, lighten($valiente-ink, 3%) 100%);
+  z-index: 0;
+}
+
+.about-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-body {
+  max-width: 780px;
+  margin: 0 auto $space-grid-margin;
+  font-size: var(--font-size-md);
+  line-height: 1.8;
+  color: var(--color-text-muted-on-dark);
+
+  p { margin: 0; }
+}
+
+// ─── Mission & Vision ────────────────────────────────────────────────────────
+
+.about-mv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-gap-lg);
+  margin-bottom: $space-grid-margin;
+}
+
+@include media-min($breakpoint-md) {
+  .about-mv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-mv-card {
+  padding: var(--space-card-padding-lg);
+  @include surface-card($radius-card-lg);
+  background: rgba($valiente-midnight, 0.75);
+  border-top: 3px solid $border-surface;
+
+  &--mission {
+    border-top-color: $primary;
+
+    .about-mv-card__icon .fa-circle { color: rgba($primary, 0.4); }
+    .about-mv-card__icon .fa-inverse {
+      color: lighten($primary, 15%);
+      text-shadow: 0 4px 12px rgba($primary, 0.4);
+    }
+  }
+
+  &--vision {
+    border-top-color: lighten($valiente-violet, 20%);
+
+    .about-mv-card__icon .fa-circle { color: rgba($valiente-violet, 0.5); }
+    .about-mv-card__icon .fa-inverse {
+      color: lighten($valiente-violet, 25%);
+      text-shadow: 0 4px 12px rgba($valiente-violet, 0.4);
+    }
+  }
+}
+
+.about-mv-card__icon {
+  margin-bottom: var(--space-gap-md);
+
+  .fa-stack {
+    font-size: 1.75rem;
+  }
+}
+
+.about-mv-card__title {
+  @include heading-font;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-on-dark);
+  margin: 0 0 var(--space-gap-md);
+}
+
+.about-mv-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-on-dark);
+  line-height: 1.65;
+  margin: 0;
+
+  p { margin: 0; }
+}
+
+// ─── Certifications ──────────────────────────────────────────────────────────
+
+.about-certs-heading {
+  @include heading-font;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-label;
+  color: var(--color-text-on-dark);
+  margin: $space-grid-margin 0;
+}
+
+.about-cert-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-card-padding-lg);
+  @include surface-card($radius-card-lg);
+  background: rgba($valiente-midnight, 0.75);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($primary, 0.4);
+    box-shadow: 0 24px 48px rgba($valiente-midnight, 0.8), 0 0 20px rgba($primary, 0.15);
+  }
+}
+
+.about-cert-card__image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  margin-bottom: var(--space-gap-md);
+}
+
+.about-cert-card__image {
+  max-height: 80px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+.about-cert-card__title {
+  @include heading-font;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-on-dark);
+  margin: 0 0 var(--space-gap-sm);
+}
+
+.about-cert-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-on-dark);
+  flex-grow: 1;
+  margin: 0 0 var(--space-gap-lg);
+  line-height: 1.5;
+
+  p { margin: 0; }
+}
+
+.about-cert-card__cta {
+  margin-top: auto;
+}
+
+// On the standalone /about page the navbar is fixed-top — add clearance
+body.about-page .about-section {
+  padding-top: calc(var(--space-section-y) + 5rem);
+
+  @include media-min($breakpoint-lg) {
+    padding-top: calc(var(--space-section-y) + 7rem);
+  }
+}
+
+@include media-max($breakpoint-sm - 1px) {
+  .about-section {
+    padding-block: var(--space-section-y-sm);
+  }
+}
