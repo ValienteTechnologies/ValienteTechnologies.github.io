@@ -8,8 +8,10 @@
     <a class="navbar-brand js-scroll-trigger" href="{{ site.baseurl }}/#">
       {%- if site.logo -%}
       <img
+        width="{{ site.logo.width | default: 208 }}"
         height="{{ site.logo.height | default: 52 }}"
         src="{{ site.logo.path }}"
+        alt="{{ site.title }}"
       />
       {%- else -%} {{ site.title }} {%- endif -%}
     </a>
