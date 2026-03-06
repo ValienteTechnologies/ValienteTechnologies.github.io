@@ -30,8 +30,6 @@
 }
 
 .about-body {
-  max-width: 780px;
-  margin: 0 auto $space-grid-margin;
   font-size: var(--font-size-md);
   line-height: 1.8;
   color: var(--color-text-muted-on-dark);
@@ -39,7 +37,7 @@
   p { margin: 0; }
 }
 
-// Mission & Vision grid
+// About grid: body card (full width) + mission + vision
 .about-mv-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -50,6 +48,10 @@
   .about-mv-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .about-mv-card--body {
+    grid-column: 1 / -1;
+  }
 }
 
 .about-mv-card {
@@ -57,6 +59,14 @@
   @include surface-card($radius-card-lg);
   background: rgba($valiente-midnight, 0.75);
   border-top: 3px solid $border-surface;
+
+  &--body {
+    border-top-color: rgba($primary, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   &--mission {
     border-top-color: $primary;
