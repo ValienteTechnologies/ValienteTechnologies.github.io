@@ -163,6 +163,7 @@ tr: &DEFAULT_TR
       icon: fas fa-user-shield
     certifications:
       title: "Sertifikalarımız"
+      section: certifications
       list:
         - title: "ISO 27001"
           desc: "Bilgi güvenliği yönetim sistemi sertifikası."

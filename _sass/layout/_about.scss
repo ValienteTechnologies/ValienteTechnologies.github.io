@@ -1,5 +1,6 @@
-// Styling for the about section
-$about-accent: $primary;
+// Styling for the about & certifications sections
+
+// ─── About Us Section ────────────────────────────────────────────────────────
 
 .about-section {
   position: relative;
@@ -38,13 +39,11 @@ $about-accent: $primary;
   p { margin: 0; }
 }
 
-// ─── Mission & Vision ────────────────────────────────────────────────────────
-
+// Mission & Vision grid
 .about-mv-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-gap-lg);
-  margin-bottom: $space-grid-margin;
 }
 
 @include media-min($breakpoint-md) {
@@ -105,18 +104,36 @@ $about-accent: $primary;
   p { margin: 0; }
 }
 
-// ─── Certifications ──────────────────────────────────────────────────────────
+// ─── Certifications Section ───────────────────────────────────────────────────
 
-.about-certs-heading {
-  @include heading-font;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-label;
+.certs-section {
+  position: relative;
+  padding-block: var(--space-section-y);
   color: var(--color-text-on-dark);
-  margin: $space-grid-margin 0;
+  overflow: hidden;
+  @include full-viewport-section;
+
+  .section-heading {
+    color: var(--color-text-on-dark);
+  }
 }
 
+.certs-background {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba($primary, 0.25), transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba($valiente-violet, 0.25), transparent 55%),
+    linear-gradient(135deg, $valiente-ink 0%, darken($valiente-midnight, 3%) 100%);
+  z-index: 0;
+}
+
+.certs-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+// Certification cards
 .about-cert-card {
   display: flex;
   flex-direction: column;
@@ -171,7 +188,8 @@ $about-accent: $primary;
   margin-top: auto;
 }
 
-// On the standalone /about page the navbar is fixed-top — add clearance
+// ─── Navbar clearance on standalone /about page ───────────────────────────────
+
 body.about-page .about-section {
   padding-top: calc(var(--space-section-y) + 5rem);
 
@@ -181,7 +199,8 @@ body.about-page .about-section {
 }
 
 @include media-max($breakpoint-sm - 1px) {
-  .about-section {
+  .about-section,
+  .certs-section {
     padding-block: var(--space-section-y-sm);
   }
 }
