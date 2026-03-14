@@ -1,6 +1,9 @@
 ---
 ---
 @charset "utf-8";
+// Vendor
+@import "vendor/bootstrap";
+
 // Core variables and mixins
 @import "base/variables.scss";
 @import "base/mixins.scss";

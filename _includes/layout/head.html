@@ -1,6 +1,5 @@
 <head>
-  <!-- Critical CSS: preload both stylesheets immediately so the browser fetches them in parallel -->
-  <link rel="preload" href="/assets/css/bootstrap.min.css" as="style">
+  <!-- Critical CSS: single stylesheet (bootstrap bundled in) -->
   <link rel="preload" href="/assets/css/agency.css" as="style">
 
   {% if site.analytics.google %}
@@ -89,9 +88,6 @@
   <!-- Preconnect to font origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Bootstrap core CSS -->
-  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- FontAwesome: non-render-blocking -->
   <link rel="preload" href="/assets/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
