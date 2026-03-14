@@ -27,6 +27,9 @@ analytics:
   google: G-FF9YHPMVJL
 
 collections:
+  pages:
+    output: true
+    permalink: /:name/
   portfolio:
 
 plugins:

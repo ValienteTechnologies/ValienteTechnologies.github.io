@@ -1,0 +1,35 @@
+<!-- Partners -->
+{% assign partners = site.data.partners[site.locale] | default: site.data.partners.tr %}
+<section class="bg-light page-section" id="{{ partners.section | default: "partners" }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">{{ partners.title | default: "Partners" }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      {%- for event in partners.events -%}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="partner-card">
+          <div class="partner-card__bg" aria-hidden="true">
+            <picture>
+              <source srcset="{{ event.image | replace: '.png', '.webp' }}" type="image/webp">
+              <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+            </picture>
+          </div>
+          <div class="partner-card__overlay"></div>
+          <div class="partner-card__content">
+            <div class="partner-card__header">
+              <h4 class="partner-card__title">{{ event.title }}</h4>
+            </div>
+            <div class="partner-card__body">
+              <p class="partner-card__desc">{{ event.desc | markdownify }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<!-- End Partners -->

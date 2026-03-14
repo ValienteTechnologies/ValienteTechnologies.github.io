@@ -1,10 +1,5 @@
 <!-- About -->
-{% assign has_locale = site.locale and site.locale != "" and site.locale != nil %}
-{% if has_locale %}
-  {% assign about = site.data.sitetext[site.locale].about %}
-{% else %}
-  {% assign about = site.data.sitetext.about %}
-{% endif %}
+{% assign about = site.data.about[site.locale] | default: site.data.about.tr %}
 {% if about %}
 
 <!-- About Us Section -->

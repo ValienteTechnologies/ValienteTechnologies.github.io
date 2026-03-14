@@ -1,0 +1,16 @@
+tr: &DEFAULT_TR
+  title: "İletişime Geçin"
+  section: contact
+  name: "Ad Soyad*"
+  name-validation: "Lütfen adınızı girin."
+  email: "E-posta Adresi*"
+  email-validation: "Lütfen e-posta adresinizi girin."
+  phone: "Telefon Numarası*"
+  phone-validation: "Lütfen telefon numaranızı girin."
+  message: "Mesajınız*"
+  message-validation: "Lütfen bir mesaj girin."
+  subject: "Konu*"
+  submit: "Gönder"
+
+tr-TR:
+  <<: *DEFAULT_TR

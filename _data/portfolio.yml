@@ -1,0 +1,8 @@
+tr: &DEFAULT_TR
+  title: "Broşürlerimiz"
+  section: portfolio
+  closebutton: "Kapat"
+  cta: "Detayları Gör"
+
+tr-TR:
+  <<: *DEFAULT_TR

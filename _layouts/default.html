@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 
-  {% include head.html %}
+  {% include layout/head.html %}
 
   <body id="page-top">
 
@@ -9,7 +9,7 @@
         {{ content }}
       </main>
 
-	  {% include footer.html %}
+	  {% include layout/footer.html %}
 
 	  <!-- Bootstrap core JavaScript -->
 	  <script src="/assets/js/jquery.min.js" defer></script>

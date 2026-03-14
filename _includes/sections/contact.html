@@ -1,10 +1,5 @@
 <!-- Contact -->
-{% assign has_locale = site.locale and site.locale != "" and site.locale != nil %}
-{% if has_locale %}
-  {% assign contact = site.data.sitetext[site.locale].contact %}
-{% else %}
-  {% assign contact = site.data.sitetext.contact %}
-{% endif %}
+{% assign contact = site.data.contact[site.locale] | default: site.data.contact.tr %}
 {% assign fallback_points = "24/7 destek|Uzaktan ve yerinde danışmanlık|İhtiyacınıza özel teklif" | split: "|" %}
 {% assign contact_points = contact.points | default: fallback_points %}
 <section class="page-section contact-section" id="{{ contact.section | default: "contact" }}">

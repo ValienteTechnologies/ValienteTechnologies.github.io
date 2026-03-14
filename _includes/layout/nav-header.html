@@ -1,0 +1,54 @@
+{% assign header = site.data.header[site.locale] | default: site.data.header.tr %}
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      {%- if site.logo -%}
+        <img width="{{ site.logo.width | default: 208 }}" height="{{ site.logo.height | default: 52 }}" src="{{ site.logo.path }}" alt="{{ site.title }}"/>
+      {%- else -%}
+        {{ site.title }}
+      {%- endif -%}
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        {% assign nav = site.data.navigation[site.locale] | default: site.data.navigation.tr %}
+        {% for link in nav.nav %}
+        <li class="nav-item">
+          {%- if link.url -%}
+            <a class="nav-link js-scroll-trigger" href="{{ link.url }}">{{ link.title }}</a>
+          {%- elsif link.section -%}
+            <a class="nav-link js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
+          {%- else -%}
+            <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
+          {%- endif -%}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navigation -->
+
+<!-- Header -->
+<header class="masthead">
+  <canvas id="meshNetwork" class="mesh-network-canvas"></canvas>
+  <div class="container">
+    <div class="intro-text">
+      {%- if header.title -%}
+        <div class="intro-lead-in">{{ header.title }}</div>
+      {%- endif -%}
+      {%- if header.text -%}
+        <h1 class="intro-heading text-uppercase">{{ header.text }}</h1>
+      {%- endif -%}
+      {%- if header.button -%}
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ header.buttonlink }}">{{ header.button }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</header>
+<!-- End Header -->

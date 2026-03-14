@@ -1,10 +1,5 @@
 <!-- Testimonials -->
-{% assign has_locale = site.locale and site.locale != "" and site.locale != nil %}
-{% if has_locale %}
-  {% assign testimonials = site.data.sitetext[site.locale].testimonials %}
-{% else %}
-  {% assign testimonials = site.data.sitetext.testimonials %}
-{% endif %}
+{% assign testimonials = site.data.testimonials[site.locale] | default: site.data.testimonials.tr %}
 {% if testimonials %}
 <section class="page-section testimonials-section" id="{{ testimonials.section | default: "testimonials" }}">
   <div class="container">
@@ -41,7 +36,6 @@
                 <div class="testimonial-card__body">
                   {% if t.quote %}
                   <blockquote class="testimonial-quote mb-4">
-                    {% comment %} Remove the FontAwesome <i> tag if you're using CSS pseudo-elements for quotes {% endcomment %}
                     {{ t.quote }}
                   </blockquote>
                   {% endif %}

@@ -1,10 +1,5 @@
 <!-- Services -->
-{% assign has_locale = site.locale and site.locale != "" and site.locale != nil %}
-{% if has_locale %}
-  {% assign services = site.data.sitetext[site.locale].services %}
-{% else %}
-  {% assign services = site.data.sitetext.services %}
-{% endif %}
+{% assign services = site.data.services[site.locale] | default: site.data.services.tr %}
 {% if services %}
 <section class="page-section services-section" id="{{ services.section | default: "services" }}">
   <div class="services-background" aria-hidden="true"></div>

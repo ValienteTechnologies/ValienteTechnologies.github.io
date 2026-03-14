@@ -1,0 +1,36 @@
+tr: &DEFAULT_TR
+  title: "Hakkımızda"
+  section: about
+  body: "Valiente Technologies, kurumların güvenlik açıklarını kötü niyetli saldırganlardan önce keşfetmesini ve kapatmasını sağlayan ofansif siber güvenlik uzmanları tarafından kurulmuş bir teknoloji girişimidir. Ana odağımız, gerçek dünyadaki saldırı tekniklerini birebir simüle ederek müşterilerimizin dijital altyapılarındaki zayıflıkları detaylı şekilde ortaya çıkarmak ve işletmelerin siber dayanıklılığını en üst düzeye taşımaktır."
+  mission:
+    title: "Misyonumuz"
+    text: "Dijital dünyada karşılaşılan güvenlik tehditlerine karşı yenilikçi, hızlı ve etkili çözümler sunarak kurumların verilerini güvenle yönetmelerini sağlamak. Teknolojiyi insan odaklı bir yaklaşımla birleştirerek siber riskleri minimuma indirmek ve tüm kullanıcılar için daha güvenli bir dijital ekosistem oluşturmaktır."
+    icon: fas fa-crosshairs
+  vision:
+    title: "Vizyonumuz"
+    text: "Küresel ölçekte tanınan, güven veren ve ileri teknoloji çözümleriyle sektör standartlarını belirleyen lider bir siber güvenlik şirketi olmak. Geleceğin tehditlerine bugünden hazırlıklı olarak, yapay zekâ destekli savunma teknolojileriyle dijital güvenliğin geleceğini şekillendirmektir."
+    icon: fas fa-user-shield
+  certifications:
+    title: "Sertifikalarımız"
+    section: certifications
+    iso:
+      title: "ISO/IEC 27001:2022"
+      desc: "Bilgi Güvenliği Yönetim Sistemi alanında uluslararası geçerliliğe sahip bu sertifika, kurumumuzun veri güvenliği süreçlerinin en yüksek standartları karşıladığını belgeler."
+      image: /assets/img/about/iso.png
+      url: /assets/docs/iso27001.pdf
+    list:
+      - title: "OSCP"
+        image: /assets/img/about/oscp.png
+      - title: "OSWE"
+        image: /assets/img/about/oswe.png
+      - title: "CISSP"
+        image: /assets/img/about/cissp.png
+      - title: "eWPTXv2"
+        image: /assets/img/about/ewptxv2.png
+      - title: "Red Hat"
+        image: /assets/img/about/redhat.png
+      - title: "TSE"
+        image: /assets/img/about/tse.png
+
+tr-TR:
+  <<: *DEFAULT_TR

@@ -1,0 +1,8 @@
+tr: &DEFAULT_TR
+  title: Denetim bir gerekliliktir, güvenlik ise strateji.
+  text: Sızma Testi ve Siber Güvenlik Hizmetleri
+  button: Keşfet
+  buttonlink: "#services"
+
+tr-TR:
+  <<: *DEFAULT_TR
