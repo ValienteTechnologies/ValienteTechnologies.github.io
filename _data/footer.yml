@@ -1,5 +1,5 @@
 tr: &DEFAULT_TR
-  legal: "Gizlilik Politikası"
+  legal: "Yasal"
   careers: "Kariyer"
   careers_url: "https://www.linkedin.com/company/valientetechnologies/jobs/"
   social:
@@ -17,7 +17,7 @@ tr-TR:
   <<: *DEFAULT_TR
 
 en:
-  legal: "Privacy Policy"
+  legal: "Legal"
   careers: "Careers"
   careers_url: "https://www.linkedin.com/company/valientetechnologies/jobs/"
   social:
