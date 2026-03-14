@@ -5,4 +5,5 @@ body_class: about-page
 ---
 {% include sections/about.html %}
 {% include sections/portfolio.html %}
+{% include sections/partners.html %}
 {% include sections/modals.html %}

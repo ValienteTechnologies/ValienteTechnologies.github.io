@@ -17,7 +17,7 @@ tr: &DEFAULT_TR
         - title: "Sertifikalar"
           url: /about#certifications
         - title: "İş Ortakları"
-          url: /partners
+          url: /about#partners
     - title: "İletişim"
       url: /contact
     - title: "Blog"
@@ -38,7 +38,7 @@ en:
         - title: "Certifications"
           url: /about#certifications
         - title: "Partners"
-          url: /partners
+          url: /about#partners
     - title: "Contact"
       url: /contact
     - title: "Blog"
