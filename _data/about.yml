@@ -2,7 +2,7 @@ tr: &DEFAULT_TR
   title: "Hakkımızda"
   description: "Valiente Technologies hakkında bilgi edinin. Misyon, vizyon ve sertifikalarımız."
   section: about
-  body: "Valiente Technologies, kurumların güvenlik açıklarını kötü niyetli saldırganlardan önce keşfetmesini ve kapatmasını sağlayan ofansif siber güvenlik uzmanları tarafından kurulmuş bir teknoloji girişimidir. Ana odağımız, gerçek dünyadaki saldırı tekniklerini birebir simüle ederek müşterilerimizin dijital altyapılarındaki zayıflıkları detaylı şekilde ortaya çıkarmak ve işletmelerin siber dayanıklılığını en üst düzeye taşımaktır."
+  body: "Valiente Technologies, Antalya’nın ilk ve tek siber güvenlik şirketi olarak, kurumların güvenlik açıklarını kötü niyetli saldırganlardan önce keşfetmesini ve kapatmasını sağlayan ofansif siber güvenlik uzmanları tarafından kurulmuş bir teknoloji girişimidir. Ana odağımız, gerçek dünyadaki saldırı tekniklerini birebir simüle ederek müşterilerimizin dijital altyapılarındaki zayıflıkları detaylı şekilde ortaya çıkarmak ve işletmelerin siber dayanıklılığını en üst düzeye taşımaktır."
   mission:
     title: "Misyonumuz"
     text: "Dijital dünyada karşılaşılan güvenlik tehditlerine karşı yenilikçi, hızlı ve etkili çözümler sunarak kurumların verilerini güvenle yönetmelerini sağlamak. Teknolojiyi insan odaklı bir yaklaşımla birleştirerek siber riskleri minimuma indirmek ve tüm kullanıcılar için daha güvenli bir dijital ekosistem oluşturmaktır."
@@ -41,7 +41,7 @@ en:
   title: "About Us"
   description: "Learn about Valiente Technologies. Our mission, vision, and certifications."
   section: about
-  body: "Valiente Technologies is a technology venture founded by offensive cybersecurity experts who help organizations discover and remediate security vulnerabilities before malicious actors can exploit them. Our core focus is to simulate real-world attack techniques to expose weaknesses in our clients' digital infrastructure in detail, and to maximize the cyber resilience of their businesses."
+  body: "As the first and only cybersecurity company in Antalya, Valiente Technologies is a technology venture founded by offensive cybersecurity experts who help organizations discover and remediate security vulnerabilities before malicious actors can exploit them. Our core focus is to simulate real-world attack techniques to expose weaknesses in our clients' digital infrastructure in detail, and to maximize the cyber resilience of their businesses."
   mission:
     title: "Our Mission"
     text: "To provide innovative, fast, and effective solutions against security threats in the digital world, enabling organizations to manage their data securely. To combine technology with a human-centered approach to minimize cyber risks and create a safer digital ecosystem for all users."
