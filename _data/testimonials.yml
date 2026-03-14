@@ -21,7 +21,7 @@ tr-TR:
   <<: *DEFAULT_TR
 
 en:
-  title: "Testimonials"
+  title: "Our Testimonials"
   section: testimonials
   list:
     - company: "Enelsa Endüstriyel Elektronik"

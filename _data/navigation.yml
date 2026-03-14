@@ -51,11 +51,11 @@ en:
     - title: "Corporate"
       url: /corporate
       children:
-        - title: "About"
+        - title: "About Us"
           url: /corporate#about
         - title: "Certifications"
           url: /corporate#certifications
-        - title: "Brochure"
+        - title: "Brochures"
           url: /corporate#portfolio
         - title: "Partners"
           url: /corporate#partners

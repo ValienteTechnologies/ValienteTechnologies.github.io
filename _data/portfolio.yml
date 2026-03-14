@@ -38,7 +38,7 @@ tr-TR:
   <<: *DEFAULT_TR
 
 en:
-  title: "Brochures"
+  title: "Our Brochures"
   section: portfolio
   closebutton: "Close"
   cta: "View Details"
