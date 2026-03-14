@@ -17,19 +17,32 @@
         <h3 class="office-card__city">{{ office.city }}</h3>
         {% if office.address %}
         <div class="office-card__info">
-          <span class="office-card__icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+          <span class="office-card__icon" aria-hidden="true">
+            <span class="fa-stack">
+              <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.15"></i>
+              <i class="fas fa-map-marker-alt fa-stack-1x text-primary"></i>
+            </span>
+          </span>
           <p>{{ office.address }}</p>
         </div>
         {% endif %}
         {% if office.phone %}
         <div class="office-card__info">
-          <span class="office-card__icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+          <span class="office-card__icon" aria-hidden="true">
+            <span class="fa-stack">
+              <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.15"></i>
+              <i class="fas fa-phone fa-stack-1x text-primary"></i>
+            </span>
+          </span>
           <a href="tel:{{ office.phone | replace: ' ', '' }}">{{ office.phone }}</a>
         </div>
         {% endif %}
         {% if office.map_url %}
         <a href="{{ office.map_url }}" class="office-card__map-link" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-directions" aria-hidden="true"></i>
+          <span class="fa-stack" style="font-size: 0.8em;">
+            <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.15"></i>
+            <i class="fas fa-directions fa-stack-1x text-primary"></i>
+          </span>
           {{ contact.directions_label | default: "Yol Tarifi Al" }}
         </a>
         {% endif %}

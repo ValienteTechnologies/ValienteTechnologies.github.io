@@ -20,7 +20,10 @@
               {% for point in contact_points %}
               <li>
                 <span class="contact-highlights__icon">
-                  <i class="fas fa-check"></i>
+                  <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.2"></i>
+                    <i class="fas fa-check fa-stack-1x text-primary"></i>
+                  </span>
                 </span>
                 <span>{{ point }}</span>
               </li>
@@ -29,7 +32,12 @@
             <div class="contact-meta">
               {% if site.email %}
               <a class="contact-meta__item" href="mailto:{{ site.email }}">
-                <span class="contact-meta__icon"><i class="fas fa-envelope"></i></span>
+                <span class="contact-meta__icon">
+                  <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.18"></i>
+                    <i class="fas fa-envelope fa-stack-1x text-primary"></i>
+                  </span>
+                </span>
                 <div>
                   <p class="label">E-posta</p>
                   <p class="value">{{ site.email }}</p>
@@ -38,7 +46,12 @@
               {% endif %}
               {% if contact.phone_number %}
               <a class="contact-meta__item" href="tel:{{ contact.phone_number | replace: ' ', '' }}">
-                <span class="contact-meta__icon"><i class="fas fa-phone"></i></span>
+                <span class="contact-meta__icon">
+                  <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.18"></i>
+                    <i class="fas fa-phone fa-stack-1x text-primary"></i>
+                  </span>
+                </span>
                 <div>
                   <p class="label">Telefon</p>
                   <p class="value">{{ contact.phone_number }}</p>

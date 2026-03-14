@@ -135,7 +135,7 @@
 }
 
 // Navbar clearance on standalone /contact page
-body.contact-page .offices-section {
+body.contact-page .contact-section {
   padding-top: calc(var(--space-section-y) + 5rem);
 
   @include media-min($breakpoint-lg) {
@@ -372,6 +372,15 @@ body.contact-page .offices-section {
       flex: 1;
       gap: var(--space-gap-lg);
       min-height: 0;
+    }
+  }
+
+  .contact-panel--info {
+    // Override default icon container styles when using fa-stack
+    .contact-highlights__icon, .contact-meta__icon {
+      background: none;
+      width: auto;
+      height: auto;
     }
   }
 
