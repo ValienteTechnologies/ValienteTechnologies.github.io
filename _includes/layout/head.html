@@ -77,6 +77,11 @@
   <meta property="og:description" content="{{ page.description | default: site.description }}">
   <meta property="og:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
 
+  {% if page.layout == "home" %}
+  <!-- LCP preload: masthead ::before background image (CSS images aren't auto-prioritized) -->
+  <link rel="preload" href="/assets/img/valiente/valiente.svg" as="image" fetchpriority="high">
+  {% endif %}
+
   <!-- Preconnect to font origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
