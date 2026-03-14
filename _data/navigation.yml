@@ -18,23 +18,23 @@ tr: &DEFAULT_TR
         - title: "Geri Bildirimler"
           section: testimonials
     - title: "Kurumsal"
-      url: /corporate
+      url: /corporate/
       children:
         - title: "Hakkımızda"
-          url: /corporate#about
+          url: /corporate/#about
         - title: "Sertifikalar"
-          url: /corporate#certifications
+          url: /corporate/#certifications
         - title: "Broşürler"
-          url: /corporate#brochures
+          url: /corporate/#brochures
         - title: "İş Ortakları"
-          url: /corporate#partners
+          url: /corporate/#partners
     - title: "İletişim"
-      url: /contact
+      url: /contact/
       children:
         - title: "Form"
-          url: /contact#contact
+          url: /contact/#contact
         - title: "Ofisler"
-          url: /contact#offices
+          url: /contact/#offices
     - title: "Blog"
       url: /blog/
       static: true
@@ -54,23 +54,23 @@ en:
         - title: "Testimonials"
           section: testimonials
     - title: "Corporate"
-      url: /corporate
+      url: /corporate/
       children:
         - title: "About Us"
-          url: /corporate#about
+          url: /corporate/#about
         - title: "Certifications"
-          url: /corporate#certifications
+          url: /corporate/#certifications
         - title: "Brochures"
-          url: /corporate#brochures
+          url: /corporate/#brochures
         - title: "Partners"
-          url: /corporate#partners
+          url: /corporate/#partners
     - title: "Contact"
-      url: /contact
+      url: /contact/
       children:
         - title: "Form"
-          url: /contact#contact
+          url: /contact/#contact
         - title: "Offices"
-          url: /contact#offices
+          url: /contact/#offices
     - title: "Blog"
       url: /blog/
       static: true
