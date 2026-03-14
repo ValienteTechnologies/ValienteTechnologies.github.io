@@ -18,16 +18,16 @@ tr: &DEFAULT_TR
         - title: "Müşteri Yorumları"
           section: testimonials
     - title: "Kurumsal"
-      url: /about
+      url: /corporate
       children:
         - title: "Hakkımızda"
-          url: /about#about
+          url: /corporate#about
         - title: "Sertifikalar"
-          url: /about#certifications
+          url: /corporate#certifications
         - title: "Broşürlerimiz"
-          url: /about#portfolio
+          url: /corporate#portfolio
         - title: "İş Ortakları"
-          url: /about#partners
+          url: /corporate#partners
     - title: "İletişim"
       url: /contact
     - title: "Blog"
@@ -49,16 +49,16 @@ en:
         - title: "Testimonials"
           section: testimonials
     - title: "Corporate"
-      url: /about
+      url: /corporate
       children:
         - title: "About"
-          url: /about#about
+          url: /corporate#about
         - title: "Certifications"
-          url: /about#certifications
+          url: /corporate#certifications
         - title: "Brochures"
-          url: /about#portfolio
+          url: /corporate#portfolio
         - title: "Partners"
-          url: /about#partners
+          url: /corporate#partners
     - title: "Contact"
       url: /contact
     - title: "Blog"
