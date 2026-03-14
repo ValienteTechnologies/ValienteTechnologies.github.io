@@ -1,4 +1,10 @@
 <head>
+  {%- assign _data_section = site.data[page.data_key][site.active_lang] | default: site.data[page.data_key].tr -%}
+  {%- assign _page_title = page.title -%}
+  {%- assign _page_description = page.description | default: site.description -%}
+  {%- if _data_section.title -%}{%- assign _page_title = _data_section.title -%}{%- endif -%}
+  {%- if _data_section.description -%}{%- assign _page_description = _data_section.description -%}{%- endif -%}
+
   <!-- Critical CSS: single stylesheet (bootstrap bundled in) -->
   <link rel="preload" href="/assets/css/agency.css" as="style">
 
@@ -20,7 +26,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="description" content="{{ _page_description }}">
   <meta name="author" content="{{ site.author }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="icon" type="image/x-icon" href="/assets/img/valiente/favicon.ico">
@@ -52,7 +58,7 @@
     "@context": "https://schema.org",
     "@type": "{{ page.schema_type }}",
     "name": "{{ page.schema_name | default: page.title }}",
-    "description": "{{ page.schema_description | default: page.description }}",
+    "description": "{{ page.schema_description | default: _page_description }}",
     "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
     "provider": {
       "@type": "Organization",
@@ -68,25 +74,19 @@
   <link rel="alternate" hreflang="en" {% static_href %}href="{{ site.url }}/en{{ page.url }}"{% endstatic_href %}>
   <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ site.url }}{{ page.url }}"{% endstatic_href %}>
 
-  {%- assign _page_title = page.title -%}
-  {%- if page.data_key -%}
-    {%- assign _data_section = site.data[page.data_key][site.active_lang] | default: site.data[page.data_key].tr -%}
-    {%- if _data_section.title -%}{%- assign _page_title = _data_section.title -%}{%- endif -%}
-  {%- endif -%}
-
   <title>{% if _page_title %}{{ _page_title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <!-- Open Graph / Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if _page_title %}{{ _page_title | append: ' | ' | append: site.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:description" content="{{ _page_description }}">
   <meta name="twitter:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <meta property="og:title" content="{% if _page_title %}{{ _page_title | append: ' | ' | append: site.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:description" content="{{ _page_description }}">
   <meta property="og:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
 
   {% if page.layout == "home" %}

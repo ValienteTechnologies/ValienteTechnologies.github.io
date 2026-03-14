@@ -1,0 +1,10 @@
+tr: &DEFAULT_TR
+  title: "Gizlilik Politikası"
+  description: "Valiente Technologies gizlilik politikası ve kişisel veri işleme hakkında bilgi."
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  title: "Privacy Policy"
+  description: "Valiente Technologies privacy policy and personal data processing information."

@@ -1,5 +1,6 @@
 tr: &DEFAULT_TR
   title: "Hakkımızda"
+  description: "Valiente Technologies hakkında bilgi edinin. Misyon, vizyon ve sertifikalarımız."
   section: about
   body: "Valiente Technologies, kurumların güvenlik açıklarını kötü niyetli saldırganlardan önce keşfetmesini ve kapatmasını sağlayan ofansif siber güvenlik uzmanları tarafından kurulmuş bir teknoloji girişimidir. Ana odağımız, gerçek dünyadaki saldırı tekniklerini birebir simüle ederek müşterilerimizin dijital altyapılarındaki zayıflıkları detaylı şekilde ortaya çıkarmak ve işletmelerin siber dayanıklılığını en üst düzeye taşımaktır."
   mission:
@@ -13,6 +14,7 @@ tr: &DEFAULT_TR
   certifications:
     title: "Sertifikalarımız"
     section: certifications
+    view-document: "Belgeyi Görüntüle"
     iso:
       title: "ISO/IEC 27001:2022"
       desc: "Bilgi Güvenliği Yönetim Sistemi alanında uluslararası geçerliliğe sahip bu sertifika, kurumumuzun veri güvenliği süreçlerinin en yüksek standartları karşıladığını belgeler."
@@ -37,6 +39,7 @@ tr-TR:
 
 en:
   title: "About Us"
+  description: "Learn about Valiente Technologies. Our mission, vision, and certifications."
   section: about
   body: "Valiente Technologies is a technology venture founded by offensive cybersecurity experts who help organizations discover and remediate security vulnerabilities before malicious actors can exploit them. Our core focus is to simulate real-world attack techniques to expose weaknesses in our clients' digital infrastructure in detail, and to maximize the cyber resilience of their businesses."
   mission:
@@ -50,6 +53,7 @@ en:
   certifications:
     title: "Our Certifications"
     section: certifications
+    view-document: "View Document"
     iso:
       title: "ISO/IEC 27001:2022"
       desc: "This internationally recognized certificate in Information Security Management Systems documents that our organization's data security processes meet the highest standards."

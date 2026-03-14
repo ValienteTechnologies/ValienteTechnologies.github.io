@@ -1,0 +1,8 @@
+tr: &DEFAULT_TR
+  description: "Antalya merkezli siber güvenlik şirketi. Sızma (penetrasyon) testi ve ofansif güvenlik hizmetleri. Valiente Technologies ile dijital varlıklarınızı koruyun."
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  description: "Antalya-based cybersecurity company. Penetration testing and offensive security services. Protect your digital assets with Valiente Technologies."

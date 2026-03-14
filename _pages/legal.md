@@ -1,7 +1,6 @@
 ---
 layout: subpage
-title: Gizlilik Politikası
-description: "Valiente Technologies gizlilik politikası ve kişisel veri işleme hakkında bilgi."
+data_key: legal
 body_class: page-layout
 ---
 <div class="container" id="pagecontainer">
