@@ -1,5 +1,5 @@
 <!-- Portfolio Modals -->
-{% assign portfolio = site.data.portfolio[site.locale] | default: site.data.portfolio.tr %}
+{% assign portfolio = site.data.portfolio[site.active_lang] | default: site.data.portfolio.tr %}
 {% for project in portfolio.items %}
 <div
   class="portfolio-modal modal fade"

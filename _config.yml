@@ -19,7 +19,15 @@ title      : Valiente Technologies
 email      : info@valiente.com.tr
 description: "Antalya merkezli siber güvenlik şirketi. Sızma (penetrasyon) testi ve ofansif güvenlik hizmetleri. Valiente Technologies ile dijital varlıklarınızı koruyun."
 author     : Valiente Technologies
-locale: "tr-TR"
+# Polyglot multilanguage
+languages: ["tr", "en"]
+default_lang: "tr"
+exclude_from_localization:
+  - assets
+  - CNAME
+  - robots.txt
+  - scripts
+parallel_localization: true
 logo:
   path: /assets/img/valiente/valientetitle.svg
 
@@ -32,6 +40,7 @@ collections:
     permalink: /:name/
 
 plugins:
+  - jekyll-polyglot
   - jekyll-sitemap
   - jekyll-redirect-from
 

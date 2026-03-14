@@ -37,7 +37,7 @@
     "description": "{{ site.description }}",
     "email": "{{ site.email }}",
     "sameAs": [
-      {%- assign footer = site.data.footer[site.locale] | default: site.data.footer.tr -%}
+      {%- assign footer = site.data.footer[site.active_lang] | default: site.data.footer.tr -%}
       {%- for link in footer.social -%}
         "{{ link.url }}"{% unless forloop.last %},{% endunless %}
       {%- endfor %}
@@ -63,7 +63,16 @@
   </script>
   {% endif %}
 
-  {% assign _page_title = page.title %}
+  <!-- hreflang alternates for multilanguage SEO (page.url is always the base path in polyglot) -->
+  <link rel="alternate" hreflang="tr" {% static_href %}href="{{ site.url }}{{ page.url }}"{% endstatic_href %}>
+  <link rel="alternate" hreflang="en" {% static_href %}href="{{ site.url }}/en{{ page.url }}"{% endstatic_href %}>
+  <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ site.url }}{{ page.url }}"{% endstatic_href %}>
+
+  {%- assign _page_title = page.title -%}
+  {%- if page.data_key -%}
+    {%- assign _data_section = site.data[page.data_key][site.active_lang] | default: site.data[page.data_key].tr -%}
+    {%- if _data_section.title -%}{%- assign _page_title = _data_section.title -%}{%- endif -%}
+  {%- endif -%}
 
   <title>{% if _page_title %}{{ _page_title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}</title>
 

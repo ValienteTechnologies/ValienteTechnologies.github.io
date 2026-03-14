@@ -13,3 +13,16 @@ tr: &DEFAULT_TR
 
 tr-TR:
   <<: *DEFAULT_TR
+
+en:
+  legal: "Privacy Policy"
+  social:
+    - url: https://www.linkedin.com/company/valientetechnologies
+      icon: "fab fa-linkedin-in"
+      label: "LinkedIn"
+    - url: https://github.com/ValienteTechnologies
+      icon: "fab fa-github"
+      label: "GitHub"
+    - url: https://www.instagram.com/valientetechnologies
+      icon: "fab fa-instagram"
+      label: "Instagram"

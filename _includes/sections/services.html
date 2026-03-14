@@ -1,5 +1,5 @@
 <!-- Services -->
-{% assign services = site.data.services[site.locale] | default: site.data.services.tr %}
+{% assign services = site.data.services[site.active_lang] | default: site.data.services.tr %}
 {% if services %}
 <section class="page-section services-section" id="{{ services.section | default: "services" }}">
   <div class="services-background" aria-hidden="true"></div>

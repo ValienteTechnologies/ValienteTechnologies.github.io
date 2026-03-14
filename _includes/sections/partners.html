@@ -1,5 +1,5 @@
 <!-- Partners -->
-{% assign partners = site.data.partners[site.locale] | default: site.data.partners.tr %}
+{% assign partners = site.data.partners[site.active_lang] | default: site.data.partners.tr %}
 <section class="bg-light page-section" id="{{ partners.section | default: "partners" }}">
   <div class="container">
     <div class="row">

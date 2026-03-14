@@ -6,3 +6,9 @@ tr: &DEFAULT_TR
 
 tr-TR:
   <<: *DEFAULT_TR
+
+en:
+  title: Audit is a requirement, security is strategy.
+  text: Penetration Testing & Cybersecurity Services
+  button: Explore
+  buttonlink: "#services"

@@ -1,5 +1,5 @@
 <!-- Testimonials -->
-{% assign testimonials = site.data.testimonials[site.locale] | default: site.data.testimonials.tr %}
+{% assign testimonials = site.data.testimonials[site.active_lang] | default: site.data.testimonials.tr %}
 {% if testimonials %}
 <section class="page-section testimonials-section" id="{{ testimonials.section | default: "testimonials" }}">
   <div class="container">

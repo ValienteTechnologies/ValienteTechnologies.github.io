@@ -1,5 +1,5 @@
 <!-- Portfolio Grid -->
-{% assign portfolio = site.data.portfolio[site.locale] | default: site.data.portfolio.tr %}
+{% assign portfolio = site.data.portfolio[site.active_lang] | default: site.data.portfolio.tr %}
 <section class="page-section portfolio-section" id="{{ portfolio.section | default: "portfolio" }}">
   <div class="container">
     <div class="row">

@@ -1,6 +1,6 @@
 ---
 layout: subpage
-title: "Hakkımızda"
+data_key: about
 description: "Valiente Technologies hakkında bilgi edinin. Misyon, vizyon ve sertifikalarımız."
 body_class: about-page
 ---

@@ -14,3 +14,17 @@ tr: &DEFAULT_TR
 
 tr-TR:
   <<: *DEFAULT_TR
+
+en:
+  title: "Get In Touch"
+  section: contact
+  name: "Full Name*"
+  name-validation: "Please enter your name."
+  email: "Email Address*"
+  email-validation: "Please enter your email address."
+  phone: "Phone Number*"
+  phone-validation: "Please enter your phone number."
+  message: "Your Message*"
+  message-validation: "Please enter a message."
+  subject: "Subject*"
+  submit: "Send"

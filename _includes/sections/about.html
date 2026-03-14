@@ -1,5 +1,5 @@
 <!-- About -->
-{% assign about = site.data.about[site.locale] | default: site.data.about.tr %}
+{% assign about = site.data.about[site.active_lang] | default: site.data.about.tr %}
 {% if about %}
 
 <!-- About Us Section -->

@@ -1,5 +1,5 @@
 <!-- References -->
-{% assign references = site.data.references[site.locale] | default: site.data.references.tr %}
+{% assign references = site.data.references[site.active_lang] | default: site.data.references.tr %}
 <section class="page-section references-section" id="{{ references.section | default: "references" }}">
   <div class="container">
     <div class="row">

@@ -36,3 +36,39 @@ tr: &DEFAULT_TR
 
 tr-TR:
   <<: *DEFAULT_TR
+
+en:
+  title: "Brochures"
+  section: portfolio
+  closebutton: "Close"
+  cta: "View Details"
+  items:
+    - title: Cloud Backup
+      subtitle: Secure, Scalable, and Uninterrupted Data Protection
+      image: /assets/img/portfolio/backup.png
+      alt: Cloud storage and data backup brochure
+      caption:
+        title: Cloud Backup
+        subtitle: Ransomware protection
+        thumbnail: /assets/img/valiente/thumbnail.png
+      content: "Our cloud-based backup solutions enable you to securely store your critical data, access it from anywhere, and ensure business continuity in the event of system failures. With a flexible, scalable architecture compliant with modern security standards, we simplify corporate data management and strengthen your business against cyber risks."
+
+    - title: External Network Tests
+      subtitle: Comprehensive External Network Vulnerability Scanning and Phishing Simulation for Organizations
+      image: /assets/img/portfolio/external.png
+      alt: External Network Security and Phishing Simulation brochure
+      caption:
+        title: External Network Tests
+        subtitle: External Security Assessment
+        thumbnail: /assets/img/valiente/thumbnail.png
+      content: "We test your internet-facing systems with vulnerability scans and realistic phishing simulations. We identify weak configurations, audit your email infrastructure, and provide detailed reports by risk level to strengthen your cybersecurity proactively."
+
+    - title: Penetration Test
+      subtitle: Comprehensive Cybersecurity and Penetration Testing Services for Organizations
+      image: /assets/img/portfolio/pentest.png
+      alt: Penetration Test brochure
+      caption:
+        title: Penetration Test
+        subtitle: Corporate Security Assessment
+        thumbnail: /assets/img/valiente/thumbnail.png
+      content: "We test organizations' defense mechanisms against cybersecurity threats, expose vulnerabilities, and provide comprehensive reporting to raise the security level. We measure your network, application, and system security with penetration tests based on real attack scenarios."

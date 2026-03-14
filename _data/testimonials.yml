@@ -19,3 +19,22 @@ tr: &DEFAULT_TR
 
 tr-TR:
   <<: *DEFAULT_TR
+
+en:
+  title: "Testimonials"
+  section: testimonials
+  list:
+    - company: "Enelsa Endüstriyel Elektronik"
+      person: "Ahmet Ulaş Polat"
+      title: "IT Manager"
+      quote: "They worked meticulously without disrupting our operations or straining the network. They delivered quality work with their technical depth and post-report support."
+
+    - company: "CENAL Elektrik Üretim"
+      person: "Mehmet Akif Karahan"
+      title: "IT Specialist"
+      quote: "We asked for a real attack scenario and were satisfied. A technically deep and professional team that helped us see our vulnerabilities."
+
+    - company: "Megasaray Hotels"
+      person: "Şükrü Kavurmacı"
+      title: "Group IT Manager"
+      quote: "We worked together to see the gaps in our ISO 27001 process. They conducted comprehensive multi-faceted tests and helped us close many critical vulnerabilities."

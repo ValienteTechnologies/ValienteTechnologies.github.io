@@ -1,11 +1,11 @@
-# Turkish
-# -----------------
 # Supported link types:
 #   section: services        → scrolls to /#services (home only) or links to /#services (subpages)
-#   url: /about              → links to a page
-#   children:                → renders a dropdown; each child supports url or section
+#   url: /about              → links to a page (automatically prefixed with language)
+#   static: true             → url is NOT language-prefixed (e.g. external or the blog)
+#   children:                → renders a dropdown; each child supports url, section, or static
 #     - title: "..."
 #       url: /services/pentest
+
 tr: &DEFAULT_TR
   nav:
     - title: "Hizmetler"
@@ -18,7 +18,25 @@ tr: &DEFAULT_TR
       section: partners
     - title: "Blog"
       url: /blog/
+      static: true
     - title: "İletişim"
       section: contact
+
 tr-TR:
   <<: *DEFAULT_TR
+
+en:
+  nav:
+    - title: "Services"
+      section: services
+    - title: "References"
+      section: references
+    - title: "About"
+      url: /about
+    - title: "Partners"
+      section: partners
+    - title: "Blog"
+      url: /blog/
+      static: true
+    - title: "Contact"
+      section: contact
