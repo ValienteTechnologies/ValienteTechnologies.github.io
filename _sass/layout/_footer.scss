@@ -18,6 +18,11 @@
     margin-bottom: 0;
     text-transform: none;
     @include heading-font;
+    li + li::before {
+      content: "|";
+      margin: 0 0.5em;
+      opacity: 0.4;
+    }
   }
 }
 
