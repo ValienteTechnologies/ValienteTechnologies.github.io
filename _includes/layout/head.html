@@ -1,4 +1,8 @@
 <head>
+  <!-- Critical CSS: preload both stylesheets immediately so the browser fetches them in parallel -->
+  <link rel="preload" href="/assets/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/assets/css/agency.css" as="style">
+
   {% if site.analytics.google %}
   <!-- Google Analytics: deferred until after load to avoid forced reflow on LCP -->
   <script>
