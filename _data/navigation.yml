@@ -10,12 +10,22 @@ tr: &DEFAULT_TR
   nav:
     - title: "Ana Sayfa"
       url: /
+      children:
+        - title: "Hizmetler"
+          section: services
+        - title: "Referanslar"
+          section: references
+        - title: "Müşteri Yorumları"
+          section: testimonials
     - title: "Kurumsal"
+      url: /about
       children:
         - title: "Hakkımızda"
-          url: /about
+          url: /about#about
         - title: "Sertifikalar"
           url: /about#certifications
+        - title: "Broşürlerimiz"
+          url: /about#portfolio
         - title: "İş Ortakları"
           url: /about#partners
     - title: "İletişim"
@@ -31,12 +41,22 @@ en:
   nav:
     - title: "Home"
       url: /
+      children:
+        - title: "Services"
+          section: services
+        - title: "References"
+          section: references
+        - title: "Testimonials"
+          section: testimonials
     - title: "Corporate"
+      url: /about
       children:
         - title: "About"
-          url: /about
+          url: /about#about
         - title: "Certifications"
           url: /about#certifications
+        - title: "Brochures"
+          url: /about#portfolio
         - title: "Partners"
           url: /about#partners
     - title: "Contact"
