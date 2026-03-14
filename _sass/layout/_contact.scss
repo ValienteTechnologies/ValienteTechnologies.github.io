@@ -55,7 +55,7 @@
   margin-bottom: var(--space-gap-xl);
 
   @include media-min($breakpoint-md) {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -75,34 +75,40 @@
 
   .office-card__info {
     display: flex;
-    align-items: flex-start;
+    align-items: center; // Center vertically for better alignment with icons
     gap: var(--space-gap);
-    margin-bottom: var(--space-gap-sm);
+    margin-bottom: var(--space-gap-md); // Slightly more gap
     color: var(--color-text-muted-on-dark);
     font-size: var(--font-size-sm);
+    line-height: 1.4;
 
     p, a {
       margin: 0;
       color: inherit;
       text-decoration: none;
+      transition: color 200ms ease;
 
       &:hover {
-        color: lighten($primary, 15%);
+        color: var(--color-primary);
       }
+    }
+
+    a {
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
   }
 
   .office-card__icon {
-    width: $icon-size-sm;
-    height: $icon-size-sm;
-    border-radius: 50%;
-    background: rgba($primary, 0.2);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: lighten($primary, 15%);
     flex-shrink: 0;
-    font-size: var(--font-size-sm);
+    width: 2.5rem; // Fixed width for alignment
+    
+    .fa-stack {
+      font-size: 1.1rem; // Adjust stack size
+    }
   }
 
   .office-card__map-link {

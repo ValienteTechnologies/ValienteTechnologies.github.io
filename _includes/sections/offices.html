@@ -23,7 +23,9 @@
               <i class="fas fa-map-marker-alt fa-stack-1x text-primary"></i>
             </span>
           </span>
-          <p>{{ office.address }}</p>
+          <a href="{{ office.map_url }}" target="_blank" rel="noopener noreferrer">
+            {{ office.address }}
+          </a>
         </div>
         {% endif %}
         {% if office.phone %}
@@ -36,15 +38,6 @@
           </span>
           <a href="tel:{{ office.phone | replace: ' ', '' }}">{{ office.phone }}</a>
         </div>
-        {% endif %}
-        {% if office.map_url %}
-        <a href="{{ office.map_url }}" class="office-card__map-link" target="_blank" rel="noopener noreferrer">
-          <span class="fa-stack" style="font-size: 0.8em;">
-            <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.15"></i>
-            <i class="fas fa-directions fa-stack-1x text-primary"></i>
-          </span>
-          {{ contact.directions_label | default: "Yol Tarifi Al" }}
-        </a>
         {% endif %}
       </div>
       {% endfor %}
