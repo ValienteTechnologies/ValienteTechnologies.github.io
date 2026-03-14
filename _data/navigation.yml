@@ -15,7 +15,7 @@ tr: &DEFAULT_TR
           section: services
         - title: "Referanslar"
           section: references
-        - title: "Müşteri Yorumları"
+        - title: "Geri Bildirimler"
           section: testimonials
     - title: "Kurumsal"
       url: /corporate
@@ -24,7 +24,7 @@ tr: &DEFAULT_TR
           url: /corporate#about
         - title: "Sertifikalar"
           url: /corporate#certifications
-        - title: "Broşürlerimiz"
+        - title: "Broşürler"
           url: /corporate#portfolio
         - title: "İş Ortakları"
           url: /corporate#partners
@@ -55,7 +55,7 @@ en:
           url: /corporate#about
         - title: "Certifications"
           url: /corporate#certifications
-        - title: "Brochures"
+        - title: "Brochure"
           url: /corporate#portfolio
         - title: "Partners"
           url: /corporate#partners
