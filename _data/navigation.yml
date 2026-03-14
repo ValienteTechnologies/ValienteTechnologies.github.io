@@ -9,18 +9,20 @@
 tr: &DEFAULT_TR
   nav:
     - title: "Hizmetler"
-      section: services
-    - title: "Referanslar"
-      section: references
+      url: /
     - title: "Hakkımızda"
-      url: /about
-    - title: "İş Ortakları"
-      section: partners
+      children:
+        - title: "Şirket"
+          url: /about
+        - title: "Sertifikalar"
+          url: /about#certifications
+        - title: "İş Ortakları"
+          url: /partners
     - title: "Blog"
       url: /blog/
       static: true
     - title: "İletişim"
-      section: contact
+      url: /contact
 
 tr-TR:
   <<: *DEFAULT_TR
@@ -28,15 +30,17 @@ tr-TR:
 en:
   nav:
     - title: "Services"
-      section: services
-    - title: "References"
-      section: references
+      url: /
     - title: "About"
-      url: /about
-    - title: "Partners"
-      section: partners
+      children:
+        - title: "Company"
+          url: /about
+        - title: "Certifications"
+          url: /about#certifications
+        - title: "Partners"
+          url: /partners
     - title: "Blog"
       url: /blog/
       static: true
     - title: "Contact"
-      section: contact
+      url: /contact

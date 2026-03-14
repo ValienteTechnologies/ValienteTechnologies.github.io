@@ -1,0 +1,16 @@
+<!-- Contact CTA -->
+{% assign contact = site.data.contact[site.active_lang] | default: site.data.contact.tr %}
+{% if contact.cta %}
+<section class="page-section contact-cta-section">
+  <div class="container text-center">
+    <h2 class="section-heading text-uppercase">{{ contact.cta.title }}</h2>
+    {%- if site.active_lang == site.default_lang -%}
+      {%- assign cta_url = "/contact" -%}
+    {%- else -%}
+      {%- assign cta_url = "/" | append: site.active_lang | append: "/contact" -%}
+    {%- endif -%}
+    <a href="{{ cta_url }}" class="btn btn-primary btn-xl text-uppercase">{{ contact.cta.button }}</a>
+  </div>
+</section>
+{% endif %}
+<!-- End Contact CTA -->

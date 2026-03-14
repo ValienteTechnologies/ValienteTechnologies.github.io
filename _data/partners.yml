@@ -1,5 +1,6 @@
 tr: &DEFAULT_TR
   title: "İş Ortaklarımız"
+  description: "Valiente Technologies çözüm ortakları. Bulut, sertifikasyon ve altyapı alanlarında güçlü iş ortaklarımızla birlikte hizmet sunuyoruz."
   section: partners
   events:
     - title: "DT Cloud"
@@ -20,6 +21,7 @@ tr-TR:
 
 en:
   title: "Our Partners"
+  description: "Valiente Technologies solution partners. We deliver services alongside strong partners in cloud, certification, and infrastructure."
   section: partners
   events:
     - title: "DT Cloud"

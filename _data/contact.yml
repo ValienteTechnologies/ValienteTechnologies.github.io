@@ -1,5 +1,6 @@
 tr: &DEFAULT_TR
   title: "İletişime Geçin"
+  description: "Valiente Technologies ile iletişime geçin. Ofis adreslerimiz, telefon numaralarımız ve iletişim formu."
   section: contact
   name: "Ad Soyad*"
   name-validation: "Lütfen adınızı girin."
@@ -11,12 +12,36 @@ tr: &DEFAULT_TR
   message-validation: "Lütfen bir mesaj girin."
   subject: "Konu*"
   submit: "Gönder"
+  phone_number: "+90 000 000 00 00"
+  availability: "48 saat içinde dönüş"
+  availability_desc: "Formu doldurun, uzmanlarımız en geç iki iş günü içerisinde dönüş yapsın."
+  points:
+    - "7/24 destek"
+    - "Uzaktan ve yerinde danışmanlık"
+    - "İhtiyacınıza özel teklif"
+  cta:
+    title: "Projeleriniz İçin Buradayız"
+    button: "Bize Ulaşın"
+  offices_title: "Ofislerimiz"
+  directions_label: "Yol Tarifi Al"
+  # Google Maps embed URL — replace with your actual embed URL from maps.google.com > Share > Embed a map
+  map_embed: ""
+  offices:
+    - city: "Antalya"
+      address: "Örnek Mah. Örnek Cad. No:1, 07000 Kepez / Antalya"
+      phone: "+90 242 000 00 00"
+      map_url: "https://maps.google.com/?q=Antalya"
+    - city: "İstanbul"
+      address: "Örnek Mah. Örnek Cad. No:1, 34000 Ataşehir / İstanbul"
+      phone: "+90 212 000 00 00"
+      map_url: "https://maps.google.com/?q=Istanbul"
 
 tr-TR:
   <<: *DEFAULT_TR
 
 en:
   title: "Get In Touch"
+  description: "Contact Valiente Technologies. Our office addresses, phone numbers, and contact form."
   section: contact
   name: "Full Name*"
   name-validation: "Please enter your name."
@@ -28,3 +53,26 @@ en:
   message-validation: "Please enter a message."
   subject: "Subject*"
   submit: "Send"
+  phone_number: "+90 000 000 00 00"
+  availability: "Response within 48 hours"
+  availability_desc: "Fill out the form and our experts will get back to you within two business days."
+  points:
+    - "24/7 support"
+    - "Remote and on-site consulting"
+    - "Custom proposal for your needs"
+  cta:
+    title: "We're Here for Your Projects"
+    button: "Contact Us"
+  offices_title: "Our Offices"
+  directions_label: "Get Directions"
+  # Google Maps embed URL — replace with your actual embed URL from maps.google.com > Share > Embed a map
+  map_embed: ""
+  offices:
+    - city: "Antalya"
+      address: "Sample St. No:1, 07000 Kepez / Antalya"
+      phone: "+90 242 000 00 00"
+      map_url: "https://maps.google.com/?q=Antalya"
+    - city: "Istanbul"
+      address: "Sample St. No:1, 34000 Ataşehir / Istanbul"
+      phone: "+90 212 000 00 00"
+      map_url: "https://maps.google.com/?q=Istanbul"
