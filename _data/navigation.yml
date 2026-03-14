@@ -30,6 +30,11 @@ tr: &DEFAULT_TR
           url: /corporate#partners
     - title: "İletişim"
       url: /contact
+      children:
+        - title: "İletişim Formu"
+          url: /contact#contact
+        - title: "Ofislerimiz"
+          url: /contact#offices
     - title: "Blog"
       url: /blog/
       static: true
@@ -61,6 +66,11 @@ en:
           url: /corporate#partners
     - title: "Contact"
       url: /contact
+      children:
+        - title: "Contact Form"
+          url: /contact#contact
+        - title: "Offices"
+          url: /contact#offices
     - title: "Blog"
       url: /blog/
       static: true
