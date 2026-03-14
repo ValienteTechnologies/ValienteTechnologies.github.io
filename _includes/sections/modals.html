@@ -1,6 +1,6 @@
 <!-- Portfolio Modals -->
 {% assign portfolio = site.data.portfolio[site.locale] | default: site.data.portfolio.tr %}
-{% for project in site.portfolio %}
+{% for project in portfolio.items %}
 <div
   class="portfolio-modal modal fade"
   id="p{{ forloop.index }}"
@@ -26,7 +26,7 @@
                 <source srcset="{{ project.image | replace: '.png', '.webp' }}" type="image/webp">
                 <img class="img-fluid d-block mx-auto" src="{{ project.image }}" alt="{{ project.alt }}" loading="lazy">
               </picture>
-              <p>{{ project.content }}</p>
+              <p>{{ project.content | markdownify }}</p>
               <button
                 class="btn btn-primary"
                 data-dismiss="modal"

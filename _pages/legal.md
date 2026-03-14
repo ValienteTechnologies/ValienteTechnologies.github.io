@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: subpage
 title: Gizlilik Politikası
 description: "Valiente Technologies gizlilik politikası ve kişisel veri işleme hakkında bilgi."
+body_class: page-layout
 ---
+<div class="container" id="pagecontainer">
 <div class="col-lg-12 text-center">
 	<h2 class="section-heading text-uppercase">Gizlilik Politikası</h2>
 </div>
@@ -36,3 +38,5 @@ Bu gizlilik politikasını, kişisel, operasyonel, yasal veya düzenleyici neden
 **BİZE ULAŞIN**
 
 Daha fazla bilgi almak veya sorularınızı iletmek için lütfen bize e-posta adresimizden ulaşın: <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+
+</div>

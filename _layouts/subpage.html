@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% if page.body_class %}<script>document.getElementById("page-top").classList.add("{{ page.body_class }}");</script>{% endif %}
+
+{% include layout/nav.html %}
+
+{{ content }}

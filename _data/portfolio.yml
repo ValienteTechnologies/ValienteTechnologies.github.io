@@ -3,6 +3,36 @@ tr: &DEFAULT_TR
   section: portfolio
   closebutton: "Kapat"
   cta: "Detayları Gör"
+  items:
+    - title: Bulut Yedekleme
+      subtitle: Güvenli, Ölçeklenebilir ve Kesintisiz Veri Koruması
+      image: /assets/img/portfolio/backup.png
+      alt: Bulut depolama ve veri yedekleme broşürü
+      caption:
+        title: Bulut Yedekleme
+        subtitle: Fidye yazılım koruması
+        thumbnail: /assets/img/valiente/thumbnail.png
+      content: "Bulut tabanlı yedekleme çözümlerimiz, kritik verilerinizi güvenli şekilde saklamanızı, her yerden erişmenizi ve olası sistem arızalarında iş sürekliliğini sağlamanızı mümkün kılar. Modern güvenlik standartlarına uygun, esnek ve ölçeklenebilir yapısıyla kurumsal veri yönetimini sadeleştiriyor, işletmenizi siber risklere karşı güçlendiriyoruz."
+
+    - title: Dış Ağ Testleri
+      subtitle: Kurumlar İçin Kapsamlı Dış Ağ Zafiyet Taraması ve Kimlik Avı Simülasyonu
+      image: /assets/img/portfolio/external.png
+      alt: Dış Ağ Güvenlik ve Kimlik Avı Simülasyonu broşürü
+      caption:
+        title: Dış Ağ Testleri
+        subtitle: Dışarıdan Güvenlik Değerlendirmesi
+        thumbnail: /assets/img/valiente/thumbnail.png
+      content: "İnternete açık sistemlerinizi zafiyet taramaları ve gerçekçi kimlik avı simülasyonlarıyla test ediyoruz. Zayıf yapılandırmaları tespit ediyor, e-posta altyapınızı denetliyor ve risk seviyesine göre detaylı raporlar sunarak siber güvenliğinizi proaktif bir yaklaşımla güçlendiriyoruz."
+
+    - title: Sızma Testi
+      subtitle: Kurumlar İçin Kapsamlı Siber Güvenlik ve Penetrasyon Testi Hizmetleri
+      image: /assets/img/portfolio/pentest.png
+      alt: Sızma Testi broşürü
+      caption:
+        title: Sızma Testi
+        subtitle: Kurumsal Güvenlik Değerlendirmesi
+        thumbnail: /assets/img/valiente/thumbnail.png
+      content: "Siber güvenlik tehditlerine karşı kuruluşların savunma mekanizmalarını test ediyor, zafiyetleri ortaya çıkarıyor ve güvenlik seviyesini yükseltmek için kapsamlı raporlamalar sunuyoruz. Gerçek saldırı senaryolarına dayalı sızma testleriyle ağ, uygulama ve sistem güvenliğinizi ölçüyoruz."
 
 tr-TR:
   <<: *DEFAULT_TR
