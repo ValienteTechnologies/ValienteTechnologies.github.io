@@ -31,9 +31,9 @@ tr: &DEFAULT_TR
     - title: "İletişim"
       url: /contact
       children:
-        - title: "İletişim Formu"
+        - title: "Form"
           url: /contact#contact
-        - title: "Ofislerimiz"
+        - title: "Ofisler"
           url: /contact#offices
     - title: "Blog"
       url: /blog/
@@ -67,7 +67,7 @@ en:
     - title: "Contact"
       url: /contact
       children:
-        - title: "Contact Form"
+        - title: "Form"
           url: /contact#contact
         - title: "Offices"
           url: /contact#offices
