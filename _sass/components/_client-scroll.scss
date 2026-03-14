@@ -7,26 +7,16 @@
   scroll-behavior: auto; // Use auto for programmatic scrolling, smooth causes jank
   -webkit-overflow-scrolling: touch;
   touch-action: pan-x;
-  scrollbar-width: thin;
-  scrollbar-color: $valiente-magenta transparent;
+  scrollbar-width: none;
   will-change: scroll-position; // Hint browser for better performance
   backface-visibility: hidden; // Force hardware acceleration
   contain: layout style paint; // CSS containment for performance
   transform: translateZ(0); // Force GPU acceleration
   
   &::-webkit-scrollbar {
-    height: 8px;
+    display: none;
   }
-  
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background-color: $valiente-magenta;
-    border-radius: 4px;
-  }
-  
+
   > div {
     flex: 0 0 auto;
     min-width: 200px;
