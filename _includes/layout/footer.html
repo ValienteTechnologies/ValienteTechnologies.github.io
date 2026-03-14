@@ -30,6 +30,11 @@
             <a href="/{{ site.active_lang }}/legal/">{{ footer.legal | default: "Privacy Policy" }}</a>
             {%- endif -%}
           </li>
+          {%- if footer.careers_url -%}
+          <li class="list-inline-item">
+            <a href="{{ footer.careers_url }}" target="_blank" rel="noopener">{{ footer.careers | default: "Careers" }}</a>
+          </li>
+          {%- endif -%}
         </ul>
       </div>
     </div>
