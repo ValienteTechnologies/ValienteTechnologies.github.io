@@ -1,5 +1,11 @@
 # Turkish
 # -----------------
+# Supported link types:
+#   section: services        → scrolls to /#services (home only) or links to /#services (subpages)
+#   url: /about              → links to a page
+#   children:                → renders a dropdown; each child supports url or section
+#     - title: "..."
+#       url: /services/pentest
 tr: &DEFAULT_TR
   nav:
     - title: "Hizmetler"

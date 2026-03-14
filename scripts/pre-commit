@@ -1,0 +1,27 @@
+#!/bin/sh
+# WebP pre-commit hook
+# Converts any newly staged PNG/JPG images to WebP and stages the result.
+#
+# Install: cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+STAGED_IMAGES=$(git diff --cached --name-only --diff-filter=A | grep -iE '\.(png|jpg|jpeg)$')
+
+if [ -z "$STAGED_IMAGES" ]; then
+  exit 0
+fi
+
+if ! python3 -c "from PIL import Image" 2>/dev/null; then
+  echo "Warning: pillow not installed — skipping WebP conversion. Run: pip install pillow"
+  exit 0
+fi
+
+echo "Converting new images to WebP..."
+for img in $STAGED_IMAGES; do
+  if [ -f "$img" ]; then
+    python3 scripts/to_webp.py "$img"
+    webp="${img%.*}.webp"
+    if [ -f "$webp" ]; then
+      git add "$webp"
+    fi
+  fi
+done

@@ -42,6 +42,24 @@
   }
   </script>
 
+  {% if page.schema_type %}
+  <!-- JSON-LD: Page-specific structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ page.schema_type }}",
+    "name": "{{ page.schema_name | default: page.title }}",
+    "description": "{{ page.schema_description | default: page.description }}",
+    "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+    "provider": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}"
+    }
+  }
+  </script>
+  {% endif %}
+
   {% assign _page_title = page.title %}
 
   <title>{% if _page_title %}{{ _page_title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -85,7 +103,7 @@
   <link href="/assets/css/agency.css" rel="stylesheet" />
 
   <!-- Page container change top padding when nav shrinks -->
-  {% if page.layout == "page" %}
+  {% if page.body_class == "page-layout" %}
   <style>
     #pagecontainer {
       padding-top: 150px;
