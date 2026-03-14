@@ -1,6 +1,6 @@
 tr: &DEFAULT_TR
   title: "Broşürlerimiz"
-  section: portfolio
+  section: brochures
   closebutton: "Kapat"
   cta: "Detayları Gör"
   items:
@@ -39,7 +39,7 @@ tr-TR:
 
 en:
   title: "Our Brochures"
-  section: portfolio
+  section: brochures
   closebutton: "Close"
   cta: "View Details"
   items:

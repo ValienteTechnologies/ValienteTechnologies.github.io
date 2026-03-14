@@ -1,8 +1,8 @@
-<!-- Portfolio Modals -->
-{% assign portfolio = site.data.portfolio[site.active_lang] | default: site.data.portfolio.tr %}
-{% for project in portfolio.items %}
+<!-- Brochures Modals -->
+{% assign brochures = site.data.brochures[site.active_lang] | default: site.data.brochures.tr %}
+{% for project in brochures.items %}
 <div
-  class="portfolio-modal modal fade"
+  class="brochures-modal modal fade"
   id="p{{ forloop.index }}"
   tabindex="-1"
   role="dialog"
@@ -32,7 +32,7 @@
                 data-dismiss="modal"
                 type="button"
               >
-                {{ portfolio.closebutton | default: "Close Project" }}
+                {{ brochures.closebutton | default: "Close Project" }}
               </button>
             </div>
           </div>
@@ -42,4 +42,4 @@
   </div>
 </div>
 {% endfor %}
-<!-- End Portfolio Modals -->
+<!-- End Brochures Modals -->

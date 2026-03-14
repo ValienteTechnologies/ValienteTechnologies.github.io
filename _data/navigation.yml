@@ -25,7 +25,7 @@ tr: &DEFAULT_TR
         - title: "Sertifikalar"
           url: /corporate#certifications
         - title: "Broşürler"
-          url: /corporate#portfolio
+          url: /corporate#brochures
         - title: "İş Ortakları"
           url: /corporate#partners
     - title: "İletişim"
@@ -56,7 +56,7 @@ en:
         - title: "Certifications"
           url: /corporate#certifications
         - title: "Brochures"
-          url: /corporate#portfolio
+          url: /corporate#brochures
         - title: "Partners"
           url: /corporate#partners
     - title: "Contact"
