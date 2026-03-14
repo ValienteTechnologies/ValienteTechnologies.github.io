@@ -4,7 +4,7 @@ data_key: contact
 body_class: contact-page
 permalink: /contact/
 ---
-{% include sections/contact.html %}
+{% include sections/contact_form.html %}
 {% include sections/offices.html %}
 
 <script src="/assets/js/jqBootstrapValidation.js" defer></script>
