@@ -10,7 +10,7 @@ tr: &DEFAULT_TR
       alt: Bulut depolama ve veri yedekleme broşürü
       caption:
         title: Bulut Yedekleme
-        subtitle: Fidye yazılım koruması
+        subtitle: Güvenli Kurumsal Fidye Yazılım Koruması
         thumbnail: /assets/img/valiente/thumbnail.png
       content: "Bulut tabanlı yedekleme çözümlerimiz, kritik verilerinizi güvenli şekilde saklamanızı, her yerden erişmenizi ve olası sistem arızalarında iş sürekliliğini sağlamanızı mümkün kılar. Modern güvenlik standartlarına uygun, esnek ve ölçeklenebilir yapısıyla kurumsal veri yönetimini sadeleştiriyor, işletmenizi siber risklere karşı güçlendiriyoruz."
 
@@ -49,16 +49,16 @@ en:
       alt: Cloud storage and data backup brochure
       caption:
         title: Cloud Backup
-        subtitle: Ransomware protection
+        subtitle: Secure Corporate Ransomware Protection
         thumbnail: /assets/img/valiente/thumbnail.png
       content: "Our cloud-based backup solutions enable you to securely store your critical data, access it from anywhere, and ensure business continuity in the event of system failures. With a flexible, scalable architecture compliant with modern security standards, we simplify corporate data management and strengthen your business against cyber risks."
 
-    - title: External Network Tests
+    - title: External Tests
       subtitle: Comprehensive External Network Vulnerability Scanning and Phishing Simulation for Organizations
       image: /assets/img/portfolio/external.png
       alt: External Network Security and Phishing Simulation brochure
       caption:
-        title: External Network Tests
+        title: External Tests
         subtitle: External Security Assessment
         thumbnail: /assets/img/valiente/thumbnail.png
       content: "We test your internet-facing systems with vulnerability scans and realistic phishing simulations. We identify weak configurations, audit your email infrastructure, and provide detailed reports by risk level to strengthen your cybersecurity proactively."
