@@ -8,19 +8,16 @@ body.legal-layout {
   }
 }
 
-body.legal-layout #pagecontainer {
-  padding-top: 5rem;
-  padding-bottom: 4rem;
-  color: var(--color-text-on-dark);
+// Navbar clearance on standalone /legal page (mirrors partners/contact pattern)
+body.legal-layout .legal-section {
+  padding-top: calc(var(--space-section-y) + 5rem);
 
   @include media-min($breakpoint-lg) {
-    padding-top: 7rem;
-    padding-bottom: 5rem;
+    padding-top: calc(var(--space-section-y) + 7rem);
   }
 
   .section-heading {
     color: $white;
-    font-size: 2rem;
   }
 
   .legal-updated {
@@ -28,7 +25,8 @@ body.legal-layout #pagecontainer {
     font-size: var(--font-size-sm);
     letter-spacing: $letter-spacing-label;
     text-transform: uppercase;
-    margin-bottom: 0;
+    margin-top: var(--space-gap);
+    margin-bottom: var(--space-gap-xl);
   }
 
   a {
@@ -65,7 +63,7 @@ body.legal-layout #pagecontainer {
   display: flex;
   align-items: center;
   gap: var(--space-gap);
-  padding: 1.25rem 1.5rem;
+  padding: var(--space-gap-lg) var(--space-gap-xl);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -75,7 +73,7 @@ body.legal-layout #pagecontainer {
 
   &:hover,
   &:focus-visible {
-    background: rgba($white, 0.04);
+    background: $surface-subtle;
     outline: none;
   }
 
@@ -95,22 +93,22 @@ body.legal-layout #pagecontainer {
   }
 
   @include media-min($breakpoint-lg) {
-    padding: 1.5rem 2rem;
+    padding: var(--space-gap-xl) var(--space-card-padding-lg);
   }
 }
 
 // Icon circle
 .legal-card__icon-wrap {
   flex-shrink: 0;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: $icon-size-sm;
+  height: $icon-size-sm;
   border-radius: 50%;
-  background: rgba($white, 0.08);
-  color: rgba($white, 0.7);
+  background: $surface-input;
+  color: $text-on-dark-muted;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: var(--font-size-base);
   transition: background 0.25s ease, color 0.25s ease;
 }
 
@@ -132,29 +130,24 @@ body.legal-layout #pagecontainer {
 // Chevron
 .legal-card__chevron {
   flex-shrink: 0;
-  font-size: 0.75rem;
-  color: rgba($white, 0.45);
+  font-size: var(--font-size-xs);
+  color: $text-placeholder;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
 }
 
-// Collapsible body
-.legal-card__body {
-  // Bootstrap handles display:none / show via .collapse
-}
-
+// Card content (prose)
 .legal-card__content {
-  padding: 1.5rem;
+  padding: var(--space-gap-xl);
   border-top: 1px solid $border-surface;
 
   @include media-min($breakpoint-lg) {
-    padding: 2rem;
+    padding: var(--space-card-padding-lg);
   }
 
-  // Prose styles inside each card
   h4, h5, h6 {
     color: $white;
-    margin-top: 1.5rem;
-    margin-bottom: 0.6rem;
+    margin-top: var(--space-gap-xl);
+    margin-bottom: var(--space-gap-md);
     font-size: var(--font-size-base);
 
     &:first-child {
@@ -165,42 +158,40 @@ body.legal-layout #pagecontainer {
   p {
     color: var(--color-text-muted-on-dark);
     font-size: var(--font-size-sm);
-    line-height: 1.75;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-gap-md);
   }
 
   ul, ol {
-    padding-left: 1.4rem;
-    margin-bottom: 0.75rem;
+    padding-left: var(--space-gap-xl);
+    margin-bottom: var(--space-gap-md);
 
     li {
       color: var(--color-text-muted-on-dark);
       font-size: var(--font-size-sm);
-      line-height: 1.7;
-      margin-bottom: 0.3rem;
+      margin-bottom: var(--space-gap-xs);
     }
   }
 
   strong {
-    color: rgba($white, 0.88);
+    color: $text-on-dark-subtle;
     font-weight: 600;
   }
 
   hr {
     border-color: $border-surface;
-    margin: 1.5rem 0;
+    margin: var(--space-gap-xl) 0;
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0 0.5rem;
-    font-size: $font-size-sm;
+    margin: var(--space-gap) 0 var(--space-gap-sm);
+    font-size: var(--font-size-sm);
 
     th {
       color: $white;
       border-bottom: 2px solid $border-surface-muted;
-      padding: 0.5rem 0.75rem;
+      padding: var(--space-gap-sm) var(--space-gap-md);
       text-align: left;
       @include heading-font;
     }
@@ -208,7 +199,7 @@ body.legal-layout #pagecontainer {
     td {
       color: var(--color-text-muted-on-dark);
       border-bottom: 1px solid $border-surface;
-      padding: 0.5rem 0.75rem;
+      padding: var(--space-gap-sm) var(--space-gap-md);
     }
 
     tr:last-child td {
