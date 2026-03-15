@@ -345,34 +345,28 @@
     animationFrameId = requestAnimationFrame(animate);
   }
 
-  // Mouse move handler - optimized with throttling
+  // Cache header rect to avoid forced reflow on every mouse event
+  let headerRect = { left: 0, top: 0 };
+
+  // Mouse move handler - uses cached rect, no reflow
   let mouseUpdateScheduled = false;
   function handleMouseMove(e) {
     if (mouseUpdateScheduled) return;
     mouseUpdateScheduled = true;
-    
     requestAnimationFrame(() => {
-      const header = canvas.parentElement;
-      if (header) {
-        const rect = header.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-      }
+      mouse.x = e.clientX - headerRect.left;
+      mouse.y = e.clientY - headerRect.top;
       mouseUpdateScheduled = false;
     });
   }
 
-  // Touch move handler for mobile - optimized
+  // Touch move handler - uses cached rect, no reflow
   function handleTouchMove(e) {
     if (e.touches.length > 0 && !mouseUpdateScheduled) {
       mouseUpdateScheduled = true;
       requestAnimationFrame(() => {
-        const header = canvas.parentElement;
-        if (header) {
-          const rect = header.getBoundingClientRect();
-          mouse.x = e.touches[0].clientX - rect.left;
-          mouse.y = e.touches[0].clientY - rect.top;
-        }
+        mouse.x = e.touches[0].clientX - headerRect.left;
+        mouse.y = e.touches[0].clientY - headerRect.top;
         mouseUpdateScheduled = false;
       });
     }
@@ -390,6 +384,8 @@
       for (const entry of entries) {
         const w = Math.round(entry.contentRect.width);
         const h = Math.round(entry.contentRect.height);
+        // Update cached rect — safe here since ResizeObserver fires after layout
+        headerRect = header.getBoundingClientRect();
         if (!animationStarted) {
           resizeCanvas(w, h);
           initNodes();
