@@ -10,6 +10,7 @@ $services-accent-bright: lighten($primary, 8%);
   padding-block: var(--space-section-y);
   color: var(--color-text-on-dark);
   overflow: hidden;
+  contain: layout style paint;
   @include full-viewport-section;
 
   .section-heading {
