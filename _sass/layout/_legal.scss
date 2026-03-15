@@ -1,0 +1,83 @@
+// Styling for the legal page
+body.legal-layout {
+  background: $valiente-midnight;
+  color: var(--color-text-on-dark);
+
+  main.site-content {
+    background: transparent;
+  }
+}
+
+body.legal-layout #pagecontainer {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  color: var(--color-text-on-dark);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  p, li {
+    color: var(--color-text-muted-on-dark);
+  }
+
+  a {
+    color: $primary;
+    &:hover {
+      color: lighten($primary, 10%);
+    }
+  }
+
+  hr {
+    border-color: $border-surface;
+  }
+
+  .legal-toc {
+    background: $surface-subtle;
+    border-left: 3px solid $primary;
+    border-radius: 0 $radius-input $radius-input 0;
+    padding: 1.25rem 1.5rem;
+
+    ol {
+      margin-bottom: 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      color: var(--color-text-muted-on-dark);
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: $font-size-sm;
+
+    th {
+      color: $white;
+      border-bottom: 2px solid $border-surface-muted;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+
+    td {
+      color: var(--color-text-muted-on-dark);
+      border-bottom: 1px solid $border-surface;
+      padding: 0.5rem 0.75rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding-top: 7rem;
+  }
+}
