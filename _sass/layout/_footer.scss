@@ -30,11 +30,11 @@ ul.social-buttons {
   margin-bottom: 0;
   li {
     a {
-      font-size: 18px;
-      line-height: 38px;
+      font-size: $social-button-font-size;
+      line-height: $social-button-size;
       display: block;
-      width: 38px;
-      height: 38px;
+      width: $social-button-size;
+      height: $social-button-size;
       transition: all 0.3s;
       color: white;
       border-radius: 100%;

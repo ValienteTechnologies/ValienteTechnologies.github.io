@@ -1,0 +1,9 @@
+// Shared utility classes
+
+// fa-stack circle background opacities
+.icon-circle--light  { opacity: 0.20; }
+.icon-circle--muted  { opacity: 0.18; }
+.icon-circle--subtle { opacity: 0.15; }
+
+// Borderless iframe (replaces inline style="border:0;")
+iframe.borderless { border: 0; }

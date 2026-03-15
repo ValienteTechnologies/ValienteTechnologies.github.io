@@ -1,0 +1,10 @@
+tr: &DEFAULT
+  home: "Ana Sayfa"
+  site_title_suffix: "Sızma Testi ve Siber Güvenlik"
+
+tr-TR:
+  <<: *DEFAULT
+
+en:
+  home: "Home"
+  site_title_suffix: "Penetration Testing & Cybersecurity"

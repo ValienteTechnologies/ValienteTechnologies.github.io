@@ -4,8 +4,9 @@
   {%- assign _page_description = page.description | default: site.description -%}
   {%- if _data_section.title -%}{%- assign _page_title = _data_section.title -%}{%- endif -%}
   {%- if _data_section.description -%}{%- assign _page_description = _data_section.description -%}{%- endif -%}
+  {%- assign _i18n = site.data.i18n[site.active_lang] | default: site.data.i18n.tr -%}
   {%- if page.url == "/" or page.url == "/index.html" -%}
-    {%- assign _page_full_title = site.title | append: " | Sızma Testi ve Siber Güvenlik" -%}
+    {%- assign _page_full_title = site.title | append: " | " | append: _i18n.site_title_suffix -%}
   {%- elsif _page_title -%}
     {%- assign _page_full_title = _page_title | append: " | " | append: site.title -%}
   {%- else -%}
@@ -42,7 +43,7 @@
   <link rel="icon" type="image/x-icon" href="/assets/img/valiente/favicon.ico">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="apple-touch-icon" href="/assets/img/valiente/valiente1024.webp">
-  <meta name="theme-color" content="#e22388">
+  <meta name="theme-color" content="{{ site.data.style.highlight | default: '#e22388' }}">
 
   <!-- JSON-LD: LocalBusiness structured data -->
   <script type="application/ld+json">
@@ -79,7 +80,7 @@
     "itemListElement": [{
       "@type": "ListItem",
       "position": 1,
-      "name": "{% if site.active_lang == 'tr' %}Ana Sayfa{% else %}Home{% endif %}",
+      "name": "{{ _i18n.home }}",
       "item": "{{ site.url }}"
     },{
       "@type": "ListItem",
@@ -157,7 +158,6 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"></noscript>
   {% endif %}
   <!-- Custom styles for this theme -->
-  <!--<link href="/assets/css/agency.min.css" rel="stylesheet">-->
   <link href="/assets/css/agency.css" rel="stylesheet" />
 
   <!-- Page container change top padding when nav shrinks -->

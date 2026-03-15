@@ -99,10 +99,10 @@ header.masthead {
   .intro-text {
     position: relative;
     z-index: 1;
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: $masthead-padding-top-sm;
+    padding-bottom: $masthead-padding-bottom-sm;
     .btn {
-      margin-top: 30px;
+      margin-top: $space-gap-lg * 2;
       box-shadow: 0 15px 35px rgba($primary, 0.35);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       &:hover,
@@ -112,17 +112,17 @@ header.masthead {
       }
     }
     .intro-lead-in {
-      font-size: 22px;
+      font-size: $masthead-font-size-lead-sm;
       font-style: italic;
-      line-height: 22px;
-      margin-bottom: 25px;
+      line-height: $masthead-font-size-lead-sm;
+      margin-bottom: $space-gap * 1.5;
       @include serif-font;
     }
     .intro-heading {
-      font-size: 42px;
+      font-size: $masthead-font-size-heading-sm;
       font-weight: 700;
-      line-height: 48px;
-      margin-bottom: 25px;
+      line-height: 1.14;
+      margin-bottom: $space-gap * 1.5;
       @include heading-font;
     }
   }
@@ -164,20 +164,20 @@ header.masthead {
 @media (min-width: 768px) {
   header.masthead {
     .intro-text {
-      padding-top: 300px;
-      padding-bottom: 200px;
+      padding-top: $masthead-padding-top-lg;
+      padding-bottom: $masthead-padding-bottom-lg;
       .intro-lead-in {
-        font-size: 40px;
+        font-size: $masthead-font-size-lead-lg;
         font-style: italic;
-        line-height: 40px;
-        margin-bottom: 25px;
+        line-height: $masthead-font-size-lead-lg;
+        margin-bottom: $space-gap * 1.5;
         @include serif-font;
       }
       .intro-heading {
-        font-size: 58px;
+        font-size: $masthead-font-size-heading-lg;
         font-weight: 700;
-        line-height: 64px;
-        margin-bottom: 50px;
+        line-height: 1.1;
+        margin-bottom: $space-gap * 3;
         @include heading-font;
       }
     }
