@@ -6,7 +6,7 @@ body_class: legal-layout
 {% assign legal = site.data.legal[site.active_lang] | default: site.data.legal.tr %}
 
 <section class="page-section legal-section" id="legal">
-<div class="container" id="pagecontainer">
+<div class="container">
 <div class="col-lg-10 offset-lg-1">
 
 <div class="text-center mb-5">

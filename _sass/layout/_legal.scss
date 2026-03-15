@@ -8,6 +8,11 @@ body.legal-layout {
   }
 }
 
+.legal-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
 // Navbar clearance on standalone /legal page (mirrors partners/contact pattern)
 body.legal-layout .legal-section {
   padding-top: calc(var(--space-section-y) + 5rem);
