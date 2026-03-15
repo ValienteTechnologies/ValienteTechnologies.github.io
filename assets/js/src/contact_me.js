@@ -1,5 +1,3 @@
----
----
 $(function() {
   var $form = $("#contactForm");
   var $fields = $form.find("input, textarea");
@@ -79,7 +77,7 @@ $(function() {
     setButtonState("sending");
 
     $.ajax({
-      url: "https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}",
+      url: $form.data("action"),
       type: "POST",
       dataType: "json",
       headers: { Accept: "application/json" },
