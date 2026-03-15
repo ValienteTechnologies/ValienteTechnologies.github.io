@@ -1,0 +1,94 @@
+<!-- Navigation -->
+{% assign nav = site.data.navigation[site.active_lang] | default: site.data.navigation.tr %}
+<nav
+  class="navbar navbar-expand-lg navbar-dark fixed-top"
+  id="mainNav"
+>
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="{{ site.baseurl }}/#">
+      {%- if site.logo -%}
+      <img
+        width="{{ site.logo.width | default: 208 }}"
+        height="{{ site.logo.height | default: 52 }}"
+        src="{{ site.logo.path }}"
+        alt="{{ site.title }}"
+      />
+      {%- else -%} {{ site.title }} {%- endif -%}
+    </a>
+    <button
+      class="navbar-toggler navbar-toggler-right"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      Menu<i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        {%- for link in nav.nav -%}
+        {%- if link.children -%}
+        <li class="nav-item dropdown">
+          {%- if link.url -%}
+            {%- if link.static or site.active_lang == site.default_lang -%}
+              {%- assign parent_url = link.url -%}
+            {%- else -%}
+              {%- assign parent_url = '/' | append: site.active_lang | append: link.url -%}
+            {%- endif -%}
+          <a class="nav-link dropdown-toggle" href="{{ parent_url }}" id="navDrop{{ forloop.index }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ link.title }}
+          </a>
+          {%- else -%}
+          <a class="nav-link dropdown-toggle" href="#" id="navDrop{{ forloop.index }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ link.title }}
+          </a>
+          {%- endif -%}
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navDrop{{ forloop.index }}">
+            {%- for child in link.children -%}
+            {%- if child.url -%}
+              {%- if child.static or site.active_lang == site.default_lang -%}
+                {%- assign child_url = child.url -%}
+              {%- else -%}
+                {%- assign child_url = '/' | append: site.active_lang | append: child.url -%}
+              {%- endif -%}
+            <a class="dropdown-item" href="{{ child_url }}">{{ child.title }}</a>
+            {%- elsif child.section -%}
+            <a class="dropdown-item" href="{{ site.baseurl }}/#{{ child.section }}">{{ child.title }}</a>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </li>
+        {%- else -%}
+        <li class="nav-item">
+          {%- if link.url -%}
+            {%- if link.static or site.active_lang == site.default_lang -%}
+              {%- assign nav_url = link.url -%}
+            {%- else -%}
+              {%- assign nav_url = '/' | append: site.active_lang | append: link.url -%}
+            {%- endif -%}
+          <a class="nav-link js-scroll-trigger" href="{{ nav_url }}">{{ link.title }}</a>
+          {%- elsif link.section -%}
+          <a class="nav-link js-scroll-trigger" href="{{ site.baseurl }}/#{{ link.section }}">{{ link.title }}</a>
+          {%- else -%}
+          <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
+          {%- endif -%}
+        </li>
+        {%- endif -%}
+        {%- endfor -%}
+        <!-- Language switcher -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-globe"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+            <a class="dropdown-item" {% static_href %}href="{{ page.url }}"{% endstatic_href %}>TR</a>
+            <a class="dropdown-item" {% static_href %}href="/en{{ page.url }}"{% endstatic_href %}>EN</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navigation -->

@@ -10,7 +10,7 @@ body.page-layout {
 }
 
 body.page-layout #pagecontainer {
-  padding-top: 5rem;     // clears mobile navbar
+  padding-top: $navbar-height;
   padding-bottom: 3rem;
   color: var(--color-text-on-dark);
 
@@ -38,6 +38,6 @@ body.page-layout #pagecontainer {
   }
 
   @media (min-width: $breakpoint-lg) {
-    padding-top: 7rem;   // clears desktop navbar
+    padding-top: $navbar-height-lg;
   }
 }

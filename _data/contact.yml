@@ -1,0 +1,86 @@
+tr: &DEFAULT_TR
+  title: "İletişime Geçin"
+  description: "Valiente Technologies ile iletişime geçin. Ofis adreslerimiz, telefon numaralarımız ve iletişim formu."
+  section: contact
+  name: "Ad Soyad*"
+  name-validation: "Lütfen adınızı girin."
+  email: "E-posta Adresi*"
+  email-validation: "Lütfen e-posta adresinizi girin."
+  phone: "Telefon Numarası*"
+  phone-validation: "Lütfen telefon numaranızı girin."
+  message: "Mesajınız*"
+  message-validation: "Lütfen bir mesaj girin."
+  subject: "Konu*"
+  submit: "Gönder"
+  phone_number: "+90 551 159 61 61"
+  availability: "48 saat içinde dönüş"
+  availability_desc: "Formu doldurun, uzmanlarımız en geç iki iş günü içerisinde dönüş yapsın."
+  points:
+    - "7/24 destek"
+    - "Uzaktan ve yerinde danışmanlık"
+    - "İhtiyacınıza özel teklif"
+  cta:
+    title: "Projeleriniz İçin Buradayız"
+    button: "Bize Ulaşın"
+  offices_title: "Ofislerimiz"
+  directions_label: "Yol Tarifi Al"
+  # Google Maps embed URL — replace with your actual embed URL from maps.google.com > Share > Embed a map
+  map_embed: ""
+  offices:
+    - city: "Antalya (Teknokent)"
+      address: "Akdeniz Üniversitesi Ar-Ge 2 No:3A/31 Konyaaltı/Antalya"
+      phone: "+90 551 159 61 61"
+      map_url: "https://maps.google.com/?q=Antalya+Teknokent"
+    - city: "Antalya"
+      address: "Altındağ Mah. 151 Sk. Arli Apt No:27/9 Muratpaşa/Antalya"
+      phone: "+90 551 159 61 61"
+      map_url: "https://maps.google.com/?q=Muratpasa+Antalya"
+    - city: "Ankara"
+      address: "Malazgirt Blv. 1513 Sk. Aykon Apt No:34/4 Çankaya/Ankara"
+      phone: "+90 551 537 61 07"
+      map_url: "https://maps.google.com/?q=Cankaya+Ankara"
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  title: "Get In Touch"
+  description: "Contact Valiente Technologies. Our office addresses, phone numbers, and contact form."
+  section: contact
+  name: "Full Name*"
+  name-validation: "Please enter your name."
+  email: "Email Address*"
+  email-validation: "Please enter your email address."
+  phone: "Phone Number*"
+  phone-validation: "Please enter your phone number."
+  message: "Your Message*"
+  message-validation: "Please enter a message."
+  subject: "Subject*"
+  submit: "Send"
+  phone_number: "+90 551 159 61 61"
+  availability: "Response within 48 hours"
+  availability_desc: "Fill out the form and our experts will get back to you within two business days."
+  points:
+    - "24/7 support"
+    - "Remote and on-site consulting"
+    - "Custom proposal for your needs"
+  cta:
+    title: "We're Here for Your Projects"
+    button: "Contact Us"
+  offices_title: "Our Offices"
+  directions_label: "Get Directions"
+  # Google Maps embed URL — replace with your actual embed URL from maps.google.com > Share > Embed a map
+  map_embed: ""
+  offices:
+    - city: "Antalya (Technopolis)"
+      address: "Akdeniz Üniversitesi Ar-Ge 2 No:3A/31 Konyaaltı/Antalya"
+      phone: "+90 551 159 61 61"
+      map_url: "https://maps.google.com/?q=Antalya+Teknokent"
+    - city: "Antalya"
+      address: "Altındağ Mah. 151 Sk. Arli Apt No:27/9 Muratpaşa/Antalya"
+      phone: "+90 551 159 61 61"
+      map_url: "https://maps.google.com/?q=Muratpasa+Antalya"
+    - city: "Ankara"
+      address: "Malazgirt Blv. 1513 Sk. Aykon Apt No:34/4 Çankaya/Ankara"
+      phone: "+90 551 537 61 07"
+      map_url: "https://maps.google.com/?q=Cankaya+Ankara"

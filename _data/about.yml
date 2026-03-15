@@ -1,0 +1,74 @@
+tr: &DEFAULT_TR
+  title: "Hakkımızda"
+  description: "Valiente Technologies hakkında bilgi edinin. Misyon, vizyon ve sertifikalarımız."
+  section: about
+  body: "Valiente Technologies, Antalya’nın ilk ve tek siber güvenlik şirketi olarak, kurumların güvenlik açıklarını kötü niyetli saldırganlardan önce keşfetmesini ve kapatmasını sağlayan ofansif siber güvenlik uzmanları tarafından kurulmuş bir teknoloji girişimidir. Ana odağımız, gerçek dünyadaki saldırı tekniklerini birebir simüle ederek müşterilerimizin dijital altyapılarındaki zayıflıkları detaylı şekilde ortaya çıkarmak ve işletmelerin siber dayanıklılığını en üst düzeye taşımaktır."
+  mission:
+    title: "Misyonumuz"
+    text: "Dijital dünyada karşılaşılan güvenlik tehditlerine karşı yenilikçi, hızlı ve etkili çözümler sunarak kurumların verilerini güvenle yönetmelerini sağlamak. Teknolojiyi insan odaklı bir yaklaşımla birleştirerek siber riskleri minimuma indirmek ve tüm kullanıcılar için daha güvenli bir dijital ekosistem oluşturmaktır."
+    icon: fas fa-crosshairs
+  vision:
+    title: "Vizyonumuz"
+    text: "Küresel ölçekte tanınan, güven veren ve ileri teknoloji çözümleriyle sektör standartlarını belirleyen lider bir siber güvenlik şirketi olmak. Geleceğin tehditlerine bugünden hazırlıklı olarak, yapay zekâ destekli savunma teknolojileriyle dijital güvenliğin geleceğini şekillendirmektir."
+    icon: fas fa-user-shield
+  certifications:
+    title: "Sertifikalarımız"
+    section: certifications
+    view-document: "Belgeyi Görüntüle"
+    iso:
+      title: "ISO/IEC 27001:2022"
+      desc: "Bilgi Güvenliği Yönetim Sistemi alanında uluslararası geçerliliğe sahip bu sertifika, kurumumuzun veri güvenliği süreçlerinin en yüksek standartları karşıladığını belgeler."
+      image: /assets/img/about/iso.png
+      url: /assets/docs/iso27001.pdf
+    list:
+      - title: "OSCP"
+        image: /assets/img/about/oscp.png
+      - title: "OSWE"
+        image: /assets/img/about/oswe.png
+      - title: "CISSP"
+        image: /assets/img/about/cissp.png
+      - title: "eWPTXv2"
+        image: /assets/img/about/ewptxv2.png
+      - title: "Red Hat"
+        image: /assets/img/about/redhat.png
+      - title: "TSE"
+        image: /assets/img/about/tse.png
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  title: "About Us"
+  description: "Learn about Valiente Technologies. Our mission, vision, and certifications."
+  section: about
+  body: "As the first and only cybersecurity company in Antalya, Valiente Technologies is a technology venture founded by offensive cybersecurity experts who help organizations discover and remediate security vulnerabilities before malicious actors can exploit them. Our core focus is to simulate real-world attack techniques to expose weaknesses in our clients' digital infrastructure in detail, and to maximize the cyber resilience of their businesses."
+  mission:
+    title: "Our Mission"
+    text: "To provide innovative, fast, and effective solutions against security threats in the digital world, enabling organizations to manage their data securely. To combine technology with a human-centered approach to minimize cyber risks and create a safer digital ecosystem for all users."
+    icon: fas fa-crosshairs
+  vision:
+    title: "Our Vision"
+    text: "To become a leading cybersecurity company recognized globally, trusted, and setting industry standards with advanced technology solutions. To be prepared for tomorrow's threats today and shape the future of digital security with AI-powered defense technologies."
+    icon: fas fa-user-shield
+  certifications:
+    title: "Our Certifications"
+    section: certifications
+    view-document: "View Document"
+    iso:
+      title: "ISO/IEC 27001:2022"
+      desc: "This internationally recognized certificate in Information Security Management Systems documents that our organization's data security processes meet the highest standards."
+      image: /assets/img/about/iso.png
+      url: /assets/docs/iso27001.pdf
+    list:
+      - title: "OSCP"
+        image: /assets/img/about/oscp.png
+      - title: "OSWE"
+        image: /assets/img/about/oswe.png
+      - title: "CISSP"
+        image: /assets/img/about/cissp.png
+      - title: "eWPTXv2"
+        image: /assets/img/about/ewptxv2.png
+      - title: "Red Hat"
+        image: /assets/img/about/redhat.png
+      - title: "TSE"
+        image: /assets/img/about/tse.png

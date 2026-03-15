@@ -1,6 +1,9 @@
 ---
 ---
 @charset "utf-8";
+// Vendor
+@import "vendor/bootstrap";
+
 // Core variables and mixins
 @import "base/variables.scss";
 @import "base/mixins.scss";
@@ -37,19 +40,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "base/page.scss";
 
 // Components
-@import "components/buttons.scss";
-@import "components/navbar.scss";
-@import "components/client-scroll.scss";
+@import "components/index";
 
 // Layout
-@import "layout/masthead.scss";
-@import "layout/services.scss";
-@import "layout/portfolio.scss";
-@import "layout/references.scss";
-@import "layout/testimonials.scss";
-@import "layout/partners.scss";
-@import "layout/about.scss";
-@import "layout/contact.scss";
-@import "layout/page.scss";
-@import "layout/error.scss";
-@import "layout/footer.scss";
+@import "layout/index";

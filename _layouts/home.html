@@ -1,11 +1,17 @@
 ---
 layout: default
 ---
-{% include nav-header.html %}
+{% include layout/nav-header.html %}
 
-{% include services.html %}
-{% include portfolio.html %}
-{% include references.html %}
-{% include testimonials.html %}
-{% include partners.html %}
-{% include contact.html %}
+{% include sections/services.html %}
+{% include sections/references.html %}
+{% include sections/testimonials.html %}
+
+<!-- Client scroll animation -->
+<script src="/assets/js/client-scroll.js" defer></script>
+
+<!-- Testimonials shuffle -->
+<script src="/assets/js/testimonials-shuffle.js" defer></script>
+
+<!-- Mesh network animation -->
+<script src="/assets/js/mesh-network.js" defer></script>

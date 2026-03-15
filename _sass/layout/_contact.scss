@@ -1,3 +1,162 @@
+// ─── Contact CTA section (home page) ─────────────────────────────────────────
+
+.contact-cta-section {
+  position: relative;
+  padding-block: var(--space-section-y);
+  color: var(--color-text-on-dark);
+  @include full-viewport-section;
+  background:
+    radial-gradient(circle at 50% 60%, rgba($primary, 0.18), transparent 55%),
+    linear-gradient(135deg, $valiente-ink 0%, darken($valiente-midnight, 4%) 100%);
+
+  .section-heading {
+    color: var(--color-text-on-dark);
+    margin-bottom: var(--space-gap-xl);
+  }
+
+  .btn {
+    box-shadow: 0 15px 35px rgba($primary, 0.35);
+  }
+}
+
+// ─── Offices section (contact page) ──────────────────────────────────────────
+
+.offices-section {
+  position: relative;
+  padding-block: var(--space-section-y);
+  color: var(--color-text-on-dark);
+  overflow: hidden;
+  @include full-viewport-section;
+
+  .section-heading {
+    color: var(--color-text-on-dark);
+  }
+}
+
+.offices-background {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba($primary, 0.2), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba($valiente-violet, 0.2), transparent 55%),
+    linear-gradient(135deg, darken($valiente-midnight, 5%) 0%, $valiente-ink 100%);
+  z-index: 0;
+}
+
+.offices-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.offices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-gap-lg);
+  margin-bottom: var(--space-gap-xl);
+}
+
+.office-card {
+  padding: var(--space-card-padding-lg);
+  @include surface-card($radius-card-lg);
+  background: rgba($valiente-midnight, 0.75);
+  border-top: 3px solid rgba($primary, 0.5);
+
+  .office-card__city {
+    @include heading-font;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text-on-dark);
+    margin: 0 0 var(--space-gap-md);
+  }
+
+  .office-card__info {
+    display: flex;
+    align-items: center; // Center vertically for better alignment with icons
+    gap: var(--space-gap);
+    margin-bottom: var(--space-gap-md); // Slightly more gap
+    color: var(--color-text-muted-on-dark);
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+
+    p, a {
+      margin: 0;
+      color: inherit;
+      text-decoration: none;
+      transition: color 200ms ease;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    a {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  .office-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2.5rem; // Fixed width for alignment
+    
+    .fa-stack {
+      font-size: 1.1rem; // Adjust stack size
+    }
+  }
+
+  .office-card__map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-gap-xs;
+    margin-top: var(--space-gap-md);
+    font-size: var(--font-size-sm);
+    color: lighten($primary, 15%);
+    text-decoration: none;
+    @include heading-font;
+    font-weight: 600;
+    letter-spacing: $letter-spacing-label;
+    text-transform: uppercase;
+
+    &:hover {
+      color: lighten($primary, 25%);
+    }
+  }
+}
+
+.offices-map {
+  border-radius: $radius-card-lg;
+  overflow: hidden;
+  border: 1px solid $border-surface;
+
+  iframe {
+    display: block;
+  }
+}
+
+// Navbar clearance on standalone /contact page
+body.contact-page .contact-section {
+  padding-top: calc(var(--space-section-y) + var(--navbar-height));
+
+  @include media-min($breakpoint-lg) {
+    padding-top: calc(var(--space-section-y) + var(--navbar-height-lg));
+  }
+}
+
+@include media-max($breakpoint-sm - 1px) {
+  .offices-section {
+    padding-block: var(--space-section-y-sm);
+  }
+
+  .contact-cta-section {
+    padding-block: var(--space-section-y-sm);
+  }
+}
+
+// ─── Contact form section ─────────────────────────────────────────────────────
+
 // Styling for the contact section
 .contact-section {
   position: relative;
@@ -215,6 +374,15 @@
       flex: 1;
       gap: var(--space-gap-lg);
       min-height: 0;
+    }
+  }
+
+  .contact-panel--info {
+    // Override default icon container styles when using fa-stack
+    .contact-highlights__icon, .contact-meta__icon {
+      background: none;
+      width: auto;
+      height: auto;
     }
   }
 

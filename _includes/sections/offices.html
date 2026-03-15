@@ -1,0 +1,64 @@
+<!-- Offices -->
+{% assign contact = site.data.contact[site.active_lang] | default: site.data.contact.tr %}
+{% if contact.offices %}
+<section class="page-section offices-section" id="offices">
+  <div class="offices-background" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10">
+        <h2 class="section-heading text-uppercase">{{ contact.offices_title | default: "Ofislerimiz" }}</h2>
+      </div>
+    </div>
+
+    <div class="offices-grid">
+      {% for office in contact.offices %}
+      <div class="office-card">
+        <h3 class="office-card__city">{{ office.city }}</h3>
+        {% if office.address %}
+        <div class="office-card__info">
+          <span class="office-card__icon" aria-hidden="true">
+            <span class="fa-stack">
+              <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.15"></i>
+              <i class="fas fa-map-marker-alt fa-stack-1x text-primary"></i>
+            </span>
+          </span>
+          <a href="{{ office.map_url }}" target="_blank" rel="noopener noreferrer">
+            {{ office.address }}
+          </a>
+        </div>
+        {% endif %}
+        {% if office.phone %}
+        <div class="office-card__info">
+          <span class="office-card__icon" aria-hidden="true">
+            <span class="fa-stack">
+              <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.15"></i>
+              <i class="fas fa-phone fa-stack-1x text-primary"></i>
+            </span>
+          </span>
+          <a href="tel:{{ office.phone | replace: ' ', '' }}">{{ office.phone }}</a>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if contact.map_embed != "" and contact.map_embed %}
+    <div class="offices-map">
+      <iframe
+        src="{{ contact.map_embed }}"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="{{ contact.offices_title | default: 'Ofislerimiz' }}"
+      ></iframe>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
+<!-- End Offices -->

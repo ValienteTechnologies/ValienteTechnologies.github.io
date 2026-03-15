@@ -1,18 +1,76 @@
-# Turkish
-# -----------------
+# Supported link types:
+#   section: services        → scrolls to /#services (home only) or links to /#services (subpages)
+#   url: /about              → links to a page (automatically prefixed with language)
+#   static: true             → url is NOT language-prefixed (e.g. external or the blog)
+#   children:                → renders a dropdown; each child supports url, section, or static
+#     - title: "..."
+#       url: /services/pentest
+
 tr: &DEFAULT_TR
   nav:
-    - title: "Hizmetler"
-      section: services
-    - title: "Referanslar"
-      section: references
-    - title: "Hakkımızda"
-      url: /about
-    - title: "İş Ortakları"
-      section: partners
+    - title: "Ana Sayfa"
+      url: /
+      children:
+        - title: "Hizmetler"
+          section: services
+        - title: "Referanslar"
+          section: references
+        - title: "Geri Bildirimler"
+          section: testimonials
+    - title: "Kurumsal"
+      url: /corporate/
+      children:
+        - title: "Hakkımızda"
+          url: /corporate/#about
+        - title: "Sertifikalar"
+          url: /corporate/#certifications
+        - title: "Broşürler"
+          url: /corporate/#brochures
+        - title: "İş Ortakları"
+          url: /corporate/#partners
+    - title: "İletişim"
+      url: /contact/
+      children:
+        - title: "Form"
+          url: /contact/#contact
+        - title: "Ofisler"
+          url: /contact/#offices
     - title: "Blog"
       url: /blog/
-    - title: "İletişim"
-      section: contact
+      static: true
+
 tr-TR:
   <<: *DEFAULT_TR
+
+en:
+  nav:
+    - title: "Home"
+      url: /
+      children:
+        - title: "Services"
+          section: services
+        - title: "References"
+          section: references
+        - title: "Testimonials"
+          section: testimonials
+    - title: "Corporate"
+      url: /corporate/
+      children:
+        - title: "About Us"
+          url: /corporate/#about
+        - title: "Certifications"
+          url: /corporate/#certifications
+        - title: "Brochures"
+          url: /corporate/#brochures
+        - title: "Partners"
+          url: /corporate/#partners
+    - title: "Contact"
+      url: /contact/
+      children:
+        - title: "Form"
+          url: /contact/#contact
+        - title: "Offices"
+          url: /contact/#offices
+    - title: "Blog"
+      url: /blog/
+      static: true

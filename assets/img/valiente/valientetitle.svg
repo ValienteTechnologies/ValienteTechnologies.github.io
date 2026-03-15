@@ -4,11 +4,11 @@
 <svg
    version="1.1"
    id="svg1"
-   width="208"
-   height="52"
-   viewBox="0 0 208 52"
-   sodipodi:docname="valientelong.svg"
-   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   width="200"
+   height="50"
+   viewBox="0 0 200 50"
+   sodipodi:docname="valientetitle.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
    inkscape:export-filename="valiente1.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -45,22 +45,22 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="132.93608"
-     inkscape:cy="-24.041631"
+     inkscape:zoom="4"
+     inkscape:cx="79.125001"
+     inkscape:cy="15.75"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1"
+     inkscape:current-layer="svg1"
      inkscape:export-bgcolor="#ffffff00" />
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
      id="g1"
      style="display:inline"
-     transform="matrix(0.04076786,0,0,0.04076786,9.3361618,-2.5262731)">
+     transform="matrix(0.04076786,0,0,0.04076786,12.739967,-3.5262753)">
     <circle
        style="display:inline;fill:#000000;fill-opacity:0;stroke:#310b5d;stroke-width:50;stroke-dasharray:none;stroke-opacity:1"
        id="path38"
@@ -114,18 +114,23 @@
   </g>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:21.3333px;font-family:Kanit;-inkscape-font-specification:'Kanit Semi-Bold';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;display:inline;fill:#ab0693;fill-opacity:1;stroke-width:72"
-     x="63.844513"
-     y="17.978691"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:29.3333px;font-family:Kanit;-inkscape-font-specification:'Kanit Semi-Bold';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;display:inline;fill:#ab0693;fill-opacity:1;stroke-width:72"
+     x="67.694595"
+     y="24.738647"
      id="text1"><tspan
        sodipodi:role="line"
-       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ab0693;fill-opacity:1;stroke-width:72"
-       x="63.844513"
-       y="17.978691"
-       id="tspan2">Valiente </tspan><tspan
+       style="font-size:29.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ab0693;fill-opacity:1;stroke-width:72"
+       x="67.694595"
+       y="24.738647"
+       id="tspan3">Valiente</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-weight:600;font-size:16px;font-family:Kanit;-inkscape-font-specification:'Kanit Semi-Bold';writing-mode:lr-tb;direction:ltr;fill:#ab0693;fill-opacity:1;stroke-width:72"
+     x="76.42794"
+     y="41.815983"
+     id="text2"><tspan
        sodipodi:role="line"
-       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ab0693;fill-opacity:1;stroke-width:72"
-       x="63.844513"
-       y="44.645317"
-       id="tspan3">Technologies</tspan></text>
+       id="tspan1"
+       x="76.42794"
+       y="41.815983">Technologies</tspan></text>
 </svg>

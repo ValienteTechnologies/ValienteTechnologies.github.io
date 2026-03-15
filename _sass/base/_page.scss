@@ -16,6 +16,10 @@
     "Segoe UI Symbol", "Noto Color Emoji";
   --font-heading: "Montserrat", var(--font-body);
 
+  /* Navbar heights */
+  --navbar-height: #{$navbar-height};
+  --navbar-height-lg: #{$navbar-height-lg};
+
   /* Layout & spacing */
   --space-section-y: #{$space-section-y};
   --space-section-y-sm: #{$space-section-y-sm};
@@ -56,6 +60,10 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
+
+  @include media-max($breakpoint-lg - 1px) {
+    scroll-padding-top: var(--navbar-height);
+  }
 }
 
 body {

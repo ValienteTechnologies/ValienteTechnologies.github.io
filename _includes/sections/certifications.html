@@ -1,0 +1,51 @@
+<!-- Certifications Section -->
+{% assign about = site.data.about[site.active_lang] | default: site.data.about.tr %}
+{% if about.certifications %}
+<section class="page-section certs-section" id="{{ about.certifications.section | default: "certifications" }}">
+  <div class="certs-background" aria-hidden="true"></div>
+  <div class="container">
+
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10">
+        <h2 class="section-heading text-uppercase">{{ about.certifications.title | default: "Sertifikalarımız" }}</h2>
+      </div>
+    </div>
+
+    {% if about.certifications.list or about.certifications.iso %}
+    <div class="cert-logos">
+      {% for cert in about.certifications.list %}
+      <div class="cert-logo-item">
+        <picture>
+          <source srcset="{{ cert.image | replace: '.png', '.webp' }}" type="image/webp">
+          <img src="{{ cert.image }}" alt="{{ cert.title }}" loading="lazy">
+        </picture>
+      </div>
+      {% endfor %}
+
+      {% if about.certifications.iso %}
+      {% assign iso = about.certifications.iso %}
+      <div class="cert-featured">
+        <div class="cert-featured__logo">
+          <picture>
+            <source srcset="{{ iso.image | replace: '.png', '.webp' }}" type="image/webp">
+            <img src="{{ iso.image }}" alt="{{ iso.title }}" loading="lazy">
+          </picture>
+        </div>
+        <div class="cert-featured__info">
+          <h3 class="cert-featured__title">{{ iso.title }}</h3>
+          <p class="cert-featured__desc">{{ iso.desc }}</p>
+          {% if iso.url %}
+          <a href="{{ iso.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            {{ about.certifications["view-document"] }}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
+<!-- End Certifications -->

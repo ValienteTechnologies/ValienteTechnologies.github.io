@@ -248,13 +248,13 @@
   }
 }
 
-// ─── Navbar clearance on standalone /about page ───────────────────────────────
+// ─── Navbar clearance on standalone /corporate page ───────────────────────────────
 
-body.about-page .about-section {
-  padding-top: calc(var(--space-section-y) + 5rem);
+body.corporate-page .about-section {
+  padding-top: calc(var(--space-section-y) + var(--navbar-height));
 
   @include media-min($breakpoint-lg) {
-    padding-top: calc(var(--space-section-y) + 7rem);
+    padding-top: calc(var(--space-section-y) + var(--navbar-height-lg));
   }
 }
 

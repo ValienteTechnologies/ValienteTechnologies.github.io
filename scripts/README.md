@@ -2,6 +2,13 @@
 
 Local development scripts. This directory is excluded from Jekyll builds via `_config.yml` and is never served as part of the website.
 
+## Setup (run once after cloning)
+
+```bash
+cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+pip install pillow
+```
+
 ## to_webp.py
 
 Converts PNG/JPG images to WebP format.

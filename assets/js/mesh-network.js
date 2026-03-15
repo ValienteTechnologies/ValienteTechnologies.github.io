@@ -5,6 +5,12 @@
   const canvas = document.getElementById('meshNetwork');
   if (!canvas) return;
 
+  // Skip animation on mobile — reduces CPU usage and eliminates reflow warnings
+  if (window.innerWidth < 768) {
+    canvas.style.display = 'none';
+    return;
+  }
+
   const ctx = canvas.getContext('2d');
   let mouse = { x: 0, y: 0 };
   let nodes = [];
@@ -15,9 +21,9 @@
   let gridCols = 0;
   let gridRows = 0;
   
-  // Detect if desktop (screen width >= 768px)
+  // Detect if desktop based on canvas width (set by ResizeObserver — no reflow)
   function isDesktop() {
-    return window.innerWidth >= 768;
+    return canvas.width >= 768;
   }
   
   // Dynamic settings based on device
@@ -85,34 +91,25 @@
   let prevCanvasWidth = 0;
   let prevCanvasHeight = 0;
   
-  // Resize canvas to match header
-  function resizeCanvas() {
-    const header = canvas.parentElement;
-    if (header) {
-      const newWidth = header.offsetWidth;
-      const newHeight = header.offsetHeight;
-      
-      // Check if dimensions actually changed significantly
-      const widthChanged = Math.abs(newWidth - prevCanvasWidth) > 50;
-      const heightChanged = Math.abs(newHeight - prevCanvasHeight) > 50;
-      const shouldReinitNodes = widthChanged || heightChanged;
-      
-      canvas.width = newWidth;
-      canvas.height = newHeight;
-      prevCanvasWidth = newWidth;
-      prevCanvasHeight = newHeight;
-      
-      // Update cached distances
-      const maxDist = getConnectionDistance();
-      maxDistance = maxDist;
-      maxDistanceSquared = maxDist * maxDist;
-      maxMouseDistance = maxDist * 1.5;
-      maxMouseDistanceSquared = maxMouseDistance * maxMouseDistance;
-      initGrid();
-      
-      return shouldReinitNodes;
-    }
-    return false;
+  // Resize canvas — dimensions provided by ResizeObserver (no layout read, no reflow)
+  function resizeCanvas(newWidth, newHeight) {
+    const widthChanged = Math.abs(newWidth - prevCanvasWidth) > 50;
+    const heightChanged = Math.abs(newHeight - prevCanvasHeight) > 50;
+    const shouldReinitNodes = widthChanged || heightChanged;
+
+    canvas.width = newWidth;
+    canvas.height = newHeight;
+    prevCanvasWidth = newWidth;
+    prevCanvasHeight = newHeight;
+
+    const maxDist = getConnectionDistance();
+    maxDistance = maxDist;
+    maxDistanceSquared = maxDist * maxDist;
+    maxMouseDistance = maxDist * 1.5;
+    maxMouseDistanceSquared = maxMouseDistance * maxMouseDistance;
+    initGrid();
+
+    return shouldReinitNodes;
   }
 
   // Initialize nodes - use typed arrays for better performance
@@ -383,46 +380,41 @@
 
   // Initialize
   function init() {
-    resizeCanvas();
-    initNodes();
-    
-    // Set initial mouse position to center
-    mouse.x = canvas.width / 2;
-    mouse.y = canvas.height / 2;
-    
-    // Event listeners
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        const shouldReinitNodes = resizeCanvas();
-        if (shouldReinitNodes) {
-          initNodes();
-        } else {
-          // Just update the grid for minor resizes
-          updateGrid();
-        }
-      }, 250);
-    }, { passive: true });
-    
-    // Track mouse over entire header, not just canvas
     const header = canvas.parentElement;
-    if (header) {
-      header.addEventListener('mousemove', handleMouseMove, { passive: true });
-      header.addEventListener('touchmove', handleTouchMove, { passive: true });
-    }
-    
-    // Start animation
-    lastTime = performance.now();
-    animationFrameId = requestAnimationFrame(animate);
-  }
+    if (!header) return;
 
-  // Cleanup function
-  window.addEventListener('beforeunload', () => {
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
-    }
-  });
+    let animationStarted = false;
+
+    // ResizeObserver receives dimensions after layout — no forced reflow
+    const ro = new ResizeObserver(function(entries) {
+      for (const entry of entries) {
+        const w = Math.round(entry.contentRect.width);
+        const h = Math.round(entry.contentRect.height);
+        if (!animationStarted) {
+          resizeCanvas(w, h);
+          initNodes();
+          mouse.x = w / 2;
+          mouse.y = h / 2;
+          lastTime = performance.now();
+          animationFrameId = requestAnimationFrame(animate);
+          animationStarted = true;
+        } else {
+          const shouldReinit = resizeCanvas(w, h);
+          if (shouldReinit) initNodes();
+          else updateGrid();
+        }
+      }
+    });
+    ro.observe(header);
+
+    header.addEventListener('mousemove', handleMouseMove, { passive: true });
+    header.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    window.addEventListener('beforeunload', () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      ro.disconnect();
+    });
+  }
 
   // Wait for DOM to be ready
   if (document.readyState === 'loading') {

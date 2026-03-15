@@ -1,0 +1,62 @@
+tr: &DEFAULT_TR
+  title: "Yasal Bildirimler"
+  updated: "Son güncelleme: Mart 2026"
+  description: "Valiente Technologies gizlilik politikası, çerez politikası, KVKK kapsamındaki haklarınız ve kullanım koşulları."
+  cards:
+    - id: gizlilik
+      title: "Gizlilik Politikası"
+      icon: "fas fa-shield-alt"
+      include: "legal/gizlilik.md"
+    - id: cerez
+      title: "Çerez Politikası"
+      icon: "fas fa-cookie-bite"
+      include: "legal/cerez.md"
+    - id: aydinlatma
+      title: "Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni"
+      icon: "fas fa-file-alt"
+      include: "legal/aydinlatma.md"
+    - id: imha
+      title: "Kişisel Veri Saklama ve İmha Politikası"
+      icon: "fas fa-database"
+      include: "legal/imha.md"
+    - id: kullanim
+      title: "Kullanım Koşulları"
+      icon: "fas fa-gavel"
+      include: "legal/kullanim.md"
+    - id: iletisim
+      title: "Kurumsal Bilgiler ve İletişim"
+      icon: "fas fa-building"
+      include: "legal/iletisim.md"
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  title: "Legal"
+  updated: "Last updated: March 2026"
+  description: "Valiente Technologies privacy policy, cookie policy, your rights under applicable law, and terms of use."
+  cards:
+    - id: gizlilik
+      title: "Privacy Policy"
+      icon: "fas fa-shield-alt"
+      include: "legal/gizlilik-en.md"
+    - id: cerez
+      title: "Cookie Policy"
+      icon: "fas fa-cookie-bite"
+      include: "legal/cerez-en.md"
+    - id: aydinlatma
+      title: "Clarification Text on Personal Data Processing"
+      icon: "fas fa-file-alt"
+      include: "legal/aydinlatma-en.md"
+    - id: imha
+      title: "Personal Data Retention and Destruction Policy"
+      icon: "fas fa-database"
+      include: "legal/imha-en.md"
+    - id: kullanim
+      title: "Terms of Use"
+      icon: "fas fa-gavel"
+      include: "legal/kullanim-en.md"
+    - id: iletisim
+      title: "Corporate Information and Contact"
+      icon: "fas fa-building"
+      include: "legal/iletisim-en.md"

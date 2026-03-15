@@ -1,0 +1,176 @@
+<head>
+  {%- assign _data_section = site.data[page.data_key][site.active_lang] | default: site.data[page.data_key].tr -%}
+  {%- assign _page_title = page.title -%}
+  {%- assign _page_description = page.description | default: site.description -%}
+  {%- if _data_section.title -%}{%- assign _page_title = _data_section.title -%}{%- endif -%}
+  {%- if _data_section.description -%}{%- assign _page_description = _data_section.description -%}{%- endif -%}
+  {%- if page.url == "/" or page.url == "/index.html" -%}
+    {%- assign _page_full_title = site.title | append: " | Sızma Testi ve Siber Güvenlik" -%}
+  {%- elsif _page_title -%}
+    {%- assign _page_full_title = _page_title | append: " | " | append: site.title -%}
+  {%- else -%}
+    {%- assign _page_full_title = site.title -%}
+  {%- endif -%}
+
+  <!-- Critical CSS: single stylesheet (bootstrap bundled in) -->
+  <link rel="preload" href="/assets/css/agency.css" as="style">
+
+  {% if site.analytics.google %}
+  <!-- Google Analytics: deferred until after load to avoid forced reflow on LCP -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', '{{ site.analytics.google }}');
+    });
+  </script>
+  {% endif %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ _page_description }}">
+  <meta name="author" content="{{ site.author }}">
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
+  <meta name="geo.region" content="TR-07">
+  <meta name="geo.placename" content="Antalya">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="icon" type="image/x-icon" href="/assets/img/valiente/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="apple-touch-icon" href="/assets/img/valiente/valiente1024.webp">
+  <meta name="theme-color" content="#e22388">
+
+  <!-- JSON-LD: LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/img/valiente/valientetitle.svg",
+    "image": "{{ site.url }}/assets/img/valiente/og-image.png",
+    "description": "{{ site.description }}",
+    "email": "{{ site.email }}",
+    "telephone": "{{ site.data.contact.tr.phone_number }}",
+    "areaServed": ["Antalya", "Türkiye"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Antalya",
+      "addressCountry": "TR"
+    },
+    "sameAs": [
+      "{{ site.social.linkedin }}",
+      "{{ site.social.instagram }}",
+      "{{ site.social.github }}"
+    ]
+  }
+  </script>
+
+  {% if page.url != "/" and page.url != "/index.html" %}
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{% if site.active_lang == 'tr' %}Ana Sayfa{% else %}Home{% endif %}",
+      "item": "{{ site.url }}"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ _page_title }}",
+      "item": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+    }]
+  }
+  </script>
+  {% endif %}
+
+  {% if page.schema_type %}
+  <!-- JSON-LD: Page-specific structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ page.schema_type }}",
+    "name": "{{ page.schema_name | default: page.title }}",
+    "description": "{{ page.schema_description | default: _page_description }}",
+    "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+    "provider": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}"
+    }
+  }
+  </script>
+  {% endif %}
+
+  <!-- hreflang alternates for multilanguage SEO (page.url is always the base path in polyglot) -->
+  <link rel="alternate" hreflang="tr" {% static_href %}href="{{ site.url }}{{ page.url }}"{% endstatic_href %}>
+  <link rel="alternate" hreflang="en" {% static_href %}href="{{ site.url }}/en{{ page.url }}"{% endstatic_href %}>
+  <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ site.url }}{{ page.url }}"{% endstatic_href %}>
+
+  <title>{{ _page_full_title }}</title>
+
+  <!-- Open Graph / Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ _page_full_title }}">
+  <meta name="twitter:description" content="{{ _page_description }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:title" content="{{ _page_full_title }}">
+  <meta property="og:description" content="{{ _page_description }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{% if site.active_lang == 'en' %}en_US{% else %}tr_TR{% endif %}">
+  <meta property="og:locale:alternate" content="{% if site.active_lang == 'en' %}tr_TR{% else %}en_US{% endif %}">
+
+  {% if page.layout == "home" %}
+  <!-- LCP preload: masthead ::before background image (CSS images aren't auto-prioritized) -->
+  <link rel="preload" href="/assets/img/valiente/valiente.svg" as="image" fetchpriority="high">
+  {% endif %}
+
+  <!-- Preconnect to font origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- FontAwesome: non-render-blocking -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+  <!-- Custom fonts: high-priority non-render-blocking with display=swap -->
+  {% if site.data.style.fonts_urls %}
+    {% for font_url in site.data.style.fonts_urls %}
+      <link rel="preload" href="{{font_url}}" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="{{font_url}}"></noscript>
+    {% endfor %}
+  {% else %}
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"></noscript>
+  {% endif %}
+  <!-- Custom styles for this theme -->
+  <!--<link href="/assets/css/agency.min.css" rel="stylesheet">-->
+  <link href="/assets/css/agency.css" rel="stylesheet" />
+
+  <!-- Page container change top padding when nav shrinks -->
+  {% if page.body_class == "page-layout" %}
+  <style>
+    #pagecontainer {
+      padding-top: 150px;
+    }
+    @media only screen and (max-width: 991px) {
+      #pagecontainer {
+        padding-top: 100px;
+      }
+    }
+  </style>
+  {% endif %}
+</head>

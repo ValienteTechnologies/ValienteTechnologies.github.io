@@ -1,0 +1,38 @@
+tr: &DEFAULT_TR
+  title: "İş Ortaklarımız"
+  description: "Valiente Technologies çözüm ortakları. Bulut, sertifikasyon ve altyapı alanlarında güçlü iş ortaklarımızla birlikte hizmet sunuyoruz."
+  section: partners
+  events:
+    - title: "DT Cloud"
+      desc: "DT Cloud, Türkiye'de güçlü bir varlığı olan küresel bir bulut bilişim şirketidir."
+      image: /assets/img/partners/dt.png
+
+    - title: "Sigmacert Global"
+      desc: "Sigmacert Global, denetim ve sertifikasyon hizmetleri sunan ve ISO standartları eğitimleri veren bir şirkettir."
+      image: /assets/img/partners/sigmacert.png
+
+    - title: "Biga Bilişim"
+      desc: "Biga Bilişim, kamera, VoIP ve fiber ağ altyapılarının entegre edildiği profesyonel çözümler sunar."
+      image: /assets/img/partners/biga.png
+  end: "Yolculuğun <br> Bir Parçası <br> Olun!"
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  title: "Our Partners"
+  description: "Valiente Technologies solution partners. We deliver services alongside strong partners in cloud, certification, and infrastructure."
+  section: partners
+  events:
+    - title: "DT Cloud"
+      desc: "DT Cloud is a global cloud computing company with a strong presence in Turkey."
+      image: /assets/img/partners/dt.png
+
+    - title: "Sigmacert Global"
+      desc: "Sigmacert Global provides audit and certification services and delivers ISO standards training."
+      image: /assets/img/partners/sigmacert.png
+
+    - title: "Biga Bilişim"
+      desc: "Biga Bilişim offers professional solutions integrating camera, VoIP, and fiber network infrastructures."
+      image: /assets/img/partners/biga.png
+  end: "Be Part of <br> the Journey!"
