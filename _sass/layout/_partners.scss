@@ -175,11 +175,3 @@ section#partners {
   }
 }
 
-// Navbar clearance on standalone /partners page
-body.partners-page section#partners {
-  padding-top: calc(var(--space-section-y) + var(--navbar-height));
-
-  @include media-min($breakpoint-lg) {
-    padding-top: calc(var(--space-section-y) + var(--navbar-height-lg));
-  }
-}

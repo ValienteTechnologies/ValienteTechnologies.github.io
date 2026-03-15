@@ -1,0 +1,28 @@
+---
+---
+@charset "utf-8";
+
+// ── Variables & mixins (no CSS output) ───────────────────────────────────────
+@import "base/variables";
+@import "base/mixins";
+
+// ── Theme colors (Liquid-injected) ────────────────────────────────────────────
+$primary:           {{ site.data.style.highlight | default: "#e22388" }} !default;
+$white:             {{ site.data.style.white     | default: "#fff"     }} !default;
+$black:             {{ site.data.style.black     | default: "#000"     }} !default;
+$valiente-midnight: #1a0b2f !default;
+$valiente-ink:      #310b5d !default;
+$valiente-violet:   #63068c !default;
+$valiente-fuchsia:  #ab0693 !default;
+$valiente-magenta:  $primary !default;
+$valiente-rose:     lighten($valiente-magenta, 12%) !default;
+$header-image:      "{{ site.data.style.header-image }}";
+$contact-image:     "{{ site.data.style.contact-image }}";
+
+// ── Subpage layout (body.page-layout container styles) ────────────────────────
+@import "layout/page";
+
+// ── Corporate-page sections ───────────────────────────────────────────────────
+@import "layout/about";
+@import "layout/brochures";
+@import "layout/partners";
