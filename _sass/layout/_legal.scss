@@ -9,16 +9,19 @@ body.legal-layout {
 }
 
 .legal-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-section-y);
+  color: var(--color-text-on-dark);
+  @include full-viewport-section;
 }
 
 // Navbar clearance on standalone /legal page (mirrors partners/contact pattern)
 body.legal-layout .legal-section {
-  padding-top: calc(var(--space-section-y) + 5rem);
+  padding-top: calc(var(--space-section-y) + var(--navbar-height));
 
   @include media-min($breakpoint-lg) {
-    padding-top: calc(var(--space-section-y) + 7rem);
+    padding-top: calc(var(--space-section-y) + var(--navbar-height-lg));
   }
 
   .section-heading {

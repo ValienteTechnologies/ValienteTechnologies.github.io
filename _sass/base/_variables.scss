@@ -19,6 +19,10 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 
+// Navbar heights (used for scroll-padding-top and standalone-page top clearance)
+$navbar-height: 5rem !default;    // mobile + desktop shrunk (~76–78px)
+$navbar-height-lg: 7rem !default; // desktop un-shrunk (25px pad + logo + 25px pad ≈ 112px)
+
 // Layout scale
 $space-section-y: 6rem !default;
 $space-section-y-sm: 4.5rem !default;

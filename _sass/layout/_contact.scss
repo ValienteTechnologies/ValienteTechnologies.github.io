@@ -138,10 +138,10 @@
 
 // Navbar clearance on standalone /contact page
 body.contact-page .contact-section {
-  padding-top: calc(var(--space-section-y) + 5rem);
+  padding-top: calc(var(--space-section-y) + var(--navbar-height));
 
   @include media-min($breakpoint-lg) {
-    padding-top: calc(var(--space-section-y) + 7rem);
+    padding-top: calc(var(--space-section-y) + var(--navbar-height-lg));
   }
 }
 

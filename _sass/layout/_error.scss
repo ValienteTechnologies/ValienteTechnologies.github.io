@@ -2,7 +2,7 @@
 #pagecontainer {
   color: $white;
   min-height: 100vh;
-  padding-top: 4rem;     // clears mobile navbar (~56px)
+  padding-top: $navbar-height;
   padding-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -48,18 +48,18 @@
         width: auto;
         max-width: 100%;
         // Constrain height so title + button + image all fit in viewport
-        max-height: calc(100vh - 13rem); // 4rem padding-top + ~3.5rem title+btn + margins
+        max-height: calc(100vh - #{$navbar-height} - 9rem);
         object-fit: contain;
       }
     }
   }
 
   @media (min-width: 992px) {
-    padding-top: 6.5rem; // clears desktop navbar (~100px)
+    padding-top: $navbar-height-lg;
 
     .error-content {
       .error-image img {
-        max-height: calc(100vh - 16rem);
+        max-height: calc(100vh - #{$navbar-height-lg} - 9rem);
       }
     }
   }
