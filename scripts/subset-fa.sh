@@ -13,9 +13,9 @@ set -e
 
 SCRIPTS_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$SCRIPTS_DIR/.."
-FULL_CSS="$SCRIPTS_DIR/fa-full.css"
-SOLID_FULL="$SCRIPTS_DIR/fa-solid-900-full.woff2"
-BRANDS_FULL="$SCRIPTS_DIR/fa-brands-400-full.woff2"
+FULL_CSS="$SCRIPTS_DIR/fa-source/fa-full.css"
+SOLID_FULL="$SCRIPTS_DIR/fa-source/fa-solid-900-full.woff2"
+BRANDS_FULL="$SCRIPTS_DIR/fa-source/fa-brands-400-full.woff2"
 OUT_CSS="$ROOT/assets/css/all.min.css"
 OUT_SOLID="$ROOT/assets/css/webfonts/fa-solid-900.woff2"
 OUT_BRANDS="$ROOT/assets/css/webfonts/fa-brands-400.woff2"
@@ -45,7 +45,7 @@ echo "$USED" | sed 's/^/  /'
 BASE=$(python3 - <<'PYEOF'
 import re, sys
 
-css = open("scripts/fa-full.css").read()
+css = open("scripts/fa-source/fa-full.css").read()
 # Find position of first icon :before rule
 m = re.search(r'\.fa-[a-z0-9-]+:before\{', css)
 if m:
@@ -57,7 +57,7 @@ PYEOF
 ICON_RULES=$(python3 - "$USED" <<'PYEOF'
 import re, sys
 
-css = open("scripts/fa-full.css").read()
+css = open("scripts/fa-source/fa-full.css").read()
 # Strip fa- prefix; each entry in USED is e.g. "fa-arrow-right"
 used = set(n[3:] if n.startswith("fa-") else n for n in sys.argv[1].split())
 
@@ -80,7 +80,7 @@ PYEOF
 TAIL=$(python3 - <<'PYEOF'
 import re
 
-css = open("scripts/fa-full.css").read()
+css = open("scripts/fa-source/fa-full.css").read()
 # Find last icon :before rule end position
 matches = list(re.finditer(r'\.fa-[a-z0-9-]+:before\{[^}]+\}', css))
 if matches:
@@ -92,7 +92,7 @@ PYEOF
 SOLID_UNICODES=$(python3 - "$USED" <<'PYEOF'
 import re, sys
 
-css = open("scripts/fa-full.css").read()
+css = open("scripts/fa-source/fa-full.css").read()
 used = set(n[3:] if n.startswith("fa-") else n for n in sys.argv[1].split())
 
 # Map name -> unicode codepoint
@@ -114,7 +114,7 @@ PYEOF
 BRANDS_UNICODES=$(python3 - "$USED" <<'PYEOF'
 import re, sys
 
-css = open("scripts/fa-full.css").read()
+css = open("scripts/fa-source/fa-full.css").read()
 used = set(n[3:] if n.startswith("fa-") else n for n in sys.argv[1].split())
 
 rules = re.findall(r'\.fa-([a-z0-9-]+):before\{content:"\\([0-9a-fA-F]+)"\}', css)
@@ -131,7 +131,7 @@ if not fab_section_match:
 import subprocess, json
 result = subprocess.run(
     ["python3", "-c",
-     "from fontTools.ttLib import TTFont; f=TTFont('scripts/fa-brands-400-full.woff2'); "
+     "from fontTools.ttLib import TTFont; f=TTFont('scripts/fa-source/fa-brands-400-full.woff2'); "
      "cmap=f.getBestCmap(); print(' '.join(hex(c) for c in cmap.keys()))"],
     capture_output=True, text=True
 )
