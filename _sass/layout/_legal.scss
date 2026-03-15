@@ -10,19 +10,25 @@ body.legal-layout {
 
 body.legal-layout #pagecontainer {
   padding-top: 5rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
   color: var(--color-text-on-dark);
 
-  h1, h2, h3, h4, h5, h6 {
+  @include media-min($breakpoint-lg) {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  }
+
+  .section-heading {
     color: $white;
+    font-size: 2rem;
   }
 
-  h2 {
-    margin-top: 2.5rem;
-  }
-
-  p, li {
+  .legal-updated {
     color: var(--color-text-muted-on-dark);
+    font-size: var(--font-size-sm);
+    letter-spacing: $letter-spacing-label;
+    text-transform: uppercase;
+    margin-bottom: 0;
   }
 
   a {
@@ -31,32 +37,164 @@ body.legal-layout #pagecontainer {
       color: lighten($primary, 10%);
     }
   }
+}
 
-  hr {
-    border-color: $border-surface;
+// Accordion container
+.legal-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-gap-md);
+}
+
+// Individual card
+.legal-card {
+  @include surface-card($radius-card-md);
+  background: rgba($valiente-ink, 0.55);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:has(.legal-card__header[aria-expanded="true"]) {
+    border-color: rgba($primary, 0.45);
+    box-shadow: 0 16px 48px rgba($valiente-midnight, 0.7), 0 0 0 1px rgba($primary, 0.15);
+  }
+}
+
+// Header / toggle button
+.legal-card__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-gap);
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-text-on-dark);
+  transition: background 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba($white, 0.04);
+    outline: none;
   }
 
-  .legal-toc {
-    background: $surface-subtle;
-    border-left: 3px solid $primary;
-    border-radius: 0 $radius-input $radius-input 0;
-    padding: 1.25rem 1.5rem;
+  &[aria-expanded="true"] {
+    background: rgba($primary, 0.08);
+    border-bottom: 1px solid rgba($primary, 0.2);
 
-    ol {
-      margin-bottom: 0;
-      padding-left: 1.25rem;
+    .legal-card__icon-wrap {
+      background: rgba($primary, 0.25);
+      color: $primary;
     }
+
+    .legal-card__chevron {
+      transform: rotate(180deg);
+      color: $primary;
+    }
+  }
+
+  @include media-min($breakpoint-lg) {
+    padding: 1.5rem 2rem;
+  }
+}
+
+// Icon circle
+.legal-card__icon-wrap {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: rgba($white, 0.08);
+  color: rgba($white, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+// Card title
+.legal-card__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  letter-spacing: $letter-spacing-tight;
+  @include heading-font;
+  color: $white;
+
+  @include media-min($breakpoint-lg) {
+    font-size: var(--font-size-lg);
+  }
+}
+
+// Chevron
+.legal-card__chevron {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: rgba($white, 0.45);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
+}
+
+// Collapsible body
+.legal-card__body {
+  // Bootstrap handles display:none / show via .collapse
+}
+
+.legal-card__content {
+  padding: 1.5rem;
+  border-top: 1px solid $border-surface;
+
+  @include media-min($breakpoint-lg) {
+    padding: 2rem;
+  }
+
+  // Prose styles inside each card
+  h4, h5, h6 {
+    color: $white;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-size: var(--font-size-base);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    color: var(--color-text-muted-on-dark);
+    font-size: var(--font-size-sm);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  ul, ol {
+    padding-left: 1.4rem;
+    margin-bottom: 0.75rem;
 
     li {
       color: var(--color-text-muted-on-dark);
-      margin-bottom: 0.25rem;
+      font-size: var(--font-size-sm);
+      line-height: 1.7;
+      margin-bottom: 0.3rem;
     }
+  }
+
+  strong {
+    color: rgba($white, 0.88);
+    font-weight: 600;
+  }
+
+  hr {
+    border-color: $border-surface;
+    margin: 1.5rem 0;
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0 1.5rem;
+    margin: 1rem 0 0.5rem;
     font-size: $font-size-sm;
 
     th {
@@ -64,6 +202,7 @@ body.legal-layout #pagecontainer {
       border-bottom: 2px solid $border-surface-muted;
       padding: 0.5rem 0.75rem;
       text-align: left;
+      @include heading-font;
     }
 
     td {
@@ -75,9 +214,5 @@ body.legal-layout #pagecontainer {
     tr:last-child td {
       border-bottom: none;
     }
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    padding-top: 7rem;
   }
 }
