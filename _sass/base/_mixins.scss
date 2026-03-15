@@ -24,7 +24,6 @@
 }
 
 // Layout & section mixins
-// Ensures a consistent, full‑viewport section layout with snap scrolling.
 @mixin full-viewport-section {
   min-height: 100vh;
   display: flex;

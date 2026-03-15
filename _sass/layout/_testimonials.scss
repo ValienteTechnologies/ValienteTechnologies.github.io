@@ -2,6 +2,7 @@
 .testimonials-section {
   position: relative;
   overflow: hidden;
+  contain: layout style paint;
   color: var(--color-text-on-dark);
   @include full-viewport-section;
   padding-block: var(--space-section-y);
