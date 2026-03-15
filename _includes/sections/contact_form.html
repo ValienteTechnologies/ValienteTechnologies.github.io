@@ -21,7 +21,7 @@
               <li>
                 <span class="contact-highlights__icon">
                   <span class="fa-stack">
-                    <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.2"></i>
+                    <i class="fas fa-circle fa-stack-2x text-primary icon-circle--light"></i>
                     <i class="fas fa-check fa-stack-1x text-primary"></i>
                   </span>
                 </span>
@@ -34,7 +34,7 @@
               <a class="contact-meta__item" href="mailto:{{ site.email }}">
                 <span class="contact-meta__icon">
                   <span class="fa-stack">
-                    <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.18"></i>
+                    <i class="fas fa-circle fa-stack-2x text-primary icon-circle--muted"></i>
                     <i class="fas fa-envelope fa-stack-1x text-primary"></i>
                   </span>
                 </span>
@@ -48,7 +48,7 @@
               <a class="contact-meta__item" href="tel:{{ contact.phone_number | replace: ' ', '' }}">
                 <span class="contact-meta__icon">
                   <span class="fa-stack">
-                    <i class="fas fa-circle fa-stack-2x text-primary" style="opacity: 0.18"></i>
+                    <i class="fas fa-circle fa-stack-2x text-primary icon-circle--muted"></i>
                     <i class="fas fa-phone fa-stack-1x text-primary"></i>
                   </span>
                 </span>
@@ -69,7 +69,8 @@
       <div class="col-lg-6 mb-4 mb-lg-0">
         <div class="contact-panel contact-panel--form h-100">
           <div class="contact-panel__glow" aria-hidden="true"></div>
-          <form id="contactForm" method="POST" novalidate>
+          <form id="contactForm" method="POST" novalidate
+            data-action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}">
             <div class="contact-form-fields">
               <div class="form-field">
                 <label for="name">{{ contact.name | default: "Name*" }}</label>

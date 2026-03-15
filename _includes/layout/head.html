@@ -4,16 +4,33 @@
   {%- assign _page_description = page.description | default: site.description -%}
   {%- if _data_section.title -%}{%- assign _page_title = _data_section.title -%}{%- endif -%}
   {%- if _data_section.description -%}{%- assign _page_description = _data_section.description -%}{%- endif -%}
+  {%- assign _i18n = site.data.i18n[site.active_lang] | default: site.data.i18n.tr -%}
   {%- if page.url == "/" or page.url == "/index.html" -%}
-    {%- assign _page_full_title = site.title | append: " | Sızma Testi ve Siber Güvenlik" -%}
+    {%- assign _page_full_title = site.title | append: " | " | append: _i18n.site_title_suffix -%}
   {%- elsif _page_title -%}
     {%- assign _page_full_title = _page_title | append: " | " | append: site.title -%}
   {%- else -%}
     {%- assign _page_full_title = site.title -%}
   {%- endif -%}
 
-  <!-- Critical CSS: single stylesheet (bootstrap bundled in) -->
-  <link rel="preload" href="/assets/css/agency.css" as="style">
+  <!-- CSS: base (bootstrap + global) + page-specific sheet -->
+  {%- if page.layout == "home" -%}
+    {%- assign _page_css = "valiente-home.css" -%}
+  {%- elsif page.body_class == "corporate-page" -%}
+    {%- assign _page_css = "valiente-corporate.css" -%}
+  {%- elsif page.body_class == "contact-page" -%}
+    {%- assign _page_css = "valiente-contact.css" -%}
+  {%- elsif page.body_class == "legal-layout" -%}
+    {%- assign _page_css = "valiente-legal.css" -%}
+  {%- elsif page.layout == "error" -%}
+    {%- assign _page_css = "valiente-error.css" -%}
+  {%- else -%}
+    {%- assign _page_css = "" -%}
+  {%- endif -%}
+  <link rel="preload" href="/assets/css/valiente-base.css" as="style">
+  {%- if _page_css != "" -%}
+  <link rel="preload" href="/assets/css/{{ _page_css }}" as="style">
+  {%- endif -%}
 
   {% if site.analytics.google %}
   <!-- Google Analytics: deferred until after load to avoid forced reflow on LCP -->
@@ -42,7 +59,7 @@
   <link rel="icon" type="image/x-icon" href="/assets/img/valiente/favicon.ico">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="apple-touch-icon" href="/assets/img/valiente/valiente1024.webp">
-  <meta name="theme-color" content="#e22388">
+  <meta name="theme-color" content="{{ site.data.style.highlight | default: '#e22388' }}">
 
   <!-- JSON-LD: LocalBusiness structured data -->
   <script type="application/ld+json">
@@ -79,7 +96,7 @@
     "itemListElement": [{
       "@type": "ListItem",
       "position": 1,
-      "name": "{% if site.active_lang == 'tr' %}Ana Sayfa{% else %}Home{% endif %}",
+      "name": "{{ _i18n.home }}",
       "item": "{{ site.url }}"
     },{
       "@type": "ListItem",
@@ -143,9 +160,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- FontAwesome: non-render-blocking -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+  <!-- FontAwesome: local subsetted build (font-display:swap, ~3KB) -->
+  <link rel="preload" href="/assets/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/all.min.css"></noscript>
   <!-- Custom fonts: high-priority non-render-blocking with display=swap -->
   {% if site.data.style.fonts_urls %}
     {% for font_url in site.data.style.fonts_urls %}
@@ -157,8 +174,10 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"></noscript>
   {% endif %}
   <!-- Custom styles for this theme -->
-  <!--<link href="/assets/css/agency.min.css" rel="stylesheet">-->
-  <link href="/assets/css/agency.css" rel="stylesheet" />
+  <link href="/assets/css/valiente-base.css" rel="stylesheet" />
+  {%- if _page_css != "" -%}
+  <link href="/assets/css/{{ _page_css }}" rel="stylesheet" />
+  {%- endif -%}
 
   <!-- Page container change top padding when nav shrinks -->
   {% if page.body_class == "page-layout" %}

@@ -1,12 +1,13 @@
 #!/bin/sh
 # Pre-commit hook
-# 1. Converts any newly staged PNG/JPG images to WebP and stages the result.
+# 1. Converts any staged PNG/JPG images to WebP and stages the result.
 # 2. Minifies any staged assets/js/src/*.js files and stages the output.
+# 3. Regenerates FontAwesome subset if any HTML/SCSS/data files changed.
 #
 # Install: cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
 
 # --- WebP conversion ---
-STAGED_IMAGES=$(git diff --cached --name-only --diff-filter=A | grep -iE '\.(png|jpg|jpeg)$' || true)
+STAGED_IMAGES=$(git diff --cached --name-only --diff-filter=ACM | grep -iE '\.(png|jpg|jpeg)$' || true)
 
 if [ -n "$STAGED_IMAGES" ]; then
   if ! python3 -c "from PIL import Image" 2>/dev/null; then
@@ -40,5 +41,18 @@ if [ -n "$STAGED_JS" ]; then
       git add "$out"
       echo "  $src -> $out"
     done
+  fi
+fi
+
+# --- FontAwesome subset regeneration ---
+STAGED_FA=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^(_includes|_layouts|_pages|_data|assets/js/src)/.*\.(html|scss|js|yml|md)$' || true)
+
+if [ -n "$STAGED_FA" ]; then
+  if ! command -v pyftsubset >/dev/null 2>&1; then
+    echo "Warning: pyftsubset not found — skipping FA subset. Run: pip install fonttools brotli"
+  else
+    echo "Regenerating FontAwesome subset..."
+    bash scripts/subset-fa.sh
+    git add assets/css/all.min.css assets/css/webfonts/fa-solid-900.woff2 assets/css/webfonts/fa-brands-400.woff2
   fi
 fi

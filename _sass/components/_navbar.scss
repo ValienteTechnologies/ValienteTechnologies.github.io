@@ -10,9 +10,9 @@
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
   .navbar-toggler {
-    font-size: 12px;
+    font-size: $navbar-toggler-font-size;
     right: 0;
-    padding: 13px;
+    padding: $navbar-toggler-padding;
     text-transform: uppercase;
     color: $white;
     border: 0;
@@ -80,9 +80,8 @@
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
+    padding-top: $navbar-padding-y-lg;
+    padding-bottom: $navbar-padding-y-lg;
     border: none;
     border-bottom: 1px solid $surface-subtle;
 
@@ -99,18 +98,6 @@
       }
     }
 
-    &.navbar-shrink {
-      padding-top: 0;
-      padding-bottom: 0;
-      background: linear-gradient(135deg, $valiente-midnight, $valiente-ink);
-      border-bottom-color: $surface-input;
-      box-shadow: 0 10px 30px rgba($valiente-midnight, 0.35);
-
-      .navbar-brand {
-        font-size: 1.25em;
-        padding: 12px 0;
-      }
-    }
   }
 }
 

@@ -1,19 +1,14 @@
-#after any changes to the Gemfile, execute bundle update!
+# After any changes to the Gemfile, run: bundle update
 source "https://rubygems.org"
 
 gem "jekyll-remote-theme"
+gem "jekyll-agency", "~> 1.2"
+gem "webrick",       "~> 1.9"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
-  gem "jekyll-sitemap"
-  gem "jekyll-redirect-from"
-  gem "jekyll-polyglot"
+  gem "jekyll-feed",          "~> 0.6"
+  gem "jekyll-sitemap",       "~> 1.4"
+  gem "jekyll-redirect-from", "~> 0.16"
+  gem "jekyll-polyglot",      "~> 1.8"
   # gem "github-pages" # https://github.com/github/pages-gem
 end
-
-# Uncomment the following line if developing on Windows: 
-# Performance-booster for watching directories on Windows
-# gem "wdm", ">= 0.1.0" if Gem.win_platform?
-
-gem "jekyll-agency"
-gem "webrick"

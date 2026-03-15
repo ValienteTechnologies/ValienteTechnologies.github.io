@@ -20,8 +20,8 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 
 // Navbar heights (used for scroll-padding-top and standalone-page top clearance)
-$navbar-height: 5rem !default;    // mobile + desktop shrunk (~76–78px)
-$navbar-height-lg: 7rem !default; // desktop un-shrunk (25px pad + logo + 25px pad ≈ 112px)
+$navbar-height: 5rem !default;    // mobile + desktop (~76–78px)
+$navbar-height-lg: 5rem !default; // desktop (same, no un-shrunk state)
 
 // Layout scale
 $space-section-y: 6rem !default;
@@ -89,3 +89,27 @@ $text-placeholder: rgba(255, 255, 255, 0.5) !default;
 // Elevation (does not depend on theme palette so it can be used safely
 // before brand colors are defined in `agency.scss`)
 $shadow-elevated: 0 20px 45px rgba(0, 0, 0, 0.65) !default;
+
+// Typography — system font fallback stack (shared by all font mixins)
+$font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+// Masthead padding & typography
+$masthead-padding-top-sm: 120px !default;
+$masthead-padding-bottom-sm: 80px !default;
+$masthead-padding-top-lg: 300px !default;
+$masthead-padding-bottom-lg: 200px !default;
+$masthead-font-size-lead-sm: 22px !default;
+$masthead-font-size-lead-lg: 40px !default;
+$masthead-font-size-heading-sm: 42px !default;
+$masthead-font-size-heading-lg: 58px !default;
+
+// Navbar
+$navbar-toggler-font-size: 12px !default;
+$navbar-toggler-padding: 13px !default;
+$navbar-padding-y-lg: 10px !default;
+
+// Social buttons (footer)
+$social-button-size: 38px !default;
+$social-button-font-size: 18px !default;

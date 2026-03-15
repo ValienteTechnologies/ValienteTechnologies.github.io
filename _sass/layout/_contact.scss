@@ -1,24 +1,3 @@
-// ─── Contact CTA section (home page) ─────────────────────────────────────────
-
-.contact-cta-section {
-  position: relative;
-  padding-block: var(--space-section-y);
-  color: var(--color-text-on-dark);
-  @include full-viewport-section;
-  background:
-    radial-gradient(circle at 50% 60%, rgba($primary, 0.18), transparent 55%),
-    linear-gradient(135deg, $valiente-ink 0%, darken($valiente-midnight, 4%) 100%);
-
-  .section-heading {
-    color: var(--color-text-on-dark);
-    margin-bottom: var(--space-gap-xl);
-  }
-
-  .btn {
-    box-shadow: 0 15px 35px rgba($primary, 0.35);
-  }
-}
-
 // ─── Offices section (contact page) ──────────────────────────────────────────
 
 .offices-section {

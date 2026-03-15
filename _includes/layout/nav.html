@@ -5,7 +5,7 @@
   id="mainNav"
 >
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="{{ site.baseurl }}/#">
+    <a class="navbar-brand" href="{{ site.baseurl }}/#">
       {%- if site.logo -%}
       <img
         width="{{ site.logo.width | default: 208 }}"
@@ -68,19 +68,19 @@
             {%- else -%}
               {%- assign nav_url = '/' | append: site.active_lang | append: link.url -%}
             {%- endif -%}
-          <a class="nav-link js-scroll-trigger" href="{{ nav_url }}">{{ link.title }}</a>
+          <a class="nav-link" href="{{ nav_url }}">{{ link.title }}</a>
           {%- elsif link.section -%}
-          <a class="nav-link js-scroll-trigger" href="{{ site.baseurl }}/#{{ link.section }}">{{ link.title }}</a>
+          <a class="nav-link" href="{{ site.baseurl }}/#{{ link.section }}">{{ link.title }}</a>
           {%- else -%}
-          <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
+          <a class="nav-link" href="#">{{ link.title }}</a>
           {%- endif -%}
         </li>
         {%- endif -%}
         {%- endfor -%}
         <!-- Language switcher -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-globe"></i>
+          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ site.data.i18n[site.active_lang].language_select | default: site.data.i18n.tr.language_select }}">
+            <i class="fas fa-globe" aria-hidden="true"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
             <a class="dropdown-item" {% static_href %}href="{{ page.url }}"{% endstatic_href %}>TR</a>
