@@ -46,9 +46,7 @@ $(function() {
     if (!$invalidFields.length) return;
 
     $invalidFields.addClass("contact-field-error");
-    $invalidFields[0].scrollIntoView({ behavior: "smooth", block: "center" });
-
-    setTimeout(function() { $invalidFields.first().focus(); }, 300);
+    $invalidFields.first().focus();
     setTimeout(function() { $invalidFields.removeClass("contact-field-error"); }, 1200);
   }
 
