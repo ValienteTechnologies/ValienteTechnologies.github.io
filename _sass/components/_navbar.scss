@@ -99,18 +99,6 @@
       }
     }
 
-    &.navbar-shrink {
-      padding-top: 0;
-      padding-bottom: 0;
-      background: linear-gradient(135deg, $valiente-midnight, $valiente-ink);
-      border-bottom-color: $surface-input;
-      box-shadow: 0 10px 30px rgba($valiente-midnight, 0.35);
-
-      .navbar-brand {
-        font-size: 1.25em;
-        padding: 12px 0;
-      }
-    }
   }
 }
 

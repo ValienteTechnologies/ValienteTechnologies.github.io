@@ -1,27 +1,30 @@
 /**
- * PurgeCSS config for agency.css
+ * PurgeCSS audit tool for valiente CSS files.
  *
  * Run after a Jekyll build:
  *   bundle exec jekyll build
  *   npx purgecss --config purgecss.config.js
  *
- * Output lands in _site/assets/css/ — commit if you want to serve it statically.
- * NOTE: agency.css is compiled by Jekyll from agency.scss, so changes here
- * don't affect the live build on GitHub Pages. Use this to audit unused CSS.
+ * Output lands in _site/assets/css/ for inspection only.
+ * Changes must be made in the SCSS source files.
  */
 module.exports = {
-  css: ['_site/assets/css/agency.css'],
+  css: [
+    '_site/assets/css/valiente-base.css',
+    '_site/assets/css/valiente-home.css',
+    '_site/assets/css/valiente-corporate.css',
+    '_site/assets/css/valiente-contact.css',
+    '_site/assets/css/valiente-legal.css',
+    '_site/assets/css/valiente-error.css',
+  ],
   content: [
     '_site/**/*.html',
-    '_site/assets/js/agency.min.js',
     '_site/assets/js/nav-active.js',
     '_site/assets/js/client-scroll.js',
     '_site/assets/js/testimonials-shuffle.js',
   ],
   safelist: {
-    // JS-applied classes (not present in static HTML)
     standard: [
-      'navbar-shrink',      // agency.min.js scroll handler
       'is-loading',         // contact form button state
       'is-success',         // contact form button state
       'is-error',           // contact form button state
@@ -35,10 +38,8 @@ module.exports = {
       'modal-open',         // Bootstrap modal
       'fade',               // Bootstrap modal/transition
     ],
-    // Keep all Bootstrap modal, dropdown, navbar classes
     greedy: [/^modal/, /^dropdown/, /^navbar/, /^collapse/],
   },
-  // Extended extractor to handle BEM (--) and utility classes
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
   output: '_site/assets/css/',
 };
