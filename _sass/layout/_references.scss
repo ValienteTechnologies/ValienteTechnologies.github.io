@@ -107,6 +107,7 @@
   img {
     max-height: 80px;
     width: auto;
+    aspect-ratio: 4 / 1;
     transition: filter 0.35s ease, transform 0.35s ease;
     filter: grayscale(15%) brightness(1.05);
   }
