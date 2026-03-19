@@ -42,10 +42,10 @@ tr: &DEFAULT_TR
   references:
     title: "HealthCheck'e Güvenenler"
     list:
-      - title: "Alarko Holding"
-        logo: /assets/img/clients/alarko.png
-      - title: "STM Savunma"
-        logo: /assets/img/clients/stm.png
+      - title: "Tactical Europe"
+        logo: /assets/img/clients/teurope.png
+      - title: "Max Security International"
+        logo: /assets/img/clients/maxguvenlik.png
       - title: "Megasaray Hotels"
         logo: /assets/img/clients/megasarayhotels.png
       - title: "Şahinler Holding"
@@ -114,10 +114,10 @@ en:
   references:
     title: "Trusted by HealthCheck Clients"
     list:
-      - title: "Alarko Holding"
-        logo: /assets/img/clients/alarko.png
-      - title: "STM Defense"
-        logo: /assets/img/clients/stm.png
+      - title: "Tactical Europe"
+        logo: /assets/img/clients/teurope.png
+      - title: "Max Security International"
+        logo: /assets/img/clients/maxguvenlik.png
       - title: "Megasaray Hotels"
         logo: /assets/img/clients/megasarayhotels.png
       - title: "Şahinler Holding"
