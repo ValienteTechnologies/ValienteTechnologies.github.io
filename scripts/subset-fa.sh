@@ -148,17 +148,19 @@ print(",".join(sorted(set(brand_unicodes))))
 PYEOF
 )
 
-# --- 4. Write all.min.css ---
+# --- 4. Write all.min.css (placeholder URLs; hashes added after woff2 generation) ---
 printf '%s%s%s\n' "$BASE" "$ICON_RULES" "$TAIL" > "$OUT_CSS"
 echo "Written: $OUT_CSS"
 
-# --- 5. Regenerate woff2 subsets ---
+# --- 5. Regenerate woff2 subsets + stamp content-hash into CSS URLs ---
 if [ -n "$SOLID_UNICODES" ]; then
   pyftsubset "$SOLID_FULL" \
     --unicodes="$SOLID_UNICODES" \
     --flavor=woff2 \
     --output-file="$OUT_SOLID" 2>/dev/null
-  echo "Written: $OUT_SOLID ($(wc -c < "$OUT_SOLID") bytes)"
+  SOLID_HASH=$(md5sum "$OUT_SOLID" | cut -c1-8)
+  sed -i "s|webfonts/fa-solid-900\.woff2|webfonts/fa-solid-900.woff2?v=$SOLID_HASH|g" "$OUT_CSS"
+  echo "Written: $OUT_SOLID ($(wc -c < "$OUT_SOLID") bytes, hash=$SOLID_HASH)"
 fi
 
 if [ -n "$BRANDS_UNICODES" ]; then
@@ -166,7 +168,9 @@ if [ -n "$BRANDS_UNICODES" ]; then
     --unicodes="$BRANDS_UNICODES" \
     --flavor=woff2 \
     --output-file="$OUT_BRANDS" 2>/dev/null
-  echo "Written: $OUT_BRANDS ($(wc -c < "$OUT_BRANDS") bytes)"
+  BRANDS_HASH=$(md5sum "$OUT_BRANDS" | cut -c1-8)
+  sed -i "s|webfonts/fa-brands-400\.woff2|webfonts/fa-brands-400.woff2?v=$BRANDS_HASH|g" "$OUT_CSS"
+  echo "Written: $OUT_BRANDS ($(wc -c < "$OUT_BRANDS") bytes, hash=$BRANDS_HASH)"
 fi
 
 echo "Done."
