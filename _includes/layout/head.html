@@ -61,6 +61,17 @@
       descent-override: 29.3%;
       line-gap-override: 0%;
     }
+    /* Pre-apply the same font stacks that valiente-base.css will set on these above-fold
+       elements. Without this, when the non-blocking CSS fires it changes font-family from
+       system-ui → MontserratFallback, which is a different font → layout shift (CLS 0.276).
+       With this, the CSS load is a no-op for these elements. */
+    .navbar, .navbar a, .navbar .nav-link, .navbar .dropdown-item,
+    .navbar-brand, .intro-heading, .masthead .btn {
+      font-family: "Montserrat", "MontserratFallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    .intro-lead-in {
+      font-family: "Droid Serif", "DroidSerifFallback", Georgia, "Times New Roman", serif;
+    }
   </style>
 
   {% if site.analytics.google %}
