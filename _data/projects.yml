@@ -1,0 +1,54 @@
+tr: &DEFAULT_TR
+  section: projects
+  title: "Projelerimiz"
+  list:
+    - name: "HealthCheck"
+      desc: "Şirketlere ücretsiz sunduğumuz güvenlik ve BT altyapısı sağlık değerlendirme hizmeti."
+      icon: "fas fa-heartbeat"
+      status: "Aktif"
+      status_type: active
+      tags: ["Güvenlik", "Ücretsiz", "Danışmanlık"]
+      url: /projects/healthcheck/
+
+    - name: "Yakında"
+      desc: "Yeni bir proje yakında geliyor."
+      icon: "fas fa-rocket"
+      status: "Yakında"
+      status_type: coming_soon
+      tags: ["Yakında"]
+
+    - name: "Yakında"
+      desc: "Yeni bir proje yakında geliyor."
+      icon: "fas fa-shield-alt"
+      status: "Yakında"
+      status_type: coming_soon
+      tags: ["Yakında"]
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  section: projects
+  title: "Our Projects"
+  list:
+    - name: "HealthCheck"
+      desc: "Free security and IT infrastructure health assessment service offered to companies."
+      icon: "fas fa-heartbeat"
+      status: "Active"
+      status_type: active
+      tags: ["Security", "Free", "Consulting"]
+      url: /projects/healthcheck/
+
+    - name: "Coming Soon"
+      desc: "A new project is on the way."
+      icon: "fas fa-rocket"
+      status: "Coming Soon"
+      status_type: coming_soon
+      tags: ["Coming Soon"]
+
+    - name: "Coming Soon"
+      desc: "A new project is on the way."
+      icon: "fas fa-shield-alt"
+      status: "Coming Soon"
+      status_type: coming_soon
+      tags: ["Coming Soon"]

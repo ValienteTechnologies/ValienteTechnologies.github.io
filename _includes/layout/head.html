@@ -22,6 +22,8 @@
     {%- assign _page_css = "valiente-contact.css" -%}
   {%- elsif page.body_class == "legal-layout" -%}
     {%- assign _page_css = "valiente-legal.css" -%}
+  {%- elsif page.body_class contains "projects-page" or page.body_class contains "project-page" -%}
+    {%- assign _page_css = "valiente-projects.css" -%}
   {%- elsif page.layout == "error" -%}
     {%- assign _page_css = "valiente-error.css" -%}
   {%- else -%}
