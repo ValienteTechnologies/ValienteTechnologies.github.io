@@ -28,6 +28,13 @@ tr: &DEFAULT_TR
           url: /corporate/#brochures
         - title: "İş Ortakları"
           url: /corporate/#partners
+    - title: "Projeler"
+      url: /projects/
+      children:
+        - title: "Tüm Projeler"
+          url: /projects/
+        - title: "HealthCheck"
+          url: /projects/healthcheck/
     - title: "İletişim"
       url: /contact/
       children:
@@ -64,6 +71,13 @@ en:
           url: /corporate/#brochures
         - title: "Partners"
           url: /corporate/#partners
+    - title: "Projects"
+      url: /projects/
+      children:
+        - title: "All Projects"
+          url: /projects/
+        - title: "HealthCheck"
+          url: /projects/healthcheck/
     - title: "Contact"
       url: /contact/
       children:

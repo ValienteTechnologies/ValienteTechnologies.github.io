@@ -1,0 +1,33 @@
+<!-- HealthCheck References -->
+{% assign hc = site.data.healthcheck[site.active_lang] | default: site.data.healthcheck.tr %}
+{% if hc and hc.references %}
+{% assign refs = hc.references %}
+<section class="page-section references-section" id="hc-references">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">{{ refs.title }}</h2>
+      </div>
+    </div>
+    <div class="row references-grid" id="scrolling-clients">
+      {% for client in refs.list %}
+      <div class="col-md-3 col-sm-6 reference-item">
+        <div class="reference-card">
+          <div class="reference-card__glow"></div>
+          <div class="reference-card__logo">
+            <picture>
+              <source srcset="{{ client.logo | replace: '.png', '.webp' }}" type="image/webp">
+              <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" width="200" height="50" loading="lazy">
+            </picture>
+          </div>
+          {% if client.title %}
+          <span class="reference-card__name">{{ client.title }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+<!-- End HealthCheck References -->

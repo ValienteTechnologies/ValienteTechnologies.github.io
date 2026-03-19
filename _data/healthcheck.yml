@@ -1,0 +1,140 @@
+tr: &DEFAULT_TR
+  hero:
+    title: "HealthCheck"
+    tagline: "Antalya'daki firmalar için ücretsiz Siber Güvenlik Ön Analizi"
+    description: "İnternet üzerinden erişilebilen sistemlerinizin temel güvenlik durumunu değerlendiriyoruz. Analiz tamamen farkındalık amaçlıdır; gerekiyorsa detaylı sızma testi (pentest) önerilir."
+    guarantees:
+      - icon: "fas fa-check"
+        text: "Hizmetlerinizde kesinti veya aksaklık söz konusu değildir"
+      - icon: "fas fa-check"
+        text: "Sisteminize müdahale edilmez, parola veya gizli bilgiye erişilmez"
+      - icon: "fas fa-check"
+        text: "Tamamen ücretsiz, hiçbir taahhüt gerektirmez"
+      - icon: "fas fa-check"
+        text: "Analiz sonrası kısa ve anlaşılır rapor sunulur"
+    status: "Ücretsiz"
+    status_type: active
+    cta_button: "Hemen Başvur"
+    cta_anchor: "#hc-contact"
+
+  checks:
+    title: "Analiz Kapsamı"
+    list:
+      - title: "Açık Port Taraması"
+        desc: "İnternet üzerinden erişilebilen servisler ve portların tespiti."
+        icon: "fas fa-search"
+      - title: "Nessus Vulnerability Scan"
+        desc: "Güncel zafiyet veritabanlarına dayalı kapsamlı güvenlik açığı taraması."
+        icon: "fas fa-clipboard-check"
+      - title: "Mail ve Domain Güvenlik Analizi"
+        desc: "DNS yapılandırması, SPF/DKIM/DMARC protokolleri ve e-posta spoofing risklerinin değerlendirilmesi."
+        icon: "fas fa-envelope"
+      - title: "HTTP Güvenlik Başlıkları"
+        desc: "HSTS, CSP, X-Frame-Options gibi başlıkların varlığı ve yapılandırmasının kontrolü."
+        icon: "fas fa-shield-alt"
+      - title: "Dark Web Veri Sızıntısı Kontrolü"
+        desc: "Firmanıza ait e-posta adresi veya verinin dark web'de yer alıp almadığının araştırılması."
+        icon: "fas fa-user-secret"
+      - title: "Shodan CVE ve Servis Analizi"
+        desc: "İnternetten görülebilen cihazlar ve bilinen zafiyetlerin araştırılması."
+        icon: "fas fa-globe"
+
+  references:
+    title: "HealthCheck'e Güvenenler"
+    list:
+      - title: "Alarko Holding"
+        logo: /assets/img/clients/alarko.png
+      - title: "STM Savunma"
+        logo: /assets/img/clients/stm.png
+      - title: "Megasaray Hotels"
+        logo: /assets/img/clients/megasarayhotels.png
+      - title: "Şahinler Holding"
+        logo: /assets/img/clients/sahinler.png
+
+  contact:
+    section: hc-contact
+    title: "Ücretsiz HealthCheck Başvurusu"
+    points:
+      - "Tamamen ücretsiz ve taahhütsüz"
+      - "Uzman ekibimiz 48 saat içinde dönüş yapar"
+      - "Gizliliğiniz güvence altındadır"
+    availability: "48 saat içinde dönüş"
+    availability_desc: "Formu doldurun, güvenlik uzmanlarımız en geç iki iş günü içinde sizinle iletişime geçsin."
+    full_name: "Ad Soyad *"
+    email: "E-posta *"
+    phone: "Telefon *"
+    company: "Şirket Adı *"
+    submit: "Başvur"
+    formspree_action: "https://formspree.io/f/mbdzwkrv"
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  hero:
+    title: "HealthCheck"
+    tagline: "Free Cybersecurity Pre-Analysis for businesses in Antalya"
+    description: "We assess the basic security posture of your internet-facing systems. The analysis is purely for awareness — a pentest recommendation is included if needed."
+    guarantees:
+      - icon: "fas fa-check"
+        text: "No disruption or downtime to your services"
+      - icon: "fas fa-check"
+        text: "No system interference, no access to passwords or sensitive data"
+      - icon: "fas fa-check"
+        text: "Completely free, no commitment required"
+      - icon: "fas fa-check"
+        text: "A clear, concise report delivered after analysis"
+    status: "Free"
+    status_type: active
+    cta_button: "Apply Now"
+    cta_anchor: "#hc-contact"
+
+  checks:
+    title: "Scope of Analysis"
+    list:
+      - title: "Open Port Scanning"
+        desc: "Detection of internet-facing services and open ports."
+        icon: "fas fa-search"
+      - title: "Nessus Vulnerability Scan"
+        desc: "Comprehensive vulnerability scan based on up-to-date CVE databases."
+        icon: "fas fa-clipboard-check"
+      - title: "Mail & Domain Security Analysis"
+        desc: "DNS configuration, SPF/DKIM/DMARC protocols and email spoofing risk assessment."
+        icon: "fas fa-envelope"
+      - title: "HTTP Security Headers"
+        desc: "Audit of security headers such as HSTS, CSP, and X-Frame-Options."
+        icon: "fas fa-shield-alt"
+      - title: "Dark Web Data Leak Check"
+        desc: "Investigation of whether your company's email addresses or data appear on the dark web."
+        icon: "fas fa-user-secret"
+      - title: "Shodan CVE & Service Analysis"
+        desc: "Research into internet-visible devices and known vulnerabilities."
+        icon: "fas fa-globe"
+
+  references:
+    title: "Trusted by HealthCheck Clients"
+    list:
+      - title: "Alarko Holding"
+        logo: /assets/img/clients/alarko.png
+      - title: "STM Defense"
+        logo: /assets/img/clients/stm.png
+      - title: "Megasaray Hotels"
+        logo: /assets/img/clients/megasarayhotels.png
+      - title: "Şahinler Holding"
+        logo: /assets/img/clients/sahinler.png
+
+  contact:
+    section: hc-contact
+    title: "Free HealthCheck Application"
+    points:
+      - "Completely free and non-binding"
+      - "Our expert team responds within 48 hours"
+      - "Your confidentiality is guaranteed"
+    availability: "Response within 48 hours"
+    availability_desc: "Fill out the form and our security experts will contact you within two business days."
+    full_name: "Full Name *"
+    email: "Email *"
+    phone: "Phone *"
+    company: "Company Name *"
+    submit: "Apply"
+    formspree_action: "https://formspree.io/f/mbdzwkrv"
