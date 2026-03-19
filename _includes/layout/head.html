@@ -37,6 +37,11 @@
     body { background-color: var(--color-page-bg); color: var(--color-text); margin: 0; font-family: system-ui, -apple-system, sans-serif; }
     .masthead { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--color-page-bg); position: relative; overflow: hidden; }
     .navbar { position: fixed; top: 0; width: 100%; height: 80px; z-index: 1030; }
+    /* Canvas must be absolutely positioned from first render — if external CSS loads late
+       and canvas is still inline (default), it sits in flex flow (300×150) then shifts out,
+       causing the 0.538 CLS. Keeping it absolute from the start prevents that shift. */
+    #meshNetwork { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; pointer-events: none; }
+    @media (min-width: 768px) { #meshNetwork { display: block; } }
   </style>
 
   {% if site.analytics.google %}
