@@ -5,11 +5,8 @@
   const canvas = document.getElementById('meshNetwork');
   if (!canvas) return;
 
-  // Skip animation on mobile — reduces CPU usage and eliminates reflow warnings
-  if (window.innerWidth < 768) {
-    canvas.style.display = 'none';
-    return;
-  }
+  // Skip animation on mobile — canvas already hidden by critical CSS
+  if (window.innerWidth < 768) return;
 
   const ctx = canvas.getContext('2d');
   let mouse = { x: 0, y: 0 };

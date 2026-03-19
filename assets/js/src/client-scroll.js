@@ -57,10 +57,11 @@
       let lastTime = performance.now();
 
       // Seamless wrap: when we've scrolled one full copy, jump back silently
+      // Use cached `pos` (not track.scrollLeft) to avoid a forced reflow on every frame
       function wrap() {
-        if (track.scrollLeft >= half) {
-          track.scrollLeft -= half;
-          pos = track.scrollLeft;
+        if (pos >= half) {
+          pos -= half;
+          track.scrollLeft = pos;
         }
       }
 
