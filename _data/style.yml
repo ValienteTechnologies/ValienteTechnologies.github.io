@@ -10,15 +10,11 @@ brochures-icon: fas fa-info-circle fa-2x #default: fas fa-plus fa-3x
 
 # Add custom fonts
 fonts_urls:
-    - "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kanit:wght@700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"
+    - "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 
 # Set custom fonts
 fonts:
   - name: "Montserrat"
     for: "heading"
-  - name: "Kanit"
-    for: "script"
   - name: "Droid Serif"
     for: "serif"
-  - name: "Roboto Slab"
-    for: "body"

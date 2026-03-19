@@ -27,10 +27,15 @@
   {%- else -%}
     {%- assign _page_css = "" -%}
   {%- endif -%}
-  <link rel="preload" href="/assets/css/valiente-base.css" as="style">
-  {%- if _page_css != "" -%}
-  <link rel="preload" href="/assets/css/{{ _page_css }}" as="style">
-  {%- endif -%}
+  <title>{{ _page_full_title }}</title>
+
+  <!-- Critical CSS: prevents FOUC while main sheets load non-blockingly -->
+  <style>
+    :root { --color-page-bg: #1a0b2f; --color-text: rgba(255,255,255,0.9); }
+    body { background-color: var(--color-page-bg); color: var(--color-text); margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+    .masthead { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--color-page-bg); position: relative; overflow: hidden; }
+    .navbar { position: fixed; top: 0; width: 100%; height: 80px; z-index: 1030; }
+  </style>
 
   {% if site.analytics.google %}
   <!-- Google Analytics: deferred until after load to avoid forced reflow on LCP -->
@@ -131,8 +136,6 @@
   <link rel="alternate" hreflang="en" {% static_href %}href="{{ site.url }}/en{{ page.url }}"{% endstatic_href %}>
   <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ site.url }}{{ page.url }}"{% endstatic_href %}>
 
-  <title>{{ _page_full_title }}</title>
-
   <!-- Open Graph / Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ _page_full_title }}">
@@ -170,13 +173,15 @@
       <noscript><link rel="stylesheet" href="{{font_url}}"></noscript>
     {% endfor %}
   {% else %}
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
   {% endif %}
-  <!-- Custom styles for this theme -->
-  <link href="/assets/css/valiente-base.css" rel="stylesheet" />
+  <!-- Custom styles for this theme: loaded non-blockingly for performance -->
+  <link rel="preload" href="/assets/css/valiente-base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/valiente-base.css"></noscript>
   {%- if _page_css != "" -%}
-  <link href="/assets/css/{{ _page_css }}" rel="stylesheet" />
+  <link rel="preload" href="/assets/css/{{ _page_css }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/{{ _page_css }}"></noscript>
   {%- endif -%}
 
   <!-- Page container change top padding when nav shrinks -->
