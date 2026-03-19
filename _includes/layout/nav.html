@@ -53,7 +53,7 @@
               {%- else -%}
                 {%- assign child_url = '/' | append: site.active_lang | append: child.url -%}
               {%- endif -%}
-            <a class="dropdown-item" href="{{ child_url }}">{{ child.title }}</a>
+            <a class="dropdown-item" href="{{ child_url }}"{% if child.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ child.title }}</a>
             {%- elsif child.section -%}
             <a class="dropdown-item" href="{{ site.baseurl }}/#{{ child.section }}">{{ child.title }}</a>
             {%- endif -%}

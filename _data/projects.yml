@@ -10,6 +10,15 @@ tr: &DEFAULT_TR
       tags: ["Güvenlik", "Ücretsiz", "Danışmanlık"]
       url: /projects/healthcheck/
 
+    - name: "GhostBadger"
+      desc: "Ghostwriter için güvenli raporlama eklentisi. Pentest çıktı PDF'lerini entegre vault depolama ile oluşturup korumalı biçimde iletir."
+      icon: "fas fa-ghost"
+      status: "Aktif"
+      status_type: active
+      tags: ["Pentest", "Ghostwriter", "PDF", "Açık Kaynak"]
+      url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+      url_external: true
+
     - name: "Yakında"
       desc: "Yeni bir proje yakında geliyor."
       icon: "fas fa-rocket"
@@ -19,7 +28,7 @@ tr: &DEFAULT_TR
 
     - name: "Yakında"
       desc: "Yeni bir proje yakında geliyor."
-      icon: "fas fa-shield-alt"
+      icon: "fas fa-code"
       status: "Yakında"
       status_type: coming_soon
       tags: ["Yakında"]
@@ -39,6 +48,15 @@ en:
       tags: ["Security", "Free", "Consulting"]
       url: /projects/healthcheck/
 
+    - name: "GhostBadger"
+      desc: "Secure reporting extension for Ghostwriter that generates and delivers protected pentest deliverable PDFs through integrated vault storage."
+      icon: "fas fa-ghost"
+      status: "Active"
+      status_type: active
+      tags: ["Pentest", "Ghostwriter", "PDF", "Open Source"]
+      url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+      url_external: true
+
     - name: "Coming Soon"
       desc: "A new project is on the way."
       icon: "fas fa-rocket"
@@ -48,7 +66,7 @@ en:
 
     - name: "Coming Soon"
       desc: "A new project is on the way."
-      icon: "fas fa-shield-alt"
+      icon: "fas fa-code"
       status: "Coming Soon"
       status_type: coming_soon
       tags: ["Coming Soon"]
