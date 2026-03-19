@@ -3,10 +3,6 @@
   font-family: "Droid Serif", $font-fallback;
 }
 
-@mixin script-font {
-  font-family: "Kaushan Script", $font-fallback;
-}
-
 @mixin body-font {
   font-family: $font-fallback;
 }
