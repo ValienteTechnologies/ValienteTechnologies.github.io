@@ -35,6 +35,10 @@ tr: &DEFAULT_TR
           url: /projects/
         - title: "HealthCheck"
           url: /projects/healthcheck/
+        - title: "GhostBadger"
+          url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+          static: true
+          external: true
     - title: "İletişim"
       url: /contact/
       children:
@@ -78,6 +82,10 @@ en:
           url: /projects/
         - title: "HealthCheck"
           url: /projects/healthcheck/
+        - title: "GhostBadger"
+          url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+          static: true
+          external: true
     - title: "Contact"
       url: /contact/
       children:

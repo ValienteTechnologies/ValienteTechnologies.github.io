@@ -35,7 +35,7 @@
         </div>
         {% endif %}
         {% if project.url and project.status_type != "coming_soon" %}
-        <a class="project-card__cta" href="{{ project.url }}">
+        <a class="project-card__cta" href="{{ project.url }}"{% if project.url_external %} target="_blank" rel="noopener noreferrer"{% endif %}>
           Keşfet <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
         {% endif %}
