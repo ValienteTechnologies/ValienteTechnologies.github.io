@@ -4,7 +4,9 @@ source "https://rubygems.org"
 gem "jekyll-remote-theme"
 gem "jekyll-agency", "~> 1.2"
 gem "webrick",       "~> 1.9"
-gem "csv",          "~> 3.3.6"
+gem "csv",           "~> 3.3.6"
+gem "base64",        "~> 0.3.0"
+gem "bigdecimal",    "~> 4.1.2"
 
 group :jekyll_plugins do
   gem "jekyll-feed",          "~> 0.6"
