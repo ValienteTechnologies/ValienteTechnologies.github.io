@@ -1,0 +1,16 @@
+---
+permalink: /sitemap_index.xml
+---
+{%- comment -%}
+The blog is a separate repo served at /blog, with its own sitemap that nothing
+else references. This index is the single URL to hand to Search Console.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>{{ site.url }}/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>{{ site.url }}/blog/sitemap.xml</loc>
+  </sitemap>
+</sitemapindex>

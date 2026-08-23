@@ -1,0 +1,37 @@
+---
+permalink: /sitemap.xml
+---
+{%- comment -%}
+Hand-rolled because jekyll-sitemap is unaware of jekyll-polyglot: it emitted the
+default-language URLs only, and polyglot then copied that same file to /en/sitemap.xml.
+Excluded from localization in _config.yml so this renders exactly once.
+{%- endcomment -%}
+{%- capture pathlist -%}
+/
+{%- for doc in site.documents -%}
+{%- unless doc.url == "/404.html" -%},{{ doc.url }}{%- endunless -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign paths = pathlist | split: "," -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for path in paths %}
+{%- for lang in site.languages %}
+{%- if lang == site.default_lang %}{% assign loc = path %}{% else %}{% assign loc = "/" | append: lang | append: path %}{% endif %}
+  <url>
+    <loc>{{ site.url }}{{ loc }}</loc>
+{%- for alt in site.languages %}
+{%- if alt == site.default_lang %}{% assign altloc = path %}{% else %}{% assign altloc = "/" | append: alt | append: path %}{% endif %}
+    <xhtml:link rel="alternate" hreflang="{{ alt }}" href="{{ site.url }}{{ altloc }}"/>
+{%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ path }}"/>
+  </url>
+{%- endfor %}
+{%- endfor %}
+{%- for file in site.static_files %}{% if file.extname == ".pdf" %}
+  <url>
+    <loc>{{ site.url }}{{ file.path }}</loc>
+  </url>
+{%- endif %}{% endfor %}
+</urlset>

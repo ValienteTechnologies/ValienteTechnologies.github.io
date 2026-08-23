@@ -31,6 +31,8 @@ exclude_from_localization:
   - CNAME
   - robots.txt
   - scripts
+  - sitemap.xml
+  - sitemap_index.xml
 parallel_localization: true
 logo:
   path: /assets/img/valiente/valientetitle.svg
@@ -45,7 +47,6 @@ collections:
 
 plugins:
   - jekyll-polyglot
-  - jekyll-sitemap
   - jekyll-redirect-from
 
 exclude:
