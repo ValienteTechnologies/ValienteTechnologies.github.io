@@ -1,4 +1,4 @@
-**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Şirket" veya "biz") olarak, https://valientetechnologies.com ("Site") adresli web sitemiz üzerinden sunduğumuz kullanıcı deneyimini geliştirmek ve ziyaretçi trafiğini analiz etmek amacıyla çerezler (cookies) kullanmaktayız.
+**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Şirket" veya "biz") olarak, https://valiente.com.tr ("Site") adresli web sitemiz üzerinden sunduğumuz kullanıcı deneyimini geliştirmek ve ziyaretçi trafiğini analiz etmek amacıyla çerezler (cookies) kullanmaktayız.
 
 #### 1. Çerez Nedir?
 

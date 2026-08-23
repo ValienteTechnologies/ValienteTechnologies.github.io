@@ -1,6 +1,6 @@
 # ValienteTechnologies.github.io
 
-Marketing site for [Valiente Technologies](https://valientetechnologies.com) — Turkey's first cybersecurity firm based in Antalya.
+Marketing site for [Valiente Technologies](https://valiente.com.tr) — Turkey's first cybersecurity firm based in Antalya.
 
 Built with **Jekyll** + [jekyll-agency](https://github.com/y7kim/agency-jekyll-theme) theme, deployed via **GitHub Pages**, served behind **Cloudflare**.
 

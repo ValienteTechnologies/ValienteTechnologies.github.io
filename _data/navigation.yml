@@ -36,7 +36,7 @@ tr: &DEFAULT_TR
         - title: "HealthCheck"
           url: /projects/healthcheck/
         - title: "GhostBadger"
-          url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+          url: https://valiente.com.tr/blog/posts/introducing-ghostbadger/
           static: true
           external: true
     - title: "İletişim"
@@ -83,7 +83,7 @@ en:
         - title: "HealthCheck"
           url: /projects/healthcheck/
         - title: "GhostBadger"
-          url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+          url: https://valiente.com.tr/blog/posts/introducing-ghostbadger/
           static: true
           external: true
     - title: "Contact"

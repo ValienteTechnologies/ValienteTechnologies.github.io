@@ -1,4 +1,4 @@
-**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Company", or "we") prioritizes protecting the privacy and security of users visiting our website at https://valientetechnologies.com ("Site"). This Privacy Policy comprehensively explains for what purposes your personal data is collected, how it is used, and your rights over your data.
+**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Company", or "we") prioritizes protecting the privacy and security of users visiting our website at https://valiente.com.tr ("Site"). This Privacy Policy comprehensively explains for what purposes your personal data is collected, how it is used, and your rights over your data.
 
 #### 1. Data Collection and Processing Principles
 

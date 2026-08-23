@@ -1,4 +1,4 @@
-**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Company", or "we") uses cookies to improve the user experience on our website at https://valientetechnologies.com ("Site") and to analyze visitor traffic.
+**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Company", or "we") uses cookies to improve the user experience on our website at https://valiente.com.tr ("Site") and to analyze visitor traffic.
 
 #### 1. What is a Cookie?
 

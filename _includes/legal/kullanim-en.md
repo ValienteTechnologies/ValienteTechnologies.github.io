@@ -1,4 +1,4 @@
-Welcome to https://valientetechnologies.com ("Site"), operated by **Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Company", or "we"). By visiting the Site or using its content, you agree to the following terms of use.
+Welcome to https://valiente.com.tr ("Site"), operated by **Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Company", or "we"). By visiting the Site or using its content, you agree to the following terms of use.
 
 #### 1. General Terms
 

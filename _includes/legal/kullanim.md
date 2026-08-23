@@ -1,4 +1,4 @@
-**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Şirket" veya "biz") tarafından işletilen https://valientetechnologies.com ("Site") adresli web sitesine hoş geldiniz. Site'yi ziyaret ederek veya içeriklerden yararlanarak, aşağıda belirtilen kullanım koşullarını kabul etmiş sayılırsınız.
+**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Şirket" veya "biz") tarafından işletilen https://valiente.com.tr ("Site") adresli web sitesine hoş geldiniz. Site'yi ziyaret ederek veya içeriklerden yararlanarak, aşağıda belirtilen kullanım koşullarını kabul etmiş sayılırsınız.
 
 #### 1. Genel Kullanım Şartları
 

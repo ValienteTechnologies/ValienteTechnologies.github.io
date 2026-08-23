@@ -16,7 +16,7 @@ tr: &DEFAULT_TR
       status: "Aktif"
       status_type: active
       tags: ["Pentest", "Ghostwriter", "PDF", "Açık Kaynak"]
-      url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+      url: https://valiente.com.tr/blog/posts/introducing-ghostbadger/
       url_external: true
 
     - name: "Yakında"
@@ -54,7 +54,7 @@ en:
       status: "Active"
       status_type: active
       tags: ["Pentest", "Ghostwriter", "PDF", "Open Source"]
-      url: https://valientetechnologies.com/blog/posts/introducing-ghostbadger/
+      url: https://valiente.com.tr/blog/posts/introducing-ghostbadger/
       url_external: true
 
     - name: "Coming Soon"

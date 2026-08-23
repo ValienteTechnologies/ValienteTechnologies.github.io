@@ -1,4 +1,4 @@
-**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Şirket" veya "biz") olarak, https://valientetechnologies.com ("Site") adresli web sitemizi ziyaret eden kullanıcılarımızın mahremiyetini ve güvenliğini korumak en temel önceliğimizdir. Bu Gizlilik Politikası, kişisel verilerinizin hangi amaçlarla toplandığını, nasıl kullanıldığını ve verileriniz üzerindeki haklarınızı kapsamlı bir şekilde açıklamaktadır.
+**Valiente Technologies Bilişim San. ve Tic. Ltd. Şti.** ("Valiente Technologies", "Şirket" veya "biz") olarak, https://valiente.com.tr ("Site") adresli web sitemizi ziyaret eden kullanıcılarımızın mahremiyetini ve güvenliğini korumak en temel önceliğimizdir. Bu Gizlilik Politikası, kişisel verilerinizin hangi amaçlarla toplandığını, nasıl kullanıldığını ve verileriniz üzerindeki haklarınızı kapsamlı bir şekilde açıklamaktadır.
 
 #### 1. Veri Toplama ve İşleme Prensipleri
 
