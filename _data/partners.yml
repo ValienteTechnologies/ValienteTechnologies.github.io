@@ -11,9 +11,9 @@ tr: &DEFAULT_TR
       desc: "Sigmacert Global, denetim ve sertifikasyon hizmetleri sunan ve ISO standartları eğitimleri veren bir şirkettir."
       image: /assets/img/partners/sigmacert.png
 
-    - title: "Biga Bilişim"
-      desc: "Biga Bilişim, kamera, VoIP ve fiber ağ altyapılarının entegre edildiği profesyonel çözümler sunar."
-      image: /assets/img/partners/biga.png
+    - title: "Procom Bilişim"
+      desc: "Procom Bilişim, kurumsal ağ altyapısı, ağ güvenliği ve veri depolama alanlarında uçtan uca çözümler ve teknik destek sunar."
+      image: /assets/img/partners/procom.png
   end: "Yolculuğun <br> Bir Parçası <br> Olun!"
 
 tr-TR:
@@ -32,7 +32,7 @@ en:
       desc: "Sigmacert Global provides audit and certification services and delivers ISO standards training."
       image: /assets/img/partners/sigmacert.png
 
-    - title: "Biga Bilişim"
-      desc: "Biga Bilişim offers professional solutions integrating camera, VoIP, and fiber network infrastructures."
-      image: /assets/img/partners/biga.png
+    - title: "Procom Bilişim"
+      desc: "Procom Bilişim delivers end-to-end enterprise network infrastructure, network security, and data storage solutions with ongoing technical support."
+      image: /assets/img/partners/procom.png
   end: "Be Part of <br> the Journey!"
