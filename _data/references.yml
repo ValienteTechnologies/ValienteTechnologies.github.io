@@ -10,6 +10,14 @@ tr: &DEFAULT_TR
       url: https://www.alarko.com.tr/
       logo: /assets/img/clients/alarko.png
 
+    - title: "Anex Tour"
+      url: https://www.anextour.com/
+      logo: /assets/img/clients/anextour.png
+
+    - title: "Antalya Marble"
+      url: https://antalyamarble.com/en/
+      logo: /assets/img/clients/antalyamarble.png
+
     - title: "BakSoft Ar-Ge"
       url: https://www.baksoftarge.com/
       logo: /assets/img/clients/baksoftarge.png
@@ -18,6 +26,10 @@ tr: &DEFAULT_TR
       url: https://www.cenal.com.tr/
       logo: /assets/img/clients/cenal.png
 
+    - title: "Ceylan İşletme ve Yatırım A.Ş."
+      url: https://ceylan.com.tr/
+      logo: /assets/img/clients/ceylan.png
+
     - title: "Coretech Bilişim"
       url: https://coretechbilisim.com/
       logo: /assets/img/clients/coretechbilisim.png
@@ -25,6 +37,10 @@ tr: &DEFAULT_TR
     - title: "CW Enerji"
       url: https://cw-enerji.com/
       logo: /assets/img/clients/cwenerji.png
+
+    - title: "Doka Plastik"
+      url: https://www.dokaplast.com/
+      logo: /assets/img/clients/dokaplast.png
 
     - title: "EGE A.Ş."
       url: https://www.egeas.com.tr/
@@ -46,6 +62,22 @@ tr: &DEFAULT_TR
       url: https://www.megasarayhotels.com/
       logo: /assets/img/clients/megasarayhotels.png
 
+    - title: "Mindra"
+      url: https://mindra.co/
+      logo: /assets/img/clients/mindra.png
+
+    - title: "Mobileksen"
+      url: https://mobileksen.com.tr/
+      logo: /assets/img/clients/mobileksen.png
+
+    - title: "PA Localisation"
+      url: https://palocalisation.co.uk/
+      logo: /assets/img/clients/palocalisation.png
+
+    - title: "Pegas Touristik"
+      url: http://pegastr.com/
+      logo: /assets/img/clients/pegas.png
+
     - title: "Raw Beach Hotel"
       url: https://www.instagram.com/rawbeachhotel
       logo: /assets/img/clients/rawbeach.png
@@ -54,13 +86,33 @@ tr: &DEFAULT_TR
       url: https://sahinlerholding.com.tr/
       logo: /assets/img/clients/sahinler.png
 
+    - title: "Sandy Beach Hotel"
+      url: https://sandybeachotel.com/
+      logo: /assets/img/clients/sandybeach.png
+
+    - title: "Sherwood Resorts & Hotels"
+      url: https://sherwoodhotels.com.tr/
+      logo: /assets/img/clients/sherwood.png
+
+    - title: "Southwind Airlines"
+      url: https://southwindairlines.com/
+      logo: /assets/img/clients/southwind.png
+
     - title: "STM Savunma"
       url: https://www.stm.com.tr/
       logo: /assets/img/clients/stm.png
 
+    - title: "Susesi Luxury Resort"
+      url: https://www.susesihotel.com/
+      logo: /assets/img/clients/susesi.png
+
     - title: "Tactical Europe"
       url: https://www.tacticaleurope.com/
       logo: /assets/img/clients/teurope.png
+
+    - title: "Tailwind Airlines"
+      url: https://www.tailwind.com.tr/
+      logo: /assets/img/clients/tailwind.png
 
     - title: "Türk Silahlı Kuvvetleri"
       url: https://www.tsk.tr/
@@ -81,6 +133,14 @@ en:
       url: https://www.alarko.com.tr/
       logo: /assets/img/clients/alarko.png
 
+    - title: "Anex Tour"
+      url: https://www.anextour.com/
+      logo: /assets/img/clients/anextour.png
+
+    - title: "Antalya Marble"
+      url: https://antalyamarble.com/en/
+      logo: /assets/img/clients/antalyamarble.png
+
     - title: "BakSoft Ar-Ge"
       url: https://www.baksoftarge.com/
       logo: /assets/img/clients/baksoftarge.png
@@ -89,6 +149,10 @@ en:
       url: https://www.cenal.com.tr/
       logo: /assets/img/clients/cenal.png
 
+    - title: "Ceylan İşletme ve Yatırım A.Ş."
+      url: https://ceylan.com.tr/
+      logo: /assets/img/clients/ceylan.png
+
     - title: "Coretech Bilişim"
       url: https://coretechbilisim.com/
       logo: /assets/img/clients/coretechbilisim.png
@@ -96,6 +160,10 @@ en:
     - title: "CW Enerji"
       url: https://cw-enerji.com/
       logo: /assets/img/clients/cwenerji.png
+
+    - title: "Doka Plastik"
+      url: https://www.dokaplast.com/
+      logo: /assets/img/clients/dokaplast.png
 
     - title: "EGE A.Ş."
       url: https://www.egeas.com.tr/
@@ -117,6 +185,22 @@ en:
       url: https://www.megasarayhotels.com/
       logo: /assets/img/clients/megasarayhotels.png
 
+    - title: "Mindra"
+      url: https://mindra.co/
+      logo: /assets/img/clients/mindra.png
+
+    - title: "Mobileksen"
+      url: https://mobileksen.com.tr/
+      logo: /assets/img/clients/mobileksen.png
+
+    - title: "PA Localisation"
+      url: https://palocalisation.co.uk/
+      logo: /assets/img/clients/palocalisation.png
+
+    - title: "Pegas Touristik"
+      url: http://pegastr.com/
+      logo: /assets/img/clients/pegas.png
+
     - title: "Raw Beach Hotel"
       url: https://www.instagram.com/rawbeachhotel
       logo: /assets/img/clients/rawbeach.png
@@ -125,13 +209,33 @@ en:
       url: https://sahinlerholding.com.tr/
       logo: /assets/img/clients/sahinler.png
 
+    - title: "Sandy Beach Hotel"
+      url: https://sandybeachotel.com/
+      logo: /assets/img/clients/sandybeach.png
+
+    - title: "Sherwood Resorts & Hotels"
+      url: https://sherwoodhotels.com.tr/
+      logo: /assets/img/clients/sherwood.png
+
+    - title: "Southwind Airlines"
+      url: https://southwindairlines.com/
+      logo: /assets/img/clients/southwind.png
+
     - title: "STM Savunma"
       url: https://www.stm.com.tr/
       logo: /assets/img/clients/stm.png
 
+    - title: "Susesi Luxury Resort"
+      url: https://www.susesihotel.com/
+      logo: /assets/img/clients/susesi.png
+
     - title: "Tactical Europe"
       url: https://www.tacticaleurope.com/
       logo: /assets/img/clients/teurope.png
+
+    - title: "Tailwind Airlines"
+      url: https://www.tailwind.com.tr/
+      logo: /assets/img/clients/tailwind.png
 
     - title: "Türk Silahlı Kuvvetleri"
       url: https://www.tsk.tr/
