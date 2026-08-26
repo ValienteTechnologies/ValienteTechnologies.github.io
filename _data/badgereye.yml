@@ -88,7 +88,7 @@ tr: &DEFAULT_TR
     title: "Gürültüyü Eleyin"
     stages:
       - value: "11.000"
-        label: "istismar edilebilir bulgu"
+        label: "açık maruziyet"
       - value: "~200"
         label: "kritik düğüm noktası"
       - value: "5"
@@ -299,7 +299,7 @@ en:
     title: "Cut the Noise"
     stages:
       - value: "11,000"
-        label: "exploitable findings"
+        label: "open exposures"
       - value: "~200"
         label: "critical choke points"
       - value: "5"
