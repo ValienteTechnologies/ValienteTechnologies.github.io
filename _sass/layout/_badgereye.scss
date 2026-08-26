@@ -643,6 +643,12 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   .be-focus__wrap {
     grid-template-columns: 1fr auto 1fr;
     column-gap: 2.5rem;
+
+    // The auto column is content-sized, so the tiers' percentage widths
+    // would collapse without an explicit funnel width
+    .be-funnel {
+      width: 34rem;
+    }
   }
 
   .be-focus__noise {
