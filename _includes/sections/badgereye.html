@@ -35,6 +35,7 @@
           <div class="be-panel__header">
             <span class="be-panel__dot"></span>
             <span class="be-panel__heading">{{ panel.heading }}</span>
+            <span class="be-panel__diff">{{ panel.diff }}</span>
           </div>
           <div class="be-panel__stats">
             {% for s in panel.stats %}
@@ -55,28 +56,104 @@
             <li><span class="be-sev-dot be-sev--{{ s.type }}"></span>{{ s.name }} <em>{{ s.count }}</em></li>
             {% endfor %}
           </ul>
+          <div class="be-panel__severity-label be-panel__validation-label">{{ panel.validation_label }}</div>
+          <div class="be-panel__validations">
+            {% for v in panel.validations %}
+            <span class="be-vchip be-vchip--{{ v.type }}">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              {{ v.name }} <em>{{ v.count }}</em>
+            </span>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BadgerEye Capabilities -->
-{% assign caps = be.capabilities %}
-<section class="be-section be-capabilities" id="be-capabilities">
+<!-- BadgerEye Difference -->
+{% assign diff = be.difference %}
+<section class="be-section be-difference">
   <div class="container">
     <div class="be-section__head">
-      <h2>{{ caps.title }}</h2>
-      <p>{{ caps.subtitle }}</p>
+      <h2>{{ diff.title }}</h2>
+      <p>{{ diff.subtitle }}</p>
+    </div>
+    <div class="be-pillars">
+      {% for pillar in diff.pillars %}
+      <article class="be-pillar">
+        <div class="be-pillar__icon"><i class="{{ pillar.icon }}" aria-hidden="true"></i></div>
+        <h3>{{ pillar.title }}</h3>
+        <p>{{ pillar.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="be-evidence">
+      <div class="be-funnel">
+        <div class="be-funnel__title">{{ diff.funnel.title }}</div>
+        {% for stage in diff.funnel.stages %}
+        <div class="be-funnel__stage be-funnel__stage--{{ forloop.index }}">
+          <span class="be-funnel__value">{{ stage.value }}</span>
+          <span class="be-funnel__label">{{ stage.label }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="be-industry">
+        {% for s in diff.stats %}
+        <div class="be-industry__stat">
+          <span class="be-industry__value">{{ s.value }}</span>
+          <span class="be-industry__label">{{ s.label }}</span>
+        </div>
+        {% endfor %}
+        <div class="be-industry__note">{{ diff.stats_note }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye Modules -->
+{% assign modules = be.modules %}
+<section class="be-section be-modules" id="be-modules">
+  <div class="container">
+    <div class="be-section__head">
+      <h2>{{ modules.title }}</h2>
+      <p>{{ modules.subtitle }}</p>
     </div>
     <div class="be-cap-grid">
-      {% for item in caps.list %}
+      {% for item in modules.list %}
       <article class="be-cap-card">
         <div class="be-cap-card__icon"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
         <h3>{{ item.title }}</h3>
         <p>{{ item.desc }}</p>
       </article>
       {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye Validation Ladder -->
+{% assign val = be.validation %}
+<section class="be-section be-validation">
+  <div class="container">
+    <div class="be-section__head">
+      <h2>{{ val.title }}</h2>
+      <p>{{ val.subtitle }}</p>
+    </div>
+    <ol class="be-ladder">
+      {% for rung in val.ladder %}
+      <li class="be-rung be-rung--{{ rung.type }}">
+        <span class="be-rung__marker"></span>
+        <h3>{{ rung.name }}</h3>
+        <p>{{ rung.desc }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="be-loop">
+      <div class="be-loop__icon"><i class="fas fa-sync-alt" aria-hidden="true"></i></div>
+      <div>
+        <h3>{{ val.loop_title }}</h3>
+        <p>{{ val.loop_desc }}</p>
+      </div>
     </div>
   </div>
 </section>
@@ -98,6 +175,55 @@
       </li>
       {% endfor %}
     </ol>
+  </div>
+</section>
+
+<!-- BadgerEye Compare -->
+{% assign cmp = be.compare %}
+<section class="be-section be-compare">
+  <div class="container">
+    <div class="be-section__head">
+      <h2>{{ cmp.title }}</h2>
+      <p>{{ cmp.subtitle }}</p>
+    </div>
+    <div class="be-compare__grid">
+      {% for col in cmp.cols %}
+      <article class="be-compare__card{% if col.highlight %} be-compare__card--highlight{% endif %}">
+        <span class="be-compare__verdict">{{ col.verdict }}</span>
+        <h3>{{ col.title }}</h3>
+        <p>{{ col.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye HealthCheck On-Ramp -->
+{% assign hc = be.healthcheck %}
+<section class="be-section be-onramp">
+  <div class="container">
+    <div class="be-onramp__panel">
+      <div class="be-onramp__body">
+        <div class="be-onramp__icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div>
+        <div>
+          <h2>{{ hc.title }}</h2>
+          <p>{{ hc.desc }}</p>
+          <a class="be-btn be-btn--ghost" href="{{ hc.cta_url }}">
+            {{ hc.cta_button }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      {% if hc.logos %}
+      <div class="be-onramp__proof">
+        <span class="be-onramp__proof-title">{{ hc.logos_title }}</span>
+        <div class="be-onramp__logos">
+          {% for l in hc.logos %}
+          <img src="{{ l.logo }}" alt="{{ l.title }}" loading="lazy">
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
   </div>
 </section>
 

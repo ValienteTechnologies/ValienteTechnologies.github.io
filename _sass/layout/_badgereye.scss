@@ -22,6 +22,10 @@ $be-sev-critical: #ef4444;
 $be-sev-high: #f97316;
 $be-sev-medium: #eab308;
 $be-sev-low: #22c55e;
+$be-conf-confirmed: #14b8a6;
+$be-conf-ai: #8b5cf6;
+$be-conf-unvalidated: #7d8698;
+$be-state-ok: #22c55e;
 
 $be-font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, Arial, sans-serif;
@@ -227,6 +231,18 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     letter-spacing: 0.06em;
     color: $be-text-3;
   }
+
+  .be-panel__diff {
+    margin-left: auto;
+    font-family: $be-font-mono;
+    font-size: 0.7rem;
+    color: $be-state-ok;
+    background: rgba($be-state-ok, 0.1);
+    border: 1px solid rgba($be-state-ok, 0.25);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    white-space: nowrap;
+  }
 }
 
 .be-panel__stats {
@@ -312,6 +328,48 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     width: 7px;
     height: 7px;
     border-radius: 999px;
+  }
+}
+
+.be-panel__validation-label {
+  margin-top: 1rem;
+}
+
+.be-panel__validations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .be-vchip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+
+    em {
+      font-style: normal;
+      font-family: $be-font-mono;
+      opacity: 0.8;
+    }
+
+    i {
+      font-size: 0.7rem;
+    }
+
+    &--ai {
+      color: lighten($be-conf-ai, 12%);
+      background: rgba($be-conf-ai, 0.12);
+      border: 1px solid rgba($be-conf-ai, 0.3);
+    }
+
+    &--confirmed {
+      color: lighten($be-conf-confirmed, 8%);
+      background: rgba($be-conf-confirmed, 0.1);
+      border: 1px solid rgba($be-conf-confirmed, 0.3);
+    }
   }
 }
 
@@ -496,5 +554,401 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     color: $be-text-3;
+  }
+}
+
+// ─── Difference: pillars ───────────────────────────────────────────────────
+
+.be-pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include media-min($breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.be-pillar {
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-top: 2px solid $be-accent;
+  border-radius: $be-radius-card;
+  padding: 1.75rem 1.5rem;
+
+  .be-pillar__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: $be-radius-control;
+    background: $be-bg-2;
+    border: 1px solid $be-edge;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $be-accent;
+    font-size: 1.25rem;
+    margin-bottom: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $be-text-1;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: $be-text-2;
+    margin: 0;
+  }
+}
+
+// ─── Difference: funnel + industry stats band ──────────────────────────────
+
+.be-evidence {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  @include media-min($breakpoint-lg) {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.be-funnel {
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-card;
+  padding: 1.5rem;
+
+  .be-funnel__title {
+    font-family: $be-font-mono;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+    color: $be-text-3;
+    margin-bottom: 1rem;
+  }
+
+  .be-funnel__stage {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: $be-radius-control;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.5rem;
+    color: $be-text-1;
+
+    .be-funnel__value {
+      font-family: $be-font-mono;
+      font-size: 1.25rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .be-funnel__label {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      text-align: right;
+    }
+
+    // The reserved brand-ramp funnel fill — narrowing width, deepening color
+    &--1 { width: 100%; background: linear-gradient(90deg, rgba($be-brand-a, 0.9), rgba($be-brand-b, 0.9)); }
+    &--2 { width: 78%;  background: linear-gradient(90deg, rgba($be-brand-b, 0.95), rgba($be-brand-c, 0.95)); }
+    &--3 { width: 56%;  background: linear-gradient(90deg, $be-brand-c, $be-brand-d); margin-bottom: 0; }
+  }
+}
+
+.be-industry {
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-card;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  .be-industry__stat {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+
+    .be-industry__value {
+      font-family: $be-font-mono;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $be-accent;
+      min-width: 5rem;
+      white-space: nowrap;
+    }
+
+    .be-industry__label {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: $be-text-2;
+    }
+  }
+
+  .be-industry__note {
+    margin-top: auto;
+    font-family: $be-font-mono;
+    font-size: 0.7rem;
+    color: $be-text-3;
+  }
+}
+
+// ─── Validation ladder ─────────────────────────────────────────────────────
+
+.be-ladder {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include media-min($breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.be-rung {
+  position: relative;
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-card;
+  padding: 1.5rem;
+
+  .be-rung__marker {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    margin-bottom: 0.9rem;
+  }
+
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: $be-text-1;
+    margin-bottom: 0.45rem;
+  }
+
+  p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: $be-text-2;
+    margin: 0;
+  }
+
+  // Connector arrows between rungs on wide layout
+  @include media-min($breakpoint-md) {
+    &:not(:last-child)::after {
+      content: "\2192";
+      position: absolute;
+      top: 50%;
+      right: -1.05rem;
+      transform: translateY(-50%);
+      color: $be-text-3;
+      font-size: 1rem;
+    }
+  }
+
+  &--unvalidated {
+    .be-rung__marker { background: $be-conf-unvalidated; }
+  }
+
+  &--ai {
+    border-color: rgba($be-conf-ai, 0.35);
+    .be-rung__marker { background: $be-conf-ai; }
+  }
+
+  &--confirmed {
+    border-color: rgba($be-conf-confirmed, 0.45);
+    box-shadow: 0 0 24px rgba($be-conf-confirmed, 0.08);
+    .be-rung__marker { background: $be-conf-confirmed; }
+  }
+}
+
+.be-loop {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-left: 3px solid $be-conf-confirmed;
+  border-radius: $be-radius-card;
+  padding: 1.5rem;
+
+  .be-loop__icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: $be-radius-control;
+    background: rgba($be-conf-confirmed, 0.1);
+    border: 1px solid rgba($be-conf-confirmed, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $be-conf-confirmed;
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $be-text-1;
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: $be-text-2;
+    margin: 0;
+  }
+}
+
+// ─── Compare ───────────────────────────────────────────────────────────────
+
+.be-compare__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include media-min($breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.be-compare__card {
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-card;
+  padding: 1.6rem 1.5rem;
+
+  .be-compare__verdict {
+    display: inline-block;
+    font-family: $be-font-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: $be-text-3;
+    border: 1px solid $be-edge-strong;
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $be-text-1;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: $be-text-2;
+    margin: 0;
+  }
+
+  &--highlight {
+    border: 1px solid transparent;
+    background:
+      linear-gradient($be-bg-2, $be-bg-2) padding-box,
+      linear-gradient(135deg, $be-brand-b, $be-brand-d) border-box;
+    box-shadow: 0 0 32px rgba($be-brand-d, 0.15);
+
+    .be-compare__verdict {
+      color: $be-accent;
+      border-color: rgba($be-accent, 0.4);
+    }
+  }
+}
+
+// ─── HealthCheck on-ramp ───────────────────────────────────────────────────
+
+.be-onramp__panel {
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-card;
+  padding: 2rem;
+}
+
+.be-onramp__body {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  .be-onramp__icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: $be-radius-control;
+    background: $be-bg-2;
+    border: 1px solid $be-edge;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $be-accent;
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $be-text-1;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: $be-text-2;
+    max-width: 44rem;
+    margin-bottom: 1.1rem;
+  }
+}
+
+.be-onramp__proof {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $be-edge;
+
+  .be-onramp__proof-title {
+    display: block;
+    font-family: $be-font-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: $be-text-3;
+    margin-bottom: 1rem;
+  }
+
+  .be-onramp__logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2.5rem;
+
+    img {
+      height: 34px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: grayscale(1) brightness(1.6);
+      opacity: 0.65;
+      transition: filter 180ms cubic-bezier(0.2, 0, 0, 1),
+        opacity 180ms cubic-bezier(0.2, 0, 0, 1);
+
+      &:hover {
+        filter: none;
+        opacity: 1;
+      }
+    }
   }
 }
