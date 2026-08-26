@@ -71,11 +71,9 @@
     a {
       font-weight: 500;
       letter-spacing: 0.02em;
-      // Padding + negative margin grows the touch target past 44px without
-      // moving the rendered text.
-      display: inline-block;
-      padding: 0.7rem 0.4rem;
-      margin: -0.7rem -0.4rem;
+      // 0.3rem vertical stays inside the 0.75rem row gap so the address
+      // and phone hit boxes never overlap.
+      @include touch-target(0.3rem, 0.4rem);
     }
   }
 

@@ -21,6 +21,16 @@
   scroll-snap-stop: normal;
 }
 
+// Expanded touch target: padding grows the hit box while the negative
+// margin cancels the layout footprint, so the rendered text stays put.
+// Keep the vertical expansion smaller than the gap to the next
+// interactive row, or adjacent hit boxes overlap.
+@mixin touch-target($y: 0.7rem, $x: 0.5rem) {
+  display: inline-block;
+  padding: $y $x;
+  margin: (-$y) (-$x);
+}
+
 // Glassy surface card with shared border + shadow.
 @mixin surface-card($radius: $radius-card-lg) {
   border-radius: $radius;
