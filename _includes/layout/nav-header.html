@@ -16,6 +16,13 @@
       {%- if header.button -%}
         <a class="btn btn-primary btn-xl text-uppercase" href="{{ header.buttonlink }}">{{ header.button }}</a>
       {%- endif -%}
+      {%- if header.button2 -%}
+        <div class="masthead-secondary">
+          <a class="btn btn-badgereye btn-xl text-uppercase" href="{{ header.button2link }}">
+            {{ header.button2 }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </header>

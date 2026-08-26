@@ -2,6 +2,14 @@ tr: &DEFAULT_TR
   section: projects
   title: "Projelerimiz"
   list:
+    - name: "BadgerEye"
+      desc: "Valiente'nin bulut tabanlı Unified Vulnerability Management (UVM) ve CTEM platformu. Saldırı yüzeyi, sürekli taramalar, tehdit istihbaratı ve raporlama tek çatı altında."
+      icon: "fas fa-eye"
+      status: "Aktif"
+      status_type: active
+      tags: ["UVM", "CTEM", "AI Pentest", "SaaS"]
+      url: /projects/badgereye/
+
     - name: "HealthCheck"
       desc: "Şirketlere ücretsiz sunduğumuz güvenlik ve BT altyapısı sağlık değerlendirme hizmeti."
       icon: "fas fa-heartbeat"
@@ -26,13 +34,6 @@ tr: &DEFAULT_TR
       status_type: coming_soon
       tags: ["Yakında"]
 
-    - name: "Yakında"
-      desc: "Yeni bir proje yakında geliyor."
-      icon: "fas fa-code"
-      status: "Yakında"
-      status_type: coming_soon
-      tags: ["Yakında"]
-
 tr-TR:
   <<: *DEFAULT_TR
 
@@ -40,6 +41,14 @@ en:
   section: projects
   title: "Our Projects"
   list:
+    - name: "BadgerEye"
+      desc: "Valiente's cloud-based Unified Vulnerability Management (UVM) and CTEM platform. Attack surface, continuous scanning, threat intelligence and reporting under one roof."
+      icon: "fas fa-eye"
+      status: "Active"
+      status_type: active
+      tags: ["UVM", "CTEM", "AI Pentesting", "SaaS"]
+      url: /projects/badgereye/
+
     - name: "HealthCheck"
       desc: "Free security and IT infrastructure health assessment service offered to companies."
       icon: "fas fa-heartbeat"
@@ -60,13 +69,6 @@ en:
     - name: "Coming Soon"
       desc: "A new project is on the way."
       icon: "fas fa-rocket"
-      status: "Coming Soon"
-      status_type: coming_soon
-      tags: ["Coming Soon"]
-
-    - name: "Coming Soon"
-      desc: "A new project is on the way."
-      icon: "fas fa-code"
       status: "Coming Soon"
       status_type: coming_soon
       tags: ["Coming Soon"]

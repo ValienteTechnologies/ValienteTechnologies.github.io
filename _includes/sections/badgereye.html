@@ -1,0 +1,298 @@
+<!-- BadgerEye product accent font (IBM Plex Mono, used for chips and metric values) -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+
+{% assign be = site.data.badgereye[site.active_lang] | default: site.data.badgereye.tr %}
+{% if be %}
+{% assign hero = be.hero %}
+
+<!-- BadgerEye Hero -->
+<section class="be-hero">
+  <div class="be-hero__glow" aria-hidden="true"></div>
+  <div class="container position-relative">
+    <div class="be-hero__stack">
+      <span class="be-hero__eyebrow">{{ hero.eyebrow }}</span>
+      <h1 class="be-hero__title">Badger<span>Eye</span></h1>
+      <p class="be-hero__subtitle">{{ hero.subtitle }}</p>
+      <p class="be-hero__tagline">{{ hero.tagline }}</p>
+      <div class="be-hero__actions">
+        <a class="be-btn be-btn--primary" href="{{ hero.cta_primary_url }}" target="_blank" rel="noopener noreferrer">
+          {{ hero.cta_primary }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="be-btn be-btn--ghost" href="{{ hero.cta_secondary_anchor }}">{{ hero.cta_secondary }}</a>
+      </div>
+      {% assign panel = hero.panel %}
+      <div class="be-panel" aria-hidden="true">
+          <div class="be-panel__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-panel__heading">{{ panel.heading }}</span>
+            <span class="be-panel__diff">{{ panel.diff }}</span>
+          </div>
+          <div class="be-panel__stats">
+            {% for s in panel.stats %}
+            <div class="be-stat">
+              <span class="be-stat__value">{{ s.value }}</span>
+              <span class="be-stat__label">{{ s.label }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="be-panel__severity-label">{{ panel.severity_label }}</div>
+          <div class="be-panel__severity-bar">
+            {% for s in panel.severities %}
+            <span class="be-sev be-sev--{{ s.type }}" style="flex-grow: {{ s.count }}"></span>
+            {% endfor %}
+          </div>
+          <ul class="be-panel__severity-legend">
+            {% for s in panel.severities %}
+            <li><span class="be-sev-dot be-sev--{{ s.type }}"></span>{{ s.name }} <em>{{ s.count }}</em></li>
+            {% endfor %}
+          </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye: the three answers, shown as product windows -->
+{% assign ans = be.answers %}
+<section class="page-section be-section be-answers">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ ans.title }}</h2>
+      </div>
+    </div>
+    <div class="be-answers__grid">
+
+      {% assign p = ans.posture %}
+      <div class="be-answer">
+        <div class="be-mock" aria-hidden="true">
+          <div class="be-mock__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-mock__label">{{ p.label }}</span>
+          </div>
+          <div class="be-mock__posture">
+            <div class="be-ring" style="--score: {{ p.score }}%"><span>{{ p.score }}</span></div>
+            <ul class="be-mock__sevrows">
+              {% assign max = p.severities | map: "count" | sort | last %}
+              {% for s in p.severities %}
+              <li>
+                <span class="be-mock__sevname">{{ s.name }}</span>
+                <span class="be-mock__sevtrack"><span class="be-sev--{{ s.type }}" style="width: {{ s.count | times: 100 | divided_by: max }}%"></span></span>
+                <em>{{ s.count }}</em>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <h3>{{ p.caption }}</h3>
+        <p class="sr-only">{{ p.sr }}</p>
+      </div>
+
+      {% assign c = ans.changes %}
+      <div class="be-answer">
+        <div class="be-mock" aria-hidden="true">
+          <div class="be-mock__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-mock__label">{{ c.label }}</span>
+          </div>
+          <ul class="be-mock__feed">
+            {% for f in c.feed %}
+            <li class="be-feedrow be-feedrow--{{ f.type }}">
+              <span class="be-feedrow__mark"></span>
+              <span class="be-feedrow__text">{{ f.text }}</span>
+              <em>{{ f.time }}</em>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <h3>{{ c.caption }}</h3>
+        <p class="sr-only">{{ c.sr }}</p>
+      </div>
+
+      {% assign n = ans.next %}
+      <div class="be-answer">
+        <div class="be-mock" aria-hidden="true">
+          <div class="be-mock__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-mock__label">{{ n.label }}</span>
+          </div>
+          <ol class="be-mock__queue">
+            {% for q in n.queue %}
+            <li class="be-queuerow">
+              <span class="be-sev-dot be-sev--{{ q.sev }}"></span>
+              <span class="be-queuerow__name">{{ q.name }}</span>
+              <span class="be-queuerow__chip">{{ q.chip }}</span>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <h3>{{ n.caption }}</h3>
+        <p class="sr-only">{{ n.sr }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye: the funnel -->
+{% assign focus = be.focus %}
+<section class="page-section be-section be-focus">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ focus.title }}</h2>
+      </div>
+    </div>
+    <div class="be-funnel" aria-label="{{ focus.title }}">
+      {% for stage in focus.stages %}
+      <div class="be-funnel__tier be-funnel__tier--{{ forloop.index }}">
+        <span class="be-funnel__value">{{ stage.value }}</span>
+        <span class="be-funnel__label">{{ stage.label }}</span>
+      </div>
+      {% unless forloop.last %}
+      {% assign sieve = focus.sieves[forloop.index0] %}
+      <div class="be-sieve be-sieve--{{ forloop.index }}">
+        {% for item in sieve.items %}
+        <span class="be-sieve__chip">{{ item }}</span>
+        {% endfor %}
+        {% for e in sieve.ejects %}
+        <span class="be-eject be-eject--{{ e.side }}" aria-hidden="true">
+          {% if e.side == 'left' %}<span class="be-eject__arrow">&#8592;</span>{% endif %}
+          <span class="be-eject__text">{{ e.text }}</span>
+          {% if e.side == 'right' %}<span class="be-eject__arrow">&#8594;</span>{% endif %}
+        </span>
+        {% endfor %}
+      </div>
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye Modules -->
+{% assign modules = be.modules %}
+<section class="page-section be-section be-modules" id="be-modules">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ modules.title }}</h2>
+      </div>
+    </div>
+    <div class="be-cap-grid">
+      {% for item in modules.list %}
+      <article class="be-cap-card">
+        <div class="be-cap-card__side">
+          <div class="be-cap-card__icon"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
+          {% if item.chip %}<span class="be-cap-card__chip">{{ item.chip }}</span>{% endif %}
+        </div>
+        <div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye CTEM Lifecycle -->
+{% assign lc = be.lifecycle %}
+<section class="page-section be-section be-lifecycle">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ lc.title }}</h2>
+      </div>
+    </div>
+    <p class="be-ctem__expansion">{{ lc.expansion }}</p>
+    <div class="be-ctem">
+      <div class="be-ctem__ring" aria-hidden="true"></div>
+      {% for word in lc.corners %}
+      <span class="be-ctem__corner be-ctem__corner--{{ forloop.index }}" aria-hidden="true">{{ word }}</span>
+      {% endfor %}
+      {% for step in lc.steps %}
+      <span class="be-ctem__arrow be-ctem__arrow--{{ forloop.index }}" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+      {% endfor %}
+      <div class="be-ctem__hub" aria-hidden="true">
+        <i class="fas fa-robot"></i>
+        <span class="be-ctem__hub-label">{{ lc.hub_label }}</span>
+        <span class="be-ctem__hub-sub">{{ lc.hub_sub }}</span>
+      </div>
+      <ol class="be-ctem__nodes">
+        {% for step in lc.steps %}
+        <li class="be-ctem__node be-ctem__node--{{ forloop.index }}">
+          <span class="be-step__num">{{ forloop.index | prepend: "0" }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye: hands-off split -->
+{% assign ho = be.handsoff %}
+<section class="page-section be-section be-handsoff">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ ho.title }}</h2>
+      </div>
+    </div>
+    <div class="be-handsoff__nos">
+      {% for no in ho.nos %}
+      <span class="be-no"><i class="fas fa-ban" aria-hidden="true"></i>{{ no }}</span>
+      {% endfor %}
+    </div>
+    <div class="be-handsoff__grid">
+      <div class="be-mock be-handsoff__you">
+        <div class="be-mock__header">
+          <span class="be-panel__dot"></span>
+          <span class="be-mock__label">{{ ho.you_label }}</span>
+        </div>
+        <ul class="be-handsoff__list">
+          {% for item in ho.you %}
+          <li><i class="fas fa-check" aria-hidden="true"></i><span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="be-mock be-handsoff__platform">
+        <div class="be-mock__header">
+          <span class="be-panel__dot"></span>
+          <span class="be-mock__label">{{ ho.platform_label }}</span>
+        </div>
+        <ul class="be-handsoff__list be-handsoff__list--platform">
+          {% for item in ho.platform %}
+          <li><span class="be-feedrow__mark"></span><span class="be-handsoff__text">{{ item.text }}</span><em>{{ item.tag }}</em></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye Final CTA -->
+{% assign cta = be.cta %}
+<section class="page-section be-section be-cta">
+  <div class="container">
+    <div class="be-exit">
+      <div class="be-mock be-exit__terminal">
+        <div class="be-exit__bar" aria-hidden="true">
+          <span class="be-exit__light be-exit__light--r"></span>
+          <span class="be-exit__light be-exit__light--y"></span>
+          <span class="be-exit__light be-exit__light--g"></span>
+          <span class="be-exit__title">{{ cta.label }}</span>
+        </div>
+        <p class="be-exit__line">{{ cta.line }}</p>
+        <h2 class="be-exit__q"><span class="be-exit__prompt" aria-hidden="true">$</span> <span class="sr-only">{{ cta.title }}</span><span class="be-exit__type" aria-hidden="true" data-phrases="{{ cta.phrases | jsonify | escape }}">{{ cta.title }}</span><span class="be-exit__cursor" aria-hidden="true"></span></h2>
+      </div>
+      <a class="be-btn be-btn--primary be-btn--lg" href="{{ cta.url }}" target="_blank" rel="noopener noreferrer">
+        {{ cta.button }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+<!-- End BadgerEye -->

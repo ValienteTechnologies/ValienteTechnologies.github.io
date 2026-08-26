@@ -26,6 +26,9 @@ $valiente-rose:     lighten($valiente-magenta, 12%) !default;
 // ── Projects + HealthCheck styles ─────────────────────────────────────────────
 @import "layout/projects";
 
+// ── BadgerEye project page (product-token styling) ────────────────────────────
+@import "layout/badgereye";
+
 // ── Reused section styles ─────────────────────────────────────────────────────
 @import "layout/references";
 @import "components/client-scroll";

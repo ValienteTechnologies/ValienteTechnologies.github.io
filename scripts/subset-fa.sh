@@ -171,6 +171,12 @@ if [ -n "$BRANDS_UNICODES" ]; then
   BRANDS_HASH=$(md5sum "$OUT_BRANDS" | cut -c1-8)
   sed -i "s|webfonts/fa-brands-400\.woff2|webfonts/fa-brands-400.woff2?v=$BRANDS_HASH|g" "$OUT_CSS"
   echo "Written: $OUT_BRANDS ($(wc -c < "$OUT_BRANDS") bytes, hash=$BRANDS_HASH)"
+elif [ -f "$OUT_BRANDS" ]; then
+  # Brands font untouched (e.g. fontTools unavailable for the cmap probe):
+  # keep the cache-busting hash of the existing file in the CSS
+  BRANDS_HASH=$(md5sum "$OUT_BRANDS" | cut -c1-8)
+  sed -i "s|webfonts/fa-brands-400\.woff2|webfonts/fa-brands-400.woff2?v=$BRANDS_HASH|g" "$OUT_CSS"
+  echo "Kept: $OUT_BRANDS (hash=$BRANDS_HASH)"
 fi
 
 echo "Done."
