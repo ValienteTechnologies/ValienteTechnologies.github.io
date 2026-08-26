@@ -1,6 +1,8 @@
 tr: &DEFAULT_TR
   section: projects
   title: "Projelerimiz"
+  description: "Valiente Technologies'in projeleri: bulut tabanlı BadgerEye UVM/CTEM platformu, ücretsiz HealthCheck güvenlik analizi ve açık kaynak güvenlik araçları."
+  cta: "Keşfet"
   list:
     - name: "BadgerEye"
       desc: "Valiente'nin bulut tabanlı Unified Vulnerability Management (UVM) ve CTEM platformu. Saldırı yüzeyi, sürekli taramalar, tehdit istihbaratı ve raporlama tek çatı altında."
@@ -40,6 +42,8 @@ tr-TR:
 en:
   section: projects
   title: "Our Projects"
+  description: "Projects by Valiente Technologies: the cloud-based BadgerEye UVM/CTEM platform, the free HealthCheck security assessment and open-source security tools."
+  cta: "Explore"
   list:
     - name: "BadgerEye"
       desc: "Valiente's cloud-based Unified Vulnerability Management (UVM) and CTEM platform. Attack surface, continuous scanning, threat intelligence and reporting under one roof."

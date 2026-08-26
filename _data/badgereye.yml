@@ -1,6 +1,6 @@
 tr: &DEFAULT_TR
   title: "BadgerEye"
-  description: "BadgerEye, Valiente'nin bulut tabanlı Unified Vulnerability Management (UVM) ve CTEM platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI Pentest, tehdit istihbaratı ve dijital risk koruması tek platformda."
+  description: "BadgerEye: Valiente'nin bulut tabanlı UVM ve CTEM platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI Pentest ve tehdit istihbaratı tek platformda."
 
   hero:
     eyebrow: "Birleşik Zafiyet Yönetimi (UVM) + CTEM"
@@ -219,7 +219,7 @@ tr-TR:
 
 en:
   title: "BadgerEye"
-  description: "BadgerEye is Valiente's cloud-based Unified Vulnerability Management (UVM) and CTEM platform. Attack surface management, continuous scanning, AI pentesting, threat intelligence and digital risk protection in one platform."
+  description: "BadgerEye is Valiente's cloud-based UVM and CTEM platform: attack surface management, continuous scanning, AI pentesting and threat intelligence in one place."
 
   hero:
     eyebrow: "Unified Vulnerability Management + CTEM"
