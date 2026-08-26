@@ -1043,7 +1043,7 @@ $be-ctem-radius: 250px;
     animation: be-eye-turn 24s linear infinite;
   }
 
-  // The pupil
+  // The pupil; --px/--py come from be-eye.js as it tracks the cursor
   &::after {
     content: "";
     position: absolute;
@@ -1052,9 +1052,10 @@ $be-ctem-radius: 250px;
     width: 34px;
     height: 34px;
     border-radius: 999px;
-    transform: translate(-50%, -50%);
+    transform: translate(calc(-50% + var(--px, 0px)), calc(-50% + var(--py, 0px)));
     background: radial-gradient(circle at 38% 32%, lighten($be-accent, 14%), $be-brand-c 70%);
     box-shadow: 0 0 34px rgba($be-brand-d, 0.55);
+    will-change: transform;
   }
 }
 
