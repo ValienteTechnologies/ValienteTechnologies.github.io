@@ -1,5 +1,6 @@
 <!-- BadgerEye product accent font (IBM Plex Mono, used for chips and metric values) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
 
 {% assign be = site.data.badgereye[site.active_lang] | default: site.data.badgereye.tr %}
 {% if be %}
@@ -70,9 +71,9 @@
             <span class="be-mock__label">{{ p.label }}</span>
           </div>
           <div class="be-mock__posture">
-            <div class="be-ring"><span>{{ p.score }}</span></div>
+            <div class="be-ring" style="--score: {{ p.score }}%"><span>{{ p.score }}</span></div>
             <ul class="be-mock__sevrows">
-              {% assign max = 132 %}
+              {% assign max = p.severities | map: "count" | sort | last %}
               {% for s in p.severities %}
               <li>
                 <span class="be-mock__sevname">{{ s.name }}</span>
@@ -84,6 +85,7 @@
           </div>
         </div>
         <h3>{{ p.caption }}</h3>
+        <p class="sr-only">{{ p.sr }}</p>
       </div>
 
       {% assign c = ans.changes %}
@@ -104,6 +106,7 @@
           </ul>
         </div>
         <h3>{{ c.caption }}</h3>
+        <p class="sr-only">{{ c.sr }}</p>
       </div>
 
       {% assign n = ans.next %}
@@ -124,6 +127,7 @@
           </ol>
         </div>
         <h3>{{ n.caption }}</h3>
+        <p class="sr-only">{{ n.sr }}</p>
       </div>
 
     </div>

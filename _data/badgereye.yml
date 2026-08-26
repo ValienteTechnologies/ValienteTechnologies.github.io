@@ -39,6 +39,7 @@ tr: &DEFAULT_TR
     title: "Neden BadgerEye?"
     posture:
       caption: "Ne durumdayım?"
+      sr: "Örnek ürün ekranı: maruziyet skoru ve kritiklik dağılımı."
       label: "exposure_score"
       score: "72"
       severities:
@@ -56,6 +57,7 @@ tr: &DEFAULT_TR
           type: low
     changes:
       caption: "Ne değişti?"
+      sr: "Örnek ürün ekranı: son 24 saatin değişiklik akışı."
       label: "changes_24h"
       feed:
         - type: closed
@@ -72,6 +74,7 @@ tr: &DEFAULT_TR
           time: "16:30"
     next:
       caption: "Sırada ne var?"
+      sr: "Örnek ürün ekranı: önceliklendirilmiş aksiyon kuyruğu."
       label: "next_actions"
       queue:
         - sev: critical
@@ -252,6 +255,7 @@ en:
     title: "Why BadgerEye?"
     posture:
       caption: "Where do I stand?"
+      sr: "Sample product view: exposure score with severity breakdown."
       label: "exposure_score"
       score: "72"
       severities:
@@ -269,6 +273,7 @@ en:
           type: low
     changes:
       caption: "What changed?"
+      sr: "Sample product view: the last 24 hours of changes."
       label: "changes_24h"
       feed:
         - type: closed
@@ -285,6 +290,7 @@ en:
           time: "16:30"
     next:
       caption: "What's next?"
+      sr: "Sample product view: the prioritized action queue."
       label: "next_actions"
       queue:
         - sev: critical

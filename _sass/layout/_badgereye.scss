@@ -368,14 +368,6 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     $be-bg-0;
 }
 
-.be-section__subtitle {
-  color: $be-text-2;
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 42rem;
-  margin: 0 auto var(--space-grid-margin);
-}
-
 // ─── The three answers: product windows ────────────────────────────────────
 
 .be-answers__grid {
@@ -438,7 +430,7 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   width: 92px;
   height: 92px;
   border-radius: 999px;
-  background: conic-gradient($be-accent 0 72%, $be-bg-3 72% 100%);
+  background: conic-gradient($be-accent 0 var(--score, 72%), $be-bg-3 0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -547,7 +539,6 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   margin: 0;
   display: grid;
   gap: 0.5rem;
-  counter-reset: queue;
 }
 
 .be-queuerow {
