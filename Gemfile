@@ -1,8 +1,7 @@
 # After any changes to the Gemfile, run: bundle update
 source "https://rubygems.org"
 
-gem "jekyll-remote-theme"
-gem "jekyll-agency", "~> 1.2"
+gem "jekyll",        "~> 4.2"
 gem "webrick",       "~> 1.9"
 gem "csv",           "~> 3.3.6"
 gem "base64",        "~> 0.3.0"

@@ -1,4 +1,6 @@
 tr: &DEFAULT_TR
+  title: "HealthCheck"
+  description: "Antalya'daki firmalar için ücretsiz siber güvenlik ön analizi. İnternete açık sistemlerinizin temel güvenlik durumunu kesintisiz ve taahhütsüz değerlendiriyoruz."
   hero:
     title: "HealthCheck"
     tagline: "Antalya'daki firmalar için ücretsiz Siber Güvenlik Ön Analizi"
@@ -65,12 +67,15 @@ tr: &DEFAULT_TR
     phone: "Telefon *"
     company: "Şirket Adı *"
     submit: "Başvur"
+    email_subject: "HealthCheck Başvurusu"
     formspree_action: "https://formspree.io/f/mbdzwkrv"
 
 tr-TR:
   <<: *DEFAULT_TR
 
 en:
+  title: "HealthCheck"
+  description: "Free cybersecurity pre-analysis for businesses in Antalya. We assess the security posture of your internet-facing systems — no disruption, no commitment."
   hero:
     title: "HealthCheck"
     tagline: "Free Cybersecurity Pre-Analysis for businesses in Antalya"
@@ -137,4 +142,5 @@ en:
     phone: "Phone *"
     company: "Company Name *"
     submit: "Apply"
+    email_subject: "HealthCheck Application"
     formspree_action: "https://formspree.io/f/mbdzwkrv"

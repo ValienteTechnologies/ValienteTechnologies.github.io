@@ -2,6 +2,8 @@ tr: &DEFAULT
   home: "Ana Sayfa"
   site_title_suffix: "Sızma Testi ve Siber Güvenlik"
   language_select: "Dil seçin"
+  menu: "Menü"
+  toggle_nav: "Menüyü aç/kapat"
 
 tr-TR:
   <<: *DEFAULT
@@ -10,3 +12,5 @@ en:
   home: "Home"
   site_title_suffix: "Penetration Testing & Cybersecurity"
   language_select: "Select language"
+  menu: "Menu"
+  toggle_nav: "Toggle navigation"

@@ -39,7 +39,7 @@
                   </span>
                 </span>
                 <div>
-                  <p class="label">E-posta</p>
+                  <p class="label">{{ contact.email_label | default: "E-posta" }}</p>
                   <p class="value">{{ site.email }}</p>
                 </div>
               </a>
@@ -53,7 +53,7 @@
                   </span>
                 </span>
                 <div>
-                  <p class="label">Telefon</p>
+                  <p class="label">{{ contact.phone_label | default: "Telefon" }}</p>
                   <p class="value">{{ contact.phone_number }}</p>
                 </div>
               </a>

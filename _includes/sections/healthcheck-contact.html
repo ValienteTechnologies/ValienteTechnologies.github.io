@@ -65,7 +65,7 @@
                   required="required">
               </div>
             </div>
-            <input type="hidden" name="_subject" value="HealthCheck Başvurusu">
+            <input type="hidden" name="_subject" value="{{ hcc.email_subject | default: 'HealthCheck Başvurusu' }}">
             <div class="contact-form-actions text-center">
               <button id="sendMessageButton"
                 class="btn btn-primary btn-xl text-uppercase"

@@ -1,10 +1,22 @@
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   {%- assign _data_section = site.data[page.data_key][site.active_lang] | default: site.data[page.data_key].tr -%}
   {%- assign _page_title = page.title -%}
-  {%- assign _page_description = page.description | default: site.description -%}
+  {%- comment -%} site.description is Turkish-only config; the localized site
+      description in home.yml is the language-safe fallback. {%- endcomment -%}
+  {%- assign _site_description = site.data.home[site.active_lang].description | default: site.description -%}
+  {%- assign _page_description = page.description | default: _site_description -%}
   {%- if _data_section.title -%}{%- assign _page_title = _data_section.title -%}{%- endif -%}
   {%- if _data_section.description -%}{%- assign _page_description = _data_section.description -%}{%- endif -%}
   {%- assign _i18n = site.data.i18n[site.active_lang] | default: site.data.i18n.tr -%}
+  {%- comment -%} Polyglot only rewrites href attributes to the /en/ prefix, so meta
+      content attributes and JSON-LD strings need the localized URL built explicitly. {%- endcomment -%}
+  {%- assign _lang_prefix = "" -%}
+  {%- if site.active_lang != site.default_lang -%}
+    {%- assign _lang_prefix = "/" | append: site.active_lang -%}
+  {%- endif -%}
+  {%- assign _page_url_abs = page.url | replace: 'index.html', '' | prepend: _lang_prefix | prepend: site.baseurl | prepend: site.url -%}
   {%- if page.url == "/" or page.url == "/index.html" -%}
     {%- assign _page_full_title = site.title | append: " | " | append: _i18n.site_title_suffix -%}
   {%- elsif _page_title -%}
@@ -31,20 +43,24 @@
   {%- endif -%}
   <title>{{ _page_full_title }}</title>
 
-  <!-- Language routing: first visit follows the browser language, an explicit
-       dropdown choice is remembered, at most one redirect per session. Runs
-       synchronously before first paint so there is no wrong-language flash.
-       hreflang alternates below stay authoritative for crawlers. -->
+  <!-- Language routing: only the language-neutral root "/" auto-detects — any deep
+       link (tr path or /en/...) is already an explicit language choice and is never
+       redirected away from, which also keeps crawler renders of every page stable.
+       An explicit dropdown choice is remembered; at most one redirect per session.
+       Runs synchronously before first paint so there is no wrong-language flash. -->
   <script>
     (function () {
       try {
         var KEY = "ve-lang", SKEY = "ve-lang-routed";
-        var path = location.pathname;
-        var pageLang = (path === "/en" || path.indexOf("/en/") === 0) ? "en" : "tr";
         document.addEventListener("click", function (e) {
+          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
           var a = e.target.closest && e.target.closest("a[data-lang]");
           if (a) { try { localStorage.setItem(KEY, a.getAttribute("data-lang")); } catch (_) {} }
         }, true);
+        var path = location.pathname;
+        if (path !== "/" && path !== "/index.html") return;
+        if (navigator.webdriver) return;
+        if (/bot|crawl|spider|slurp|preview|facebookexternalhit|whatsapp|telegram|lighthouse/i.test(navigator.userAgent)) return;
         if (sessionStorage.getItem(SKEY)) return;
         sessionStorage.setItem(SKEY, "1");
         var stored = localStorage.getItem(KEY);
@@ -53,11 +69,7 @@
             return String(l).toLowerCase().split("-")[0] === "tr";
           }) ? "tr" : "en");
         localStorage.setItem(KEY, target);
-        if (target === pageLang) return;
-        var dest = target === "en"
-          ? "/en" + path
-          : ((path === "/en" || path === "/en/") ? "/" : path.slice(3));
-        location.replace(dest + location.search + location.hash);
+        if (target === "en") location.replace("/en/" + location.search + location.hash);
       } catch (_) {}
     })();
   </script>
@@ -121,8 +133,6 @@
   </script>
   {% endif %}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="{{ _page_description }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
@@ -143,7 +153,7 @@
     "url": "{{ site.url }}",
     "logo": "{{ site.url }}/assets/img/valiente/valientetitle.svg",
     "image": "{{ site.url }}/assets/img/valiente/og-image.png",
-    "description": "{{ site.description }}",
+    "description": "{{ _site_description }}",
     "email": "{{ site.email }}",
     "telephone": "{{ site.data.contact.tr.phone_number }}",
     "areaServed": ["Antalya", "Türkiye"],
@@ -170,12 +180,12 @@
       "@type": "ListItem",
       "position": 1,
       "name": "{{ _i18n.home }}",
-      "item": "{{ site.url }}"
+      "item": "{{ site.url }}{{ site.baseurl }}{{ _lang_prefix }}/"
     },{
       "@type": "ListItem",
       "position": 2,
       "name": "{{ _page_title }}",
-      "item": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+      "item": "{{ _page_url_abs }}"
     }]
   }
   </script>
@@ -189,7 +199,7 @@
     "@type": "{{ page.schema_type }}",
     "name": "{{ page.schema_name | default: page.title }}",
     "description": "{{ page.schema_description | default: _page_description }}",
-    "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+    "url": "{{ _page_url_abs }}",
     "provider": {
       "@type": "Organization",
       "name": "{{ site.title }}",
@@ -212,7 +222,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:url" content="{{ _page_url_abs }}">
   <meta property="og:title" content="{{ _page_full_title }}">
   <meta property="og:description" content="{{ _page_description }}">
   <meta property="og:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
