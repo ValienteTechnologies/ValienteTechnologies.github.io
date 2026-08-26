@@ -718,9 +718,22 @@ $be-ctem-radius: 250px;
   &--5 .be-step__num { color: lighten($be-brand-d, 14%); }
 }
 
-// Hub and ring are decorative; on small screens the hub leads the stacked list
+// Acronym expansion: one quiet line on small screens, corner words on large
+.be-ctem__expansion {
+  text-align: center;
+  font-family: $be-font-mono;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $be-text-3;
+  margin: -1.25rem 0 2rem;
+}
+
+// Hub, ring and corner words are decorative; on small screens the hub leads
+// the stacked list
 .be-ctem__ring,
-.be-ctem__arrow {
+.be-ctem__arrow,
+.be-ctem__corner {
   display: none;
 }
 
@@ -825,6 +838,125 @@ $be-ctem-radius: 250px;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+  }
+
+  .be-ctem__expansion {
+    display: none;
+  }
+
+  // C·T·E·M spelled out on the four corners of the loop. The words come
+  // pre-uppercased from the data: text-transform would apply Turkish casing
+  // (i -> dotted İ) to these English words on the tr pages.
+  .be-ctem__corner {
+    display: block;
+    position: absolute;
+    font-family: $be-font-mono;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    color: $be-text-3;
+    opacity: 0.75;
+
+    &::first-letter {
+      color: $be-accent;
+    }
+
+    &--1 { top: 0.5rem; left: 0; }
+    &--2 { top: 0.5rem; right: 0; text-align: right; }
+    &--3 { bottom: 0.5rem; left: 0; }
+    &--4 { bottom: 0.5rem; right: 0; text-align: right; }
+  }
+}
+
+// ─── Hands-off split: you do three things, the platform does the rest ──────
+
+.be-handsoff__nos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+
+  .be-no {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: $be-font-mono;
+    font-size: 0.78rem;
+    color: $be-text-2;
+    border: 1px solid $be-edge-strong;
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+    background: $be-bg-1;
+
+    i {
+      color: $be-brand-d;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.be-handsoff__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  max-width: 56rem;
+  margin: 0 auto;
+
+  @include media-min($breakpoint-md) {
+    grid-template-columns: 1fr 1.7fr;
+  }
+}
+
+.be-handsoff__you {
+  border-color: rgba($be-accent, 0.4);
+}
+
+.be-handsoff__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: $be-bg-2;
+    border: 1px solid $be-edge;
+    border-radius: $be-radius-control;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+    color: $be-text-1;
+
+    i {
+      color: $be-accent;
+      font-size: 0.75rem;
+    }
+  }
+
+  &--platform li {
+    color: $be-text-2;
+
+    .be-feedrow__mark {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: $be-accent;
+    }
+
+    .be-handsoff__text {
+      flex: 1;
+    }
+
+    em {
+      font-style: normal;
+      font-family: $be-font-mono;
+      font-size: 0.68rem;
+      color: $be-text-3;
+    }
   }
 }
 

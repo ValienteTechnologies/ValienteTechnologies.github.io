@@ -149,6 +149,8 @@ tr: &DEFAULT_TR
 
   lifecycle:
     title: "AI Çağında CTEM"
+    corners: ["CONTINUOUS", "THREAT", "EXPOSURE", "MANAGEMENT"]
+    expansion: "Sürekli Tehdit Maruziyeti Yönetimi"
     hub_label: "AI"
     hub_sub: "her adımda"
     steps:
@@ -162,6 +164,30 @@ tr: &DEFAULT_TR
         desc: "İstismar kanıtlanır."
       - title: "Harekete Geçirme"
         desc: "Düzeltme yapılır, bulgu kapanır."
+
+  handsoff:
+    title: "Gerisini Platform Halleder"
+    nos:
+      - "Kurulum yok"
+      - "Ajan yok"
+      - "Güvenlik ekibi gerekmez"
+    you_label: "siz"
+    you:
+      - "Alan adınızı ekleyin"
+      - "Kapsamı onaylayın"
+      - "Kararı siz verin"
+    platform_label: "badgereye"
+    platform:
+      - text: "Keşif ve envanter"
+        tag: "7/24"
+      - text: "Tarama ve doğrulama"
+        tag: "7/24"
+      - text: "Önceliklendirme"
+        tag: "otomatik"
+      - text: "Yeniden test ve kapanış"
+        tag: "otomatik"
+      - text: "Raporlama"
+        tag: "hazır"
 
   cta:
     title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
@@ -323,6 +349,8 @@ en:
 
   lifecycle:
     title: "CTEM for the AI Era"
+    corners: ["CONTINUOUS", "THREAT", "EXPOSURE", "MANAGEMENT"]
+    expansion: "Continuous Threat Exposure Management"
     hub_label: "AI"
     hub_sub: "in every stage"
     steps:
@@ -336,6 +364,30 @@ en:
         desc: "Exploitability is proven."
       - title: "Mobilization"
         desc: "Fixes are applied and findings close."
+
+  handsoff:
+    title: "The Platform Handles the Rest"
+    nos:
+      - "No installation"
+      - "No legacy agents"
+      - "No security team required"
+    you_label: "you"
+    you:
+      - "Add your domain"
+      - "Approve the scope"
+      - "Make the calls"
+    platform_label: "badgereye"
+    platform:
+      - text: "Discovery and inventory"
+        tag: "24/7"
+      - text: "Scanning and validation"
+        tag: "24/7"
+      - text: "Prioritization"
+        tag: "automatic"
+      - text: "Retest and closure"
+        tag: "automatic"
+      - text: "Reporting"
+        tag: "ready"
 
   cta:
     title: "Manage your attack surface with BadgerEye"
