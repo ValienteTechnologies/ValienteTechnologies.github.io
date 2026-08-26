@@ -1,0 +1,120 @@
+<!-- BadgerEye product fonts (IBM Plex — the platform's type) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
+{% assign be = site.data.badgereye[site.active_lang] | default: site.data.badgereye.tr %}
+{% if be %}
+{% assign hero = be.hero %}
+
+<!-- BadgerEye Hero -->
+<section class="be-hero">
+  <div class="be-hero__glow" aria-hidden="true"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <span class="be-hero__eyebrow">{{ hero.eyebrow }}</span>
+        <h1 class="be-hero__title">Badger<span>Eye</span></h1>
+        <p class="be-hero__tagline">{{ hero.tagline }}</p>
+        <p class="be-hero__desc">{{ hero.description }}</p>
+        {% if hero.points %}
+        <ul class="be-hero__points">
+          {% for p in hero.points %}
+          <li><i class="fas fa-check" aria-hidden="true"></i><span>{{ p }}</span></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="be-hero__actions">
+          <a class="be-btn be-btn--primary" href="{{ hero.cta_primary_url }}" target="_blank" rel="noopener noreferrer">
+            {{ hero.cta_primary }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a class="be-btn be-btn--ghost" href="{{ hero.cta_secondary_anchor }}">{{ hero.cta_secondary }}</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        {% assign panel = hero.panel %}
+        <div class="be-panel" aria-hidden="true">
+          <div class="be-panel__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-panel__heading">{{ panel.heading }}</span>
+          </div>
+          <div class="be-panel__stats">
+            {% for s in panel.stats %}
+            <div class="be-stat">
+              <span class="be-stat__value">{{ s.value }}</span>
+              <span class="be-stat__label">{{ s.label }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="be-panel__severity-label">{{ panel.severity_label }}</div>
+          <div class="be-panel__severity-bar">
+            {% for s in panel.severities %}
+            <span class="be-sev be-sev--{{ s.type }}" style="flex-grow: {{ s.count }}"></span>
+            {% endfor %}
+          </div>
+          <ul class="be-panel__severity-legend">
+            {% for s in panel.severities %}
+            <li><span class="be-sev-dot be-sev--{{ s.type }}"></span>{{ s.name }} <em>{{ s.count }}</em></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye Capabilities -->
+{% assign caps = be.capabilities %}
+<section class="be-section be-capabilities" id="be-capabilities">
+  <div class="container">
+    <div class="be-section__head">
+      <h2>{{ caps.title }}</h2>
+      <p>{{ caps.subtitle }}</p>
+    </div>
+    <div class="be-cap-grid">
+      {% for item in caps.list %}
+      <article class="be-cap-card">
+        <div class="be-cap-card__icon"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye CTEM Lifecycle -->
+{% assign lc = be.lifecycle %}
+<section class="be-section be-lifecycle">
+  <div class="container">
+    <div class="be-section__head">
+      <h2>{{ lc.title }}</h2>
+      <p>{{ lc.subtitle }}</p>
+    </div>
+    <ol class="be-steps">
+      {% for step in lc.steps %}
+      <li class="be-step">
+        <span class="be-step__num">{{ forloop.index | prepend: "0" }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.desc }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- BadgerEye Final CTA -->
+{% assign cta = be.cta %}
+<section class="be-section be-cta">
+  <div class="container">
+    <div class="be-cta__panel">
+      <h2>{{ cta.title }}</h2>
+      <p>{{ cta.description }}</p>
+      <a class="be-btn be-btn--primary be-btn--lg" href="{{ cta.url }}" target="_blank" rel="noopener noreferrer">
+        {{ cta.button }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      <span class="be-cta__domain">badgereye.io</span>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+<!-- End BadgerEye -->

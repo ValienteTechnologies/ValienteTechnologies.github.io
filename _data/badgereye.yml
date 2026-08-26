@@ -1,0 +1,174 @@
+tr: &DEFAULT_TR
+  title: "BadgerEye"
+  description: "BadgerEye — Valiente'nin Birleşik Zafiyet Yönetimi (UVM) ve CTEM platformu. Varlık keşfi, zafiyet taramaları, tehdit istihbaratı ve raporlama tek platformda."
+
+  hero:
+    eyebrow: "Birleşik Zafiyet Yönetimi + CTEM"
+    tagline: "Saldırı yüzeyinizi tek platformdan görün, önceliklendirin, kapatın."
+    description: "BadgerEye, Valiente'nin geliştirdiği bulut tabanlı güvenlik platformudur: varlık keşfi, zafiyet taramaları, tehdit istihbaratı ve raporlama tek veri modelinde birleşir. Ekipler riskleri iş etkisine göre önceliklendirir ve kapanışa kadar takip eder."
+    status: "SaaS Platform"
+    points:
+      - "Sürekli varlık keşfi ve saldırı yüzeyi izleme"
+      - "Yönetilen tarayıcı filosuyla ağ, web ve bulut taramaları"
+      - "Tehdit istihbaratıyla zenginleştirilmiş önceliklendirme"
+      - "Kurumsal SSO, rol tabanlı erişim ve tam denetim izi"
+    cta_primary: "badgereye.io'yu Ziyaret Et"
+    cta_primary_url: "https://badgereye.io"
+    cta_secondary: "Yetenekleri İncele"
+    cta_secondary_anchor: "#be-capabilities"
+    panel:
+      heading: "exposure_overview"
+      stats:
+        - label: "Varlık"
+          value: "1.284"
+        - label: "Açık Bulgu"
+          value: "327"
+        - label: "Ort. Kapanış"
+          value: "6,4 gün"
+      severity_label: "önem dağılımı"
+      severities:
+        - name: "Kritik"
+          count: 14
+          type: critical
+        - name: "Yüksek"
+          count: 63
+          type: high
+        - name: "Orta"
+          count: 118
+          type: medium
+        - name: "Düşük"
+          count: 132
+          type: low
+
+  capabilities:
+    title: "Tek Platformda Uçtan Uca Görünürlük"
+    subtitle: "Dağınık tarayıcı çıktıları ve tablolar yerine, saldırı yüzeyinizin tamamı tek veri modelinde."
+    list:
+      - icon: "fas fa-globe"
+        title: "Varlık Envanteri & Saldırı Yüzeyi"
+        desc: "Alan adları, sunucular, servisler ve bulut kaynakları sürekli keşfedilir; envanter kendini güncel tutar."
+      - icon: "fas fa-crosshairs"
+        title: "Orkestre Edilmiş Taramalar"
+        desc: "Ağ, web uygulaması ve bulut taramaları tek merkezden planlanır; sonuçlar normalize edilip tekilleştirilir."
+      - icon: "fas fa-shield-alt"
+        title: "Zafiyet Yaşam Döngüsü"
+        desc: "Bulgular iş etkisine göre önceliklendirilir, sahiplenilir ve kapanışa kadar SLA'larla takip edilir."
+      - icon: "fas fa-user-secret"
+        title: "Tehdit İstihbaratı"
+        desc: "Güncel tehdit verisi varlıklarınızla eşleştirilir; aktif olarak sömürülen zafiyetler öne çıkar."
+      - icon: "fas fa-file-alt"
+        title: "Raporlama & Analitik"
+        desc: "Yönetici özetinden teknik detaya, markalı PDF raporlar ve canlı güvenlik durumu panoları."
+      - icon: "fas fa-cloud"
+        title: "Kurumsal SaaS"
+        desc: "Tek oturum açma (SSO), rol tabanlı yetkilendirme, kiracı izolasyonu ve tam denetim izi."
+
+  lifecycle:
+    title: "CTEM Döngüsü"
+    subtitle: "BadgerEye, Sürekli Tehdit Maruziyeti Yönetimi (CTEM) döngüsünün beş adımını uçtan uca işletir."
+    steps:
+      - title: "Kapsamlama"
+        desc: "İş açısından kritik varlıklar ve sınırlar tanımlanır."
+      - title: "Keşif"
+        desc: "Saldırı yüzeyi ve zafiyetler sürekli taranır."
+      - title: "Önceliklendirme"
+        desc: "Bulgular istihbarat ve iş etkisiyle sıralanır."
+      - title: "Doğrulama"
+        desc: "Sömürülebilirlik doğrulanır, gürültü elenir."
+      - title: "Aksiyon"
+        desc: "Düzeltme atanır, izlenir ve kapatılır."
+
+  cta:
+    title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
+    description: "Platformu yakından incelemek ve erişim talep etmek için badgereye.io'yu ziyaret edin."
+    button: "badgereye.io'ya Git"
+    url: "https://badgereye.io"
+
+tr-TR:
+  <<: *DEFAULT_TR
+
+en:
+  title: "BadgerEye"
+  description: "BadgerEye — Valiente's Unified Vulnerability Management (UVM) and CTEM platform. Asset discovery, vulnerability scanning, threat intelligence and reporting in one platform."
+
+  hero:
+    eyebrow: "Unified Vulnerability Management + CTEM"
+    tagline: "See, prioritize and close your attack surface from a single platform."
+    description: "BadgerEye is the cloud-native security platform built by Valiente: asset discovery, vulnerability scanning, threat intelligence and reporting converge on a single data model. Teams prioritize risk by business impact and track it through to closure."
+    status: "SaaS Platform"
+    points:
+      - "Continuous asset discovery and attack surface monitoring"
+      - "Network, web and cloud scans via a managed scanner fleet"
+      - "Prioritization enriched with threat intelligence"
+      - "Enterprise SSO, role-based access and a full audit trail"
+    cta_primary: "Visit badgereye.io"
+    cta_primary_url: "https://badgereye.io"
+    cta_secondary: "Explore Capabilities"
+    cta_secondary_anchor: "#be-capabilities"
+    panel:
+      heading: "exposure_overview"
+      stats:
+        - label: "Assets"
+          value: "1,284"
+        - label: "Open Findings"
+          value: "327"
+        - label: "Avg. Closure"
+          value: "6.4 days"
+      severity_label: "severity distribution"
+      severities:
+        - name: "Critical"
+          count: 14
+          type: critical
+        - name: "High"
+          count: 63
+          type: high
+        - name: "Medium"
+          count: 118
+          type: medium
+        - name: "Low"
+          count: 132
+          type: low
+
+  capabilities:
+    title: "End-to-End Visibility in One Platform"
+    subtitle: "Your entire attack surface on a single data model — instead of scattered scanner output and spreadsheets."
+    list:
+      - icon: "fas fa-globe"
+        title: "Asset Inventory & Attack Surface"
+        desc: "Domains, hosts, services and cloud resources are discovered continuously; the inventory keeps itself current."
+      - icon: "fas fa-crosshairs"
+        title: "Orchestrated Scanning"
+        desc: "Network, web application and cloud scans are scheduled from one place; results are normalized and deduplicated."
+      - icon: "fas fa-shield-alt"
+        title: "Exposure Lifecycle"
+        desc: "Findings are prioritized by business impact, assigned an owner, and tracked to closure with SLAs."
+      - icon: "fas fa-user-secret"
+        title: "Threat Intelligence"
+        desc: "Live threat data is correlated with your assets; actively exploited vulnerabilities rise to the top."
+      - icon: "fas fa-file-alt"
+        title: "Reporting & Analytics"
+        desc: "From executive summary to technical detail — branded PDF reports and live security posture dashboards."
+      - icon: "fas fa-cloud"
+        title: "Enterprise SaaS"
+        desc: "Single sign-on (SSO), role-based access control, tenant isolation and a complete audit trail."
+
+  lifecycle:
+    title: "The CTEM Loop"
+    subtitle: "BadgerEye operates all five stages of Continuous Threat Exposure Management end to end."
+    steps:
+      - title: "Scoping"
+        desc: "Business-critical assets and boundaries are defined."
+      - title: "Discovery"
+        desc: "The attack surface and its exposures are scanned continuously."
+      - title: "Prioritization"
+        desc: "Findings are ranked by intelligence and business impact."
+      - title: "Validation"
+        desc: "Exploitability is verified and noise is eliminated."
+      - title: "Mobilization"
+        desc: "Remediation is assigned, tracked and closed."
+
+  cta:
+    title: "Manage your attack surface with BadgerEye"
+    description: "Visit badgereye.io to take a closer look at the platform and request access."
+    button: "Go to badgereye.io"
+    url: "https://badgereye.io"

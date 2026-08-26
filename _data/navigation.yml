@@ -33,6 +33,8 @@ tr: &DEFAULT_TR
       children:
         - title: "Tüm Projeler"
           url: /projects/
+        - title: "BadgerEye"
+          url: /projects/badgereye/
         - title: "HealthCheck"
           url: /projects/healthcheck/
         - title: "GhostBadger"
@@ -80,6 +82,8 @@ en:
       children:
         - title: "All Projects"
           url: /projects/
+        - title: "BadgerEye"
+          url: /projects/badgereye/
         - title: "HealthCheck"
           url: /projects/healthcheck/
         - title: "GhostBadger"

@@ -161,6 +161,37 @@ header.masthead {
   }
 }
 
+// BadgerEye hero button — sits under the primary Explore CTA and borrows the
+// product's look: near-black violet-tinted surface, subtle edge, violet hover
+header.masthead .masthead-secondary {
+  .btn-badgereye {
+    margin-top: $space-gap-lg;
+    background: rgba(#121017, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    box-shadow: 0 10px 30px rgba(#121017, 0.45);
+    backdrop-filter: blur(4px);
+
+    i {
+      font-size: 0.8em;
+      margin-left: 0.35rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(#121017, 0.9);
+      border-color: #b561e5;
+      color: #b561e5;
+      box-shadow: 0 15px 40px rgba(#63068c, 0.5);
+
+      i {
+        transform: translateX(3px);
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
   header.masthead {
     .intro-text {
