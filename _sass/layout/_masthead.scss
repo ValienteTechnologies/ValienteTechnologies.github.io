@@ -119,7 +119,11 @@ header.masthead {
       @include serif-font;
     }
     .intro-heading {
-      font-size: $masthead-font-size-heading-sm;
+      // CSS min() shrinks the heading on narrow phones where the longest
+      // English word ("CYBERSECURITY") would clip at the fixed size; wider
+      // viewports keep the design size. Written via unquote because LibSass
+      // otherwise tries (and fails) to evaluate min() itself.
+      font-size: unquote("min(#{$masthead-font-size-heading-sm}, 10.5vw)");
       font-weight: 700;
       line-height: 1.14;
       margin-bottom: $space-gap * 1.5;
