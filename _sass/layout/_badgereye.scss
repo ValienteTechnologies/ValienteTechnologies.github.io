@@ -654,17 +654,18 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     border-color: $be-edge-strong;
   }
 
+  // In flow above the title, so titles keep the full column width at
+  // every viewport instead of wrapping around a corner-pinned chip
   .be-cap-card__chip {
-    position: absolute;
-    top: 0.85rem;
-    right: 0.85rem;
+    display: inline-block;
     font-family: $be-font-mono;
-    font-size: 0.66rem;
+    font-size: 0.64rem;
     letter-spacing: 0.07em;
     color: $be-text-3;
     border: 1px solid $be-edge-strong;
     border-radius: 999px;
-    padding: 0.16rem 0.55rem;
+    padding: 0.14rem 0.5rem;
+    margin-bottom: 0.45rem;
   }
 
   &:hover .be-cap-card__chip {
@@ -692,8 +693,6 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     font-weight: 700;
     color: $be-text-1;
     margin-bottom: 0.3rem;
-    // Clear the absolutely positioned acronym chip in the top-right corner
-    padding-right: 3.4rem;
   }
 
   p {
