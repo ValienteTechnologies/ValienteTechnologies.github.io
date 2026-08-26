@@ -351,14 +351,6 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .be-lifecycle {
-  // On viewports shorter than the loop's fixed geometry the section exceeds
-  // the snapport, which makes BOTH its edges snap stops (the double lock
-  // while scrolling). Free-scroll it there; proximity snapping on the
-  // neighbors keeps the rest of the page rhythm.
-  @media (max-height: 900px) {
-    scroll-snap-align: none;
-  }
-
   background:
     radial-gradient(ellipse at 50% 50%, rgba($be-brand-b, 0.13), transparent 55%),
     #0f0d13;
@@ -798,7 +790,11 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 
 // ─── CTEM loop: five stages on a ring, AI at the hub ───────────────────────
 
-$be-ctem-radius: 222px;
+// The loop's radius derives from the viewport so the section never
+// exceeds 100vh: nodes need ~96px above/below the ring and the heading
+// plus section padding ~396px; full-height screens cap at the design
+// radius of 222px.
+$be-ctem-r: var(--ctem-r);
 
 .be-ctem {
   position: relative;
@@ -907,8 +903,9 @@ $be-ctem-radius: 222px;
 
 @include media-min($breakpoint-lg) {
   .be-ctem {
+    --ctem-r: clamp(140px, calc((100vh - 400px) / 2), 222px);
     width: 760px;
-    height: 540px;
+    height: calc(var(--ctem-r) * 2 + 116px);
   }
 
   .be-ctem__nodes {
@@ -919,13 +916,13 @@ $be-ctem-radius: 222px;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 200px;
+    width: clamp(150px, calc(#{$be-ctem-r} * 0.9), 200px);
     margin: 0;
 
     @for $i from 1 through 5 {
       $angle: ($i - 1) * 72deg;
       &--#{$i} {
-        transform: translate(-50%, -50%) rotate($angle) translateY(-$be-ctem-radius) rotate(-$angle);
+        transform: translate(-50%, -50%) rotate($angle) translateY(calc(-1 * #{$be-ctem-r})) rotate(-$angle);
       }
     }
   }
@@ -935,8 +932,8 @@ $be-ctem-radius: 222px;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: $be-ctem-radius * 2;
-    height: $be-ctem-radius * 2;
+    width: calc(#{$be-ctem-r} * 2);
+    height: calc(#{$be-ctem-r} * 2);
     transform: translate(-50%, -50%);
     border: 1px dashed $be-edge-strong;
     border-radius: 999px;
@@ -957,7 +954,7 @@ $be-ctem-radius: 222px;
     @for $i from 1 through 5 {
       $angle: ($i - 1) * 72deg + 36deg;
       &--#{$i} {
-        transform: translate(-50%, -50%) rotate($angle) translateY(-$be-ctem-radius);
+        transform: translate(-50%, -50%) rotate($angle) translateY(calc(-1 * #{$be-ctem-r}));
       }
     }
   }

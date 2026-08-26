@@ -382,7 +382,7 @@ en:
       - title: "Scoping"
         desc: "Critical assets are chosen."
       - title: "Discovery"
-        desc: "The surface is scanned continuously."
+        desc: "Scanned continuously."
       - title: "Prioritization"
         desc: "Ranked by intelligence."
       - title: "Validation"
