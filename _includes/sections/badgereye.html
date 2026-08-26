@@ -139,30 +139,28 @@
         <h2 class="section-heading text-uppercase">{{ focus.title }}</h2>
       </div>
     </div>
-    <div class="be-focus__wrap">
-      <div class="be-focus__noise" aria-hidden="true">
-        <span class="be-focus__flank-label">{{ focus.noise_label }}</span>
-        {% for n in focus.noise %}
-        <span class="be-noise-chip">{{ n }}</span>
+    <div class="be-funnel" aria-label="{{ focus.title }}">
+      {% for stage in focus.stages %}
+      <div class="be-funnel__tier be-funnel__tier--{{ forloop.index }}">
+        <span class="be-funnel__value">{{ stage.value }}</span>
+        <span class="be-funnel__label">{{ stage.label }}</span>
+      </div>
+      {% unless forloop.last %}
+      {% assign sieve = focus.sieves[forloop.index0] %}
+      <div class="be-sieve be-sieve--{{ forloop.index }}">
+        {% for item in sieve.items %}
+        <span class="be-sieve__chip">{{ item }}</span>
+        {% endfor %}
+        {% for e in sieve.ejects %}
+        <span class="be-eject be-eject--{{ e.side }}" aria-hidden="true">
+          {% if e.side == 'left' %}<span class="be-eject__arrow">&#8592;</span>{% endif %}
+          <span class="be-eject__text">{{ e.text }}</span>
+          {% if e.side == 'right' %}<span class="be-eject__arrow">&#8594;</span>{% endif %}
+        </span>
         {% endfor %}
       </div>
-      <div class="be-funnel" aria-label="{{ focus.title }}">
-        {% for stage in focus.stages %}
-        <div class="be-funnel__tier be-funnel__tier--{{ forloop.index }}">
-          <span class="be-funnel__value">{{ stage.value }}</span>
-          <span class="be-funnel__label">{{ stage.label }}</span>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="be-focus__filters">
-        {% for f in focus.filters %}
-        <div class="be-filter">
-          {% for item in f.items %}
-          <span class="be-filter__item">{{ item }}</span>
-          {% endfor %}
-        </div>
-        {% endfor %}
-      </div>
+      {% endunless %}
+      {% endfor %}
     </div>
   </div>
 </section>
