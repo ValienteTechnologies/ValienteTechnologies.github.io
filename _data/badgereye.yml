@@ -102,6 +102,8 @@ tr: &DEFAULT_TR
             side: right
       - items: ["iş etkisi", "SLA ve sahiplik"]
         ejects:
+          - text: "kabul edilen riskler"
+            side: left
           - text: "yinelenen bulgular"
             side: right
 
@@ -313,6 +315,8 @@ en:
             side: right
       - items: ["business impact", "SLA and ownership"]
         ejects:
+          - text: "accepted risks"
+            side: left
           - text: "duplicate findings"
             side: right
 
