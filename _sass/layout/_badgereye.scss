@@ -654,18 +654,26 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     border-color: $be-edge-strong;
   }
 
-  // In flow above the title, so titles keep the full column width at
-  // every viewport instead of wrapping around a corner-pinned chip
+  // Icon column carries the acronym chip underneath, so titles keep the
+  // full text-column width at every viewport
+  .be-cap-card__side {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    width: 54px;
+  }
+
   .be-cap-card__chip {
     display: inline-block;
     font-family: $be-font-mono;
-    font-size: 0.64rem;
-    letter-spacing: 0.07em;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
     color: $be-text-3;
     border: 1px solid $be-edge-strong;
     border-radius: 999px;
-    padding: 0.14rem 0.5rem;
-    margin-bottom: 0.45rem;
+    padding: 0.12rem 0.45rem;
   }
 
   &:hover .be-cap-card__chip {

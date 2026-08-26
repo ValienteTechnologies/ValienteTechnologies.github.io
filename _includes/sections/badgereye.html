@@ -167,9 +167,11 @@
     <div class="be-cap-grid">
       {% for item in modules.list %}
       <article class="be-cap-card">
-        <div class="be-cap-card__icon"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
-        <div>
+        <div class="be-cap-card__side">
+          <div class="be-cap-card__icon"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
           {% if item.chip %}<span class="be-cap-card__chip">{{ item.chip }}</span>{% endif %}
+        </div>
+        <div>
           <h3>{{ item.title }}</h3>
           <p>{{ item.desc }}</p>
         </div>
