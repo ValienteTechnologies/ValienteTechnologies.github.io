@@ -30,7 +30,7 @@ tr: &DEFAULT_TR
   map_embed: ""
   offices:
     - city: "Antalya (Teknokent)"
-      address: "Akdeniz Üniversitesi Teknokent Ar-Ge 2 Uluğbey Binası No:3A/B207 Konyaaltı/Antalya"
+      address: "Akdeniz Ünv. Teknokent Ar-Ge 2 No:3A/B207 Konyaaltı/Antalya"
       phone: "+90 551 159 61 61"
       map_url: "https://maps.google.com/?q=Antalya+Teknokent"
     - city: "Antalya"
@@ -77,7 +77,7 @@ en:
   map_embed: ""
   offices:
     - city: "Antalya (Technopolis)"
-      address: "Akdeniz Üniversitesi Teknokent Ar-Ge 2 Uluğbey Binası No:3A/B207 Konyaaltı/Antalya"
+      address: "Akdeniz Ünv. Teknokent Ar-Ge 2 No:3A/B207 Konyaaltı/Antalya"
       phone: "+90 551 159 61 61"
       map_url: "https://maps.google.com/?q=Antalya+Teknokent"
     - city: "Antalya"
