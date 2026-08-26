@@ -77,7 +77,7 @@ tr: &DEFAULT_TR
           name: "VPN ağ geçidinde RCE"
           chip: "4 yolu kapatır"
         - sev: high
-          name: "Sızmış yönetici parolası"
+          name: "Sızdırılmış yönetici parolası"
           chip: "2 sistem"
         - sev: medium
           name: "Eski TLS yapılandırması"
@@ -140,7 +140,7 @@ tr: &DEFAULT_TR
       - chip: "DRP"
         icon: "fas fa-user-secret"
         title: "Dijital Risk Koruması"
-        desc: "Varlıklarınızla bağlantılı sızdırılmış kimlik bilgileri ve benzer alan adları."
+        desc: "Varlıklarınızla bağlantılı sızdırılmış kimlik bilgileri ve benzer alan adları tespit edilir."
       - chip: "APV"
         icon: "fas fa-project-diagram"
         title: "Saldırı Yolu Grafiği"
