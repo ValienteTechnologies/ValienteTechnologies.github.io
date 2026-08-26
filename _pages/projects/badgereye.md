@@ -7,5 +7,3 @@ schema_type: SoftwareApplication
 schema_name: BadgerEye
 ---
 {% include sections/badgereye.html %}
-
-<script src="/assets/js/be-eye.js" defer></script>
