@@ -90,7 +90,7 @@ tr: &DEFAULT_TR
         label: "açık maruziyet"
       - value: "~200"
         label: "kritik düğüm noktası"
-      - value: "5"
+      - value: "3"
         label: "sıradaki adım"
     sieves:
       - items: ["tehdit istihbaratı", "istismar edilebilirlik", "saldırı yolu analizi"]
@@ -103,7 +103,7 @@ tr: &DEFAULT_TR
         ejects:
           - text: "kabul edilen riskler"
             side: left
-          - text: "yinelenen bulgular"
+          - text: "düşük etkili bulgular"
             side: right
 
   modules:
@@ -302,7 +302,7 @@ en:
         label: "open exposures"
       - value: "~200"
         label: "critical choke points"
-      - value: "5"
+      - value: "3"
         label: "next actions"
     sieves:
       - items: ["threat intelligence", "exploitability", "attack path analysis"]
@@ -315,7 +315,7 @@ en:
         ejects:
           - text: "accepted risks"
             side: left
-          - text: "duplicate findings"
+          - text: "low-impact findings"
             side: right
 
   modules:
@@ -324,7 +324,7 @@ en:
       - chip: "EASM"
         icon: "fas fa-globe"
         title: "Attack Surface Management"
-        desc: "Domains, hosts and cloud resources discovered continuously."
+        desc: "Domains, hosts and cloud resources discovered continuously, keeping inventory current."
       - chip: "UVM"
         icon: "fas fa-crosshairs"
         title: "Vulnerability Scanning"
@@ -380,7 +380,7 @@ en:
       - title: "Scoping"
         desc: "Critical assets are chosen."
       - title: "Discovery"
-        desc: "The surface is scanned."
+        desc: "The surface is scanned continuously."
       - title: "Prioritization"
         desc: "Ranked by intelligence."
       - title: "Validation"
@@ -392,7 +392,7 @@ en:
     title: "The Platform Handles the Rest"
     nos:
       - "No installation"
-      - "No legacy agents"
+      - "No agents"
       - "No security team required"
     you_label: "you"
     you:
