@@ -6,7 +6,7 @@ tr: &DEFAULT_TR
     eyebrow: "Birleşik Zafiyet Yönetimi + CTEM"
     tagline: "Saldırı yüzeyinizi saldırganın gözünden görün."
     description: "Varlık keşfi, zafiyet taramaları, tehdit istihbaratı ve dijital risk koruması tek veri modelinde."
-    cta_primary: "badgereye.io'yu Ziyaret Et"
+    cta_primary: "BadgerEye.io"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Modülleri İncele"
     cta_secondary_anchor: "#be-modules"
@@ -143,7 +143,7 @@ tr: &DEFAULT_TR
   cta:
     title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
     description: "Platformu incelemek ve erişim talep etmek için badgereye.io'yu ziyaret edin."
-    button: "badgereye.io'ya Git"
+    button: "BadgerEye.io"
     url: "https://badgereye.io"
 
 tr-TR:
@@ -157,7 +157,7 @@ en:
     eyebrow: "Unified Vulnerability Management + CTEM"
     tagline: "See your attack surface the way an attacker does."
     description: "Asset discovery, vulnerability scanning, threat intelligence and digital risk protection on a single data model."
-    cta_primary: "Visit badgereye.io"
+    cta_primary: "BadgerEye.io"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Explore the Modules"
     cta_secondary_anchor: "#be-modules"
@@ -294,5 +294,5 @@ en:
   cta:
     title: "Manage your attack surface with BadgerEye"
     description: "Visit badgereye.io to take a closer look at the platform and request access."
-    button: "Go to badgereye.io"
+    button: "BadgerEye.io"
     url: "https://badgereye.io"
