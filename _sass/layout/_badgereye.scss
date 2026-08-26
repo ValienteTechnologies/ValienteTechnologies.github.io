@@ -351,6 +351,14 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .be-lifecycle {
+  // On viewports shorter than the loop's fixed geometry the section exceeds
+  // the snapport, which makes BOTH its edges snap stops (the double lock
+  // while scrolling). Free-scroll it there; proximity snapping on the
+  // neighbors keeps the rest of the page rhythm.
+  @media (max-height: 900px) {
+    scroll-snap-align: none;
+  }
+
   background:
     radial-gradient(ellipse at 50% 50%, rgba($be-brand-b, 0.13), transparent 55%),
     #0f0d13;
