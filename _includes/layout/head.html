@@ -31,6 +31,35 @@
   {%- endif -%}
   <title>{{ _page_full_title }}</title>
 
+  <!-- Language routing: first visit follows the browser language, an explicit
+       dropdown choice is remembered, at most one redirect per session. Runs
+       synchronously before first paint so there is no wrong-language flash.
+       hreflang alternates below stay authoritative for crawlers. -->
+  <script>
+    (function () {
+      try {
+        var KEY = "ve-lang", SKEY = "ve-lang-routed";
+        var path = location.pathname;
+        var pageLang = (path === "/en" || path.indexOf("/en/") === 0) ? "en" : "tr";
+        document.addEventListener("click", function (e) {
+          var a = e.target.closest && e.target.closest("a[data-lang]");
+          if (a) { try { localStorage.setItem(KEY, a.getAttribute("data-lang")); } catch (_) {} }
+        }, true);
+        if (sessionStorage.getItem(SKEY)) return;
+        sessionStorage.setItem(SKEY, "1");
+        var stored = localStorage.getItem(KEY);
+        var target = stored ||
+          (((navigator.languages || [navigator.language || "tr"]).join(",").toLowerCase().indexOf("tr") !== -1) ? "tr" : "en");
+        localStorage.setItem(KEY, target);
+        if (target === pageLang) return;
+        var dest = target === "en"
+          ? "/en" + path
+          : ((path === "/en" || path === "/en/") ? "/" : path.slice(3));
+        location.replace(dest + location.search + location.hash);
+      } catch (_) {}
+    })();
+  </script>
+
   <!-- Critical CSS: prevents FOUC while main sheets load non-blockingly -->
   <style>
     :root { --color-page-bg: #1a0b2f; --color-text: rgba(255,255,255,0.9); }

@@ -83,8 +83,8 @@
             <i class="fas fa-language" aria-hidden="true"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
-            <a class="dropdown-item" {% static_href %}href="{{ page.url }}"{% endstatic_href %}>TR</a>
-            <a class="dropdown-item" {% static_href %}href="/en{{ page.url }}"{% endstatic_href %}>EN</a>
+            <a class="dropdown-item" data-lang="tr" {% static_href %}href="{{ page.url }}"{% endstatic_href %}>TR</a>
+            <a class="dropdown-item" data-lang="en" {% static_href %}href="/en{{ page.url }}"{% endstatic_href %}>EN</a>
           </div>
         </li>
       </ul>
