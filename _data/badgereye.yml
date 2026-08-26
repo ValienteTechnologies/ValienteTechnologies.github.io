@@ -190,8 +190,9 @@ tr: &DEFAULT_TR
         tag: "hazır"
 
   cta:
-    title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
-    description: "Platformu incelemek ve erişim talep etmek için badgereye.io'yu ziyaret edin."
+    label: "badgereye"
+    line: "Saldırganlar saldırı yüzeyinizi çoktan tarıyor."
+    title: "Peki siz ne durumda olduğunuzu biliyor musunuz?"
     button: "BadgerEye.io"
     url: "https://badgereye.io"
 
@@ -390,7 +391,8 @@ en:
         tag: "ready"
 
   cta:
-    title: "Manage your attack surface with BadgerEye"
-    description: "Visit badgereye.io to take a closer look at the platform and request access."
+    label: "badgereye"
+    line: "Attackers are already scanning your attack surface."
+    title: "Do you know where you stand?"
     button: "BadgerEye.io"
     url: "https://badgereye.io"
