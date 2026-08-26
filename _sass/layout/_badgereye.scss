@@ -1014,7 +1014,52 @@ $be-ctem-radius: 250px;
 .be-exit__terminal {
   max-width: 42rem;
   margin: 0 auto 2rem;
+  padding: 0;
+  overflow: hidden;
   text-align: left;
+
+  .be-exit__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.65rem 1rem;
+    background: $be-bg-2;
+    border-bottom: 1px solid $be-edge;
+  }
+
+  .be-exit__light {
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    opacity: 0.8;
+
+    &--r { background: $be-sev-critical; }
+    &--y { background: $be-sev-medium; }
+    &--g { background: $be-sev-low; }
+  }
+
+  .be-exit__title {
+    margin: 0 auto;
+    // Balance the traffic lights so the title sits at the true center
+    transform: translateX(calc(-1.5 * (11px + 0.45rem) / 2));
+    font-family: $be-font-mono;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: $be-text-3;
+  }
+
+  .be-exit__line,
+  .be-exit__q {
+    padding-inline: 1.25rem;
+  }
+
+  .be-exit__line {
+    padding-top: 1.25rem;
+  }
+
+  .be-exit__q {
+    padding-bottom: 1.25rem;
+  }
 }
 
 .be-exit__line {

@@ -264,9 +264,11 @@
   <div class="container">
     <div class="be-exit">
       <div class="be-mock be-exit__terminal">
-        <div class="be-mock__header">
-          <span class="be-panel__dot"></span>
-          <span class="be-mock__label">{{ cta.label }}</span>
+        <div class="be-exit__bar" aria-hidden="true">
+          <span class="be-exit__light be-exit__light--r"></span>
+          <span class="be-exit__light be-exit__light--y"></span>
+          <span class="be-exit__light be-exit__light--g"></span>
+          <span class="be-exit__title">{{ cta.label }}</span>
         </div>
         <p class="be-exit__line">{{ cta.line }}</p>
         <h2 class="be-exit__q"><span class="be-exit__prompt" aria-hidden="true">$</span> {{ cta.title }}<span class="be-exit__cursor" aria-hidden="true"></span></h2>
