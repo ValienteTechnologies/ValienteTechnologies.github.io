@@ -652,6 +652,8 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     font-weight: 700;
     color: $be-text-1;
     margin-bottom: 0.3rem;
+    // Clear the absolutely positioned acronym chip in the top-right corner
+    padding-right: 3.4rem;
   }
 
   p {
