@@ -15,6 +15,7 @@ module.exports = {
     '_site/assets/css/valiente-corporate.css',
     '_site/assets/css/valiente-contact.css',
     '_site/assets/css/valiente-legal.css',
+    '_site/assets/css/valiente-projects.css',
     '_site/assets/css/valiente-error.css',
   ],
   content: [
