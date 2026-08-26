@@ -1168,9 +1168,23 @@ $be-ctem-r: var(--ctem-r);
 }
 
 .be-exit__q {
-  // Two reserved lines so rotating phrases of different lengths never
-  // change the terminal's height
-  min-height: calc(2 * 1.5em);
+  // The live typed line and one hidden sizer per phrase share a single grid
+  // cell, so the terminal always stands at its tallest phrase's height at
+  // the current width — typing and deleting never move the layout.
+  display: grid;
+
+  > * {
+    grid-area: 1 / 1;
+  }
+
+  .be-exit__sizer {
+    visibility: hidden;
+
+    .be-exit__cursor {
+      animation: none;
+    }
+  }
+
   font-family: $be-font-mono;
   font-size: 1.15rem;
   font-weight: 500;
