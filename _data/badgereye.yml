@@ -161,7 +161,7 @@ tr: &DEFAULT_TR
       - title: "Doğrulama"
         desc: "İstismar kanıtlanır."
       - title: "Harekete Geçirme"
-        desc: "Düzeltme kapatılır."
+        desc: "Düzeltme yapılır, bulgu kapanır."
 
   cta:
     title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
@@ -335,7 +335,7 @@ en:
       - title: "Validation"
         desc: "Exploitability is proven."
       - title: "Mobilization"
-        desc: "Remediation is closed."
+        desc: "Fixes are applied and findings close."
 
   cta:
     title: "Manage your attack surface with BadgerEye"
