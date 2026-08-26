@@ -816,6 +816,18 @@ $be-ctem-r: var(--ctem-r);
   padding: 1rem 1.1rem;
   text-align: center;
 
+  // Uniform nodes: every description owns a two-line block whether it
+  // wraps or not, so line count never changes the composition; balance
+  // breaks wrapped lines evenly
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    min-height: calc(2 * 1.45em);
+    text-wrap: balance;
+  }
+
   .be-step__num {
     display: inline-block;
     font-family: $be-font-mono;
@@ -916,7 +928,10 @@ $be-ctem-r: var(--ctem-r);
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(150px, calc(#{$be-ctem-r} * 0.9), 200px);
+    // Full design width unless adjacent nodes would collide: the chord
+    // between neighboring node centers is 2r*sin(36) = 1.176r, so cards
+    // narrow only when the radius drops below ~177px (sub-750px viewports)
+    width: unquote("min(200px, calc(var(--ctem-r) * 1.13))");
     margin: 0;
 
     @for $i from 1 through 5 {
