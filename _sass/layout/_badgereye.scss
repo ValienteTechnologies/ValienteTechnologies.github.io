@@ -790,7 +790,7 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 
 // ─── CTEM loop: five stages on a ring, AI at the hub ───────────────────────
 
-$be-ctem-radius: 250px;
+$be-ctem-radius: 222px;
 
 .be-ctem {
   position: relative;
@@ -867,8 +867,8 @@ $be-ctem-radius: 250px;
   align-items: center;
   gap: 0.2rem;
   margin: 0 auto 1.25rem;
-  width: 148px;
-  height: 148px;
+  width: 132px;
+  height: 132px;
   justify-content: center;
   border-radius: 999px;
   background:
@@ -899,8 +899,8 @@ $be-ctem-radius: 250px;
 
 @include media-min($breakpoint-lg) {
   .be-ctem {
-    width: 780px;
-    height: 620px;
+    width: 760px;
+    height: 540px;
   }
 
   .be-ctem__nodes {
