@@ -262,9 +262,11 @@
 {% assign cta = be.cta %}
 <section class="page-section be-section be-cta">
   <div class="container">
-    <div class="be-cta__panel">
+    <div class="be-cta__inner">
+      <div class="be-cta__eye" aria-hidden="true">
+        <span class="be-cta__eye-ring"></span>
+      </div>
       <h2>{{ cta.title }}</h2>
-      <p>{{ cta.description }}</p>
       <a class="be-btn be-btn--primary be-btn--lg" href="{{ cta.url }}" target="_blank" rel="noopener noreferrer">
         {{ cta.button }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>

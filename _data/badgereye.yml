@@ -191,7 +191,6 @@ tr: &DEFAULT_TR
 
   cta:
     title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
-    description: "Platformu incelemek ve erişim talep etmek için badgereye.io'yu ziyaret edin."
     button: "BadgerEye.io"
     url: "https://badgereye.io"
 
@@ -391,6 +390,5 @@ en:
 
   cta:
     title: "Manage your attack surface with BadgerEye"
-    description: "Visit badgereye.io to take a closer look at the platform and request access."
     button: "BadgerEye.io"
     url: "https://badgereye.io"
