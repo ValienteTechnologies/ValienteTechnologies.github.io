@@ -3,7 +3,7 @@ tr: &DEFAULT_TR
   description: "BadgerEye, Valiente'nin bulut tabanlı Unified Vulnerability Management (UVM) ve CTEM platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI Pentest, tehdit istihbaratı ve dijital risk koruması tek platformda."
 
   hero:
-    eyebrow: "Birleşik Zafiyet Yönetimi + CTEM"
+    eyebrow: "Birleşik Zafiyet Yönetimi (UVM) + CTEM"
     tagline: "Saldırı yüzeyinizi saldırganın gözünden görün."
     cta_primary: "BadgerEye.io"
     cta_primary_url: "https://badgereye.io"
@@ -95,7 +95,7 @@ tr: &DEFAULT_TR
     sieves:
       - items: ["tehdit istihbaratı", "istismar edilebilirlik", "saldırı yolu analizi"]
         ejects:
-          - text: "sömürülemeyen CVE'ler"
+          - text: "istismar edilemeyen CVE'ler"
             side: left
           - text: "erişilemeyen servisler"
             side: right
@@ -120,7 +120,7 @@ tr: &DEFAULT_TR
       - chip: "DAST"
         icon: "fas fa-window-maximize"
         title: "Uygulama Testi"
-        desc: "Web, mobil uygulamalar ve API'ler çalışır halde test edilir."
+        desc: "Web, mobil uygulamalar ve API'ler çalışırken test edilir."
       - chip: "SAST"
         icon: "fas fa-code"
         title: "Kod Güvenliği"
@@ -144,7 +144,7 @@ tr: &DEFAULT_TR
       - chip: "APV"
         icon: "fas fa-project-diagram"
         title: "Saldırı Yolu Grafiği"
-        desc: "Dış ayak izinden kritik sisteme giden yol tek grafikte."
+        desc: "İlk sızma noktasından kritik sisteme giden yol tek grafikte."
       - chip: "SLA"
         icon: "fas fa-sync-alt"
         title: "Maruziyet Yaşam Döngüsü"
@@ -172,7 +172,7 @@ tr: &DEFAULT_TR
       - title: "Önceliklendirme"
         desc: "İstihbaratla önceliklenir."
       - title: "Doğrulama"
-        desc: "İstismar kanıtlanır."
+        desc: "İstismar edilebilirlik kanıtlanır."
       - title: "Harekete Geçirme"
         desc: "Düzeltilir ve kapatılır."
 
