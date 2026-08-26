@@ -188,15 +188,26 @@
         <h2 class="section-heading text-uppercase">{{ lc.title }}</h2>
       </div>
     </div>
-    <ol class="be-steps">
+    <div class="be-ctem">
+      <div class="be-ctem__ring" aria-hidden="true"></div>
       {% for step in lc.steps %}
-      <li class="be-step">
-        <span class="be-step__num">{{ forloop.index | prepend: "0" }}</span>
-        <h3>{{ step.title }}</h3>
-        <p>{{ step.desc }}</p>
-      </li>
+      <span class="be-ctem__arrow be-ctem__arrow--{{ forloop.index }}" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
       {% endfor %}
-    </ol>
+      <div class="be-ctem__hub" aria-hidden="true">
+        <i class="fas fa-robot"></i>
+        <span class="be-ctem__hub-label">{{ lc.hub_label }}</span>
+        <span class="be-ctem__hub-sub">{{ lc.hub_sub }}</span>
+      </div>
+      <ol class="be-ctem__nodes">
+        {% for step in lc.steps %}
+        <li class="be-ctem__node be-ctem__node--{{ forloop.index }}">
+          <span class="be-step__num">{{ forloop.index | prepend: "0" }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
   </div>
 </section>
 

@@ -662,68 +662,167 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
 }
 
-// ─── CTEM lifecycle steps ──────────────────────────────────────────────────
+// ─── CTEM loop: five stages on a ring, AI at the hub ───────────────────────
 
-.be-steps {
+$be-ctem-radius: 250px;
+
+.be-ctem {
+  position: relative;
+  margin: 0 auto;
+}
+
+.be-ctem__nodes {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
-
-  @include media-min($breakpoint-md) {
-    grid-template-columns: repeat(5, 1fr);
-  }
 }
 
-.be-step {
-  position: relative;
+.be-ctem__node {
   background: $be-bg-1;
   border: 1px solid $be-edge;
   border-radius: $be-radius-card;
-  padding: 1.25rem;
+  padding: 1rem 1.1rem;
+  text-align: center;
 
   .be-step__num {
     display: inline-block;
     font-family: $be-font-mono;
-    font-size: 0.78rem;
-    margin-bottom: 0.6rem;
-  }
-
-  // Step numbers walk the brand ramp, so the strip reads as progression
-  &:nth-child(1) .be-step__num { color: lighten($be-brand-b, 18%); }
-  &:nth-child(2) .be-step__num { color: lighten($be-brand-c, 14%); }
-  &:nth-child(3) .be-step__num { color: lighten($be-brand-c, 20%); }
-  &:nth-child(4) .be-step__num { color: lighten($be-brand-d, 6%); }
-  &:nth-child(5) .be-step__num { color: lighten($be-brand-d, 14%); }
-
-  h3 {
-    @include heading-font;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: $be-text-1;
+    font-size: 0.75rem;
     margin-bottom: 0.4rem;
   }
 
+  h3 {
+    @include heading-font;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: $be-text-1;
+    margin-bottom: 0.3rem;
+  }
+
   p {
-    font-size: 0.82rem;
-    line-height: 1.5;
+    font-size: 0.78rem;
+    line-height: 1.45;
     color: $be-text-3;
     margin: 0;
   }
 
-  // Connector between steps on wide layout
-  @include media-min($breakpoint-md) {
-    &:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -1rem;
-      width: 1rem;
-      height: 1px;
-      background: $be-edge-strong;
+  // Stage numbers walk the brand ramp around the loop
+  &--1 .be-step__num { color: lighten($be-brand-b, 18%); }
+  &--2 .be-step__num { color: lighten($be-brand-c, 14%); }
+  &--3 .be-step__num { color: lighten($be-brand-c, 20%); }
+  &--4 .be-step__num { color: lighten($be-brand-d, 6%); }
+  &--5 .be-step__num { color: lighten($be-brand-d, 14%); }
+}
+
+// Hub and ring are decorative; on small screens the hub leads the stacked list
+.be-ctem__ring,
+.be-ctem__arrow {
+  display: none;
+}
+
+.be-ctem__hub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0 auto 1.25rem;
+  width: 148px;
+  height: 148px;
+  justify-content: center;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba($be-brand-b, 0.35), transparent 70%),
+    $be-bg-1;
+  border: 1px solid $be-edge-strong;
+  box-shadow: 0 0 40px rgba($be-brand-b, 0.25);
+
+  i {
+    color: $be-accent;
+    font-size: 1.5rem;
+  }
+
+  .be-ctem__hub-label {
+    font-family: $be-font-mono;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $be-text-1;
+    letter-spacing: 0.12em;
+  }
+
+  .be-ctem__hub-sub {
+    font-family: $be-font-mono;
+    font-size: 0.66rem;
+    color: $be-text-3;
+  }
+}
+
+@include media-min($breakpoint-lg) {
+  .be-ctem {
+    width: 780px;
+    height: 620px;
+  }
+
+  .be-ctem__nodes {
+    display: block;
+  }
+
+  .be-ctem__node {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin: 0;
+
+    @for $i from 1 through 5 {
+      $angle: ($i - 1) * 72deg;
+      &--#{$i} {
+        transform: translate(-50%, -50%) rotate($angle) translateY(-$be-ctem-radius) rotate(-$angle);
+      }
     }
+  }
+
+  .be-ctem__ring {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $be-ctem-radius * 2;
+    height: $be-ctem-radius * 2;
+    transform: translate(-50%, -50%);
+    border: 1px dashed $be-edge-strong;
+    border-radius: 999px;
+  }
+
+  // Clockwise arrowheads at the midpoints between stages. After the
+  // rotate/translate placement the element's local x axis is the clockwise
+  // tangent, so the chevron needs no extra rotation.
+  .be-ctem__arrow {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $be-text-3;
+    font-size: 0.7rem;
+    line-height: 1;
+    background: $be-bg-0;
+    padding: 0.2rem;
+
+    @for $i from 1 through 5 {
+      $angle: ($i - 1) * 72deg + 36deg;
+      &--#{$i} {
+        transform: translate(-50%, -50%) rotate($angle) translateY(-$be-ctem-radius);
+      }
+    }
+  }
+
+  .be-ctem__hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
   }
 }
 

@@ -148,18 +148,20 @@ tr: &DEFAULT_TR
         desc: "Platformu biz işletiriz; kritik bulguları uzman ekip doğrular."
 
   lifecycle:
-    title: "CTEM Döngüsü"
+    title: "AI Çağında CTEM"
+    hub_label: "AI"
+    hub_sub: "her adımda"
     steps:
       - title: "Kapsam Belirleme"
-        desc: "Kritik varlıklar ve sınırlar tanımlanır."
+        desc: "Kritik varlıklar tanımlanır."
       - title: "Keşif"
-        desc: "Saldırı yüzeyi sürekli taranır."
+        desc: "Yüzey sürekli taranır."
       - title: "Önceliklendirme"
-        desc: "Bulgular istihbarat ve etkiyle sıralanır."
+        desc: "İstihbaratla sıralanır."
       - title: "Doğrulama"
-        desc: "İstismar edilebilirlik doğrulanır, gürültü elenir."
+        desc: "İstismar kanıtlanır."
       - title: "Harekete Geçirme"
-        desc: "Düzeltme atanır, izlenir, kapatılır."
+        desc: "Düzeltme kapatılır."
 
   cta:
     title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
@@ -320,18 +322,20 @@ en:
         desc: "We run the platform; an expert team verifies critical findings."
 
   lifecycle:
-    title: "The CTEM Loop"
+    title: "CTEM for the AI Era"
+    hub_label: "AI"
+    hub_sub: "in every stage"
     steps:
       - title: "Scoping"
-        desc: "Critical assets and boundaries are defined."
+        desc: "Critical assets are defined."
       - title: "Discovery"
-        desc: "The attack surface is scanned continuously."
+        desc: "The surface is scanned continuously."
       - title: "Prioritization"
-        desc: "Findings are ranked by intelligence and impact."
+        desc: "Ranked by intelligence."
       - title: "Validation"
-        desc: "Exploitability is verified, noise is eliminated."
+        desc: "Exploitability is proven."
       - title: "Mobilization"
-        desc: "Remediation is assigned, tracked, closed."
+        desc: "Remediation is closed."
 
   cta:
     title: "Manage your attack surface with BadgerEye"
