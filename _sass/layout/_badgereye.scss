@@ -616,10 +616,13 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     color: rgba(255, 255, 255, 0.85);
   }
 
-  // The reserved brand-ramp funnel fill: narrowing width, deepening color
-  &--1 { max-width: 34rem; background: linear-gradient(180deg, $be-brand-a, $be-brand-b); }
-  &--2 { max-width: 27.9rem; background: linear-gradient(180deg, $be-brand-b, $be-brand-c); }
-  &--3 { max-width: 22.9rem; background: linear-gradient(180deg, $be-brand-c, $be-brand-d); }
+  // The reserved brand-ramp funnel fill: narrowing width, deepening color.
+  // The percentages carry the same taper (34 : 27.9 : 22.9) on screens
+  // narrower than the rem caps, where every tier would otherwise render
+  // the same width and the funnel would flatten into a stack.
+  &--1 { width: 100%; max-width: 34rem; background: linear-gradient(180deg, $be-brand-a, $be-brand-b); }
+  &--2 { width: 82%; max-width: 27.9rem; background: linear-gradient(180deg, $be-brand-b, $be-brand-c); }
+  &--3 { width: 67.5%; max-width: 22.9rem; background: linear-gradient(180deg, $be-brand-c, $be-brand-d); }
 }
 
 // Sieve rows between the tiers: the filter chips sit on a dashed membrane
