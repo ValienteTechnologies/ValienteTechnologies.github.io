@@ -140,7 +140,7 @@ tr: &DEFAULT_TR
       - chip: "DRP"
         icon: "fas fa-user-secret"
         title: "Dijital Risk Koruması"
-        desc: "Sızmış kimlik bilgileri ve taklit alan adları kendi varlıklarınızla ilişkilendirilir."
+        desc: "Varlıklarınızla bağlantılı sızdırılmış kimlik bilgileri ve benzer alan adları."
       - chip: "APV"
         icon: "fas fa-project-diagram"
         title: "Saldırı Yolu Grafiği"
