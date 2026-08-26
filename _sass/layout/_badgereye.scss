@@ -598,6 +598,7 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .be-cap-card {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -611,6 +612,24 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   &:hover {
     background: $be-bg-3;
     border-color: $be-edge-strong;
+  }
+
+  .be-cap-card__chip {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    font-family: $be-font-mono;
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    color: $be-text-3;
+    border: 1px solid $be-edge-strong;
+    border-radius: 999px;
+    padding: 0.16rem 0.55rem;
+  }
+
+  &:hover .be-cap-card__chip {
+    color: $be-accent;
+    border-color: rgba($be-accent, 0.4);
   }
 
   .be-cap-card__icon {
