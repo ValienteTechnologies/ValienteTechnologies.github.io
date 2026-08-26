@@ -145,6 +145,16 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
 }
 
+// Category line of the wordmark lockup; comes pre-uppercased from data
+// (text-transform would turn i into dotted İ on the tr pages)
+.be-hero__subtitle {
+  font-family: $be-font-mono;
+  font-size: 0.78rem;
+  letter-spacing: 0.42em;
+  margin: -0.35rem 0 1.4rem 0.42em;
+  color: $be-text-3;
+}
+
 .be-hero__tagline {
   font-size: 1.35rem;
   font-weight: 500;

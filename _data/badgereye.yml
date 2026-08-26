@@ -4,6 +4,7 @@ tr: &DEFAULT_TR
 
   hero:
     eyebrow: "Birleşik Zafiyet Yönetimi (UVM) + CTEM"
+    subtitle: "OFFENSIVE EXPOSURE MANAGEMENT"
     tagline: "Saldırı yüzeyinizi saldırganın gözünden görün."
     cta_primary: "BadgerEye.io"
     cta_primary_url: "https://badgereye.io"
@@ -216,6 +217,7 @@ en:
 
   hero:
     eyebrow: "Unified Vulnerability Management + CTEM"
+    subtitle: "OFFENSIVE EXPOSURE MANAGEMENT"
     tagline: "See your attack surface the way an attacker does."
     cta_primary: "BadgerEye.io"
     cta_primary_url: "https://badgereye.io"
