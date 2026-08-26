@@ -639,13 +639,18 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   &--1 { max-width: 37rem; }
   &--2 { max-width: 25.4rem; }
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: -0.75rem;
-    right: -0.75rem;
-    top: 50%;
-    border-top: 1px dashed $be-edge-strong;
+  // The membrane reads as a sieve only while the chips sit on it in one
+  // row; where they wrap (narrow screens) it crosses the chips like a
+  // strikethrough, so it stays desktop-side — same move as .be-eject.
+  @include media-min($breakpoint-md) {
+    &::before {
+      content: "";
+      position: absolute;
+      left: -0.75rem;
+      right: -0.75rem;
+      top: 50%;
+      border-top: 1px dashed $be-edge-strong;
+    }
   }
 }
 
