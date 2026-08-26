@@ -1,16 +1,11 @@
 tr: &DEFAULT_TR
   title: "BadgerEye"
-  description: "BadgerEye, Valiente'nin bulut tabanlı Birleşik Zafiyet Yönetimi (UVM) ve CTEM platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI pentest, tehdit istihbaratı ve dijital risk koruması tek platformda."
+  description: "BadgerEye, Valiente'nin bulut tabanlı Unified Vulnerability Management (UVM) ve CTEM platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI Pentest, tehdit istihbaratı ve dijital risk koruması tek platformda."
 
   hero:
     eyebrow: "Birleşik Zafiyet Yönetimi + CTEM"
     tagline: "Saldırı yüzeyinizi saldırganın gözünden görün."
-    description: "BadgerEye, Valiente'nin geliştirdiği bulut tabanlı zafiyet ve maruziyet yönetimi platformudur. Varlık keşfi, zafiyet taramaları, tehdit istihbaratı ve dijital risk korumasını tek veri modelinde toplar; gerçekten sömürülebilir riskleri bulur ve önceliklendirir."
-    points:
-      - "Dış ve iç saldırı yüzeyi tek envanterde"
-      - "Tehdit istihbaratına dayalı önceliklendirme"
-      - "Sızmış kimlik bilgisi ve taklit alan adı takibi"
-      - "Kurumsal SSO, kiracı izolasyonu ve denetim izi"
+    description: "Varlık keşfi, zafiyet taramaları, tehdit istihbaratı ve dijital risk koruması tek veri modelinde."
     cta_primary: "badgereye.io'yu Ziyaret Et"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Modülleri İncele"
@@ -25,7 +20,7 @@ tr: &DEFAULT_TR
           value: "327"
         - label: "Ort. Kapanış"
           value: "6,4 gün"
-      severity_label: "önem dağılımı"
+      severity_label: "kritiklik dağılımı"
       severities:
         - name: "Kritik"
           count: 14
@@ -40,85 +35,110 @@ tr: &DEFAULT_TR
           count: 132
           type: low
 
-  difference:
+  answers:
     title: "Neden BadgerEye?"
-    subtitle: "Amaç alarm üretmek değil; ne durumda olduğunuzu, neyin değiştiğini ve sırada ne olduğunu net biçimde göstermek."
-    pillars:
-      - icon: "fas fa-eye"
-        title: "Tek Envanter"
-        desc: "Alan adları, sunucular, bulut kaynakları ve kimlikler tek grafikte durur. Dışarıdan görünen yüzey ile iç ağınız aynı haritada birleşir."
-      - icon: "fas fa-layer-group"
-        title: "Önceliklendirme"
-        desc: "Binlerce bulgu tehdit istihbaratı ve iş etkisiyle süzülür. Önce, saldırı yollarını kapatan az sayıdaki kritik nokta gelir."
-      - icon: "fas fa-sync-alt"
-        title: "Süreklilik"
-        desc: "Tarama bittiğinde iş bitmez. Platform neyin yeni, neyin kapandığını izler; düzelttiğiniz bulgular yeniden test edilir ve kendiliğinden kapanır."
-    funnel:
-      title: "maruziyet hunisi"
-      stages:
-        - value: "11.000"
-          label: "sömürülebilir maruziyet"
-        - value: "~200"
-          label: "kritik düğüm noktası"
-        - value: "%99,6"
-          label: "daha az düzeltme yükü"
-    stats:
-      - value: "%42"
-        label: "SOC zamanı sömürülemez bulgulara harcanıyor"
-      - value: "%96"
-        label: "kurum sömürülebilirliği ölçekte doğrulayamıyor"
-      - value: "<%40"
-        label: "kurumda sürekli doğrulama var"
-    stats_note: "Kaynak: sektör araştırmaları"
+    posture:
+      caption: "Ne durumdayım?"
+      label: "exposure_score"
+      score: "72"
+      severities:
+        - name: "Kritik"
+          count: 14
+          type: critical
+        - name: "Yüksek"
+          count: 63
+          type: high
+        - name: "Orta"
+          count: 118
+          type: medium
+        - name: "Düşük"
+          count: 132
+          type: low
+    changes:
+      caption: "Ne değişti?"
+      label: "changes_24h"
+      feed:
+        - type: closed
+          text: "SQL injection kapatıldı"
+          time: "09:12"
+        - type: new
+          text: "Yeni bulgu: açık RDP servisi"
+          time: "11:47"
+        - type: retest
+          text: "3 düzeltme yeniden test edildi"
+          time: "14:05"
+        - type: closed
+          text: "TLS sertifikası yenilendi"
+          time: "16:30"
+    next:
+      caption: "Sırada ne var?"
+      label: "next_actions"
+      queue:
+        - sev: critical
+          name: "VPN ağ geçidinde RCE"
+          chip: "4 yolu kapatır"
+        - sev: high
+          name: "Sızmış yönetici parolası"
+          chip: "2 sistem"
+        - sev: medium
+          name: "Eski TLS yapılandırması"
+          chip: "12 varlık"
+
+  focus:
+    title: "Gürültüyü Eleyin"
+    stages:
+      - value: "11.000"
+        label: "istismar edilebilir bulgu"
+      - value: "~200"
+        label: "kritik düğüm noktası"
+      - value: "5"
+        label: "sıradaki adım"
+    source: "Kaynak: sektör araştırmaları"
 
   modules:
     title: "Modüller"
-    subtitle: "Her modül aynı varlık grafiği üzerinde çalışır; veri kopyalanmaz, silo oluşmaz."
-    premium_badge: "Premium"
     list:
       - icon: "fas fa-globe"
         title: "Saldırı Yüzeyi Yönetimi"
-        desc: "Alan adları, sunucular, bulut ve kod depoları sürekli keşfedilir; envanter kendini güncel tutar."
+        desc: "Sürekli keşif, kendini güncel tutan envanter."
       - icon: "fas fa-crosshairs"
         title: "Sürekli Zafiyet Taraması"
-        desc: "Ağ, web uygulaması, bulut, konteyner ve kod taramaları hedefe göre profillerle çalışır; sonuçlar normalize edilip tekilleştirilir."
+        desc: "Ağ, web, bulut, konteyner ve kod için hedef odaklı profiller."
       - icon: "fas fa-robot"
         title: "AI Pentest"
-        desc: "Yapay zeka sömürülebilirliği güvenli biçimde sınar; saldırı zincirlerini kanıtıyla ortaya koyar."
+        desc: "İstismar edilebilirlik güvenle sınanır, saldırı zinciri kanıtlanır."
       - icon: "fas fa-satellite-dish"
         title: "Tehdit İstihbaratı"
-        desc: "EPSS, istismar olgunluğu ve fidye yazılımı takibi doğrudan sizin bulgularınızla eşleştirilir."
+        desc: "EPSS ve istismar sinyalleri kendi bulgularınızla eşleşir."
       - icon: "fas fa-user-secret"
         title: "Dijital Risk Koruması"
-        desc: "Sızmış kimlik bilgileri, taklit alan adları ve dark web maruziyeti kendi varlıklarınızla ilişkilendirilir."
+        desc: "Sızmış kimlik bilgileri ve taklit alan adları varlıklarınıza bağlanır."
       - icon: "fas fa-project-diagram"
         title: "Saldırı Yolu Grafiği"
-        desc: "Dış ayak izinden kritik sistemlere uzanan yollar tek grafikte görünür; zinciri kıran düğüm işaretlenir."
+        desc: "Dış ayak izinden kritik sisteme giden yol tek grafikte."
       - icon: "fas fa-route"
         title: "Otomasyon ve Playbook'lar"
-        desc: "Görsel tasarımcıyla düzeltme iş akışları kurulur; bildirim, biletleme ve otomatik kapanış buna dahildir."
+        desc: "Görsel tasarımcıyla düzeltme akışları, otomatik kapanış dahil."
       - icon: "fas fa-file-alt"
         title: "Raporlama ve Uyumluluk"
-        desc: "Yönetici özetinden denetim kanıtına, üründe gördüğünüz sinyalin aynısı raporlanır."
+        desc: "Yönetici özetinden denetim kanıtına aynı sinyal."
       - icon: "fas fa-user-check"
         title: "Uzman Doğrulaması"
-        desc: "İsteyen müşteriler için pentest ekibimiz kritik bulguları elle doğrular, düzeltmeleri yeniden test eder."
-        premium: true
+        desc: "İstenirse pentest ekibimiz kritik bulguları elle doğrular."
 
   lifecycle:
     title: "CTEM Döngüsü"
-    subtitle: "BadgerEye, Sürekli Tehdit Maruziyeti Yönetimi (CTEM) döngüsünün beş adımını uçtan uca işletir."
     steps:
-      - title: "Kapsamlama"
-        desc: "İş açısından kritik varlıklar ve sınırlar tanımlanır."
+      - title: "Kapsam Belirleme"
+        desc: "Kritik varlıklar ve sınırlar tanımlanır."
       - title: "Keşif"
-        desc: "Saldırı yüzeyi ve zafiyetler sürekli taranır."
+        desc: "Saldırı yüzeyi sürekli taranır."
       - title: "Önceliklendirme"
-        desc: "Bulgular istihbarat ve iş etkisiyle sıralanır."
+        desc: "Bulgular istihbarat ve etkiyle sıralanır."
       - title: "Doğrulama"
-        desc: "Sömürülebilirlik doğrulanır, gürültü elenir."
-      - title: "Aksiyon"
-        desc: "Düzeltme atanır, izlenir ve kapatılır."
+        desc: "İstismar edilebilirlik doğrulanır, gürültü elenir."
+      - title: "Harekete Geçirme"
+        desc: "Düzeltme atanır, izlenir, kapatılır."
 
   cta:
     title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
@@ -136,12 +156,7 @@ en:
   hero:
     eyebrow: "Unified Vulnerability Management + CTEM"
     tagline: "See your attack surface the way an attacker does."
-    description: "BadgerEye is the cloud-based vulnerability and exposure management platform built by Valiente. It brings asset discovery, vulnerability scanning, threat intelligence and digital risk protection together on a single data model, then finds and prioritizes the risks that are actually exploitable."
-    points:
-      - "External and internal attack surface in one inventory"
-      - "Prioritization driven by threat intelligence"
-      - "Leaked credential and lookalike domain tracking"
-      - "Enterprise SSO, tenant isolation and audit trail"
+    description: "Asset discovery, vulnerability scanning, threat intelligence and digital risk protection on a single data model."
     cta_primary: "Visit badgereye.io"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Explore the Modules"
@@ -171,85 +186,110 @@ en:
           count: 132
           type: low
 
-  difference:
+  answers:
     title: "Why BadgerEye?"
-    subtitle: "The goal is not to generate alerts; it is to show clearly where you stand, what changed and what comes next."
-    pillars:
-      - icon: "fas fa-eye"
-        title: "One Inventory"
-        desc: "Domains, hosts, cloud resources and identities live on one graph. Your external surface and your internal network share the same map."
-      - icon: "fas fa-layer-group"
-        title: "Prioritization"
-        desc: "Thousands of findings are filtered with threat intelligence and business impact. The short list that closes attack paths comes first."
-      - icon: "fas fa-sync-alt"
-        title: "Continuity"
-        desc: "The work does not end when a scan ends. The platform tracks what is new and what is resolved; fixed findings are retested and closed automatically."
-    funnel:
-      title: "the exposure funnel"
-      stages:
-        - value: "11,000"
-          label: "exploitable exposures"
-        - value: "~200"
-          label: "critical choke points"
-        - value: "99.6%"
-          label: "less remediation work"
-    stats:
-      - value: "42%"
-        label: "of SOC time goes to findings that are not exploitable"
-      - value: "96%"
-        label: "of organizations cannot validate exploitability at scale"
-      - value: "<40%"
-        label: "have continuous validation in place"
-    stats_note: "Source: industry research"
+    posture:
+      caption: "Where do I stand?"
+      label: "exposure_score"
+      score: "72"
+      severities:
+        - name: "Critical"
+          count: 14
+          type: critical
+        - name: "High"
+          count: 63
+          type: high
+        - name: "Medium"
+          count: 118
+          type: medium
+        - name: "Low"
+          count: 132
+          type: low
+    changes:
+      caption: "What changed?"
+      label: "changes_24h"
+      feed:
+        - type: closed
+          text: "SQL injection closed"
+          time: "09:12"
+        - type: new
+          text: "New finding: exposed RDP service"
+          time: "11:47"
+        - type: retest
+          text: "3 fixes retested"
+          time: "14:05"
+        - type: closed
+          text: "TLS certificate renewed"
+          time: "16:30"
+    next:
+      caption: "What's next?"
+      label: "next_actions"
+      queue:
+        - sev: critical
+          name: "RCE on the VPN gateway"
+          chip: "closes 4 paths"
+        - sev: high
+          name: "Leaked admin password"
+          chip: "2 systems"
+        - sev: medium
+          name: "Legacy TLS configuration"
+          chip: "12 assets"
+
+  focus:
+    title: "Cut the Noise"
+    stages:
+      - value: "11,000"
+        label: "exploitable findings"
+      - value: "~200"
+        label: "critical choke points"
+      - value: "5"
+        label: "next actions"
+    source: "Source: industry research"
 
   modules:
     title: "Modules"
-    subtitle: "Every module runs on the same asset graph; data is never copied and silos never form."
-    premium_badge: "Premium"
     list:
       - icon: "fas fa-globe"
         title: "Attack Surface Management"
-        desc: "Domains, hosts, cloud and code repositories are discovered continuously; the inventory keeps itself current."
+        desc: "Continuous discovery, an inventory that stays current."
       - icon: "fas fa-crosshairs"
         title: "Continuous Vulnerability Scanning"
-        desc: "Network, web application, cloud, container and code scans run on goal-based profiles; results are normalized and deduplicated."
+        desc: "Goal-based profiles for network, web, cloud, container and code."
       - icon: "fas fa-robot"
         title: "AI Pentesting"
-        desc: "AI safely tests exploitability and lays out attack chains with supporting evidence."
+        desc: "Exploitability tested safely, attack chains proven."
       - icon: "fas fa-satellite-dish"
         title: "Threat Intelligence"
-        desc: "EPSS, exploit maturity and ransomware tracking are matched directly against your own findings."
+        desc: "EPSS and exploit signals matched to your own findings."
       - icon: "fas fa-user-secret"
         title: "Digital Risk Protection"
-        desc: "Leaked credentials, lookalike domains and dark web exposure are correlated with your own assets."
+        desc: "Leaked credentials and lookalike domains tied to your assets."
       - icon: "fas fa-project-diagram"
         title: "Attack Path Graph"
-        desc: "Paths from an external foothold to critical systems appear on one graph; the node that breaks the chain is marked."
+        desc: "The path from foothold to critical system on one graph."
       - icon: "fas fa-route"
         title: "Automation and Playbooks"
-        desc: "Remediation workflows are built in a visual designer; notifications, ticketing and auto-close are included."
+        desc: "Remediation flows in a visual designer, auto-close included."
       - icon: "fas fa-file-alt"
         title: "Reporting and Compliance"
-        desc: "From executive summary to audit evidence, reports carry the same signal you see in the product."
+        desc: "The same signal from executive summary to audit evidence."
       - icon: "fas fa-user-check"
         title: "Expert Validation"
-        desc: "For customers who want it, our pentest team manually verifies critical findings and retests the fixes."
-        premium: true
+        desc: "On request, our pentest team verifies critical findings by hand."
 
   lifecycle:
     title: "The CTEM Loop"
-    subtitle: "BadgerEye operates all five stages of Continuous Threat Exposure Management end to end."
     steps:
       - title: "Scoping"
-        desc: "Business-critical assets and boundaries are defined."
+        desc: "Critical assets and boundaries are defined."
       - title: "Discovery"
-        desc: "The attack surface and its exposures are scanned continuously."
+        desc: "The attack surface is scanned continuously."
       - title: "Prioritization"
-        desc: "Findings are ranked by intelligence and business impact."
+        desc: "Findings are ranked by intelligence and impact."
       - title: "Validation"
-        desc: "Exploitability is verified and noise is eliminated."
+        desc: "Exploitability is verified, noise is eliminated."
       - title: "Mobilization"
-        desc: "Remediation is assigned, tracked and closed."
+        desc: "Remediation is assigned, tracked, closed."
 
   cta:
     title: "Manage your attack surface with BadgerEye"

@@ -98,8 +98,8 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 
 .be-hero {
   position: relative;
-  padding-top: calc(#{$navbar-height} + 4rem);
-  padding-bottom: 5rem;
+  padding-top: calc(#{$navbar-height} + 1.5rem);
+  padding-bottom: 2.5rem;
   background: $be-bg-0;
   color: $be-text-1;
   overflow: hidden;
@@ -158,27 +158,6 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   color: $be-text-2;
   max-width: 38rem;
   margin-bottom: 1.75rem;
-}
-
-.be-hero__points {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem;
-  display: grid;
-  gap: 0.6rem;
-
-  li {
-    display: flex;
-    align-items: baseline;
-    gap: 0.65rem;
-    color: $be-text-2;
-    font-size: 0.95rem;
-
-    i {
-      color: $be-accent;
-      font-size: 0.8rem;
-    }
-  }
 }
 
 .be-hero__actions {
@@ -343,148 +322,263 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   margin: 0 auto var(--space-grid-margin);
 }
 
-// ─── Why BadgerEye: pillars ────────────────────────────────────────────────
+// ─── The three answers: product windows ────────────────────────────────────
 
-.be-pillars {
+.be-answers__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
 
-  @include media-min($breakpoint-md) {
+  @include media-min($breakpoint-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.be-pillar {
-  background: $be-bg-1;
-  border: 1px solid $be-edge;
-  border-top: 2px solid $be-accent;
-  border-radius: $be-radius-card;
-  padding: 1.75rem 1.5rem;
-
-  .be-pillar__icon {
-    width: 46px;
-    height: 46px;
-    border-radius: $be-radius-control;
-    background: $be-bg-2;
-    border: 1px solid $be-edge;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $be-accent;
-    font-size: 1.25rem;
-    margin-bottom: 1.1rem;
-  }
+.be-answer {
+  display: flex;
+  flex-direction: column;
 
   h3 {
     @include heading-font;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: $be-text-1;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 0.92rem;
-    line-height: 1.6;
-    color: $be-text-2;
-    margin: 0;
+    text-align: center;
+    margin: 1.1rem 0 0;
   }
 }
 
-// ─── Why BadgerEye: funnel + industry stats band ───────────────────────────
-
-.be-evidence {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
-
-  @include media-min($breakpoint-lg) {
-    grid-template-columns: 1.1fr 1fr;
-  }
-}
-
-.be-funnel {
+.be-mock {
+  flex: 1;
   background: $be-bg-1;
   border: 1px solid $be-edge;
   border-radius: $be-radius-card;
-  padding: 1.5rem;
+  box-shadow: $be-shadow-raised;
+  padding: 1.25rem;
+  user-select: none;
+}
 
-  .be-funnel__title {
+.be-mock__header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+
+  .be-mock__label {
     font-family: $be-font-mono;
     font-size: 0.75rem;
     letter-spacing: 0.06em;
     color: $be-text-3;
-    margin-bottom: 1rem;
-  }
-
-  .be-funnel__stage {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    border-radius: $be-radius-control;
-    padding: 0.7rem 1rem;
-    margin-bottom: 0.5rem;
-    color: $be-text-1;
-
-    .be-funnel__value {
-      font-family: $be-font-mono;
-      font-size: 1.25rem;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .be-funnel__label {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.85);
-      text-align: right;
-    }
-
-    // The reserved brand-ramp funnel fill — narrowing width, deepening color
-    &--1 { width: 100%; background: linear-gradient(90deg, rgba($be-brand-a, 0.9), rgba($be-brand-b, 0.9)); }
-    &--2 { width: 78%;  background: linear-gradient(90deg, rgba($be-brand-b, 0.95), rgba($be-brand-c, 0.95)); }
-    &--3 { width: 56%;  background: linear-gradient(90deg, $be-brand-c, $be-brand-d); margin-bottom: 0; }
   }
 }
 
-.be-industry {
-  background: $be-bg-1;
-  border: 1px solid $be-edge;
-  border-radius: $be-radius-card;
-  padding: 1.5rem;
+// Window 1: score ring + severity bars
+.be-mock__posture {
   display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
+  align-items: center;
+  gap: 1.25rem;
+}
 
-  .be-industry__stat {
+.be-ring {
+  flex-shrink: 0;
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  background: conic-gradient($be-accent 0 72%, $be-bg-3 72% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    width: 68px;
+    height: 68px;
+    border-radius: 999px;
+    background: $be-bg-1;
     display: flex;
-    align-items: baseline;
-    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-family: $be-font-mono;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $be-text-1;
+  }
+}
 
-    .be-industry__value {
+.be-mock__sevrows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: grid;
+  gap: 0.55rem;
+
+  li {
+    display: grid;
+    grid-template-columns: 3.4rem 1fr 1.6rem;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    color: $be-text-2;
+
+    em {
+      font-style: normal;
       font-family: $be-font-mono;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: $be-accent;
-      min-width: 5rem;
-      white-space: nowrap;
-    }
-
-    .be-industry__label {
-      font-size: 0.88rem;
-      line-height: 1.45;
-      color: $be-text-2;
+      color: $be-text-3;
+      text-align: right;
     }
   }
 
-  .be-industry__note {
-    margin-top: auto;
+  .be-mock__sevtrack {
+    display: block;
+    height: 6px;
+    border-radius: 999px;
+    background: $be-bg-3;
+    overflow: hidden;
+
+    span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+    }
+  }
+}
+
+// Window 2: change feed
+.be-mock__feed {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.be-feedrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: $be-bg-2;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-control;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.8rem;
+  color: $be-text-2;
+
+  .be-feedrow__mark {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+  }
+
+  .be-feedrow__text {
+    flex: 1;
+  }
+
+  em {
+    font-style: normal;
     font-family: $be-font-mono;
     font-size: 0.7rem;
     color: $be-text-3;
   }
+
+  &--closed .be-feedrow__mark { background: $be-state-ok; }
+  &--new .be-feedrow__mark { background: $be-sev-critical; }
+  &--retest .be-feedrow__mark { background: $be-accent; }
+}
+
+// Window 3: prioritized queue
+.be-mock__queue {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+  counter-reset: queue;
+}
+
+.be-queuerow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: $be-bg-2;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-control;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  color: $be-text-2;
+
+  &:first-child {
+    border-color: rgba($be-accent, 0.45);
+  }
+
+  .be-sev-dot {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+  }
+
+  .be-queuerow__name {
+    flex: 1;
+    color: $be-text-1;
+  }
+
+  .be-queuerow__chip {
+    font-family: $be-font-mono;
+    font-size: 0.66rem;
+    color: $be-accent;
+    border: 1px solid rgba($be-accent, 0.35);
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+    white-space: nowrap;
+  }
+}
+
+// ─── The funnel ────────────────────────────────────────────────────────────
+
+.be-funnel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.be-funnel__tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  width: 100%;
+  padding: 1.1rem 1rem;
+  color: #fff;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 91% 100%, 9% 100%);
+
+  .be-funnel__value {
+    font-family: $be-font-mono;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .be-funnel__label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  // The reserved brand-ramp funnel fill: narrowing width, deepening color
+  &--1 { max-width: 34rem; background: linear-gradient(180deg, $be-brand-a, $be-brand-b); }
+  &--2 { max-width: 27.9rem; background: linear-gradient(180deg, $be-brand-b, $be-brand-c); }
+  &--3 { max-width: 22.9rem; background: linear-gradient(180deg, $be-brand-c, $be-brand-d); }
+}
+
+.be-focus__source {
+  text-align: center;
+  font-family: $be-font-mono;
+  font-size: 0.68rem;
+  color: $be-text-3;
+  margin-top: 1.5rem;
 }
 
 // ─── Modules grid ──────────────────────────────────────────────────────────
@@ -504,36 +598,23 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .be-cap-card {
-  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
   background: $be-bg-1;
   border: 1px solid $be-edge;
   border-radius: $be-radius-card;
-  padding: 1.5rem;
+  padding: 1.25rem;
   transition: background 180ms cubic-bezier(0.2, 0, 0, 1),
-    border-color 180ms cubic-bezier(0.2, 0, 0, 1),
-    transform 180ms cubic-bezier(0.2, 0, 0, 1);
+    border-color 180ms cubic-bezier(0.2, 0, 0, 1);
 
   &:hover {
     background: $be-bg-3;
     border-color: $be-edge-strong;
-    transform: translateY(-3px);
-  }
-
-  .be-cap-card__badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-family: $be-font-mono;
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: $be-accent;
-    border: 1px solid rgba($be-accent, 0.4);
-    border-radius: 999px;
-    padding: 0.2rem 0.6rem;
   }
 
   .be-cap-card__icon {
+    flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: $be-radius-control;
@@ -544,20 +625,19 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     justify-content: center;
     color: $be-accent;
     font-size: 1.1rem;
-    margin-bottom: 1rem;
   }
 
   h3 {
     @include heading-font;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: $be-text-1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   p {
-    font-size: 0.9rem;
-    line-height: 1.55;
+    font-size: 0.85rem;
+    line-height: 1.5;
     color: $be-text-2;
     margin: 0;
   }
@@ -589,9 +669,15 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     display: inline-block;
     font-family: $be-font-mono;
     font-size: 0.78rem;
-    color: $be-brand-d;
     margin-bottom: 0.6rem;
   }
+
+  // Step numbers walk the brand ramp, so the strip reads as progression
+  &:nth-child(1) .be-step__num { color: lighten($be-brand-b, 18%); }
+  &:nth-child(2) .be-step__num { color: lighten($be-brand-c, 14%); }
+  &:nth-child(3) .be-step__num { color: lighten($be-brand-c, 20%); }
+  &:nth-child(4) .be-step__num { color: lighten($be-brand-d, 6%); }
+  &:nth-child(5) .be-step__num { color: lighten($be-brand-d, 14%); }
 
   h3 {
     @include heading-font;

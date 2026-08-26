@@ -10,18 +10,11 @@
   <div class="be-hero__glow" aria-hidden="true"></div>
   <div class="container position-relative">
     <div class="row align-items-center">
-      <div class="col-lg-7">
+      <div class="col-lg-6">
         <span class="be-hero__eyebrow">{{ hero.eyebrow }}</span>
         <h1 class="be-hero__title">Badger<span>Eye</span></h1>
         <p class="be-hero__tagline">{{ hero.tagline }}</p>
         <p class="be-hero__desc">{{ hero.description }}</p>
-        {% if hero.points %}
-        <ul class="be-hero__points">
-          {% for p in hero.points %}
-          <li><i class="fas fa-check" aria-hidden="true"></i><span>{{ p }}</span></li>
-          {% endfor %}
-        </ul>
-        {% endif %}
         <div class="be-hero__actions">
           <a class="be-btn be-btn--primary" href="{{ hero.cta_primary_url }}" target="_blank" rel="noopener noreferrer">
             {{ hero.cta_primary }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -29,7 +22,7 @@
           <a class="be-btn be-btn--ghost" href="{{ hero.cta_secondary_anchor }}">{{ hero.cta_secondary }}</a>
         </div>
       </div>
-      <div class="col-lg-5">
+      <div class="col-lg-6">
         {% assign panel = hero.panel %}
         <div class="be-panel" aria-hidden="true">
           <div class="be-panel__header">
@@ -62,45 +55,103 @@
   </div>
 </section>
 
-<!-- BadgerEye: Why -->
-{% assign diff = be.difference %}
-<section class="page-section be-section be-difference">
+<!-- BadgerEye: the three answers, shown as product windows -->
+{% assign ans = be.answers %}
+<section class="page-section be-section be-answers">
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-lg-12">
-        <h2 class="section-heading text-uppercase">{{ diff.title }}</h2>
-        <p class="be-section__subtitle">{{ diff.subtitle }}</p>
+        <h2 class="section-heading text-uppercase">{{ ans.title }}</h2>
       </div>
     </div>
-    <div class="be-pillars">
-      {% for pillar in diff.pillars %}
-      <article class="be-pillar">
-        <div class="be-pillar__icon"><i class="{{ pillar.icon }}" aria-hidden="true"></i></div>
-        <h3>{{ pillar.title }}</h3>
-        <p>{{ pillar.desc }}</p>
-      </article>
+    <div class="be-answers__grid">
+
+      {% assign p = ans.posture %}
+      <div class="be-answer">
+        <div class="be-mock" aria-hidden="true">
+          <div class="be-mock__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-mock__label">{{ p.label }}</span>
+          </div>
+          <div class="be-mock__posture">
+            <div class="be-ring"><span>{{ p.score }}</span></div>
+            <ul class="be-mock__sevrows">
+              {% assign max = 132 %}
+              {% for s in p.severities %}
+              <li>
+                <span class="be-mock__sevname">{{ s.name }}</span>
+                <span class="be-mock__sevtrack"><span class="be-sev--{{ s.type }}" style="width: {{ s.count | times: 100 | divided_by: max }}%"></span></span>
+                <em>{{ s.count }}</em>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <h3>{{ p.caption }}</h3>
+      </div>
+
+      {% assign c = ans.changes %}
+      <div class="be-answer">
+        <div class="be-mock" aria-hidden="true">
+          <div class="be-mock__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-mock__label">{{ c.label }}</span>
+          </div>
+          <ul class="be-mock__feed">
+            {% for f in c.feed %}
+            <li class="be-feedrow be-feedrow--{{ f.type }}">
+              <span class="be-feedrow__mark"></span>
+              <span class="be-feedrow__text">{{ f.text }}</span>
+              <em>{{ f.time }}</em>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <h3>{{ c.caption }}</h3>
+      </div>
+
+      {% assign n = ans.next %}
+      <div class="be-answer">
+        <div class="be-mock" aria-hidden="true">
+          <div class="be-mock__header">
+            <span class="be-panel__dot"></span>
+            <span class="be-mock__label">{{ n.label }}</span>
+          </div>
+          <ol class="be-mock__queue">
+            {% for q in n.queue %}
+            <li class="be-queuerow">
+              <span class="be-sev-dot be-sev--{{ q.sev }}"></span>
+              <span class="be-queuerow__name">{{ q.name }}</span>
+              <span class="be-queuerow__chip">{{ q.chip }}</span>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <h3>{{ n.caption }}</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BadgerEye: the funnel -->
+{% assign focus = be.focus %}
+<section class="page-section be-section be-focus">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ focus.title }}</h2>
+      </div>
+    </div>
+    <div class="be-funnel" aria-label="{{ focus.title }}">
+      {% for stage in focus.stages %}
+      <div class="be-funnel__tier be-funnel__tier--{{ forloop.index }}">
+        <span class="be-funnel__value">{{ stage.value }}</span>
+        <span class="be-funnel__label">{{ stage.label }}</span>
+      </div>
       {% endfor %}
     </div>
-    <div class="be-evidence">
-      <div class="be-funnel">
-        <div class="be-funnel__title">{{ diff.funnel.title }}</div>
-        {% for stage in diff.funnel.stages %}
-        <div class="be-funnel__stage be-funnel__stage--{{ forloop.index }}">
-          <span class="be-funnel__value">{{ stage.value }}</span>
-          <span class="be-funnel__label">{{ stage.label }}</span>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="be-industry">
-        {% for s in diff.stats %}
-        <div class="be-industry__stat">
-          <span class="be-industry__value">{{ s.value }}</span>
-          <span class="be-industry__label">{{ s.label }}</span>
-        </div>
-        {% endfor %}
-        <div class="be-industry__note">{{ diff.stats_note }}</div>
-      </div>
-    </div>
+    <div class="be-focus__source">{{ focus.source }}</div>
   </div>
 </section>
 
@@ -111,16 +162,16 @@
     <div class="row justify-content-center text-center">
       <div class="col-lg-12">
         <h2 class="section-heading text-uppercase">{{ modules.title }}</h2>
-        <p class="be-section__subtitle">{{ modules.subtitle }}</p>
       </div>
     </div>
     <div class="be-cap-grid">
       {% for item in modules.list %}
       <article class="be-cap-card">
-        {% if item.premium %}<span class="be-cap-card__badge">{{ modules.premium_badge }}</span>{% endif %}
         <div class="be-cap-card__icon"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.desc }}</p>
+        <div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
       </article>
       {% endfor %}
     </div>
@@ -134,7 +185,6 @@
     <div class="row justify-content-center text-center">
       <div class="col-lg-12">
         <h2 class="section-heading text-uppercase">{{ lc.title }}</h2>
-        <p class="be-section__subtitle">{{ lc.subtitle }}</p>
       </div>
     </div>
     <ol class="be-steps">

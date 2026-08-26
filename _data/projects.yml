@@ -3,7 +3,7 @@ tr: &DEFAULT_TR
   title: "Projelerimiz"
   list:
     - name: "BadgerEye"
-      desc: "Valiente'nin bulut tabanlı Birleşik Zafiyet Yönetimi (UVM) ve CTEM platformu. Saldırı yüzeyi, sürekli taramalar, tehdit istihbaratı ve raporlama tek çatı altında."
+      desc: "Valiente'nin bulut tabanlı Unified Vulnerability Management (UVM) ve CTEM platformu. Saldırı yüzeyi, sürekli taramalar, tehdit istihbaratı ve raporlama tek çatı altında."
       icon: "fas fa-eye"
       status: "Aktif"
       status_type: active
