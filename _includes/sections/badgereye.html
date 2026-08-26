@@ -9,22 +9,19 @@
 <section class="be-hero">
   <div class="be-hero__glow" aria-hidden="true"></div>
   <div class="container position-relative">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <span class="be-hero__eyebrow">{{ hero.eyebrow }}</span>
-        <h1 class="be-hero__title">Badger<span>Eye</span></h1>
-        <p class="be-hero__tagline">{{ hero.tagline }}</p>
-        <p class="be-hero__desc">{{ hero.description }}</p>
-        <div class="be-hero__actions">
-          <a class="be-btn be-btn--primary" href="{{ hero.cta_primary_url }}" target="_blank" rel="noopener noreferrer">
-            {{ hero.cta_primary }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-          <a class="be-btn be-btn--ghost" href="{{ hero.cta_secondary_anchor }}">{{ hero.cta_secondary }}</a>
-        </div>
+    <div class="be-hero__stack">
+      <span class="be-hero__eyebrow">{{ hero.eyebrow }}</span>
+      <h1 class="be-hero__title">Badger<span>Eye</span></h1>
+      <p class="be-hero__tagline">{{ hero.tagline }}</p>
+      <p class="be-hero__desc">{{ hero.description }}</p>
+      <div class="be-hero__actions">
+        <a class="be-btn be-btn--primary" href="{{ hero.cta_primary_url }}" target="_blank" rel="noopener noreferrer">
+          {{ hero.cta_primary }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="be-btn be-btn--ghost" href="{{ hero.cta_secondary_anchor }}">{{ hero.cta_secondary }}</a>
       </div>
-      <div class="col-lg-6">
-        {% assign panel = hero.panel %}
-        <div class="be-panel" aria-hidden="true">
+      {% assign panel = hero.panel %}
+      <div class="be-panel" aria-hidden="true">
           <div class="be-panel__header">
             <span class="be-panel__dot"></span>
             <span class="be-panel__heading">{{ panel.heading }}</span>
@@ -50,7 +47,6 @@
             {% endfor %}
           </ul>
         </div>
-      </div>
     </div>
   </div>
 </section>

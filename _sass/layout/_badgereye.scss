@@ -157,13 +157,25 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   line-height: 1.65;
   color: $be-text-2;
   max-width: 38rem;
-  margin-bottom: 1.75rem;
+  margin: 0 auto 1.75rem;
 }
 
 .be-hero__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.9rem;
+}
+
+// Stacked hero: centered text block with the exposure panel beneath it
+.be-hero__stack {
+  text-align: center;
+
+  .be-panel {
+    max-width: 40rem;
+    margin: 2.5rem auto 0;
+    text-align: left;
+  }
 }
 
 // ─── Hero mock panel ───────────────────────────────────────────────────────
