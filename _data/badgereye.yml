@@ -5,7 +5,6 @@ tr: &DEFAULT_TR
   hero:
     eyebrow: "Birleşik Zafiyet Yönetimi + CTEM"
     tagline: "Saldırı yüzeyinizi saldırganın gözünden görün."
-    description: "Varlık keşfi, zafiyet taramaları, tehdit istihbaratı ve dijital risk koruması tek çatı altında."
     cta_primary: "BadgerEye.io"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Modülleri İncele"
@@ -218,7 +217,6 @@ en:
   hero:
     eyebrow: "Unified Vulnerability Management + CTEM"
     tagline: "See your attack surface the way an attacker does."
-    description: "Asset discovery, vulnerability scanning, threat intelligence and digital risk protection under one roof."
     cta_primary: "BadgerEye.io"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Explore the Modules"
