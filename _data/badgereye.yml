@@ -93,6 +93,14 @@ tr: &DEFAULT_TR
         label: "kritik düğüm noktası"
       - value: "5"
         label: "sıradaki adım"
+    noise_label: "elenen"
+    noise:
+      - "sömürülemeyen CVE'ler"
+      - "erişilemeyen servisler"
+      - "yinelenen bulgular"
+    filters:
+      - items: ["tehdit istihbaratı", "istismar edilebilirlik", "saldırı yolu analizi"]
+      - items: ["iş etkisi", "SLA ve sahiplik"]
 
   modules:
     title: "Modüller"
@@ -293,6 +301,14 @@ en:
         label: "critical choke points"
       - value: "5"
         label: "next actions"
+    noise_label: "filtered out"
+    noise:
+      - "unexploitable CVEs"
+      - "unreachable services"
+      - "duplicate findings"
+    filters:
+      - items: ["threat intelligence", "exploitability", "attack path analysis"]
+      - items: ["business impact", "SLA and ownership"]
 
   modules:
     title: "Modules"
