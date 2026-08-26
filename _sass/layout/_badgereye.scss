@@ -307,11 +307,51 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   background: $be-bg-0;
   color: $be-text-1;
   padding-block: var(--space-section-y);
+  border-top: 1px solid $be-edge;
   @include full-viewport-section;
 
   .section-heading {
     color: $be-text-1;
   }
+}
+
+// Each section gets its own room: alternating base tones and a quiet
+// radial tint that walks the brand ramp down the page.
+.be-answers {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba($be-brand-b, 0.14), transparent 55%),
+    $be-bg-0;
+}
+
+.be-focus {
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba($be-brand-c, 0.12), transparent 60%),
+    #16131c;
+}
+
+.be-modules {
+  background:
+    radial-gradient(ellipse at 12% 15%, rgba($be-brand-b, 0.10), transparent 50%),
+    radial-gradient(ellipse at 88% 90%, rgba($be-brand-d, 0.07), transparent 50%),
+    $be-bg-0;
+}
+
+.be-lifecycle {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba($be-brand-b, 0.13), transparent 55%),
+    #0f0d13;
+}
+
+.be-handsoff {
+  background:
+    radial-gradient(ellipse at 80% 8%, rgba($be-accent, 0.09), transparent 50%),
+    #16131c;
+}
+
+.be-cta {
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba($be-brand-c, 0.10), transparent 55%),
+    $be-bg-0;
 }
 
 .be-section__subtitle {
@@ -821,8 +861,6 @@ $be-ctem-radius: 250px;
     color: $be-text-3;
     font-size: 0.7rem;
     line-height: 1;
-    background: $be-bg-0;
-    padding: 0.2rem;
 
     @for $i from 1 through 5 {
       $angle: ($i - 1) * 72deg + 36deg;
