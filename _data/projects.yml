@@ -3,11 +3,11 @@ tr: &DEFAULT_TR
   title: "Projelerimiz"
   list:
     - name: "BadgerEye"
-      desc: "Valiente'nin Ofansif Maruziyet Yönetimi platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI pentest, insan doğrulaması ve tehdit istihbaratı tek çatı altında."
+      desc: "Valiente'nin bulut tabanlı Birleşik Zafiyet Yönetimi (UVM) ve CTEM platformu. Saldırı yüzeyi, sürekli taramalar, tehdit istihbaratı ve raporlama tek çatı altında."
       icon: "fas fa-eye"
       status: "Aktif"
       status_type: active
-      tags: ["Maruziyet Yönetimi", "CTEM", "AI Pentest", "SaaS"]
+      tags: ["UVM", "CTEM", "AI Pentest", "SaaS"]
       url: /projects/badgereye/
 
     - name: "HealthCheck"
@@ -42,11 +42,11 @@ en:
   title: "Our Projects"
   list:
     - name: "BadgerEye"
-      desc: "Valiente's Offensive Exposure Management platform. Attack surface management, continuous scanning, AI pentesting, human validation and threat intelligence under one roof."
+      desc: "Valiente's cloud-based Unified Vulnerability Management (UVM) and CTEM platform. Attack surface, continuous scanning, threat intelligence and reporting under one roof."
       icon: "fas fa-eye"
       status: "Active"
       status_type: active
-      tags: ["Exposure Management", "CTEM", "AI Pentesting", "SaaS"]
+      tags: ["UVM", "CTEM", "AI Pentesting", "SaaS"]
       url: /projects/badgereye/
 
     - name: "HealthCheck"

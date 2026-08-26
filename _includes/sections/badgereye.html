@@ -1,5 +1,5 @@
-<!-- BadgerEye product fonts (IBM Plex — the platform's type) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<!-- BadgerEye product accent font (IBM Plex Mono, used for chips and metric values) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
 
 {% assign be = site.data.badgereye[site.active_lang] | default: site.data.badgereye.tr %}
 {% if be %}
@@ -56,28 +56,21 @@
             <li><span class="be-sev-dot be-sev--{{ s.type }}"></span>{{ s.name }} <em>{{ s.count }}</em></li>
             {% endfor %}
           </ul>
-          <div class="be-panel__severity-label be-panel__validation-label">{{ panel.validation_label }}</div>
-          <div class="be-panel__validations">
-            {% for v in panel.validations %}
-            <span class="be-vchip be-vchip--{{ v.type }}">
-              <i class="fas fa-check-circle" aria-hidden="true"></i>
-              {{ v.name }} <em>{{ v.count }}</em>
-            </span>
-            {% endfor %}
-          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BadgerEye Difference -->
+<!-- BadgerEye: Why -->
 {% assign diff = be.difference %}
-<section class="be-section be-difference">
+<section class="page-section be-section be-difference">
   <div class="container">
-    <div class="be-section__head">
-      <h2>{{ diff.title }}</h2>
-      <p>{{ diff.subtitle }}</p>
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ diff.title }}</h2>
+        <p class="be-section__subtitle">{{ diff.subtitle }}</p>
+      </div>
     </div>
     <div class="be-pillars">
       {% for pillar in diff.pillars %}
@@ -113,15 +106,18 @@
 
 <!-- BadgerEye Modules -->
 {% assign modules = be.modules %}
-<section class="be-section be-modules" id="be-modules">
+<section class="page-section be-section be-modules" id="be-modules">
   <div class="container">
-    <div class="be-section__head">
-      <h2>{{ modules.title }}</h2>
-      <p>{{ modules.subtitle }}</p>
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ modules.title }}</h2>
+        <p class="be-section__subtitle">{{ modules.subtitle }}</p>
+      </div>
     </div>
     <div class="be-cap-grid">
       {% for item in modules.list %}
       <article class="be-cap-card">
+        {% if item.premium %}<span class="be-cap-card__badge">{{ modules.premium_badge }}</span>{% endif %}
         <div class="be-cap-card__icon"><i class="{{ item.icon }}" aria-hidden="true"></i></div>
         <h3>{{ item.title }}</h3>
         <p>{{ item.desc }}</p>
@@ -131,40 +127,15 @@
   </div>
 </section>
 
-<!-- BadgerEye Validation Ladder -->
-{% assign val = be.validation %}
-<section class="be-section be-validation">
-  <div class="container">
-    <div class="be-section__head">
-      <h2>{{ val.title }}</h2>
-      <p>{{ val.subtitle }}</p>
-    </div>
-    <ol class="be-ladder">
-      {% for rung in val.ladder %}
-      <li class="be-rung be-rung--{{ rung.type }}">
-        <span class="be-rung__marker"></span>
-        <h3>{{ rung.name }}</h3>
-        <p>{{ rung.desc }}</p>
-      </li>
-      {% endfor %}
-    </ol>
-    <div class="be-loop">
-      <div class="be-loop__icon"><i class="fas fa-sync-alt" aria-hidden="true"></i></div>
-      <div>
-        <h3>{{ val.loop_title }}</h3>
-        <p>{{ val.loop_desc }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- BadgerEye CTEM Lifecycle -->
 {% assign lc = be.lifecycle %}
-<section class="be-section be-lifecycle">
+<section class="page-section be-section be-lifecycle">
   <div class="container">
-    <div class="be-section__head">
-      <h2>{{ lc.title }}</h2>
-      <p>{{ lc.subtitle }}</p>
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">{{ lc.title }}</h2>
+        <p class="be-section__subtitle">{{ lc.subtitle }}</p>
+      </div>
     </div>
     <ol class="be-steps">
       {% for step in lc.steps %}
@@ -178,58 +149,9 @@
   </div>
 </section>
 
-<!-- BadgerEye Compare -->
-{% assign cmp = be.compare %}
-<section class="be-section be-compare">
-  <div class="container">
-    <div class="be-section__head">
-      <h2>{{ cmp.title }}</h2>
-      <p>{{ cmp.subtitle }}</p>
-    </div>
-    <div class="be-compare__grid">
-      {% for col in cmp.cols %}
-      <article class="be-compare__card{% if col.highlight %} be-compare__card--highlight{% endif %}">
-        <span class="be-compare__verdict">{{ col.verdict }}</span>
-        <h3>{{ col.title }}</h3>
-        <p>{{ col.desc }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- BadgerEye HealthCheck On-Ramp -->
-{% assign hc = be.healthcheck %}
-<section class="be-section be-onramp">
-  <div class="container">
-    <div class="be-onramp__panel">
-      <div class="be-onramp__body">
-        <div class="be-onramp__icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div>
-        <div>
-          <h2>{{ hc.title }}</h2>
-          <p>{{ hc.desc }}</p>
-          <a class="be-btn be-btn--ghost" href="{{ hc.cta_url }}">
-            {{ hc.cta_button }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-      {% if hc.logos %}
-      <div class="be-onramp__proof">
-        <span class="be-onramp__proof-title">{{ hc.logos_title }}</span>
-        <div class="be-onramp__logos">
-          {% for l in hc.logos %}
-          <img src="{{ l.logo }}" alt="{{ l.title }}" loading="lazy">
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
-
 <!-- BadgerEye Final CTA -->
 {% assign cta = be.cta %}
-<section class="be-section be-cta">
+<section class="page-section be-section be-cta">
   <div class="container">
     <div class="be-cta__panel">
       <h2>{{ cta.title }}</h2>

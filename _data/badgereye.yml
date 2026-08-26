@@ -1,16 +1,16 @@
 tr: &DEFAULT_TR
   title: "BadgerEye"
-  description: "BadgerEye — Valiente'nin Ofansif Maruziyet Yönetimi platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI pentest, insan doğrulaması, tehdit istihbaratı ve dijital risk koruması tek platformda."
+  description: "BadgerEye, Valiente'nin bulut tabanlı Birleşik Zafiyet Yönetimi (UVM) ve CTEM platformu. Saldırı yüzeyi yönetimi, sürekli tarama, AI pentest, tehdit istihbaratı ve dijital risk koruması tek platformda."
 
   hero:
-    eyebrow: "Ofansif Maruziyet Yönetimi"
-    tagline: "Şirketinizi bir saldırganın gözünden görün. Kanıtlanmış güvenlik."
-    description: "BadgerEye; saldırı yüzeyi keşfi, sürekli tarama, tehdit istihbaratı, dijital risk koruması ve insan doğrulamasını tek veri modelinde birleştiren bulut tabanlı maruziyet yönetimi platformudur. Gerçek dünyada sömürülebilir olanı tespit eder, doğrular ve önceliklendirir."
+    eyebrow: "Birleşik Zafiyet Yönetimi + CTEM"
+    tagline: "Saldırı yüzeyinizi saldırganın gözünden görün."
+    description: "BadgerEye, Valiente'nin geliştirdiği bulut tabanlı zafiyet ve maruziyet yönetimi platformudur. Varlık keşfi, zafiyet taramaları, tehdit istihbaratı ve dijital risk korumasını tek veri modelinde toplar; gerçekten sömürülebilir riskleri bulur ve önceliklendirir."
     points:
       - "Dış ve iç saldırı yüzeyi tek envanterde"
-      - "AI pentest ve insan onaylı doğrulama"
-      - "Sızmış kimlik bilgisi ve taklit alan adı izleme"
-      - "Kurumsal SSO, kiracı izolasyonu, tam denetim izi"
+      - "Tehdit istihbaratına dayalı önceliklendirme"
+      - "Sızmış kimlik bilgisi ve taklit alan adı takibi"
+      - "Kurumsal SSO, kiracı izolasyonu ve denetim izi"
     cta_primary: "badgereye.io'yu Ziyaret Et"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Modülleri İncele"
@@ -39,30 +39,22 @@ tr: &DEFAULT_TR
         - name: "Düşük"
           count: 132
           type: low
-      validation_label: "doğrulama durumu"
-      validations:
-        - name: "AI Doğrulamalı"
-          count: 41
-          type: ai
-        - name: "İnsan Onaylı"
-          count: 12
-          type: confirmed
 
   difference:
-    title: "BadgerEye Farkı"
-    subtitle: "Alarm yağmuru değil — ne durumda olduğunuzu, neyin değiştiğini ve ne yapacağınızı söyleyen sakin bir kokpit."
+    title: "Neden BadgerEye?"
+    subtitle: "Amaç alarm üretmek değil; ne durumda olduğunuzu, neyin değiştiğini ve sırada ne olduğunu net biçimde göstermek."
     pillars:
       - icon: "fas fa-eye"
-        title: "Her Şeyi Görün"
-        desc: "Dış varlıklar, iç topoloji ve kimlikler tek grafikte. Bilinen ve bilinmeyen tüm saldırı yüzeyiniz — saldırganın gördüğü haliyle."
+        title: "Tek Envanter"
+        desc: "Alan adları, sunucular, bulut kaynakları ve kimlikler tek grafikte durur. Dışarıdan görünen yüzey ile iç ağınız aynı haritada birleşir."
       - icon: "fas fa-layer-group"
-        title: "Önemli Olanı Düzeltin"
-        desc: "Tehdit istihbaratı ve iş etkisiyle sıralama: on binlerce bulgu değil, saldırı yollarını çökerten kritik düğüm noktaları."
-      - icon: "fas fa-user-check"
-        title: "Pentest Ekibimizi Ürünleştirdik"
-        desc: "Yılların ofansif uzmanlığı yapay zekayla ölçeklenir; kritik bulguları gerçek pentester'lar doğrular."
+        title: "Önceliklendirme"
+        desc: "Binlerce bulgu tehdit istihbaratı ve iş etkisiyle süzülür. Önce, saldırı yollarını kapatan az sayıdaki kritik nokta gelir."
+      - icon: "fas fa-sync-alt"
+        title: "Süreklilik"
+        desc: "Tarama bittiğinde iş bitmez. Platform neyin yeni, neyin kapandığını izler; düzelttiğiniz bulgular yeniden test edilir ve kendiliğinden kapanır."
     funnel:
-      title: "Maruziyet hunisi"
+      title: "maruziyet hunisi"
       stages:
         - value: "11.000"
           label: "sömürülebilir maruziyet"
@@ -80,52 +72,38 @@ tr: &DEFAULT_TR
     stats_note: "Kaynak: sektör araştırmaları"
 
   modules:
-    title: "Modüler Tasarım, Tek Platform"
-    subtitle: "Güvenlik bir proje değil, bir yolculuk. Her modül aynı varlık grafiği üzerinde çalışır — silo yok, aktarım yok."
+    title: "Modüller"
+    subtitle: "Her modül aynı varlık grafiği üzerinde çalışır; veri kopyalanmaz, silo oluşmaz."
+    premium_badge: "Premium"
     list:
       - icon: "fas fa-globe"
         title: "Saldırı Yüzeyi Yönetimi"
-        desc: "Alan adları, sunucular, bulut, kod depoları. Sürekli keşif. Kendini güncel tutan envanter."
+        desc: "Alan adları, sunucular, bulut ve kod depoları sürekli keşfedilir; envanter kendini güncel tutar."
       - icon: "fas fa-crosshairs"
         title: "Sürekli Zafiyet Taraması"
-        desc: "Ağ, web uygulaması, bulut, konteyner ve kod. Hedefe göre profiller. Normalize edilmiş, tekilleştirilmiş sonuçlar."
+        desc: "Ağ, web uygulaması, bulut, konteyner ve kod taramaları hedefe göre profillerle çalışır; sonuçlar normalize edilip tekilleştirilir."
       - icon: "fas fa-robot"
         title: "AI Pentest"
-        desc: "Ofansif uzmanlık, yapay zekayla ölçeklenmiş. Sömürülebilirlik sınaması. Saldırı zincirleri, kanıtıyla."
-      - icon: "fas fa-user-check"
-        title: "İnsan Doğrulaması & Yeniden Test"
-        desc: "Kritik bulguları gerçek pentester'lar onaylar. Tek tıkla yeniden test. Döngü kapanır."
+        desc: "Yapay zeka sömürülebilirliği güvenli biçimde sınar; saldırı zincirlerini kanıtıyla ortaya koyar."
       - icon: "fas fa-satellite-dish"
         title: "Tehdit İstihbaratı"
-        desc: "EPSS, istismar olgunluğu, fidye yazılımı takibi. Sektörünüzü kimin hedef aldığı. Size göre istihbarat."
+        desc: "EPSS, istismar olgunluğu ve fidye yazılımı takibi doğrudan sizin bulgularınızla eşleştirilir."
       - icon: "fas fa-user-secret"
         title: "Dijital Risk Koruması"
-        desc: "Sızmış kimlik bilgileri. Taklit alan adları. Dark web maruziyeti — kendi saldırı yüzeyinizle ilişkilendirilmiş."
+        desc: "Sızmış kimlik bilgileri, taklit alan adları ve dark web maruziyeti kendi varlıklarınızla ilişkilendirilir."
       - icon: "fas fa-project-diagram"
         title: "Saldırı Yolu Grafiği"
-        desc: "Dış ayak izinden Domain Admin'e. Kimlik, ağ ve kimlik bilgisi tek yolda. Zinciri kıran düğümü gösterir."
+        desc: "Dış ayak izinden kritik sistemlere uzanan yollar tek grafikte görünür; zinciri kıran düğüm işaretlenir."
       - icon: "fas fa-route"
-        title: "Otomasyon & Playbook'lar"
-        desc: "Görsel playbook tasarımcısı. Düzeltme iş akışları. Bildirim, biletleme, otomatik kapanış."
+        title: "Otomasyon ve Playbook'lar"
+        desc: "Görsel tasarımcıyla düzeltme iş akışları kurulur; bildirim, biletleme ve otomatik kapanış buna dahildir."
       - icon: "fas fa-file-alt"
-        title: "Raporlama & Uyumluluk"
-        desc: "Yönetici özetinden denetim kanıtına. Markalı PDF raporlar. Canlıda gördüğünüzle birebir aynı sinyal."
-
-  validation:
-    title: "Teori Değil, Kanıt"
-    subtitle: "Her maruziyet bir doğrulama durumu taşır. Neyin gerçekten sömürülebilir olduğunu bilirsiniz — tahmin etmezsiniz."
-    ladder:
-      - type: unvalidated
-        name: "Doğrulanmamış"
-        desc: "Tarayıcı bulgusu. Bir sinyal — henüz kanıt değil."
-      - type: ai
-        name: "AI Doğrulamalı"
-        desc: "Yapay zeka sömürülebilirliği güvenli biçimde sınadı."
-      - type: confirmed
-        name: "İnsan Onaylı"
-        desc: "Bir pentester doğruladı. Tartışmasız, raporlanabilir kanıt."
-    loop_title: "Döngüyü kapatın"
-    loop_desc: "Düzelttiniz mi? Tek tıkla yeniden test — bulgu kendiliğinden kapanır. \"Bir şey değiştirdim — işe yaradı mı?\" sorusunun cevabı üründe, tahminde değil."
+        title: "Raporlama ve Uyumluluk"
+        desc: "Yönetici özetinden denetim kanıtına, üründe gördüğünüz sinyalin aynısı raporlanır."
+      - icon: "fas fa-user-check"
+        title: "Uzman Doğrulaması"
+        desc: "İsteyen müşteriler için pentest ekibimiz kritik bulguları elle doğrular, düzeltmeleri yeniden test eder."
+        premium: true
 
   lifecycle:
     title: "CTEM Döngüsü"
@@ -142,40 +120,9 @@ tr: &DEFAULT_TR
       - title: "Aksiyon"
         desc: "Düzeltme atanır, izlenir ve kapatılır."
 
-  compare:
-    title: "Neden BadgerEye?"
-    subtitle: "İki dünyanın da eksiği var. BadgerEye ikisini tek varlık grafiğinde birleştirir."
-    cols:
-      - title: "Otomatik Platformlar"
-        desc: "Sürekli ama teorik: doğrulanmamış bulgu listeleri, alarm yorgunluğu."
-        verdict: "Sürekli, kanıtsız"
-      - title: "Pentest Firmaları"
-        desc: "Doğrulanmış ama anlık: rapor, teslim edildiği gün eskimeye başlar."
-        verdict: "Kanıtlı, anlık"
-      - title: "BadgerEye"
-        desc: "Sürekli VE insan onaylı — tek varlık grafiği üzerinde, kesintisiz."
-        verdict: "İkisi birden"
-        highlight: true
-
-  healthcheck:
-    title: "Maruziyetinizi Merak mı Ediyorsunuz?"
-    desc: "Ücretsiz HealthCheck ile başlayın: internete açık sistemlerinizin temel güvenlik durumunu değerlendirelim, sonucu kısa ve anlaşılır bir raporla sunalım. Taahhüt yok, kesinti yok."
-    cta_button: "Ücretsiz HealthCheck"
-    cta_url: "/projects/healthcheck/"
-    logos_title: "HealthCheck'e güvenenler"
-    logos:
-      - title: "Tactical Europe"
-        logo: /assets/img/clients/teurope.png
-      - title: "Max Security International"
-        logo: /assets/img/clients/maxguvenlik.png
-      - title: "Megasaray Hotels"
-        logo: /assets/img/clients/megasarayhotels.png
-      - title: "Şahinler Holding"
-        logo: /assets/img/clients/sahinler.png
-
   cta:
     title: "Saldırı yüzeyinizi BadgerEye ile yönetin"
-    description: "Platformu yakından incelemek ve erişim talep etmek için badgereye.io'yu ziyaret edin."
+    description: "Platformu incelemek ve erişim talep etmek için badgereye.io'yu ziyaret edin."
     button: "badgereye.io'ya Git"
     url: "https://badgereye.io"
 
@@ -184,17 +131,17 @@ tr-TR:
 
 en:
   title: "BadgerEye"
-  description: "BadgerEye — Valiente's Offensive Exposure Management platform. Attack surface management, continuous scanning, AI pentesting, human validation, threat intelligence and digital risk protection in one platform."
+  description: "BadgerEye is Valiente's cloud-based Unified Vulnerability Management (UVM) and CTEM platform. Attack surface management, continuous scanning, AI pentesting, threat intelligence and digital risk protection in one platform."
 
   hero:
-    eyebrow: "Offensive Exposure Management"
-    tagline: "See your whole company as an attacker does. Confidence, proven."
-    description: "BadgerEye is the cloud-native exposure management platform that unifies attack surface discovery, continuous scanning, threat intelligence, digital risk protection and human validation on a single data model. It finds, proves and prioritizes what is exploitable in the real world."
+    eyebrow: "Unified Vulnerability Management + CTEM"
+    tagline: "See your attack surface the way an attacker does."
+    description: "BadgerEye is the cloud-based vulnerability and exposure management platform built by Valiente. It brings asset discovery, vulnerability scanning, threat intelligence and digital risk protection together on a single data model, then finds and prioritizes the risks that are actually exploitable."
     points:
       - "External and internal attack surface in one inventory"
-      - "AI pentesting with human-confirmed validation"
-      - "Leaked-credential and lookalike-domain monitoring"
-      - "Enterprise SSO, tenant isolation, full audit trail"
+      - "Prioritization driven by threat intelligence"
+      - "Leaked credential and lookalike domain tracking"
+      - "Enterprise SSO, tenant isolation and audit trail"
     cta_primary: "Visit badgereye.io"
     cta_primary_url: "https://badgereye.io"
     cta_secondary: "Explore the Modules"
@@ -223,93 +170,71 @@ en:
         - name: "Low"
           count: 132
           type: low
-      validation_label: "validation state"
-      validations:
-        - name: "AI-Validated"
-          count: 41
-          type: ai
-        - name: "Human-Confirmed"
-          count: 12
-          type: confirmed
 
   difference:
-    title: "The BadgerEye Difference"
-    subtitle: "Not an alert firehose — a calm cockpit that tells you where you stand, what changed, and what to do next."
+    title: "Why BadgerEye?"
+    subtitle: "The goal is not to generate alerts; it is to show clearly where you stand, what changed and what comes next."
     pillars:
       - icon: "fas fa-eye"
-        title: "See Everything"
-        desc: "External assets, internal topology and identities on one graph. Your whole attack surface — known and unknown — the way an attacker sees it."
+        title: "One Inventory"
+        desc: "Domains, hosts, cloud resources and identities live on one graph. Your external surface and your internal network share the same map."
       - icon: "fas fa-layer-group"
-        title: "Fix What Matters"
-        desc: "Ranked by threat intelligence and business impact: not tens of thousands of findings — the choke points that collapse attack paths."
-      - icon: "fas fa-user-check"
-        title: "We Productized Our Pentest Team"
-        desc: "Years of offensive expertise scaled with AI; critical findings confirmed by real pentesters."
+        title: "Prioritization"
+        desc: "Thousands of findings are filtered with threat intelligence and business impact. The short list that closes attack paths comes first."
+      - icon: "fas fa-sync-alt"
+        title: "Continuity"
+        desc: "The work does not end when a scan ends. The platform tracks what is new and what is resolved; fixed findings are retested and closed automatically."
     funnel:
-      title: "The exposure funnel"
+      title: "the exposure funnel"
       stages:
         - value: "11,000"
           label: "exploitable exposures"
         - value: "~200"
           label: "critical choke points"
         - value: "99.6%"
-          label: "less remediation scope"
+          label: "less remediation work"
     stats:
       - value: "42%"
-        label: "of SOC time is spent on non-exploitable findings"
+        label: "of SOC time goes to findings that are not exploitable"
       - value: "96%"
-        label: "of organizations can't validate exploitability at scale"
+        label: "of organizations cannot validate exploitability at scale"
       - value: "<40%"
         label: "have continuous validation in place"
     stats_note: "Source: industry research"
 
   modules:
-    title: "Modular by Design, One Platform"
-    subtitle: "Security is a journey, not a project. Every module runs on the same asset graph — no silos, no hand-offs."
+    title: "Modules"
+    subtitle: "Every module runs on the same asset graph; data is never copied and silos never form."
+    premium_badge: "Premium"
     list:
       - icon: "fas fa-globe"
         title: "Attack Surface Management"
-        desc: "Domains, hosts, cloud, code repositories. Continuous discovery. An inventory that keeps itself current."
+        desc: "Domains, hosts, cloud and code repositories are discovered continuously; the inventory keeps itself current."
       - icon: "fas fa-crosshairs"
         title: "Continuous Vulnerability Scanning"
-        desc: "Network, web app, cloud, container and code. Intent-driven profiles. Normalized, deduplicated results."
+        desc: "Network, web application, cloud, container and code scans run on goal-based profiles; results are normalized and deduplicated."
       - icon: "fas fa-robot"
         title: "AI Pentesting"
-        desc: "Offensive expertise, scaled by AI. Exploitability testing. Attack chains, with proof."
-      - icon: "fas fa-user-check"
-        title: "Human Validation & Retest"
-        desc: "Real pentesters confirm critical findings. One-click retest. The loop closes."
+        desc: "AI safely tests exploitability and lays out attack chains with supporting evidence."
       - icon: "fas fa-satellite-dish"
         title: "Threat Intelligence"
-        desc: "EPSS, exploit maturity, ransomware tracking. Who targets your sector. Intelligence relative to you."
+        desc: "EPSS, exploit maturity and ransomware tracking are matched directly against your own findings."
       - icon: "fas fa-user-secret"
         title: "Digital Risk Protection"
-        desc: "Leaked credentials. Lookalike domains. Dark-web exposure — correlated with your own attack surface."
+        desc: "Leaked credentials, lookalike domains and dark web exposure are correlated with your own assets."
       - icon: "fas fa-project-diagram"
         title: "Attack Path Graph"
-        desc: "From external foothold to Domain Admin. Identity, network and credentials on one path. Shows the node that breaks the chain."
+        desc: "Paths from an external foothold to critical systems appear on one graph; the node that breaks the chain is marked."
       - icon: "fas fa-route"
-        title: "Automation & Playbooks"
-        desc: "Visual playbook builder. Remediation workflows. Notifications, ticketing, auto-close."
+        title: "Automation and Playbooks"
+        desc: "Remediation workflows are built in a visual designer; notifications, ticketing and auto-close are included."
       - icon: "fas fa-file-alt"
-        title: "Reporting & Compliance"
-        desc: "From executive summary to audit evidence. Branded PDF reports. The same signal you see live in the product."
-
-  validation:
-    title: "Proof, Not Theory"
-    subtitle: "Every exposure carries a validation state. You know what's actually exploitable — you don't guess."
-    ladder:
-      - type: unvalidated
-        name: "Unvalidated"
-        desc: "A scanner finding. A signal — not yet proof."
-      - type: ai
-        name: "AI-Validated"
-        desc: "AI safely tested exploitability."
-      - type: confirmed
-        name: "Human-Confirmed"
-        desc: "Confirmed by a pentester. Defensible, reportable proof."
-    loop_title: "Close the loop"
-    loop_desc: "Fixed it? One-click retest — the finding closes itself. \"I changed something — did it matter?\" is answered by the product, not by guesswork."
+        title: "Reporting and Compliance"
+        desc: "From executive summary to audit evidence, reports carry the same signal you see in the product."
+      - icon: "fas fa-user-check"
+        title: "Expert Validation"
+        desc: "For customers who want it, our pentest team manually verifies critical findings and retests the fixes."
+        premium: true
 
   lifecycle:
     title: "The CTEM Loop"
@@ -325,37 +250,6 @@ en:
         desc: "Exploitability is verified and noise is eliminated."
       - title: "Mobilization"
         desc: "Remediation is assigned, tracked and closed."
-
-  compare:
-    title: "Why BadgerEye?"
-    subtitle: "Both worlds fall short on their own. BadgerEye merges them on one asset graph."
-    cols:
-      - title: "Automated Platforms"
-        desc: "Continuous but theoretical: unvalidated finding lists, alert fatigue."
-        verdict: "Continuous, unproven"
-      - title: "Pentest Firms"
-        desc: "Validated but point-in-time: the report starts aging the day it's delivered."
-        verdict: "Proven, point-in-time"
-      - title: "BadgerEye"
-        desc: "Continuous AND human-proven — on one asset graph, without interruption."
-        verdict: "Both"
-        highlight: true
-
-  healthcheck:
-    title: "Wondering What Your Exposure Looks Like?"
-    desc: "Start with a free HealthCheck: we assess the baseline security posture of your internet-facing systems and hand you a short, clear report. No commitment, no disruption."
-    cta_button: "Free HealthCheck"
-    cta_url: "/projects/healthcheck/"
-    logos_title: "Trusted for HealthCheck"
-    logos:
-      - title: "Tactical Europe"
-        logo: /assets/img/clients/teurope.png
-      - title: "Max Security International"
-        logo: /assets/img/clients/maxguvenlik.png
-      - title: "Megasaray Hotels"
-        logo: /assets/img/clients/megasarayhotels.png
-      - title: "Şahinler Holding"
-        logo: /assets/img/clients/sahinler.png
 
   cta:
     title: "Manage your attack surface with BadgerEye"

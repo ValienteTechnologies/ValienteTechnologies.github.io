@@ -1,7 +1,8 @@
 // ─── BadgerEye project page ────────────────────────────────────────────────
-// Styled with the BadgerEye product's own design tokens so the page reads
-// as the platform: dark violet-tinted surfaces, IBM Plex type, reserved
-// brand-ramp gradient for the primary CTA, severity hue convention.
+// The page follows the site's section scaffolding (full-viewport sections,
+// uppercase section headings, site typography) while surfaces, accents and
+// data visuals use the BadgerEye product's own color tokens. IBM Plex Mono
+// is kept only for product-flavored accents: chips, metric values, labels.
 
 // Product tokens (SSOT: BadgerEye design system)
 $be-bg-0: #121017; // page
@@ -22,13 +23,8 @@ $be-sev-critical: #ef4444;
 $be-sev-high: #f97316;
 $be-sev-medium: #eab308;
 $be-sev-low: #22c55e;
-$be-conf-confirmed: #14b8a6;
-$be-conf-ai: #8b5cf6;
-$be-conf-unvalidated: #7d8698;
 $be-state-ok: #22c55e;
 
-$be-font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Arial, sans-serif;
 $be-font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
 
 $be-radius-card: 10px;
@@ -38,11 +34,6 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 
 .badgereye-page {
   background: $be-bg-0;
-  font-family: $be-font-sans;
-
-  h1, h2, h3 {
-    font-family: $be-font-sans;
-  }
 }
 
 // ─── Buttons ───────────────────────────────────────────────────────────────
@@ -53,9 +44,9 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   gap: 0.5rem;
   padding: 0.7rem 1.4rem;
   border-radius: $be-radius-control;
-  font-family: $be-font-sans;
+  @include heading-font;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: background 180ms cubic-bezier(0.2, 0, 0, 1),
     color 180ms cubic-bezier(0.2, 0, 0, 1),
@@ -139,9 +130,9 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .be-hero__title {
+  @include heading-font;
   font-size: 3.4rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
   color: $be-text-1;
 
@@ -331,233 +322,28 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
 }
 
-.be-panel__validation-label {
-  margin-top: 1rem;
-}
-
-.be-panel__validations {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  .be-vchip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 500;
-
-    em {
-      font-style: normal;
-      font-family: $be-font-mono;
-      opacity: 0.8;
-    }
-
-    i {
-      font-size: 0.7rem;
-    }
-
-    &--ai {
-      color: lighten($be-conf-ai, 12%);
-      background: rgba($be-conf-ai, 0.12);
-      border: 1px solid rgba($be-conf-ai, 0.3);
-    }
-
-    &--confirmed {
-      color: lighten($be-conf-confirmed, 8%);
-      background: rgba($be-conf-confirmed, 0.1);
-      border: 1px solid rgba($be-conf-confirmed, 0.3);
-    }
-  }
-}
-
-// ─── Shared section chrome ─────────────────────────────────────────────────
+// ─── Shared section chrome (site scaffolding, product palette) ─────────────
 
 .be-section {
   background: $be-bg-0;
   color: $be-text-1;
-  padding-block: 5rem;
+  padding-block: var(--space-section-y);
+  @include full-viewport-section;
+
+  .section-heading {
+    color: $be-text-1;
+  }
 }
 
-.be-section__head {
-  text-align: center;
+.be-section__subtitle {
+  color: $be-text-2;
+  font-size: 1rem;
+  line-height: 1.6;
   max-width: 42rem;
-  margin: 0 auto 3rem;
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: $be-text-1;
-    margin-bottom: 0.75rem;
-  }
-
-  p {
-    color: $be-text-2;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-  }
+  margin: 0 auto var(--space-grid-margin);
 }
 
-// ─── Capabilities grid ─────────────────────────────────────────────────────
-
-.be-cap-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
-  @include media-min($breakpoint-md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include media-min($breakpoint-xl) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.be-cap-card {
-  background: $be-bg-1;
-  border: 1px solid $be-edge;
-  border-radius: $be-radius-card;
-  padding: 1.5rem;
-  transition: background 180ms cubic-bezier(0.2, 0, 0, 1),
-    border-color 180ms cubic-bezier(0.2, 0, 0, 1),
-    transform 180ms cubic-bezier(0.2, 0, 0, 1);
-
-  &:hover {
-    background: $be-bg-3;
-    border-color: $be-edge-strong;
-    transform: translateY(-3px);
-  }
-
-  .be-cap-card__icon {
-    width: 42px;
-    height: 42px;
-    border-radius: $be-radius-control;
-    background: $be-bg-2;
-    border: 1px solid $be-edge;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $be-accent;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: $be-text-1;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-    line-height: 1.55;
-    color: $be-text-2;
-    margin: 0;
-  }
-}
-
-// ─── CTEM lifecycle steps ──────────────────────────────────────────────────
-
-.be-steps {
-  list-style: none;
-  counter-reset: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
-  @include media-min($breakpoint-md) {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-.be-step {
-  position: relative;
-  background: $be-bg-1;
-  border: 1px solid $be-edge;
-  border-radius: $be-radius-card;
-  padding: 1.25rem;
-
-  .be-step__num {
-    display: inline-block;
-    font-family: $be-font-mono;
-    font-size: 0.78rem;
-    color: $be-brand-d;
-    margin-bottom: 0.6rem;
-  }
-
-  h3 {
-    font-size: 0.98rem;
-    font-weight: 600;
-    color: $be-text-1;
-    margin-bottom: 0.4rem;
-  }
-
-  p {
-    font-size: 0.82rem;
-    line-height: 1.5;
-    color: $be-text-3;
-    margin: 0;
-  }
-
-  // Connector between steps on wide layout
-  @include media-min($breakpoint-md) {
-    &:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -1rem;
-      width: 1rem;
-      height: 1px;
-      background: $be-edge-strong;
-    }
-  }
-}
-
-// ─── Final CTA ─────────────────────────────────────────────────────────────
-
-.be-cta__panel {
-  position: relative;
-  text-align: center;
-  border-radius: $be-radius-card;
-  border: 1px solid $be-edge-strong;
-  padding: 3.5rem 2rem;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 120%, rgba($be-brand-c, 0.35), transparent 65%),
-    linear-gradient(180deg, $be-bg-1 0%, $be-bg-2 100%);
-
-  h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: $be-text-1;
-    margin-bottom: 0.75rem;
-  }
-
-  p {
-    color: $be-text-2;
-    max-width: 34rem;
-    margin: 0 auto 1.75rem;
-  }
-
-  .be-cta__domain {
-    display: block;
-    margin-top: 1.5rem;
-    font-family: $be-font-mono;
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    color: $be-text-3;
-  }
-}
-
-// ─── Difference: pillars ───────────────────────────────────────────────────
+// ─── Why BadgerEye: pillars ────────────────────────────────────────────────
 
 .be-pillars {
   display: grid;
@@ -591,7 +377,8 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
 
   h3 {
-    font-size: 1.15rem;
+    @include heading-font;
+    font-size: 1.1rem;
     font-weight: 700;
     color: $be-text-1;
     margin-bottom: 0.5rem;
@@ -605,7 +392,7 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
 }
 
-// ─── Difference: funnel + industry stats band ──────────────────────────────
+// ─── Why BadgerEye: funnel + industry stats band ───────────────────────────
 
 .be-evidence {
   display: grid;
@@ -628,7 +415,6 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     font-family: $be-font-mono;
     font-size: 0.75rem;
     letter-spacing: 0.06em;
-    text-transform: lowercase;
     color: $be-text-3;
     margin-bottom: 1rem;
   }
@@ -701,194 +487,55 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
 }
 
-// ─── Validation ladder ─────────────────────────────────────────────────────
+// ─── Modules grid ──────────────────────────────────────────────────────────
 
-.be-ladder {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1rem;
+.be-cap-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 
   @include media-min($breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-min($breakpoint-xl) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.be-rung {
+.be-cap-card {
   position: relative;
   background: $be-bg-1;
   border: 1px solid $be-edge;
   border-radius: $be-radius-card;
   padding: 1.5rem;
+  transition: background 180ms cubic-bezier(0.2, 0, 0, 1),
+    border-color 180ms cubic-bezier(0.2, 0, 0, 1),
+    transform 180ms cubic-bezier(0.2, 0, 0, 1);
 
-  .be-rung__marker {
-    display: block;
-    width: 12px;
-    height: 12px;
+  &:hover {
+    background: $be-bg-3;
+    border-color: $be-edge-strong;
+    transform: translateY(-3px);
+  }
+
+  .be-cap-card__badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: $be-font-mono;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $be-accent;
+    border: 1px solid rgba($be-accent, 0.4);
     border-radius: 999px;
-    margin-bottom: 0.9rem;
+    padding: 0.2rem 0.6rem;
   }
 
-  h3 {
-    font-size: 1.02rem;
-    font-weight: 600;
-    color: $be-text-1;
-    margin-bottom: 0.45rem;
-  }
-
-  p {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: $be-text-2;
-    margin: 0;
-  }
-
-  // Connector arrows between rungs on wide layout
-  @include media-min($breakpoint-md) {
-    &:not(:last-child)::after {
-      content: "\2192";
-      position: absolute;
-      top: 50%;
-      right: -1.05rem;
-      transform: translateY(-50%);
-      color: $be-text-3;
-      font-size: 1rem;
-    }
-  }
-
-  &--unvalidated {
-    .be-rung__marker { background: $be-conf-unvalidated; }
-  }
-
-  &--ai {
-    border-color: rgba($be-conf-ai, 0.35);
-    .be-rung__marker { background: $be-conf-ai; }
-  }
-
-  &--confirmed {
-    border-color: rgba($be-conf-confirmed, 0.45);
-    box-shadow: 0 0 24px rgba($be-conf-confirmed, 0.08);
-    .be-rung__marker { background: $be-conf-confirmed; }
-  }
-}
-
-.be-loop {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.1rem;
-  background: $be-bg-1;
-  border: 1px solid $be-edge;
-  border-left: 3px solid $be-conf-confirmed;
-  border-radius: $be-radius-card;
-  padding: 1.5rem;
-
-  .be-loop__icon {
-    flex-shrink: 0;
+  .be-cap-card__icon {
     width: 42px;
     height: 42px;
-    border-radius: $be-radius-control;
-    background: rgba($be-conf-confirmed, 0.1);
-    border: 1px solid rgba($be-conf-confirmed, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $be-conf-confirmed;
-    font-size: 1.1rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: $be-text-1;
-    margin-bottom: 0.35rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-    line-height: 1.55;
-    color: $be-text-2;
-    margin: 0;
-  }
-}
-
-// ─── Compare ───────────────────────────────────────────────────────────────
-
-.be-compare__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
-  @include media-min($breakpoint-md) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.be-compare__card {
-  background: $be-bg-1;
-  border: 1px solid $be-edge;
-  border-radius: $be-radius-card;
-  padding: 1.6rem 1.5rem;
-
-  .be-compare__verdict {
-    display: inline-block;
-    font-family: $be-font-mono;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-    color: $be-text-3;
-    border: 1px solid $be-edge-strong;
-    border-radius: 999px;
-    padding: 0.25rem 0.7rem;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: $be-text-1;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-    line-height: 1.55;
-    color: $be-text-2;
-    margin: 0;
-  }
-
-  &--highlight {
-    border: 1px solid transparent;
-    background:
-      linear-gradient($be-bg-2, $be-bg-2) padding-box,
-      linear-gradient(135deg, $be-brand-b, $be-brand-d) border-box;
-    box-shadow: 0 0 32px rgba($be-brand-d, 0.15);
-
-    .be-compare__verdict {
-      color: $be-accent;
-      border-color: rgba($be-accent, 0.4);
-    }
-  }
-}
-
-// ─── HealthCheck on-ramp ───────────────────────────────────────────────────
-
-.be-onramp__panel {
-  background: $be-bg-1;
-  border: 1px solid $be-edge;
-  border-radius: $be-radius-card;
-  padding: 2rem;
-}
-
-.be-onramp__body {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-
-  .be-onramp__icon {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
     border-radius: $be-radius-control;
     background: $be-bg-2;
     border: 1px solid $be-edge;
@@ -896,59 +543,118 @@ $be-shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
     align-items: center;
     justify-content: center;
     color: $be-accent;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 
-  h2 {
-    font-size: 1.4rem;
+  h3 {
+    @include heading-font;
+    font-size: 1rem;
     font-weight: 700;
     color: $be-text-1;
     margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.55;
     color: $be-text-2;
-    max-width: 44rem;
-    margin-bottom: 1.1rem;
+    margin: 0;
   }
 }
 
-.be-onramp__proof {
-  margin-top: 1.75rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid $be-edge;
+// ─── CTEM lifecycle steps ──────────────────────────────────────────────────
 
-  .be-onramp__proof-title {
-    display: block;
+.be-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include media-min($breakpoint-md) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.be-step {
+  position: relative;
+  background: $be-bg-1;
+  border: 1px solid $be-edge;
+  border-radius: $be-radius-card;
+  padding: 1.25rem;
+
+  .be-step__num {
+    display: inline-block;
     font-family: $be-font-mono;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    color: $be-text-3;
-    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    color: $be-brand-d;
+    margin-bottom: 0.6rem;
   }
 
-  .be-onramp__logos {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem 2.5rem;
+  h3 {
+    @include heading-font;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: $be-text-1;
+    margin-bottom: 0.4rem;
+  }
 
-    img {
-      height: 34px;
-      width: auto;
-      max-width: 140px;
-      object-fit: contain;
-      filter: grayscale(1) brightness(1.6);
-      opacity: 0.65;
-      transition: filter 180ms cubic-bezier(0.2, 0, 0, 1),
-        opacity 180ms cubic-bezier(0.2, 0, 0, 1);
+  p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: $be-text-3;
+    margin: 0;
+  }
 
-      &:hover {
-        filter: none;
-        opacity: 1;
-      }
+  // Connector between steps on wide layout
+  @include media-min($breakpoint-md) {
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -1rem;
+      width: 1rem;
+      height: 1px;
+      background: $be-edge-strong;
     }
+  }
+}
+
+// ─── Final CTA ─────────────────────────────────────────────────────────────
+
+.be-cta__panel {
+  position: relative;
+  text-align: center;
+  border-radius: $be-radius-card;
+  border: 1px solid $be-edge-strong;
+  padding: 3.5rem 2rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba($be-brand-c, 0.35), transparent 65%),
+    linear-gradient(180deg, $be-bg-1 0%, $be-bg-2 100%);
+
+  h2 {
+    @include heading-font;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $be-text-1;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: $be-text-2;
+    max-width: 34rem;
+    margin: 0 auto 1.75rem;
+  }
+
+  .be-cta__domain {
+    display: block;
+    margin-top: 1.5rem;
+    font-family: $be-font-mono;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: $be-text-3;
   }
 }
