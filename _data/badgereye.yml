@@ -93,7 +93,6 @@ tr: &DEFAULT_TR
         label: "kritik düğüm noktası"
       - value: "5"
         label: "sıradaki adım"
-    source: "Kaynak: sektör araştırmaları"
 
   modules:
     title: "Modüller"
@@ -294,7 +293,6 @@ en:
         label: "critical choke points"
       - value: "5"
         label: "next actions"
-    source: "Source: industry research"
 
   modules:
     title: "Modules"
