@@ -1159,6 +1159,9 @@ $be-ctem-r: var(--ctem-r);
 }
 
 .be-exit__q {
+  // Two reserved lines so rotating phrases of different lengths never
+  // change the terminal's height
+  min-height: calc(2 * 1.5em);
   font-family: $be-font-mono;
   font-size: 1.15rem;
   font-weight: 500;

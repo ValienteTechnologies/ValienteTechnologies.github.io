@@ -208,6 +208,9 @@ tr: &DEFAULT_TR
     label: "badgereye"
     line: "Saldırganlar saldırı yüzeyinizi çoktan tarıyor."
     title: "Peki siz ne durumda olduğunuzu biliyor musunuz?"
+    phrases:
+      - "Peki siz ne durumda olduğunuzu biliyor musunuz?"
+      - "BadgerEye ile durumunuzu onlardan önce görün."
     button: "BadgerEye.io"
     url: "https://badgereye.io"
 
@@ -424,5 +427,8 @@ en:
     label: "badgereye"
     line: "Attackers are already scanning your attack surface."
     title: "Do you know where you stand?"
+    phrases:
+      - "Do you know where you stand?"
+      - "With BadgerEye, see where you stand before they do."
     button: "BadgerEye.io"
     url: "https://badgereye.io"
