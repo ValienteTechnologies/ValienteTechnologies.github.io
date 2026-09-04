@@ -9,8 +9,7 @@ tr: &DEFAULT
   carousel_next: "Sonraki"
   # The language nudge banner shown on a tr page advertises the en version,
   # so these strings under tr: are written in ENGLISH (and vice versa below).
-  lang_nudge_text: "This site is also available in English."
-  lang_nudge_link: "Switch to English"
+  lang_nudge_link: "Also available in English"
   lang_nudge_dismiss: "Dismiss"
   lang_nudge_region: "Language suggestion"
   form_messages:
@@ -35,8 +34,7 @@ en:
   carousel_next: "Next"
   # The language nudge banner shown on an en page advertises the tr version,
   # so these strings under en: are written in TURKISH (and vice versa above).
-  lang_nudge_text: "Bu site Türkçe olarak da mevcut."
-  lang_nudge_link: "Türkçeye geç"
+  lang_nudge_link: "Türkçe olarak da mevcut"
   lang_nudge_dismiss: "Kapat"
   lang_nudge_region: "Dil önerisi"
   form_messages:

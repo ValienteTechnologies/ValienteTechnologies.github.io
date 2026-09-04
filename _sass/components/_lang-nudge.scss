@@ -4,14 +4,13 @@
 
 // The banner is position:fixed, so it would otherwise overlap the footer.
 // lang-nudge.js sets --lang-nudge-height from the banner's real height once,
-// at show time; 6rem is only the pre-measurement fallback.
+// at show time; 4rem is only the pre-measurement fallback.
 body.has-lang-nudge {
-  padding-bottom: var(--lang-nudge-height, 6rem);
+  padding-bottom: var(--lang-nudge-height, 4rem);
 }
 
-// Two deterministic rows on narrow screens (text, then link + close), one
-// row from md up. A wrapping flex row let the close button drop onto a row
-// of its own whenever the text and link happened to fit together.
+// One strip: the link is the whole sentence, close at the end. Copy is kept
+// short enough to stay on one line at 360px in Montserrat.
 .lang-nudge {
   position: fixed;
   left: 0;
@@ -20,55 +19,40 @@ body.has-lang-nudge {
   z-index: 1020;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas:
-    "text text"
-    "link close";
   align-items: center;
   gap: $space-gap-sm;
   width: 100%;
-  padding: 0.75rem 1rem;
-  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  padding: 0.25rem 0.5rem 0.25rem 1rem;
+  padding-bottom: calc(0.25rem + env(safe-area-inset-bottom));
   background-color: rgba($valiente-midnight, 0.96);
   border-top: 1px solid $border-surface-muted;
   box-shadow: $shadow-elevated;
   color: var(--color-text-on-dark);
+  @include heading-font;
   font-size: $font-size-sm;
+  line-height: 1.4;
 
   &[hidden] {
     display: none;
   }
 
-  &__text {
-    grid-area: text;
-    margin: 0;
-  }
-
   &__link {
-    grid-area: link;
     justify-self: start;
-    display: inline-flex;
-    align-items: center;
-    min-height: $tap-target-min;
-    padding: 0.4rem 0.9rem;
-    border-radius: $radius-input;
-    // darken($primary, 8%) ≈ #c51a74 → 5.56:1 contrast with white (WCAG AA),
-    // matching .btn-primary (components/_buttons.scss).
-    background-color: darken($primary, 8%);
+    display: inline-block;
+    padding: 0.5rem 0;
     color: $white;
-    font-weight: 600;
-    text-decoration: none;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 
     &:hover,
     &:focus {
-      background-color: darken($primary, 14%);
-      color: $white;
-      text-decoration: none;
+      color: $valiente-rose;
+      text-decoration: underline;
     }
   }
 
   &__close {
-    grid-area: close;
-    justify-self: end;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,12 +70,5 @@ body.has-lang-nudge {
     &:focus {
       color: $white;
     }
-  }
-}
-
-@include media-min($breakpoint-md) {
-  .lang-nudge {
-    grid-template-columns: minmax(0, 1fr) auto auto;
-    grid-template-areas: "text link close";
   }
 }
