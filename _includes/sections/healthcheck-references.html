@@ -11,28 +11,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="client-marquee" id="scrolling-clients">
-      <div class="client-marquee__track">
-        {% for pass in (1..2) %}
-          {% for client in refs.list %}
-          <div class="reference-item"{% if pass == 2 %} aria-hidden="true"{% endif %}>
-            <div class="reference-card">
-              <div class="reference-card__glow"></div>
-              <div class="reference-card__logo">
-                <picture>
-                  <source srcset="{{ client.logo | replace: '.png', '.webp' }}" type="image/webp">
-                  <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{% if pass == 1 %}{{ client.title }}{% endif %}" width="200" height="50">
-                </picture>
-              </div>
-              {% if client.title %}
-              <span class="reference-card__name">{{ client.title }}</span>
-              {% endif %}
-            </div>
-          </div>
-          {% endfor %}
-        {% endfor %}
-      </div>
-    </div>
+    {% include sections/client-marquee.html items=refs.list %}
   </div>
 </section>
 {% endif %}

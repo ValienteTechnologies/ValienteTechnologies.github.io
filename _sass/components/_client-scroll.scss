@@ -17,6 +17,12 @@ $client-marquee-duration-touch: 40s; // old code ran 3x faster on touch devices
   &:hover .client-marquee__track {
     animation-play-state: paused;
   }
+
+  // :hover never fires on touch devices, so client-scroll.js toggles this
+  // class on touchstart/touchend to pause the marquee under a finger.
+  &.is-paused .client-marquee__track {
+    animation-play-state: paused;
+  }
 }
 
 .client-marquee__track {
