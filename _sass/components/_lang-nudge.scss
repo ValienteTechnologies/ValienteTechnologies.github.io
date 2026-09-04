@@ -9,14 +9,20 @@ body.has-lang-nudge {
   padding-bottom: var(--lang-nudge-height, 6rem);
 }
 
+// Two deterministic rows on narrow screens (text, then link + close), one
+// row from md up. A wrapping flex row let the close button drop onto a row
+// of its own whenever the text and link happened to fit together.
 .lang-nudge {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1020;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "text text"
+    "link close";
   align-items: center;
   gap: $space-gap-sm;
   width: 100%;
@@ -33,13 +39,13 @@ body.has-lang-nudge {
   }
 
   &__text {
+    grid-area: text;
     margin: 0;
-    flex: 1 1 auto;
-    min-width: 200px;
   }
 
   &__link {
-    flex: 0 0 auto;
+    grid-area: link;
+    justify-self: start;
     display: inline-flex;
     align-items: center;
     min-height: $tap-target-min;
@@ -62,13 +68,13 @@ body.has-lang-nudge {
   }
 
   &__close {
-    flex: 0 0 auto;
+    grid-area: close;
+    justify-self: end;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: $tap-target-min;
     min-height: $tap-target-min;
-    margin-left: auto;
     padding: 0;
     border: 0;
     background: transparent;
@@ -81,5 +87,12 @@ body.has-lang-nudge {
     &:focus {
       color: $white;
     }
+  }
+}
+
+@include media-min($breakpoint-md) {
+  .lang-nudge {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas: "text link close";
   }
 }
