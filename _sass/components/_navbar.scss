@@ -13,10 +13,10 @@
     font-size: $navbar-toggler-font-size;
     right: 0;
     padding: $navbar-toggler-padding;
+    // Tap target only: no display override here, Bootstrap's
+    // .navbar-expand-lg .navbar-toggler { display: none } must keep winning
+    // on desktop, and a <button> centres its label on its own.
     min-height: $tap-target-min;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     text-transform: uppercase;
     color: $white;
     border: 0;
