@@ -13,10 +13,6 @@
   .section-heading {
     color: var(--color-text-on-dark);
   }
-
-  .section-subheading {
-    color: var(--color-text-muted-on-dark) !important;
-  }
 }
 
 .brochures-grid {
@@ -136,13 +132,6 @@
   }
 }
 
-.brochures-card__eyebrow {
-  font-size: var(--font-size-xs);
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: rgba($valiente-rose, 0.85);
-}
-
 .brochures-card__cta {
   display: inline-flex;
   align-items: center;
@@ -162,7 +151,7 @@
 .brochures-modal {
   .modal-dialog {
     margin: var(--space-gap);
-    max-width: 100vw;
+    max-width: calc(100vw - 2 * var(--space-gap));
   }
   .modal-content {
     padding: 6.25rem 0;
@@ -239,10 +228,6 @@
   .brochures-card {
     padding: var(--space-gap-lg);
     gap: var(--space-gap-md);
-  }
-
-  .brochures-card__eyebrow {
-    letter-spacing: 0.25em;
   }
 }
 

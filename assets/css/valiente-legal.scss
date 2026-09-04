@@ -20,7 +20,6 @@ $header-image:      "{{ site.data.style.header-image }}";
 $contact-image:     "{{ site.data.style.contact-image }}";
 
 // ── Subpage layout (body.page-layout container styles) ────────────────────────
-@import "layout/page";
 
 // ── Legal-page sections ───────────────────────────────────────────────────────
 @import "layout/legal";

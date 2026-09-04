@@ -13,6 +13,10 @@
     font-size: $navbar-toggler-font-size;
     right: 0;
     padding: $navbar-toggler-padding;
+    min-height: $tap-target-min;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     color: $white;
     border: 0;
@@ -78,7 +82,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@include media-min($breakpoint-lg) {
   #mainNav {
     padding-top: $navbar-padding-y-lg;
     padding-bottom: $navbar-padding-y-lg;
@@ -93,7 +97,7 @@
     .navbar-nav {
       .nav-item {
         .nav-link {
-          padding: 1.1em 1em !important;
+          padding: 1.1em 1em;
         }
       }
     }

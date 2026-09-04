@@ -854,7 +854,7 @@ $be-ctem-r: var(--ctem-r);
   }
 
   // Stage numbers walk the brand ramp around the loop
-  &--1 .be-step__num { color: lighten($be-brand-b, 18%); }
+  &--1 .be-step__num { color: lighten($be-brand-b, 34%); }
   &--2 .be-step__num { color: lighten($be-brand-c, 14%); }
   &--3 .be-step__num { color: lighten($be-brand-c, 20%); }
   &--4 .be-step__num { color: lighten($be-brand-d, 6%); }

@@ -39,7 +39,7 @@ module.exports = {
       'modal-open',         // Bootstrap modal
       'fade',               // Bootstrap modal/transition
     ],
-    greedy: [/^modal/, /^dropdown/, /^navbar/, /^collapse/],
+    greedy: [/^modal/, /^dropdown/, /^navbar/, /^collapse/, /^carousel/],
   },
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
   output: '_site/assets/css/',

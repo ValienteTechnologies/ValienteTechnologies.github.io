@@ -53,7 +53,7 @@
     }
   }
 
-  @media (min-width: 992px) {
+  @include media-min($breakpoint-lg) {
     padding-top: $navbar-height-lg;
 
     .error-content {

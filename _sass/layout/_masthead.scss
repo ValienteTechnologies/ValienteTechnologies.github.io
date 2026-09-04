@@ -43,7 +43,7 @@ header.masthead {
     z-index: 3;
     pointer-events: none;
 
-    @media (min-width: 768px) {
+    @include media-min($breakpoint-md) {
       display: block;
     }
   }
@@ -196,7 +196,7 @@ header.masthead .masthead-secondary {
   }
 }
 
-@media (min-width: 768px) {
+@include media-min($breakpoint-md) {
   header.masthead {
     .intro-text {
       padding-top: $masthead-padding-top-lg;
@@ -215,6 +215,18 @@ header.masthead .masthead-secondary {
         margin-bottom: $space-gap * 3;
         @include heading-font;
       }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.masthead {
+    .masthead-bg {
+      animation: none;
+    }
+
+    &::after {
+      animation: none;
     }
   }
 }

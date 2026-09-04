@@ -16,10 +16,6 @@
     color: var(--color-text-on-dark);
   }
 
-  .section-subheading {
-    color: var(--color-text-muted-on-dark) !important;
-  }
-
   .btn {
     box-shadow: 0 15px 35px rgba($primary, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
