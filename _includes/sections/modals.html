@@ -22,11 +22,11 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">{{ project.title }}</h2>
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
-              {%- assign brochure_img_w = 1200 -%}
-              {%- assign brochure_img_h = 1200 -%}
+              {%- assign brochure_img_w = 900 -%}
+              {%- assign brochure_img_h = 900 -%}
               {%- if project.image contains 'backup.png' or project.image contains 'pentest.png' -%}
-                {%- assign brochure_img_w = 1131 -%}
-                {%- assign brochure_img_h = 1600 -%}
+                {%- assign brochure_img_w = 900 -%}
+                {%- assign brochure_img_h = 1273 -%}
               {%- endif -%}
               <picture>
                 <source srcset="{{ project.image | replace: '.png', '.webp' }}" type="image/webp">
