@@ -64,29 +64,29 @@
   </script>
   {% endif %}
 
-  <meta name="description" content="{{ _page_description }}">
-  <meta name="author" content="{{ site.author }}">
-  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
+  <meta name="description" content="{{ _page_description | escape }}">
+  <meta name="author" content="{{ site.author | escape }}">
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' | escape }}">
   <meta name="geo.region" content="TR-07">
   <meta name="geo.placename" content="Antalya">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | escape }}">
   <link rel="icon" type="image/x-icon" href="/assets/img/valiente/favicon.ico">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="apple-touch-icon" href="/assets/img/valiente/valiente1024.webp">
-  <meta name="theme-color" content="{{ site.data.style.highlight | default: '#e22388' }}">
+  <link rel="apple-touch-icon" href="/assets/img/valiente/apple-touch-icon.png">
+  <meta name="theme-color" content="{{ site.data.style.highlight | default: '#e22388' | escape }}">
 
   <!-- JSON-LD: LocalBusiness structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["Organization", "LocalBusiness"],
-    "name": "{{ site.title }}",
-    "url": "{{ site.url }}",
-    "logo": "{{ site.url }}/assets/img/valiente/valientetitle.svg",
-    "image": "{{ site.url }}/assets/img/valiente/og-image.png",
-    "description": "{{ _site_description }}",
-    "email": "{{ site.email }}",
-    "telephone": "{{ site.data.contact.tr.phone_number }}",
+    "name": {{ site.title | jsonify }},
+    "url": {{ site.url | jsonify }},
+    "logo": {{ site.url | append: "/assets/img/valiente/valientetitle.svg" | jsonify }},
+    "image": {{ site.url | append: "/assets/img/valiente/og-image.png" | jsonify }},
+    "description": {{ _site_description | jsonify }},
+    "email": {{ site.email | jsonify }},
+    "telephone": {{ site.data.contact[site.active_lang].phone_number | default: site.data.contact.tr.phone_number | jsonify }},
     "areaServed": ["Antalya", "Türkiye"],
     "address": {
       "@type": "PostalAddress",
@@ -94,9 +94,9 @@
       "addressCountry": "TR"
     },
     "sameAs": [
-      "{{ site.social.linkedin }}",
-      "{{ site.social.instagram }}",
-      "{{ site.social.github }}"
+      {{ site.social.linkedin | jsonify }},
+      {{ site.social.instagram | jsonify }},
+      {{ site.social.github | jsonify }}
     ]
   }
   </script>
@@ -110,13 +110,13 @@
     "itemListElement": [{
       "@type": "ListItem",
       "position": 1,
-      "name": "{{ _i18n.home }}",
-      "item": "{{ site.url }}{{ site.baseurl }}{{ _lang_prefix }}/"
+      "name": {{ _i18n.home | jsonify }},
+      "item": {{ site.url | append: site.baseurl | append: _lang_prefix | append: "/" | jsonify }}
     },{
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ _page_title }}",
-      "item": "{{ _page_url_abs }}"
+      "name": {{ _page_title | jsonify }},
+      "item": {{ _page_url_abs | jsonify }}
     }]
   }
   </script>
@@ -127,14 +127,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "{{ page.schema_type }}",
-    "name": "{{ page.schema_name | default: page.title }}",
-    "description": "{{ page.schema_description | default: _page_description }}",
-    "url": "{{ _page_url_abs }}",
+    "@type": {{ page.schema_type | jsonify }},
+    "name": {{ page.schema_name | default: page.title | jsonify }},
+    "description": {{ page.schema_description | default: _page_description | jsonify }},
+    "url": {{ _page_url_abs | jsonify }},
     "provider": {
       "@type": "Organization",
-      "name": "{{ site.title }}",
-      "url": "{{ site.url }}"
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | jsonify }}
     }
   }
   </script>
@@ -147,42 +147,21 @@
 
   <!-- Open Graph / Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ _page_full_title }}">
-  <meta name="twitter:description" content="{{ _page_description }}">
-  <meta name="twitter:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
+  <meta name="twitter:title" content="{{ _page_full_title | escape }}">
+  <meta name="twitter:description" content="{{ _page_description | escape }}">
+  <meta name="twitter:image" content="{{ site.url | append: '/assets/img/valiente/og-image.png' | escape }}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ _page_url_abs }}">
-  <meta property="og:title" content="{{ _page_full_title }}">
-  <meta property="og:description" content="{{ _page_description }}">
-  <meta property="og:image" content="{{ site.url }}/assets/img/valiente/og-image.png">
+  <meta property="og:url" content="{{ _page_url_abs | escape }}">
+  <meta property="og:title" content="{{ _page_full_title | escape }}">
+  <meta property="og:description" content="{{ _page_description | escape }}">
+  <meta property="og:image" content="{{ site.url | append: '/assets/img/valiente/og-image.png' | escape }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
   <meta property="og:locale" content="{% if site.active_lang == 'en' %}en_US{% else %}tr_TR{% endif %}">
   <meta property="og:locale:alternate" content="{% if site.active_lang == 'en' %}tr_TR{% else %}en_US{% endif %}">
-
-  {% if page.layout == "home" %}
-  <!-- LCP preload: masthead ::before background image (CSS images aren't auto-prioritized) -->
-  <link rel="preload" href="/assets/img/valiente/valiente.svg" as="image" fetchpriority="high">
-  <!-- intro-lead-in (Droid Serif italic) is only above the fold on the masthead, i.e.
-       only on this layout. Its rendered text (see _data/header.yml) uses no character
-       outside Google's "latin" subset range, so that — not latin-ext — is preloaded. -->
-  <link rel="preload" href="/assets/fonts/droid-serif-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
-  {% endif %}
-
-  <!-- Self-hosted fonts: Montserrat 700 is preloaded unconditionally — h1-h6 use it
-       (font-weight:700, base/_page.scss) and are above the fold on every layout.
-       Its rendered text on all pages, including the Turkish default, only needs
-       characters from Google's "latin" subset (U+0000-00FF plus U+0131) — "latin-ext"
-       starts at U+0100 and excludes basic Latin, so it would be the wrong file here. -->
-  <link rel="preload" href="/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  {%- if site.active_lang == "tr" %}
-  <!-- Turkish headings are uppercased by CSS (text-uppercase), which turns "i" into İ
-       (U+0130) — a latin-ext glyph — so Turkish pages also need that subset above the fold. -->
-  <link rel="preload" href="/assets/fonts/montserrat-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-  {%- endif %}
 
   <!-- FontAwesome: local subsetted build (font-display:swap, ~2KB, same-origin) -->
   <link rel="stylesheet" href="/assets/css/all.min.css">
@@ -192,17 +171,26 @@
   <link rel="stylesheet" href="/assets/css/{{ _page_css }}">
   {%- endif -%}
 
-  <!-- Page container change top padding when nav shrinks -->
-  {% if page.body_class == "page-layout" %}
-  <style>
-    #pagecontainer {
-      padding-top: 150px;
-    }
-    @media only screen and (max-width: 991px) {
-      #pagecontainer {
-        padding-top: 100px;
-      }
-    }
-  </style>
+  {% if page.layout == "home" %}
+  <!-- intro-lead-in (Droid Serif italic) is only above the fold on the masthead, i.e.
+       only on this layout. Its rendered text (see _data/header.yml) uses no character
+       outside Google's "latin" subset range, so that — not latin-ext — is preloaded. -->
+  <link rel="preload" href="/assets/fonts/droid-serif-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   {% endif %}
+
+  <!-- Self-hosted fonts, requested after the render-blocking stylesheets above so the CSS
+       itself isn't delayed. Montserrat 400 is preloaded unconditionally — the navbar renders
+       it (font-weight:400) above the fold on every layout. Montserrat 700 is preloaded
+       unconditionally too — h1-h6 use it (font-weight:700, base/_page.scss) and are above
+       the fold on every layout. Both faces' rendered text on all pages, including the
+       Turkish default, only need characters from Google's "latin" subset (U+0000-00FF plus
+       U+0131) — "latin-ext" starts at U+0100 and excludes basic Latin, so it would be the
+       wrong file here. -->
+  <link rel="preload" href="/assets/fonts/montserrat-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  {%- if site.active_lang == "tr" %}
+  <!-- Turkish headings are uppercased by CSS (text-uppercase), which turns "i" into İ
+       (U+0130) — a latin-ext glyph — so Turkish pages also need that subset above the fold. -->
+  <link rel="preload" href="/assets/fonts/montserrat-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  {%- endif %}
 </head>
