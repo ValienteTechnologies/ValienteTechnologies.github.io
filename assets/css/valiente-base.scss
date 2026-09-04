@@ -9,6 +9,9 @@
 @import "base/variables";
 @import "base/mixins";
 
+// ── Self-hosted web fonts (@font-face) ────────────────────────────────────────
+@import "base/fonts";
+
 // ── Theme colors (Liquid-injected) ────────────────────────────────────────────
 $primary:           {{ site.data.style.highlight | default: "#e22388" }} !default;
 $white:             {{ site.data.style.white     | default: "#fff"     }} !default;

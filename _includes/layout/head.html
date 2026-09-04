@@ -43,48 +43,10 @@
   {%- endif -%}
   <title>{{ _page_full_title }}</title>
 
-  <!-- Critical CSS: prevents FOUC while main sheets load non-blockingly -->
-  <style>
-    :root { --color-page-bg: #1a0b2f; --color-text: rgba(255,255,255,0.9); }
-    body { background-color: var(--color-page-bg); color: var(--color-text); margin: 0; font-family: system-ui, -apple-system, sans-serif; }
-    .masthead { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--color-page-bg); position: relative; overflow: hidden; }
-    .navbar { position: fixed; top: 0; width: 100%; min-height: 80px; z-index: 1030; }
-    /* Canvas must be absolutely positioned from first render — if external CSS loads late
-       and canvas is still inline (default), it sits in flex flow (300×150) then shifts out,
-       causing the 0.538 CLS. Keeping it absolute from the start prevents that shift. */
-    #meshNetwork { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; pointer-events: none; }
-    @media (min-width: 768px) { #meshNetwork { display: block; } }
-    /* Font metric overrides: make Arial/Georgia match Montserrat/DroidSerif metrics so
-       fallback→web-font swap causes no visible layout shift (CLS). Values from fontpie/
-       @next/font calculations for Montserrat Regular vs Arial. */
-    @font-face {
-      font-family: "MontserratFallback";
-      src: local("Arial"), local("Helvetica Neue");
-      size-adjust: 113.48%;
-      ascent-override: 84.56%;
-      descent-override: 21.99%;
-      line-gap-override: 0%;
-    }
-    @font-face {
-      font-family: "DroidSerifFallback";
-      src: local("Georgia"), local("Times New Roman");
-      size-adjust: 97.3%;
-      ascent-override: 106.9%;
-      descent-override: 29.3%;
-      line-gap-override: 0%;
-    }
-    /* Pre-apply the same font stacks that valiente-base.css will set on these above-fold
-       elements. Without this, when the non-blocking CSS fires it changes font-family from
-       system-ui → MontserratFallback, which is a different font → layout shift (CLS 0.276).
-       With this, the CSS load is a no-op for these elements. */
-    .navbar, .navbar a, .navbar .nav-link, .navbar .dropdown-item,
-    .navbar-brand, .intro-heading, .masthead .btn {
-      font-family: "Montserrat", "MontserratFallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    }
-    .intro-lead-in {
-      font-family: "Droid Serif", "DroidSerifFallback", Georgia, "Times New Roman", serif;
-    }
-  </style>
+  <!-- Critical CSS: the stylesheets below are render-blocking, so the browser never
+       paints before real styles apply. This only covers the request round-trip before
+       any CSS has arrived, so the very first frame is dark instead of white. -->
+  <style>html { background: #1a0b2f; }</style>
 
   {% if site.analytics.google %}
   <!-- Google Analytics: deferred until after load to avoid forced reflow on LCP -->
@@ -204,31 +166,30 @@
   {% if page.layout == "home" %}
   <!-- LCP preload: masthead ::before background image (CSS images aren't auto-prioritized) -->
   <link rel="preload" href="/assets/img/valiente/valiente.svg" as="image" fetchpriority="high">
+  <!-- intro-lead-in (Droid Serif italic) is only above the fold on the masthead, i.e.
+       only on this layout. Its rendered text (see _data/header.yml) uses no character
+       outside Google's "latin" subset range, so that — not latin-ext — is preloaded. -->
+  <link rel="preload" href="/assets/fonts/droid-serif-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   {% endif %}
 
-  <!-- Preconnect to font origins -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Self-hosted fonts: Montserrat 700 is preloaded unconditionally — h1-h6 use it
+       (font-weight:700, base/_page.scss) and are above the fold on every layout.
+       Its rendered text on all pages, including the Turkish default, only needs
+       characters from Google's "latin" subset (U+0000-00FF plus U+0131) — "latin-ext"
+       starts at U+0100 and excludes basic Latin, so it would be the wrong file here. -->
+  <link rel="preload" href="/assets/fonts/montserrat-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  {%- if site.active_lang == "tr" %}
+  <!-- Turkish headings are uppercased by CSS (text-uppercase), which turns "i" into İ
+       (U+0130) — a latin-ext glyph — so Turkish pages also need that subset above the fold. -->
+  <link rel="preload" href="/assets/fonts/montserrat-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  {%- endif %}
 
-  <!-- FontAwesome: local subsetted build (font-display:swap, ~3KB) -->
-  <link rel="preload" href="/assets/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/all.min.css"></noscript>
-  <!-- Custom fonts: high-priority non-render-blocking with display=swap -->
-  {% if site.data.style.fonts_urls %}
-    {% for font_url in site.data.style.fonts_urls %}
-      <link rel="preload" href="{{font_url}}" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="{{font_url}}"></noscript>
-    {% endfor %}
-  {% else %}
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
-  {% endif %}
-  <!-- Custom styles for this theme: loaded non-blockingly for performance -->
-  <link rel="preload" href="/assets/css/valiente-base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/valiente-base.css"></noscript>
+  <!-- FontAwesome: local subsetted build (font-display:swap, ~2KB, same-origin) -->
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <!-- Custom styles for this theme -->
+  <link rel="stylesheet" href="/assets/css/valiente-base.css">
   {%- if _page_css != "" -%}
-  <link rel="preload" href="/assets/css/{{ _page_css }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/{{ _page_css }}"></noscript>
+  <link rel="stylesheet" href="/assets/css/{{ _page_css }}">
   {%- endif -%}
 
   <!-- Page container change top padding when nav shrinks -->

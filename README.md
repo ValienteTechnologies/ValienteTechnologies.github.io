@@ -61,7 +61,7 @@ _data/          # All site content (YAML). Edit here, not in templates.
   testimonials.yml
   footer.yml
   navigation.yml
-  style.yml     # Highlight color, fonts_urls
+  style.yml     # Highlight color
   ...
 
 _includes/
@@ -138,9 +138,26 @@ Stage a PNG/JPG and the pre-commit hook converts it to WebP automatically. Use `
 
 ---
 
+## Fonts
+
+Montserrat (400/700) and Droid Serif (400 italic only — the only style the site
+actually uses) are self-hosted under `assets/fonts/` instead of loaded from
+Google Fonts, so the site's CSS can be render-blocking without adding a
+cross-origin round-trip. Each face ships as separate `latin` and `latin-ext`
+woff2 subsets (unicode-range values copied from Google's own CSS) so Turkish
+text (ş ğ ı İ ö ü ç) renders correctly — the two ranges are needed because
+Google's `latin-ext` subset excludes basic Latin/ASCII. The `@font-face` rules
+live in `_sass/base/_fonts.scss`. To refresh a subset (e.g. a new weight), fetch
+`https://fonts.googleapis.com/css2?family=...` with an older Chrome user agent
+(e.g. `Chrome/60.0.3112.113`) to get static per-weight files instead of a
+merged variable font, then download the `latin`/`latin-ext` file URLs it
+returns.
+
+---
+
 ## Deployment
 
-Push to `main` → GitHub Pages builds automatically. Cloudflare proxies the result.
+Push to `main` → GitHub Pages builds and serves the site directly; the Cloudflare DNS records are DNS-only (not proxied) so GitHub can renew the TLS certificate.
 
 **Cloudflare notes:**
 - Email obfuscation: disable in Scrape Shield → Cloudflare Email Obfuscation to remove `email-decode.min.js`

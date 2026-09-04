@@ -68,6 +68,8 @@ html {
 
 body {
   overflow-x: hidden;
+  background-color: var(--color-page-bg);
+  color: var(--color-text-on-dark);
   @include body-font;
   min-height: 100vh;
   display: flex;
