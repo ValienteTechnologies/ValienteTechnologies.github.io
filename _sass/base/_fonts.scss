@@ -96,21 +96,30 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-// Font metric overrides: make Arial/Georgia match Montserrat/DroidSerif metrics so
-// fallback→web-font swap causes no visible layout shift (CLS). Values from fontpie/
-// @next/font calculations for Montserrat Regular vs Arial.
+// Font metric overrides: make Arial/Georgia (or their metric-identical Liberation
+// clones on Linux) match Montserrat/DroidSerif metrics so the fallback→web-font
+// swap causes no visible layout shift (CLS).
+// Montserrat is only ever used here for uppercase headings, nav links and
+// buttons, and measured against Liberation Sans/Arial those strings are
+// 1.02-1.04x wider in Montserrat (the hero word "CYBERSECURITY" is 1.018x).
+// The fontpie-style 113% figure describes mixed-case body text, which this
+// site never sets in Montserrat, and it made the fallback 11% wider than
+// the web font: the hero heading clipped on machines that matched the
+// fallback (PageSpeed's Linux, any box with Liberation Sans). 102% keeps the
+// fallback at or under the web font's width so nothing can clip during swap.
+// Ascent/descent = Montserrat's 968/251 per 1000 em divided by size-adjust.
 @font-face {
   font-family: "MontserratFallback";
-  src: local("Arial"), local("Helvetica Neue");
-  size-adjust: 113.48%;
-  ascent-override: 84.56%;
-  descent-override: 21.99%;
+  src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans");
+  size-adjust: 102%;
+  ascent-override: 94.9%;
+  descent-override: 24.6%;
   line-gap-override: 0%;
 }
 
 @font-face {
   font-family: "DroidSerifFallback";
-  src: local("Georgia"), local("Times New Roman");
+  src: local("Georgia"), local("Times New Roman"), local("Liberation Serif");
   size-adjust: 97.3%;
   ascent-override: 106.9%;
   descent-override: 29.3%;

@@ -119,11 +119,16 @@ header.masthead {
       @include serif-font;
     }
     .intro-heading {
-      // CSS min() shrinks the heading on narrow phones where the longest
-      // English word ("CYBERSECURITY") would clip at the fixed size; wider
-      // viewports keep the design size. Written via unquote because LibSass
-      // otherwise tries (and fails) to evaluate min() itself.
-      font-size: unquote("min(#{$masthead-font-size-heading-sm}, 10.5vw)");
+      // CSS min() shrinks the heading on narrow phones so the longest word
+      // ("CYBERSECURITY", 8.7em wide in Montserrat 700) fits inside the
+      // container's 15px padding down to 320px: 8.71 x 10vw x 3.2 = 279px
+      // of 290px. Wider viewports keep the design size. Written via unquote
+      // because LibSass otherwise tries (and fails) to evaluate min() itself.
+      font-size: unquote("min(#{$masthead-font-size-heading-sm}, 10vw)");
+      // A fallback font wider than the metric-matched one (e.g. DejaVu Sans
+      // on a Linux box without Arial/Liberation) must break the word with a
+      // hyphen rather than paint past the edge.
+      hyphens: auto;
       font-weight: 700;
       line-height: 1.14;
       margin-bottom: $space-gap * 1.5;
