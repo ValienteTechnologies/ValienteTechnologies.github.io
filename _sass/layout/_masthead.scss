@@ -43,7 +43,7 @@ header.masthead {
     z-index: 3;
     pointer-events: none;
 
-    @media (min-width: 768px) {
+    @include media-min($breakpoint-md) {
       display: block;
     }
   }
@@ -67,7 +67,13 @@ header.masthead {
     background-size: 60% auto;
     background-position: center center;
     background-repeat: no-repeat;
+    // The SVG is a CSS background, so it is requested only after the
+    // stylesheet has been parsed and lands a beat after first paint. Fading
+    // it in (opacity only, compositor) turns that late arrival into an
+    // intentional reveal instead of a pop, and keeps the heading text as the
+    // largest-paint candidate while the decoration is still invisible.
     opacity: 0.08;
+    animation: masthead-logo-in 700ms ease-out both;
     pointer-events: none;
     z-index: 1;
   }
@@ -119,11 +125,16 @@ header.masthead {
       @include serif-font;
     }
     .intro-heading {
-      // CSS min() shrinks the heading on narrow phones where the longest
-      // English word ("CYBERSECURITY") would clip at the fixed size; wider
-      // viewports keep the design size. Written via unquote because LibSass
-      // otherwise tries (and fails) to evaluate min() itself.
-      font-size: unquote("min(#{$masthead-font-size-heading-sm}, 10.5vw)");
+      // CSS min() shrinks the heading on narrow phones so the longest word
+      // ("CYBERSECURITY", 8.7em wide in Montserrat 700) fits inside the
+      // container's 15px padding down to 320px: 8.71 x 10vw x 3.2 = 279px
+      // of 290px. Wider viewports keep the design size. Written via unquote
+      // because LibSass otherwise tries (and fails) to evaluate min() itself.
+      font-size: unquote("min(#{$masthead-font-size-heading-sm}, 10vw)");
+      // A fallback font wider than the metric-matched one (e.g. DejaVu Sans
+      // on a Linux box without Arial/Liberation) must break the word with a
+      // hyphen rather than paint past the edge.
+      hyphens: auto;
       font-weight: 700;
       line-height: 1.14;
       margin-bottom: $space-gap * 1.5;
@@ -196,7 +207,7 @@ header.masthead .masthead-secondary {
   }
 }
 
-@media (min-width: 768px) {
+@include media-min($breakpoint-md) {
   header.masthead {
     .intro-text {
       padding-top: $masthead-padding-top-lg;
@@ -215,6 +226,24 @@ header.masthead .masthead-secondary {
         margin-bottom: $space-gap * 3;
         @include heading-font;
       }
+    }
+  }
+}
+
+@keyframes masthead-logo-in {
+  from { opacity: 0; }
+  to { opacity: 0.08; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.masthead {
+    .masthead-bg,
+    &::before {
+      animation: none;
+    }
+
+    &::after {
+      animation: none;
     }
   }
 }

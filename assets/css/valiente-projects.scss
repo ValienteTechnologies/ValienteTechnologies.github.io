@@ -17,11 +17,8 @@ $valiente-fuchsia:  #ab0693 !default;
 $valiente-magenta:  $primary !default;
 $valiente-rose:     lighten($valiente-magenta, 12%) !default;
 
-// ── Global page styles (CSS custom properties, html/body) ─────────────────────
-@import "base/page";
-
 // ── Subpage layout ────────────────────────────────────────────────────────────
-@import "layout/page";
+// (base/page tokens ship with every page via valiente-base.css already)
 
 // ── Projects + HealthCheck styles ─────────────────────────────────────────────
 @import "layout/projects";

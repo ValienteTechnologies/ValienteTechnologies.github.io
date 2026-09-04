@@ -2,6 +2,7 @@
 {% assign hc = site.data.healthcheck[site.active_lang] | default: site.data.healthcheck.tr %}
 {% if hc and hc.contact %}
 {% assign hcc = hc.contact %}
+{%- assign _i18n = site.data.i18n[site.active_lang] | default: site.data.i18n.tr -%}
 <section class="page-section contact-section hc-contact-section" id="{{ hcc.section | default: 'hc-contact' }}">
   <div class="contact-gradient" aria-hidden="true"></div>
   <div class="container position-relative">
@@ -38,32 +39,22 @@
         <div class="contact-panel contact-panel--form h-100">
           <div class="contact-panel__glow" aria-hidden="true"></div>
           <form id="contactForm" method="POST" novalidate
-            data-action="{{ hcc.formspree_action }}">
+            data-action="{{ hcc.formspree_action }}"
+            data-msg-required="{{ _i18n.form_messages.required | escape }}"
+            data-msg-invalid-email="{{ _i18n.form_messages.invalid_email | escape }}"
+            data-msg-invalid-phone="{{ _i18n.form_messages.invalid_phone | escape }}"
+            data-msg-sending="{{ _i18n.form_messages.sending | escape }}"
+            data-msg-success="{{ hcc.success_message | default: _i18n.form_messages.success | escape }}"
+            data-msg-error="{{ _i18n.form_messages.error | escape }}">
             <div class="contact-form-fields">
-              <div class="form-field">
-                <label for="hc-name">{{ hcc.full_name | default: "Ad Soyad *" }}</label>
-                <input name="name" class="form-control" id="hc-name" type="text"
-                  placeholder="{{ hcc.full_name | default: 'Ad Soyad *' }}"
-                  required="required">
-              </div>
-              <div class="form-field">
-                <label for="hc-email">{{ hcc.email | default: "E-posta *" }}</label>
-                <input name="_replyto" class="form-control" id="hc-email" type="email"
-                  placeholder="{{ hcc.email | default: 'E-posta *' }}"
-                  required="required">
-              </div>
-              <div class="form-field">
-                <label for="hc-phone">{{ hcc.phone | default: "Telefon" }}</label>
-                <input name="phone" class="form-control" id="hc-phone" type="tel"
-                  placeholder="{{ hcc.phone | default: 'Telefon *' }}"
-                  required="required">
-              </div>
-              <div class="form-field">
-                <label for="hc-company">{{ hcc.company | default: "Şirket Adı *" }}</label>
-                <input name="company" class="form-control" id="hc-company" type="text"
-                  placeholder="{{ hcc.company | default: 'Şirket Adı *' }}"
-                  required="required">
-              </div>
+              {%- assign field_label = hcc.full_name | default: "Ad Soyad *" -%}
+              {% include sections/form-field.html id="hc-name" name="name" type="text" label=field_label required=true %}
+              {%- assign field_label = hcc.email | default: "E-posta *" -%}
+              {% include sections/form-field.html id="hc-email" name="_replyto" type="email" label=field_label required=true %}
+              {%- assign field_label = hcc.phone | default: "Telefon" -%}
+              {% include sections/form-field.html id="hc-phone" name="phone" type="tel" label=field_label required=true %}
+              {%- assign field_label = hcc.company | default: "Şirket Adı *" -%}
+              {% include sections/form-field.html id="hc-company" name="company" type="text" label=field_label required=true %}
             </div>
             <input type="hidden" name="_subject" value="{{ hcc.email_subject | default: 'HealthCheck Başvurusu' }}">
             <div class="contact-form-actions text-center">
@@ -74,6 +65,7 @@
                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 <span>{{ hcc.submit | default: "Başvur" }}</span>
               </button>
+              <div class="contact-form-status small text-center mt-2" role="status" aria-live="polite"></div>
             </div>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="#" />

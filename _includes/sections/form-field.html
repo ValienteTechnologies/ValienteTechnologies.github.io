@@ -1,0 +1,29 @@
+{%- comment -%}
+  Shared contact-form field: label + input/textarea + inline error message.
+  Reused by contact_form.html and healthcheck-contact.html.
+
+  Params:
+    id          - element id (also used to build "<id>-error")
+    name        - input/textarea name attribute
+    type        - input type (text, email, tel, ...); ignored when textarea is true
+    label       - resolved label text, also used as the placeholder
+    required    - truthy to mark the field required
+    textarea    - truthy to render a <textarea> instead of an <input>
+    rows        - optional textarea rows attribute
+{%- endcomment -%}
+<div class="form-field">
+  <label for="{{ include.id }}">{{ include.label }}</label>
+  {%- if include.textarea %}
+  <textarea name="{{ include.name }}" class="form-control" id="{{ include.id }}"
+    placeholder="{{ include.label }}"
+    aria-describedby="{{ include.id }}-error"
+    {%- if include.rows %} rows="{{ include.rows }}"{% endif %}
+    {%- if include.required %} required="required"{% endif %}></textarea>
+  {%- else %}
+  <input name="{{ include.name }}" class="form-control" id="{{ include.id }}" type="{{ include.type }}"
+    placeholder="{{ include.label }}"
+    aria-describedby="{{ include.id }}-error"
+    {%- if include.required %} required="required"{% endif %}>
+  {%- endif %}
+  <small class="contact-field-message d-block" id="{{ include.id }}-error" hidden></small>
+</div>

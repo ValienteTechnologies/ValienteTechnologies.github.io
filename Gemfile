@@ -8,8 +8,6 @@ gem "base64",        "~> 0.3.0"
 gem "bigdecimal",    "~> 4.1.2"
 
 group :jekyll_plugins do
-  gem "jekyll-feed",          "~> 0.6"
-  gem "jekyll-redirect-from", "~> 0.16"
-  gem "jekyll-polyglot",      "~> 1.8"
+  gem "jekyll-polyglot", "~> 1.8"
   # gem "github-pages" # https://github.com/github/pages-gem
 end

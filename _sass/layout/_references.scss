@@ -16,10 +16,6 @@
     color: var(--color-text-on-dark);
   }
 
-  .section-subheading {
-    color: var(--color-text-muted-on-dark) !important;
-  }
-
   .btn {
     box-shadow: 0 15px 35px rgba($primary, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -37,15 +33,6 @@
   z-index: 1;
 }
 
-#scrolling-clients.references-grid {
-  flex-wrap: nowrap;
-  gap: var(--space-gap-lg);
-
-  .reference-item {
-    min-width: calc(var(--form-field-min-width) + 20px);
-  }
-}
-
 .reference-item {
   display: flex;
 }
@@ -55,7 +42,11 @@
   width: 100%;
   padding: calc(var(--space-card-padding-lg) * 0.78) var(--space-gap-xl);
   @include surface-card($radius-card-md);
-  background: rgba($valiente-midnight, 0.8);
+  // Flat, mostly-opaque fill standing in for the old blurred glass look.
+  // The card now sits over a flat section background (no backdrop-filter —
+  // see _client-scroll.scss for why), so a slightly denser solid color
+  // reads the same without a per-frame GPU blur pass.
+  background: rgba($valiente-midnight, 0.88);
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -64,8 +55,10 @@
   align-items: center;
   gap: var(--space-gap);
   overflow: hidden;
-  @include backdrop-blur(10px);
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  // Only transform is animated on the resting rule — it's compositor-only.
+  // border-color/box-shadow transitions were flagged by Lighthouse as
+  // non-composited, so they change instantly on hover instead of tweening.
+  transition: transform 0.35s ease;
 
   &:hover,
   &:focus-visible {

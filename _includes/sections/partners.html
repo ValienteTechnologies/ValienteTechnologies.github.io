@@ -14,7 +14,7 @@
           <div class="partner-card__bg" aria-hidden="true">
             <picture>
               <source srcset="{{ event.image | replace: '.png', '.webp' }}" type="image/webp">
-              <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+              <img src="{{ event.image }}" alt="{{ event.title }}"{% if event.width and event.height %} width="{{ event.width }}" height="{{ event.height }}"{% endif %} loading="lazy">
             </picture>
           </div>
           <div class="partner-card__overlay"></div>

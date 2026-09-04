@@ -54,6 +54,8 @@ tr: &DEFAULT_TR
         logo: /assets/img/clients/sahinler.png
 
   contact:
+    # Overrides the shared i18n form_messages.success: this form is an application, not a message.
+    success_message: "Başvurunuz gönderildi. Teşekkürler!"
     section: hc-contact
     title: "Ücretsiz HealthCheck Başvurusu"
     points:
@@ -129,6 +131,8 @@ en:
         logo: /assets/img/clients/sahinler.png
 
   contact:
+    # Overrides the shared i18n form_messages.success: this form is an application, not a message.
+    success_message: "Your application has been sent. Thank you!"
     section: hc-contact
     title: "Free HealthCheck Application"
     points:

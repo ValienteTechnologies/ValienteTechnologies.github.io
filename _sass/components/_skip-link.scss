@@ -1,0 +1,33 @@
+// Skip-to-content link: the first focusable element in the document, hidden
+// off-screen until keyboard focus reaches it, then revealed above everything
+// else (navbar is 1030, Bootstrap modals 1050) so Tab always shows it.
+.skip-link {
+  position: fixed;
+  top: -999px;
+  left: 0;
+  z-index: 1060;
+  padding: 0.75rem 1.25rem;
+  background-color: $primary;
+  color: $white;
+  font-weight: 600;
+  border-radius: 0 0 $radius-input 0;
+  text-decoration: none;
+
+  &:focus {
+    top: 0;
+    color: $white;
+    text-decoration: none;
+    outline: 2px solid $white;
+    outline-offset: -2px;
+  }
+
+  // Separate block (not comma-joined with :focus) so a browser that doesn't
+  // support :focus-visible doesn't invalidate the whole rule.
+  &:focus-visible {
+    top: 0;
+    color: $white;
+    text-decoration: none;
+    outline: 2px solid $white;
+    outline-offset: -2px;
+  }
+}

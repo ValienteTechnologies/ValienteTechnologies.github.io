@@ -56,7 +56,20 @@ bash scripts/minify-js.sh
 bash scripts/minify-js.sh mesh-network.js
 ```
 
-**Requirements:** `npm install -g terser`
+**Requirements:** `npm install -g terser` — no version is pinned anywhere in this repo (there's no `package.json`); the hook and this script just invoke whatever global `terser` is on `PATH`.
+
+---
+
+## purgecss.config.js (repo root)
+
+Manual audit tool, not part of the build or hooks. Run after a Jekyll build to check for unused CSS:
+
+```bash
+bundle exec jekyll build
+npx purgecss --config purgecss.config.js
+```
+
+Output lands in `_site/assets/css/` for inspection only — never edit generated CSS; make changes in the SCSS source under `_sass/` instead. Like `terser`, this uses `npx` with no pinned version.
 
 ---
 

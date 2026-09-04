@@ -17,7 +17,7 @@
       <div class="cert-logo-item">
         <picture>
           <source srcset="{{ cert.image | replace: '.png', '.webp' }}" type="image/webp">
-          <img src="{{ cert.image }}" alt="{{ cert.title }}" loading="lazy">
+          <img src="{{ cert.image }}" alt="{{ cert.title }}"{% if cert.width and cert.height %} width="{{ cert.width }}" height="{{ cert.height }}"{% endif %} loading="lazy">
         </picture>
       </div>
       {% endfor %}
@@ -28,7 +28,7 @@
         <div class="cert-featured__logo">
           <picture>
             <source srcset="{{ iso.image | replace: '.png', '.webp' }}" type="image/webp">
-            <img src="{{ iso.image }}" alt="{{ iso.title }}" loading="lazy">
+            <img src="{{ iso.image }}" alt="{{ iso.title }}"{% if iso.width and iso.height %} width="{{ iso.width }}" height="{{ iso.height }}"{% endif %} loading="lazy">
           </picture>
         </div>
         <div class="cert-featured__info">

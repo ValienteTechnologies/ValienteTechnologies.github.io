@@ -17,6 +17,15 @@
     var carousel = document.getElementById('testimonialsCarousel');
     if (!carousel) return;
 
+    // Respect reduced-motion: prevent Bootstrap's load-time data-ride init
+    // from auto-advancing the carousel. Controls (prev/next/indicators)
+    // still work, since they don't depend on data-ride.
+    try {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        carousel.removeAttribute('data-ride');
+      }
+    } catch (_) {}
+
     var indicators = carousel.querySelectorAll('.carousel-indicators li');
     var items = carousel.querySelectorAll('.carousel-inner .carousel-item');
     if (indicators.length < 2 || items.length < 2) return;

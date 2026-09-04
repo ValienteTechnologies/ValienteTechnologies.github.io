@@ -87,7 +87,8 @@ $text-on-dark-muted: rgba(255, 255, 255, 0.75) !default;
 $text-placeholder: rgba(255, 255, 255, 0.5) !default;
 
 // Elevation (does not depend on theme palette so it can be used safely
-// before brand colors are defined in `agency.scss`)
+// before brand colors are defined in the entry stylesheets, e.g.
+// `assets/css/valiente-base.scss`)
 $shadow-elevated: 0 20px 45px rgba(0, 0, 0, 0.65) !default;
 
 // Typography — system font fallback stack (shared by all font mixins)
@@ -105,11 +106,14 @@ $masthead-font-size-lead-lg: 40px !default;
 $masthead-font-size-heading-sm: 42px !default;
 $masthead-font-size-heading-lg: 58px !default;
 
+// Minimum tap target size (WCAG 2.5.5/2.5.8)
+$tap-target-min: 44px !default;
+
 // Navbar
 $navbar-toggler-font-size: 12px !default;
 $navbar-toggler-padding: 13px !default;
 $navbar-padding-y-lg: 10px !default;
 
 // Social buttons (footer)
-$social-button-size: 38px !default;
+$social-button-size: $tap-target-min !default;
 $social-button-font-size: 18px !default;

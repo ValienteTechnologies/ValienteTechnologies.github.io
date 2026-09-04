@@ -8,10 +8,6 @@ highlight: "#e22388"
 #Font Awesome icon for brochures grid when an item is hovered over
 brochures-icon: fas fa-info-circle fa-2x #default: fas fa-plus fa-3x
 
-# Add custom fonts
-fonts_urls:
-    - "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&display=optional"
-
 # Set custom fonts
 fonts:
   - name: "Montserrat"

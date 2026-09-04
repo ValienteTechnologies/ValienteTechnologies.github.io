@@ -7,7 +7,15 @@
         <h2 class="section-heading text-uppercase">{{ references.title | default: "References" }}</h2>
       </div>
     </div>
-    <div class="row references-grid" {% if references.horizontal-scrolling == "yes" %}id="scrolling-clients"{% endif %}>
+  </div>
+
+  {% if references.horizontal-scrolling == "yes" %}
+  <div class="container">
+    {% include sections/client-marquee.html items=references.list %}
+  </div>
+  {% else %}
+  <div class="container">
+    <div class="row references-grid">
       {% for client in references.list %}
       <div class="col-md-3 col-sm-6 reference-item">
         <div class="reference-card">
@@ -25,6 +33,10 @@
       </div>
       {% endfor %}
     </div>
+  </div>
+  {% endif %}
+
+  <div class="container">
     {% if references.testimonials-button %}
     <div class="row mt-5">
       <div class="col-lg-12 text-center">

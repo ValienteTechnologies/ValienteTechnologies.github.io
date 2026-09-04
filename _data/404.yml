@@ -2,6 +2,7 @@ tr: &DEFAULT_TR
   heading: "Sayfa Bulunamadı"
   description: "Aradığınız sayfa bulunamadı."
   button: "Ana Sayfaya Dön"
+  image_alt: "404 - Sayfa Bulunamadı"
 
 tr-TR:
   <<: *DEFAULT_TR
@@ -10,3 +11,4 @@ en:
   heading: "Page Not Found"
   description: "The page you are looking for could not be found."
   button: "Back to Home"
+  image_alt: "404 - Page Not Found"

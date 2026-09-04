@@ -79,10 +79,14 @@ body.legal-layout .legal-section {
   color: var(--color-text-on-dark);
   transition: background 0.2s ease;
 
-  &:hover,
+  &:hover {
+    background: $surface-subtle;
+  }
+
   &:focus-visible {
     background: $surface-subtle;
-    outline: none;
+    outline: 2px solid $primary;
+    outline-offset: -2px;
   }
 
   &[aria-expanded="true"] {
