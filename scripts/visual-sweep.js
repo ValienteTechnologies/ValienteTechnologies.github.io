@@ -185,9 +185,12 @@ async function capturePage(ctx, base, pagePath, width, variant, outDir) {
   const failedRequests = [];
   // The fallback variant blocks .woff2 itself (see main); those aborts surface as
   // ERR_BLOCKED_BY_CLIENT and are expected, not findings.
-  const isOwnFontBlock = (text) => variant === "fallback" && /ERR_BLOCKED_BY_CLIENT/.test(text);
+  const isOwnFontBlock = (text, url) =>
+    variant === "fallback" && /ERR_BLOCKED_BY_CLIENT/.test(text) && /\.woff2(\?|$)/.test(url);
   page.on("console", (msg) => {
-    if (msg.type() === "error" && !isOwnFontBlock(msg.text())) consoleErrors.push(msg.text());
+    if (msg.type() !== "error") return;
+    const url = (msg.location() && msg.location().url) || "";
+    if (!isOwnFontBlock(msg.text(), url)) consoleErrors.push(msg.text());
   });
   page.on("pageerror", (err) => consoleErrors.push(String(err)));
   page.on("requestfailed", (req) => {
@@ -195,7 +198,7 @@ async function capturePage(ctx, base, pagePath, width, variant, outDir) {
     if (url.includes("googletagmanager")) return;
     const f = req.failure();
     const error = f ? f.errorText : "unknown";
-    if (isOwnFontBlock(error)) return;
+    if (isOwnFontBlock(error, url)) return;
     failedRequests.push({ url, error });
   });
 
