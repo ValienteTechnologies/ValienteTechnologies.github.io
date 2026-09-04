@@ -1,32 +1,64 @@
-// Styling for the horizontally scrolling clients section
-#scrolling-clients {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: auto; // Use auto for programmatic scrolling, smooth causes jank
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
-  scrollbar-width: none;
-  will-change: scroll-position; // Hint browser for better performance
-  backface-visibility: hidden; // Force hardware acceleration
-  contain: layout style paint; // CSS containment for performance
-  transform: translateZ(0); // Force GPU acceleration
-  
-  &::-webkit-scrollbar {
-    display: none;
-  }
+// Logo marquee for the clients/references section.
+//
+// Pure CSS transform animation — no JS scroll loop, no per-frame layout.
+// The track renders two identical copies of the logo row (see
+// _includes/sections/references.html) and slides from translateX(0) to
+// translateX(-50%); since both copies are the same width, the loop is
+// seamless with no JS-driven "jump back" needed. Only `transform` changes
+// every frame, so the browser runs this on the compositor thread — no
+// style/layout recalculation of the ~375 descendant elements per frame.
+$client-marquee-duration: 120s; // ≈ old desktop speed of 1px/16.67ms ≈ 60px/s
+$client-marquee-duration-touch: 40s; // old code ran 3x faster on touch devices
 
-  > div {
-    flex: 0 0 auto;
-    min-width: 200px;
-    padding: 10px;
-    transform: translateZ(0); // Force GPU acceleration for child elements
-    will-change: transform; // Optimize child rendering
+.client-marquee {
+  position: relative;
+  overflow: hidden;
+
+  &:hover .client-marquee__track {
+    animation-play-state: paused;
   }
-  
-  img {
-    image-rendering: -webkit-optimize-contrast; // Optimize image rendering
-    transform: translateZ(0); // Force GPU acceleration for images
+}
+
+.client-marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: client-marquee-scroll $client-marquee-duration linear infinite;
+
+  // Spacing lives on each item's own trailing margin rather than the
+  // track's flex `gap` — including the very last item. A flex `gap` only
+  // adds space *between* items (n-1 gaps for n items), so with the track
+  // split into two equal copies, the midpoint of the total width lands in
+  // the middle of the single boundary gap, not at copy two's first item —
+  // a half-gap misalignment at the loop point. Giving every item the same
+  // trailing margin (the last item's margin just becomes harmless trailing
+  // whitespace past the end of the track, never scrolled into view since
+  // the animation stops at -50%) makes each copy's width identical and
+  // uninterrupted, so translateX(-50%) lands exactly on the duplicate.
+  .reference-item {
+    flex: 0 0 auto;
+    min-width: calc(var(--form-field-min-width) + 20px);
+    margin-right: var(--space-gap-lg);
+  }
+}
+
+@keyframes client-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .client-marquee__track {
+    animation-duration: $client-marquee-duration-touch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-marquee__track {
+    animation-play-state: paused;
   }
 }

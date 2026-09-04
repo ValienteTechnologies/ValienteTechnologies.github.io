@@ -1,135 +1,44 @@
-// Infinite auto-scroll for clients/references section
+// One-time setup for the clients/references logo marquee.
+//
+// The marquee itself is a pure CSS transform animation (see
+// _sass/components/_client-scroll.scss) — this script does nothing but
+// randomize the logo order once on load. No animation loop, no scroll
+// writes, no per-frame DOM reads. The track holds two identical copies of
+// the logo row (rendered server-side by Liquid) so the CSS loop is
+// seamless; both copies must end up in the same shuffled order or the
+// loop would visibly jump, so the same permutation is applied to both.
 (function () {
   'use strict';
 
   function initClientScroll() {
-    const track = document.getElementById('scrolling-clients');
+    const viewport = document.getElementById('scrolling-clients');
+    if (!viewport) return;
+
+    const track = viewport.querySelector('.client-marquee__track');
     if (!track) return;
 
-    // Shuffle children in place (Fisher-Yates)
-    const items = Array.from(track.children);
-    for (let i = items.length - 1; i > 0; i--) {
+    const children = Array.from(track.children);
+    const half = children.length / 2;
+    if (half === 0 || !Number.isInteger(half)) return;
+
+    const firstCopy = children.slice(0, half);
+    const secondCopy = children.slice(half);
+
+    // Fisher-Yates over the index order, then apply that same order to
+    // both copies so the two halves stay identical (required for the
+    // -50% CSS loop to be seamless).
+    const order = firstCopy.map(function (_, i) { return i; });
+    for (let i = order.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      track.appendChild(items[j]);
-      items[j] = items[i];
+      const tmp = order[i];
+      order[i] = order[j];
+      order[j] = tmp;
     }
 
-    // Clone all items for seamless infinite loop
-    Array.from(track.children).forEach(function (el) {
-      const clone = el.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.appendChild(clone);
-    });
-
-    // Start after images load (or 500ms fallback)
-    const images = track.querySelectorAll('img');
-    let started = false;
-
-    function start() {
-      if (started) return;
-      started = true;
-      run();
-    }
-
-    if (images.length === 0) {
-      start();
-    } else {
-      let loaded = 0;
-      function onLoad() { if (++loaded >= images.length) start(); }
-      images.forEach(function (img) {
-        if (img.complete) { onLoad(); }
-        else {
-          img.addEventListener('load', onLoad);
-          img.addEventListener('error', onLoad);
-        }
-      });
-      setTimeout(start, 500);
-    }
-
-    function run() {
-      const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      const speed = isMobile ? 3.0 : 1.0; // px per 16.67ms frame
-      const half = track.scrollWidth / 2;  // cached — DOM won't change after init
-
-      let pos = 0;
-      let paused = false;
-      let rafId;
-      let lastTime = performance.now();
-
-      // Seamless wrap: when we've scrolled one full copy, jump back silently
-      // Use cached `pos` (not track.scrollLeft) to avoid a forced reflow on every frame
-      function wrap() {
-        if (pos >= half) {
-          pos -= half;
-          track.scrollLeft = pos;
-        }
-      }
-
-      function animate(now) {
-        if (!paused) {
-          const dt = Math.min(now - lastTime, 100);
-          pos += speed * (dt / 16.67);
-          track.scrollLeft = pos;
-          wrap();
-        }
-        lastTime = now;
-        rafId = requestAnimationFrame(animate);
-      }
-
-      // Pause on hover
-      track.addEventListener('mouseenter', function () { paused = true; });
-      track.addEventListener('mouseleave', function () {
-        pos = track.scrollLeft;
-        paused = false;
-      });
-
-      // Pause on touch, resume after momentum settles
-      let touching = false;
-      let touchTimeout;
-
-      function resumeAfterTouch() {
-        touchTimeout = setTimeout(function () {
-          pos = track.scrollLeft;
-          wrap();
-          paused = false;
-        }, 1500);
-      }
-
-      track.addEventListener('touchstart', function () {
-        touching = true;
-        paused = true;
-        clearTimeout(touchTimeout);
-      }, { passive: true });
-
-      track.addEventListener('touchend', function () {
-        touching = false;
-        resumeAfterTouch();
-      }, { passive: true });
-
-      track.addEventListener('touchcancel', function () {
-        touching = false;
-        resumeAfterTouch();
-      }, { passive: true });
-
-      // Pause when tab is hidden
-      let hiddenPaused = false;
-      document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-          if (!paused) { paused = true; hiddenPaused = true; }
-        } else if (hiddenPaused) {
-          pos = track.scrollLeft;
-          paused = false;
-          hiddenPaused = false;
-        }
-      });
-
-      rafId = requestAnimationFrame(animate);
-
-      window.addEventListener('beforeunload', function () {
-        cancelAnimationFrame(rafId);
-        clearTimeout(touchTimeout);
-      });
-    }
+    const fragment = document.createDocumentFragment();
+    order.forEach(function (i) { fragment.appendChild(firstCopy[i]); });
+    order.forEach(function (i) { fragment.appendChild(secondCopy[i]); });
+    track.appendChild(fragment);
   }
 
   if (document.readyState === 'loading') {
