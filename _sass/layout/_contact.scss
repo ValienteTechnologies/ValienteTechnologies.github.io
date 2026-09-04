@@ -89,23 +89,6 @@
     }
   }
 
-  .office-card__map-link {
-    display: inline-flex;
-    align-items: center;
-    gap: $space-gap-xs;
-    margin-top: var(--space-gap-md);
-    font-size: var(--font-size-sm);
-    color: lighten($primary, 15%);
-    text-decoration: none;
-    @include heading-font;
-    font-weight: 600;
-    letter-spacing: $letter-spacing-label;
-    text-transform: uppercase;
-
-    &:hover {
-      color: lighten($primary, 25%);
-    }
-  }
 }
 
 .offices-map {
@@ -129,10 +112,6 @@ body.contact-page .contact-section {
 
 @include media-max($breakpoint-sm - 1px) {
   .offices-section {
-    padding-block: var(--space-section-y-sm);
-  }
-
-  .contact-cta-section {
     padding-block: var(--space-section-y-sm);
   }
 }
@@ -199,10 +178,6 @@ body.contact-page .contact-section {
     opacity: 0.7;
     filter: blur(40px);
     pointer-events: none;
-  }
-
-  .contact-lede {
-    color: var(--color-text-muted-on-dark);
   }
 
   .contact-panel__content > * {
@@ -461,15 +436,29 @@ body.contact-page .contact-section {
     }
   }
 
-  .text-muted {
-    color: rgba(248, 250, 255, 0.85) !important;
-  }
-
   .form-control.contact-field-error {
     border-color: rgba($valiente-rose, 0.85);
     box-shadow: 0 0 0 3px rgba($valiente-rose, 0.35);
     background: $surface-subtle;
     animation: contact-field-shake 450ms ease;
+  }
+
+  // Per-field validation text (linked to the input via aria-describedby) and
+  // the aria-live submit status. Same rose accent as the invalid-field border.
+  .contact-field-message {
+    margin-top: 0.35rem;
+    font-size: $font-size-sm;
+    color: $valiente-rose;
+  }
+
+  .contact-form-status {
+    min-height: 1.5em;
+    font-size: $font-size-sm;
+    color: var(--color-text-muted-on-dark);
+
+    &.is-error {
+      color: $valiente-rose;
+    }
   }
 }
 

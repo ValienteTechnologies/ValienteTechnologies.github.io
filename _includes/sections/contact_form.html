@@ -70,37 +70,53 @@
         <div class="contact-panel contact-panel--form h-100">
           <div class="contact-panel__glow" aria-hidden="true"></div>
           <form id="contactForm" method="POST" novalidate
-            data-action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}">
+            data-action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"
+            data-msg-required="{{ contact.form_messages.required | escape }}"
+            data-msg-invalid-email="{{ contact.form_messages.invalid_email | escape }}"
+            data-msg-invalid-phone="{{ contact.form_messages.invalid_phone | escape }}"
+            data-msg-sending="{{ contact.form_messages.sending | escape }}"
+            data-msg-success="{{ contact.form_messages.success | escape }}"
+            data-msg-error="{{ contact.form_messages.error | escape }}">
             <div class="contact-form-fields">
               <div class="form-field">
                 <label for="name">{{ contact.name | default: "Name*" }}</label>
                 <input name="name" class="form-control" id="name" type="text"
                   placeholder="{{ contact.name | default: "Name*" }}"
+                  aria-describedby="name-error"
                   required="required">
+                <small class="contact-field-message d-block" id="name-error" hidden></small>
               </div>
               <div class="form-field">
                 <label for="email">{{ contact.email | default: "Email*" }}</label>
                 <input name="_replyto" class="form-control" id="email" type="email"
                   placeholder="{{ contact.email | default: "Email*" }}"
+                  aria-describedby="email-error"
                   required="required">
+                <small class="contact-field-message d-block" id="email-error" hidden></small>
               </div>
               <div class="form-field">
                 <label for="phone">{{ contact.phone | default: "Phone Number*" }}</label>
                 <input name="phone" class="form-control" id="phone" type="tel"
                   placeholder="{{ contact.phone | default: "Phone Number*" }}"
+                  aria-describedby="phone-error"
                   required="required">
+                <small class="contact-field-message d-block" id="phone-error" hidden></small>
               </div>
               <div class="form-field">
                 <label for="subject">{{ contact.subject | default: "Subject" }}</label>
                 <input name="subject" class="form-control" id="subject" type="text"
                   placeholder="{{ contact.subject | default: "Subject" }}"
+                  aria-describedby="subject-error"
                   required="required">
+                <small class="contact-field-message d-block" id="subject-error" hidden></small>
               </div>
               <div class="form-field">
                 <label for="message">{{ contact.message | default: "Message*" }}</label>
                 <textarea name="message" class="form-control" id="message"
                   placeholder="{{ contact.message | default: "Message*" }}"
+                  aria-describedby="message-error"
                   required="required"></textarea>
+                <small class="contact-field-message d-block" id="message-error" hidden></small>
               </div>
             </div>
             <input type="hidden" name="_subject" id="email-subject"
@@ -113,6 +129,7 @@
                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 <span>{{ contact.submit | default: "Gönder" }}</span>
               </button>
+              <div class="contact-form-status small text-center mt-2" role="status" aria-live="polite"></div>
             </div>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="#" />

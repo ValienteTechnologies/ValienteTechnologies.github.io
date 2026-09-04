@@ -1,6 +1,14 @@
 // Dismissible language-nudge banner. Content, not routing — see
 // assets/js/src/lang-nudge.js. Sits below the navbar (z-index 1030) and
 // below Bootstrap modals (1050), above ordinary page content.
+
+// The banner is position:fixed, so it would otherwise overlap the footer.
+// lang-nudge.js sets --lang-nudge-height from the banner's real height once,
+// at show time; 6rem is only the pre-measurement fallback.
+body.has-lang-nudge {
+  padding-bottom: var(--lang-nudge-height, 6rem);
+}
+
 .lang-nudge {
   position: fixed;
   left: 0;
@@ -32,10 +40,14 @@
 
   &__link {
     flex: 0 0 auto;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     padding: 0.4rem 0.9rem;
     border-radius: $radius-input;
-    background-color: $primary;
+    // darken($primary, 8%) ≈ #c51a74 → 5.56:1 contrast with white (WCAG AA),
+    // matching .btn-primary (components/_buttons.scss).
+    background-color: darken($primary, 8%);
     color: $white;
     font-weight: 600;
     text-decoration: none;
@@ -43,7 +55,7 @@
 
     &:hover,
     &:focus {
-      background-color: darken($primary, 8%);
+      background-color: darken($primary, 14%);
       color: $white;
       text-decoration: none;
     }

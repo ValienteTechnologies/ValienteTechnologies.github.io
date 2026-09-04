@@ -5,9 +5,12 @@
 
   <body id="page-top"{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
 
+      {%- assign _i18n = site.data.i18n[site.active_lang] | default: site.data.i18n.tr -%}
+      <a class="skip-link" href="#main-content">{{ _i18n.skip_to_content }}</a>
+
       {% include layout/lang-nudge.html %}
 
-      <main class="site-content">
+      <main class="site-content" id="main-content" tabindex="-1">
         {{ content }}
       </main>
 
@@ -17,8 +20,10 @@
 	  <script src="/assets/js/jquery.min.js" defer></script>
 	  <script src="/assets/js/bootstrap.bundle.min.js" defer></script>
 
+	  {% if page.contact_form %}
 	  <!-- Contact form -->
 	  <script src="/assets/js/contact_me.js" defer></script>
+	  {% endif %}
 
 	  <!-- Set active nav link based on current URL -->
 	  <script src="/assets/js/nav-active.js" defer></script>

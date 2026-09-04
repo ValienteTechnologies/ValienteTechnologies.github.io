@@ -38,31 +38,45 @@
         <div class="contact-panel contact-panel--form h-100">
           <div class="contact-panel__glow" aria-hidden="true"></div>
           <form id="contactForm" method="POST" novalidate
-            data-action="{{ hcc.formspree_action }}">
+            data-action="{{ hcc.formspree_action }}"
+            data-msg-required="{{ hcc.form_messages.required | escape }}"
+            data-msg-invalid-email="{{ hcc.form_messages.invalid_email | escape }}"
+            data-msg-invalid-phone="{{ hcc.form_messages.invalid_phone | escape }}"
+            data-msg-sending="{{ hcc.form_messages.sending | escape }}"
+            data-msg-success="{{ hcc.form_messages.success | escape }}"
+            data-msg-error="{{ hcc.form_messages.error | escape }}">
             <div class="contact-form-fields">
               <div class="form-field">
                 <label for="hc-name">{{ hcc.full_name | default: "Ad Soyad *" }}</label>
                 <input name="name" class="form-control" id="hc-name" type="text"
                   placeholder="{{ hcc.full_name | default: 'Ad Soyad *' }}"
+                  aria-describedby="hc-name-error"
                   required="required">
+                <small class="contact-field-message d-block" id="hc-name-error" hidden></small>
               </div>
               <div class="form-field">
                 <label for="hc-email">{{ hcc.email | default: "E-posta *" }}</label>
                 <input name="_replyto" class="form-control" id="hc-email" type="email"
                   placeholder="{{ hcc.email | default: 'E-posta *' }}"
+                  aria-describedby="hc-email-error"
                   required="required">
+                <small class="contact-field-message d-block" id="hc-email-error" hidden></small>
               </div>
               <div class="form-field">
                 <label for="hc-phone">{{ hcc.phone | default: "Telefon" }}</label>
                 <input name="phone" class="form-control" id="hc-phone" type="tel"
                   placeholder="{{ hcc.phone | default: 'Telefon *' }}"
+                  aria-describedby="hc-phone-error"
                   required="required">
+                <small class="contact-field-message d-block" id="hc-phone-error" hidden></small>
               </div>
               <div class="form-field">
                 <label for="hc-company">{{ hcc.company | default: "Şirket Adı *" }}</label>
                 <input name="company" class="form-control" id="hc-company" type="text"
                   placeholder="{{ hcc.company | default: 'Şirket Adı *' }}"
+                  aria-describedby="hc-company-error"
                   required="required">
+                <small class="contact-field-message d-block" id="hc-company-error" hidden></small>
               </div>
             </div>
             <input type="hidden" name="_subject" value="{{ hcc.email_subject | default: 'HealthCheck Başvurusu' }}">
@@ -74,6 +88,7 @@
                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 <span>{{ hcc.submit | default: "Başvur" }}</span>
               </button>
+              <div class="contact-form-status small text-center mt-2" role="status" aria-live="polite"></div>
             </div>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="#" />

@@ -33,6 +33,7 @@ $contact-image:     "{{ site.data.style.contact-image }}";
 @import "components/navbar";
 @import "components/utilities";
 @import "components/lang-nudge";
+@import "components/skip-link";
 
 // ── Footer (every page) ──────────────────────────────────────────────────────
 @import "layout/footer";

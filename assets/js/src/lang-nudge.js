@@ -42,12 +42,17 @@
     if (!show) return;
 
     banner.removeAttribute("hidden");
+    document.body.classList.add("has-lang-nudge");
+    // One-time measurement at show time (not per-frame) so the footer never
+    // sits under the fixed banner.
+    document.body.style.setProperty("--lang-nudge-height", banner.offsetHeight + "px");
 
     var closeBtn = banner.querySelector(".lang-nudge__close");
     if (closeBtn) {
       closeBtn.addEventListener("click", function () {
         try { localStorage.setItem(DISMISS_KEY, "1"); } catch (_) {}
         banner.setAttribute("hidden", "");
+        document.body.classList.remove("has-lang-nudge");
       });
     }
   }

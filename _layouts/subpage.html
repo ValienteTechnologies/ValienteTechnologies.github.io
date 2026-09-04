@@ -4,4 +4,9 @@ layout: default
 
 {% include layout/nav.html %}
 
+{%- unless page.body_class contains "project-page" -%}
+{%- assign _title = site.data[page.data_key][site.active_lang].title | default: site.data[page.data_key].tr.title | default: page.title -%}
+<h1 class="sr-only">{{ _title }}</h1>
+{%- endunless -%}
+
 {{ content }}

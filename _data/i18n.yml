@@ -4,6 +4,9 @@ tr: &DEFAULT
   language_select: "Dil seçin"
   menu: "Menü"
   toggle_nav: "Menüyü aç/kapat"
+  skip_to_content: "İçeriğe geç"
+  carousel_prev: "Önceki"
+  carousel_next: "Sonraki"
   # The language nudge banner shown on a tr page advertises the en version,
   # so these strings under tr: are written in ENGLISH (and vice versa below).
   lang_nudge_text: "This site is also available in English."
@@ -20,6 +23,9 @@ en:
   language_select: "Select language"
   menu: "Menu"
   toggle_nav: "Toggle navigation"
+  skip_to_content: "Skip to content"
+  carousel_prev: "Previous"
+  carousel_next: "Next"
   # The language nudge banner shown on an en page advertises the tr version,
   # so these strings under en: are written in TURKISH (and vice versa above).
   lang_nudge_text: "Bu site Türkçe olarak da mevcut."

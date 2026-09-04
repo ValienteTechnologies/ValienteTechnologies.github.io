@@ -8,6 +8,12 @@
   // Skip animation on mobile — canvas already hidden by critical CSS
   if (window.innerWidth < 768) return;
 
+  // Respect prefers-reduced-motion: the canvas stays hidden/static, no
+  // per-frame animation runs for visitors who asked for reduced motion.
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  } catch (_) {}
+
   const ctx = canvas.getContext('2d');
   let mouse = { x: 0, y: 0 };
   let nodes = [];
