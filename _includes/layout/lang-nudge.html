@@ -1,0 +1,22 @@
+{%- comment -%}
+  Language nudge banner: a dismissible, content-only suggestion to switch
+  language. It is never a redirect — see lang-nudge.js. On a tr page the
+  banner text is English and links to /en/; on an en page it is Turkish and
+  links back to the un-prefixed path. `hidden` must stay in the markup so
+  crawlers and visitors already on the right language never see a flash.
+{%- endcomment -%}
+{%- assign _i18n = site.data.i18n[site.active_lang] | default: site.data.i18n.tr -%}
+{%- if site.active_lang == site.default_lang -%}
+  {%- assign _target_lang = "en" -%}
+{%- else -%}
+  {%- assign _target_lang = site.default_lang -%}
+{%- endif -%}
+<div id="langNudge" class="lang-nudge" role="region" aria-label="{{ _i18n.lang_nudge_region }}" data-target-lang="{{ _target_lang }}" hidden>
+  <p class="lang-nudge__text">{{ _i18n.lang_nudge_text }}</p>
+  {%- if site.active_lang == site.default_lang -%}
+  <a class="lang-nudge__link" data-lang="en" {% static_href %}href="/en{{ page.url }}"{% endstatic_href %}>{{ _i18n.lang_nudge_link }}</a>
+  {%- else -%}
+  <a class="lang-nudge__link" data-lang="{{ site.default_lang }}" {% static_href %}href="{{ page.url }}"{% endstatic_href %}>{{ _i18n.lang_nudge_link }}</a>
+  {%- endif -%}
+  <button type="button" class="lang-nudge__close" aria-label="{{ _i18n.lang_nudge_dismiss }}">&times;</button>
+</div>

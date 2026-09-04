@@ -29,6 +29,7 @@ $contact-image:     "{{ site.data.style.contact-image }}";
 @import "components/buttons";
 @import "components/navbar";
 @import "components/utilities";
+@import "components/lang-nudge";
 
 // ── Footer (every page) ──────────────────────────────────────────────────────
 @import "layout/footer";

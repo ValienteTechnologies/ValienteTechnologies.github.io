@@ -43,37 +43,6 @@
   {%- endif -%}
   <title>{{ _page_full_title }}</title>
 
-  <!-- Language routing: only the language-neutral root "/" auto-detects — any deep
-       link (tr path or /en/...) is already an explicit language choice and is never
-       redirected away from, which also keeps crawler renders of every page stable.
-       An explicit dropdown choice is remembered; at most one redirect per session.
-       Runs synchronously before first paint so there is no wrong-language flash. -->
-  <script>
-    (function () {
-      try {
-        var KEY = "ve-lang", SKEY = "ve-lang-routed";
-        document.addEventListener("click", function (e) {
-          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-          var a = e.target.closest && e.target.closest("a[data-lang]");
-          if (a) { try { localStorage.setItem(KEY, a.getAttribute("data-lang")); } catch (_) {} }
-        }, true);
-        var path = location.pathname;
-        if (path !== "/" && path !== "/index.html") return;
-        if (navigator.webdriver) return;
-        if (/bot|crawl|spider|slurp|preview|facebookexternalhit|whatsapp|telegram|lighthouse/i.test(navigator.userAgent)) return;
-        if (sessionStorage.getItem(SKEY)) return;
-        sessionStorage.setItem(SKEY, "1");
-        var stored = localStorage.getItem(KEY);
-        var target = stored ||
-          ((navigator.languages || [navigator.language || "tr"]).some(function (l) {
-            return String(l).toLowerCase().split("-")[0] === "tr";
-          }) ? "tr" : "en");
-        localStorage.setItem(KEY, target);
-        if (target === "en") location.replace("/en/" + location.search + location.hash);
-      } catch (_) {}
-    })();
-  </script>
-
   <!-- Critical CSS: prevents FOUC while main sheets load non-blockingly -->
   <style>
     :root { --color-page-bg: #1a0b2f; --color-text: rgba(255,255,255,0.9); }

@@ -1,0 +1,73 @@
+// Dismissible language-nudge banner. Content, not routing — see
+// assets/js/src/lang-nudge.js. Sits below the navbar (z-index 1030) and
+// below Bootstrap modals (1050), above ordinary page content.
+.lang-nudge {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1020;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-gap-sm;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  background-color: rgba($valiente-midnight, 0.96);
+  border-top: 1px solid $border-surface-muted;
+  box-shadow: $shadow-elevated;
+  color: var(--color-text-on-dark);
+  font-size: $font-size-sm;
+
+  &[hidden] {
+    display: none;
+  }
+
+  &__text {
+    margin: 0;
+    flex: 1 1 auto;
+    min-width: 200px;
+  }
+
+  &__link {
+    flex: 0 0 auto;
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: $radius-input;
+    background-color: $primary;
+    color: $white;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      background-color: darken($primary, 8%);
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  &__close {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $text-on-dark-dim;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}
