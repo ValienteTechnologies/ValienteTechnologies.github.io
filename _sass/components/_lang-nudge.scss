@@ -42,7 +42,7 @@ body.has-lang-nudge {
     flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
+    min-height: $tap-target-min;
     padding: 0.4rem 0.9rem;
     border-radius: $radius-input;
     // darken($primary, 8%) ≈ #c51a74 → 5.56:1 contrast with white (WCAG AA),
@@ -66,8 +66,8 @@ body.has-lang-nudge {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
+    min-width: $tap-target-min;
+    min-height: $tap-target-min;
     margin-left: auto;
     padding: 0;
     border: 0;

@@ -7,6 +7,8 @@ tr: &DEFAULT_TR
     - title: Bulut Yedekleme
       subtitle: Güvenli, Ölçeklenebilir ve Kesintisiz Veri Koruması
       image: /assets/img/portfolio/backup.png
+      width: 900
+      height: 1273
       alt: Bulut depolama ve veri yedekleme broşürü
       caption:
         title: Bulut Yedekleme
@@ -17,6 +19,8 @@ tr: &DEFAULT_TR
     - title: Dış Ağ Testleri
       subtitle: Kurumlar İçin Kapsamlı Dış Ağ Zafiyet Taraması ve Kimlik Avı Simülasyonu
       image: /assets/img/portfolio/external.png
+      width: 900
+      height: 900
       alt: Dış Ağ Güvenlik ve Kimlik Avı Simülasyonu broşürü
       caption:
         title: Dış Ağ Testleri
@@ -27,6 +31,8 @@ tr: &DEFAULT_TR
     - title: Sızma Testi
       subtitle: Kurumlar İçin Kapsamlı Siber Güvenlik ve Penetrasyon Testi Hizmetleri
       image: /assets/img/portfolio/pentest.png
+      width: 900
+      height: 1273
       alt: Sızma Testi broşürü
       caption:
         title: Sızma Testi
@@ -46,6 +52,8 @@ en:
     - title: Cloud Backup
       subtitle: Secure, Scalable, and Uninterrupted Data Protection
       image: /assets/img/portfolio/backup.png
+      width: 900
+      height: 1273
       alt: Cloud storage and data backup brochure
       caption:
         title: Cloud Backup
@@ -56,6 +64,8 @@ en:
     - title: External Tests
       subtitle: Comprehensive External Network Vulnerability Scanning and Phishing Simulation for Organizations
       image: /assets/img/portfolio/external.png
+      width: 900
+      height: 900
       alt: External Network Security and Phishing Simulation brochure
       caption:
         title: External Tests
@@ -66,6 +76,8 @@ en:
     - title: Penetration Test
       subtitle: Comprehensive Cybersecurity and Penetration Testing Services for Organizations
       image: /assets/img/portfolio/pentest.png
+      width: 900
+      height: 1273
       alt: Penetration Test brochure
       caption:
         title: Penetration Test

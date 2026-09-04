@@ -19,20 +19,34 @@ tr: &DEFAULT_TR
       title: "ISO/IEC 27001:2022"
       desc: "Bilgi Güvenliği Yönetim Sistemi alanında uluslararası geçerliliğe sahip bu sertifika, kurumumuzun veri güvenliği süreçlerinin en yüksek standartları karşıladığını belgeler."
       image: /assets/img/about/iso.png
+      width: 140
+      height: 140
       url: /assets/docs/iso27001.pdf
     list:
       - title: "OSCP"
         image: /assets/img/about/oscp.png
+        width: 300
+        height: 300
       - title: "OSWE"
         image: /assets/img/about/oswe.png
+        width: 300
+        height: 300
       - title: "CISSP"
         image: /assets/img/about/cissp.png
+        width: 300
+        height: 300
       - title: "eWPTXv2"
         image: /assets/img/about/ewptxv2.png
+        width: 140
+        height: 140
       - title: "Red Hat"
         image: /assets/img/about/redhat.png
+        width: 300
+        height: 300
       - title: "TSE"
         image: /assets/img/about/tse.png
+        width: 300
+        height: 300
 
 tr-TR:
   <<: *DEFAULT_TR
@@ -58,17 +72,31 @@ en:
       title: "ISO/IEC 27001:2022"
       desc: "This internationally recognized certificate in Information Security Management Systems documents that our organization's data security processes meet the highest standards."
       image: /assets/img/about/iso.png
+      width: 140
+      height: 140
       url: /assets/docs/iso27001.pdf
     list:
       - title: "OSCP"
         image: /assets/img/about/oscp.png
+        width: 300
+        height: 300
       - title: "OSWE"
         image: /assets/img/about/oswe.png
+        width: 300
+        height: 300
       - title: "CISSP"
         image: /assets/img/about/cissp.png
+        width: 300
+        height: 300
       - title: "eWPTXv2"
         image: /assets/img/about/ewptxv2.png
+        width: 140
+        height: 140
       - title: "Red Hat"
         image: /assets/img/about/redhat.png
+        width: 300
+        height: 300
       - title: "TSE"
         image: /assets/img/about/tse.png
+        width: 300
+        height: 300

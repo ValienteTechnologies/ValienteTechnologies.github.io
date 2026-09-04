@@ -54,6 +54,8 @@ tr: &DEFAULT_TR
         logo: /assets/img/clients/sahinler.png
 
   contact:
+    # Overrides the shared i18n form_messages.success: this form is an application, not a message.
+    success_message: "Başvurunuz gönderildi. Teşekkürler!"
     section: hc-contact
     title: "Ücretsiz HealthCheck Başvurusu"
     points:
@@ -69,13 +71,6 @@ tr: &DEFAULT_TR
     submit: "Başvur"
     email_subject: "HealthCheck Başvurusu"
     formspree_action: "https://formspree.io/f/mbdzwkrv"
-    form_messages:
-      required: "Bu alanı doldurun."
-      invalid_email: "Geçerli bir e-posta adresi girin."
-      invalid_phone: "Geçerli bir telefon numarası girin."
-      sending: "Gönderiliyor…"
-      success: "Başvurunuz gönderildi. Teşekkürler!"
-      error: "Bir şeyler ters gitti. Lütfen tekrar deneyin."
 
 tr-TR:
   <<: *DEFAULT_TR
@@ -136,6 +131,8 @@ en:
         logo: /assets/img/clients/sahinler.png
 
   contact:
+    # Overrides the shared i18n form_messages.success: this form is an application, not a message.
+    success_message: "Your application has been sent. Thank you!"
     section: hc-contact
     title: "Free HealthCheck Application"
     points:
@@ -151,10 +148,3 @@ en:
     submit: "Apply"
     email_subject: "HealthCheck Application"
     formspree_action: "https://formspree.io/f/mbdzwkrv"
-    form_messages:
-      required: "Please fill in this field."
-      invalid_email: "Enter a valid email address."
-      invalid_phone: "Enter a valid phone number."
-      sending: "Sending…"
-      success: "Your application has been sent. Thank you!"
-      error: "Something went wrong. Please try again."

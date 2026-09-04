@@ -86,10 +86,10 @@ $(function() {
     var msg = messageFor($field);
     if (msg) {
       showFieldError($field, msg);
-      return false;
+      return msg;
     }
     clearFieldError($field);
-    return true;
+    return null;
   }
 
   // Errors clear as soon as the visitor edits the field again.
@@ -108,15 +108,9 @@ $(function() {
 
     var firstErrorMsg = null;
     var $invalidFields = $fields.filter(function() {
-      var $field = $(this);
-      var msg = messageFor($field);
-      if (msg) {
-        showFieldError($field, msg);
-        if (!firstErrorMsg) firstErrorMsg = msg;
-        return true;
-      }
-      clearFieldError($field);
-      return false;
+      var msg = validateField($(this));
+      if (msg && !firstErrorMsg) firstErrorMsg = msg;
+      return !!msg;
     });
 
     if ($invalidFields.length) {

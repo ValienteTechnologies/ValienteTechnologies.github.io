@@ -1,5 +1,6 @@
 <!-- Contact -->
 {% assign contact = site.data.contact[site.active_lang] | default: site.data.contact.tr %}
+{%- assign _i18n = site.data.i18n[site.active_lang] | default: site.data.i18n.tr -%}
 {% assign fallback_points = "24/7 destek|Uzaktan ve yerinde danışmanlık|İhtiyacınıza özel teklif" | split: "|" %}
 {% assign contact_points = contact.points | default: fallback_points %}
 <section class="page-section contact-section" id="{{ contact.section | default: "contact" }}">
@@ -71,53 +72,23 @@
           <div class="contact-panel__glow" aria-hidden="true"></div>
           <form id="contactForm" method="POST" novalidate
             data-action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"
-            data-msg-required="{{ contact.form_messages.required | escape }}"
-            data-msg-invalid-email="{{ contact.form_messages.invalid_email | escape }}"
-            data-msg-invalid-phone="{{ contact.form_messages.invalid_phone | escape }}"
-            data-msg-sending="{{ contact.form_messages.sending | escape }}"
-            data-msg-success="{{ contact.form_messages.success | escape }}"
-            data-msg-error="{{ contact.form_messages.error | escape }}">
+            data-msg-required="{{ _i18n.form_messages.required | escape }}"
+            data-msg-invalid-email="{{ _i18n.form_messages.invalid_email | escape }}"
+            data-msg-invalid-phone="{{ _i18n.form_messages.invalid_phone | escape }}"
+            data-msg-sending="{{ _i18n.form_messages.sending | escape }}"
+            data-msg-success="{{ _i18n.form_messages.success | escape }}"
+            data-msg-error="{{ _i18n.form_messages.error | escape }}">
             <div class="contact-form-fields">
-              <div class="form-field">
-                <label for="name">{{ contact.name | default: "Name*" }}</label>
-                <input name="name" class="form-control" id="name" type="text"
-                  placeholder="{{ contact.name | default: "Name*" }}"
-                  aria-describedby="name-error"
-                  required="required">
-                <small class="contact-field-message d-block" id="name-error" hidden></small>
-              </div>
-              <div class="form-field">
-                <label for="email">{{ contact.email | default: "Email*" }}</label>
-                <input name="_replyto" class="form-control" id="email" type="email"
-                  placeholder="{{ contact.email | default: "Email*" }}"
-                  aria-describedby="email-error"
-                  required="required">
-                <small class="contact-field-message d-block" id="email-error" hidden></small>
-              </div>
-              <div class="form-field">
-                <label for="phone">{{ contact.phone | default: "Phone Number*" }}</label>
-                <input name="phone" class="form-control" id="phone" type="tel"
-                  placeholder="{{ contact.phone | default: "Phone Number*" }}"
-                  aria-describedby="phone-error"
-                  required="required">
-                <small class="contact-field-message d-block" id="phone-error" hidden></small>
-              </div>
-              <div class="form-field">
-                <label for="subject">{{ contact.subject | default: "Subject" }}</label>
-                <input name="subject" class="form-control" id="subject" type="text"
-                  placeholder="{{ contact.subject | default: "Subject" }}"
-                  aria-describedby="subject-error"
-                  required="required">
-                <small class="contact-field-message d-block" id="subject-error" hidden></small>
-              </div>
-              <div class="form-field">
-                <label for="message">{{ contact.message | default: "Message*" }}</label>
-                <textarea name="message" class="form-control" id="message"
-                  placeholder="{{ contact.message | default: "Message*" }}"
-                  aria-describedby="message-error"
-                  required="required"></textarea>
-                <small class="contact-field-message d-block" id="message-error" hidden></small>
-              </div>
+              {%- assign field_label = contact.name | default: "Name*" -%}
+              {% include sections/form-field.html id="name" name="name" type="text" label=field_label required=true %}
+              {%- assign field_label = contact.email | default: "Email*" -%}
+              {% include sections/form-field.html id="email" name="_replyto" type="email" label=field_label required=true %}
+              {%- assign field_label = contact.phone | default: "Phone Number*" -%}
+              {% include sections/form-field.html id="phone" name="phone" type="tel" label=field_label required=true %}
+              {%- assign field_label = contact.subject | default: "Subject" -%}
+              {% include sections/form-field.html id="subject" name="subject" type="text" label=field_label required=true %}
+              {%- assign field_label = contact.message | default: "Message*" -%}
+              {% include sections/form-field.html id="message" name="message" label=field_label textarea=true required=true %}
             </div>
             <input type="hidden" name="_subject" id="email-subject"
               value="{{ contact.subject | default: "Contact Form Submission" }}">

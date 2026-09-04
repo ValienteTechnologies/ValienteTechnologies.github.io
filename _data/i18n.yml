@@ -13,6 +13,13 @@ tr: &DEFAULT
   lang_nudge_link: "Switch to English"
   lang_nudge_dismiss: "Dismiss"
   lang_nudge_region: "Language suggestion"
+  form_messages:
+    required: "Bu alanı doldurun."
+    invalid_email: "Geçerli bir e-posta adresi girin."
+    invalid_phone: "Geçerli bir telefon numarası girin."
+    sending: "Gönderiliyor…"
+    success: "Mesajınız gönderildi. Teşekkürler!"
+    error: "Bir şeyler ters gitti. Lütfen tekrar deneyin."
 
 tr-TR:
   <<: *DEFAULT
@@ -32,3 +39,10 @@ en:
   lang_nudge_link: "Türkçeye geç"
   lang_nudge_dismiss: "Kapat"
   lang_nudge_region: "Dil önerisi"
+  form_messages:
+    required: "Please fill in this field."
+    invalid_email: "Enter a valid email address."
+    invalid_phone: "Enter a valid phone number."
+    sending: "Sending…"
+    success: "Your message has been sent. Thank you!"
+    error: "Something went wrong. Please try again."

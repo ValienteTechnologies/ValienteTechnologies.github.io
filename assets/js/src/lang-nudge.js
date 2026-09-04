@@ -43,9 +43,30 @@
 
     banner.removeAttribute("hidden");
     document.body.classList.add("has-lang-nudge");
-    // One-time measurement at show time (not per-frame) so the footer never
-    // sits under the fixed banner.
-    document.body.style.setProperty("--lang-nudge-height", banner.offsetHeight + "px");
+
+    function setHeight(px) {
+      document.body.style.setProperty("--lang-nudge-height", px + "px");
+    }
+
+    // Measured at show time and re-measured whenever the banner's own size
+    // changes (font load, text reflow, viewport width), not per-frame.
+    setHeight(banner.offsetHeight);
+
+    var resizeObserver = null;
+    if ("ResizeObserver" in window) {
+      resizeObserver = new ResizeObserver(function (entries) {
+        var entry = entries[0];
+        if (!entry) return;
+        var height = (entry.borderBoxSize && entry.borderBoxSize[0] && entry.borderBoxSize[0].blockSize)
+          || banner.offsetHeight;
+        setHeight(height);
+      });
+      resizeObserver.observe(banner);
+    } else {
+      window.addEventListener("resize", function () {
+        setHeight(banner.offsetHeight);
+      });
+    }
 
     var closeBtn = banner.querySelector(".lang-nudge__close");
     if (closeBtn) {
@@ -53,6 +74,10 @@
         try { localStorage.setItem(DISMISS_KEY, "1"); } catch (_) {}
         banner.setAttribute("hidden", "");
         document.body.classList.remove("has-lang-nudge");
+        if (resizeObserver) {
+          resizeObserver.disconnect();
+          resizeObserver = null;
+        }
       });
     }
   }

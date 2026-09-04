@@ -6,14 +6,20 @@ tr: &DEFAULT_TR
     - title: "DT Cloud"
       desc: "DT Cloud, Türkiye'de güçlü bir varlığı olan küresel bir bulut bilişim şirketidir."
       image: /assets/img/partners/dt.png
+      width: 200
+      height: 200
 
     - title: "Sigmacert Global"
       desc: "Sigmacert Global, denetim ve sertifikasyon hizmetleri sunan ve ISO standartları eğitimleri veren bir şirkettir."
       image: /assets/img/partners/sigmacert.png
+      width: 200
+      height: 200
 
     - title: "Procom Bilişim"
       desc: "Procom Bilişim, kurumsal ağ altyapısı, ağ güvenliği ve veri depolama alanlarında uçtan uca çözümler ve teknik destek sunar."
       image: /assets/img/partners/procom.png
+      width: 200
+      height: 70
   end: "Yolculuğun <br> Bir Parçası <br> Olun!"
 
 tr-TR:
@@ -27,12 +33,18 @@ en:
     - title: "DT Cloud"
       desc: "DT Cloud is a global cloud computing company with a strong presence in Turkey."
       image: /assets/img/partners/dt.png
+      width: 200
+      height: 200
 
     - title: "Sigmacert Global"
       desc: "Sigmacert Global provides audit and certification services and delivers ISO standards training."
       image: /assets/img/partners/sigmacert.png
+      width: 200
+      height: 200
 
     - title: "Procom Bilişim"
       desc: "Procom Bilişim delivers end-to-end enterprise network infrastructure, network security, and data storage solutions with ongoing technical support."
       image: /assets/img/partners/procom.png
+      width: 200
+      height: 70
   end: "Be Part of <br> the Journey!"

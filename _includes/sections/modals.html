@@ -22,15 +22,9 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">{{ project.title }}</h2>
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
-              {%- assign brochure_img_w = 900 -%}
-              {%- assign brochure_img_h = 900 -%}
-              {%- if project.image contains 'backup.png' or project.image contains 'pentest.png' -%}
-                {%- assign brochure_img_w = 900 -%}
-                {%- assign brochure_img_h = 1273 -%}
-              {%- endif -%}
               <picture>
                 <source srcset="{{ project.image | replace: '.png', '.webp' }}" type="image/webp">
-                <img class="img-fluid d-block mx-auto" src="{{ project.image }}" alt="{{ project.alt }}" width="{{ brochure_img_w }}" height="{{ brochure_img_h }}" loading="lazy">
+                <img class="img-fluid d-block mx-auto" src="{{ project.image }}" alt="{{ project.alt }}"{% if project.width and project.height %} width="{{ project.width }}" height="{{ project.height }}"{% endif %} loading="lazy">
               </picture>
               <p>{{ project.content | markdownify }}</p>
               <button
