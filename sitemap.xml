@@ -9,7 +9,7 @@ Excluded from localization in _config.yml so this renders exactly once.
 {%- capture pathlist -%}
 /
 {%- for doc in site.documents -%}
-{%- unless doc.url == "/404.html" -%},{{ doc.url }}{%- endunless -%}
+{%- unless doc.url == "/404.html" or doc.sitemap == false -%},{{ doc.url }}{%- endunless -%}
 {%- endfor -%}
 {%- endcapture -%}
 {%- assign paths = pathlist | split: "," -%}

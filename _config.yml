@@ -47,12 +47,17 @@ collections:
 
 plugins:
   - jekyll-polyglot
-  - jekyll-redirect-from
 
 exclude:
   - scripts/
+  - LICENSE
+  - README.md
+  - purgecss.config.js
 
 markdown: kramdown
+
+sass:
+  style: compressed
 
 strict_front_matter: true
 
