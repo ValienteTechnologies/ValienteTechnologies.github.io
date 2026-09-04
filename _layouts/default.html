@@ -3,7 +3,7 @@
 
   {% include layout/head.html %}
 
-  <body id="page-top">
+  <body id="page-top"{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
 
       {% include layout/lang-nudge.html %}
 

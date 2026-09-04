@@ -9,4 +9,3 @@ permalink: /projects/healthcheck/
 {% include sections/healthcheck-contact.html %}
 
 <script src="/assets/js/client-scroll.js" defer></script>
-<script src="/assets/js/contact_me.js" defer></script>
