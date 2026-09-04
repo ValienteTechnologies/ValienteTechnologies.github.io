@@ -12,11 +12,10 @@
   {%- assign _target_lang = site.default_lang -%}
 {%- endif -%}
 <div id="langNudge" class="lang-nudge" role="region" lang="{{ _target_lang }}" aria-label="{{ _i18n.lang_nudge_region }}" data-target-lang="{{ _target_lang }}" hidden>
-  <p class="lang-nudge__text">{{ _i18n.lang_nudge_text }}</p>
-  {%- if site.active_lang == site.default_lang -%}
+  {%- if site.active_lang == site.default_lang %}
   <a class="lang-nudge__link" data-lang="en" {% static_href %}href="/en{{ page.url }}"{% endstatic_href %}>{{ _i18n.lang_nudge_link }}</a>
-  {%- else -%}
+  {%- else %}
   <a class="lang-nudge__link" data-lang="{{ site.default_lang }}" {% static_href %}href="{{ page.url }}"{% endstatic_href %}>{{ _i18n.lang_nudge_link }}</a>
-  {%- endif -%}
+  {%- endif %}
   <button type="button" class="lang-nudge__close" aria-label="{{ _i18n.lang_nudge_dismiss }}">&times;</button>
 </div>
