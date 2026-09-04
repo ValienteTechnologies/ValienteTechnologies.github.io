@@ -183,13 +183,20 @@ async function capturePage(ctx, base, pagePath, width, variant, outDir) {
   const page = await ctx.newPage();
   const consoleErrors = [];
   const failedRequests = [];
-  page.on("console", (msg) => { if (msg.type() === "error") consoleErrors.push(msg.text()); });
+  // The fallback variant blocks .woff2 itself (see main); those aborts surface as
+  // ERR_BLOCKED_BY_CLIENT and are expected, not findings.
+  const isOwnFontBlock = (text) => variant === "fallback" && /ERR_BLOCKED_BY_CLIENT/.test(text);
+  page.on("console", (msg) => {
+    if (msg.type() === "error" && !isOwnFontBlock(msg.text())) consoleErrors.push(msg.text());
+  });
   page.on("pageerror", (err) => consoleErrors.push(String(err)));
   page.on("requestfailed", (req) => {
     const url = req.url();
     if (url.includes("googletagmanager")) return;
     const f = req.failure();
-    failedRequests.push({ url, error: f ? f.errorText : "unknown" });
+    const error = f ? f.errorText : "unknown";
+    if (isOwnFontBlock(error)) return;
+    failedRequests.push({ url, error });
   });
 
   const prefix = `${slugify(pagePath)}__${width}${variant === "fallback" ? "-fallback" : ""}`;
@@ -282,7 +289,7 @@ async function main() {
   for (const width of args.widths) {
     for (const variant of variants) {
       const ctx = await browser.newContext(deviceConfig(width));
-      if (variant === "fallback") await ctx.route(/\.woff2$/, (r) => r.abort());
+      if (variant === "fallback") await ctx.route(/\.woff2$/, (r) => r.abort("blockedbyclient"));
       for (const pagePath of pages) results.push(await capturePage(ctx, args.base, pagePath, width, variant, args.out));
       await ctx.close();
     }
