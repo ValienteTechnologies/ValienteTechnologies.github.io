@@ -9,12 +9,15 @@
     </div>
     <div class="row">
       {%- for event in partners.events -%}
+      {%- assign partner_img_w = 200 -%}
+      {%- assign partner_img_h = 200 -%}
+      {%- if event.image contains 'procom.png' -%}{%- assign partner_img_h = 70 -%}{%- endif -%}
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="partner-card">
           <div class="partner-card__bg" aria-hidden="true">
             <picture>
               <source srcset="{{ event.image | replace: '.png', '.webp' }}" type="image/webp">
-              <img src="{{ event.image }}" alt="{{ event.title }}" loading="lazy">
+              <img src="{{ event.image }}" alt="{{ event.title }}" width="{{ partner_img_w }}" height="{{ partner_img_h }}" loading="lazy">
             </picture>
           </div>
           <div class="partner-card__overlay"></div>
