@@ -95,3 +95,39 @@ python3 scripts/to_webp.py assets/img/ --recursive --max-width 900 --quality 80
 | `-r`, `--recursive` | false | Recurse into subdirectories |
 
 **Requirements:** `pip install pillow`
+
+---
+
+## visual-sweep.js
+
+Screenshots every page in `sitemap.xml` at each given width and flags layout defects: horizontal
+overflow, text clipped or painting outside its block/viewport, the navbar toggler breakpoint,
+`position:fixed` elements colliding with the footer, broken/undersized images, and console or
+network errors. Also captures the home-page mobile menu open and the first brochure modal open
+on `/corporate/` and `/en/corporate/`. Writes `<out>/report.json` plus PNGs, prints a
+page × width × variant table, and exits 1 if any check fails.
+
+```bash
+bundle exec jekyll build
+python3 -m http.server 4090 --directory _site &
+
+node scripts/visual-sweep.js --base http://localhost:4090 --out /tmp/sweep \
+  --widths 360,390,1280 --fallback
+
+fuser -k 4090/tcp
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--base` | required | Site origin to crawl (must be already built and served) |
+| `--out` | required | Output directory for screenshots and `report.json` |
+| `--widths` | `360,390,1280` | Comma-separated viewport widths; `< 768` gets mobile emulation |
+| `--pages` | sitemap.xml | Comma-separated page paths, overrides the sitemap crawl |
+| `--fallback` | off | Adds a second pass per page/width with `.woff2` requests aborted, to check fallback-font rendering |
+
+**Requirements:** `playwright-core` and a Chromium build, unpinned — the tools are not
+declared anywhere in this repo (there's no `package.json`). Paths resolve from env vars with
+fallbacks to a known-good local install:
+
+- `PLAYWRIGHT_CORE` — default `/home/tfp/selge-captest/pw/node_modules/playwright-core`
+- `CHROME_PATH` — default `~/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome`
